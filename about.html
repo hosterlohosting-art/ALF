@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Firm | The Awad Law Firm</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/awadlawfirmlogo.png">
+    
+    <!-- Local Stylesheets (Preserved) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Outfit (Headings) & Manrope (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Unified "Wow" Theme Config -->
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#060B11',
+                            navy: '#0C1827',
+                            charcoal: '#1A2736',
+                            primary: '#6CA1E6',      /* Sky blue from premium theme */
+                            primaryhover: '#5A8DD0',
+                            pale: '#EAF2FA',         /* Very light blue for card accents */
+                            offwhite: '#F9FAFC',
+                            white: '#FFFFFF',
+                            lightgray: '#F0F4F8',
+                            border: '#E2E8F0',
+                            text: '#0A1118',
+                            muted: '#64748B',
+                            gold: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #F9FAFC; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6CA1E6; }
+
+        /* Outlined Text Watermark on White Background (Squeezing fixed with bg-match & letter spacing) */
+        .text-stroke-white-bg {
+            color: #ffffff;
+            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.12);
+            letter-spacing: 0.08em;
+        }
+
+        /* Outlined Text Watermark on Off-White Background */
+        .text-stroke-offwhite-bg {
+            color: #F9FAFC;
+            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.12);
+            letter-spacing: 0.08em;
+        }
+
+        /* Hero Animation Utilities */
+        @keyframes slow-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-spin {
+            animation: slow-spin 25s linear infinite;
+        }
+
+        /* Hidden details summary markers */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+
+        /* Timeline Connector line glow keyframe */
+        @keyframes laser-glow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .laser-line {
+            background: linear-gradient(90deg, #EAF2FA, #6CA1E6, #EAF2FA);
+            background-size: 200% auto;
+            animation: laser-glow 4s linear infinite;
+        }
+
+        /* Custom float animation */
+        @keyframes float-element {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        .animate-float {
+            animation: float-element 6s ease-in-out infinite;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Awad Law Firm",
+      "url": "https://theawadlawfirm.com",
+      "logo": "https://theawadlawfirm.com/assets/awadlawfirmlogo.png",
+      "telephone": "+17062033097",
+      "description": "Top-rated personal injury law firm serving Atlanta, Marietta, and Dalton, Georgia.",
+      "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
+      "serviceArea": { "@type": "State", "name": "Georgia" },
+      "areaServed": [
+        {"@type": "City", "name": "Atlanta"},
+        {"@type": "City", "name": "Marietta"},
+        {"@type": "City", "name": "Dalton"}
+      ],
+      "address": [
+        {"@type": "PostalAddress", "streetAddress": "4076 Ebenezer Rd.", "addressLocality": "Marietta", "addressRegion": "GA", "addressCountry": "US"},
+        {"@type": "PostalAddress", "streetAddress": "210 North Glenwood Ave.", "addressLocality": "Dalton", "addressRegion": "GA", "addressCountry": "US"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://theawadlawfirm.com/index.html"},
+        {"@type": "ListItem", "position": 2, "name": "Firm History", "item": "https://theawadlawfirm.com/about.html"}
+      ]
+    }
+    </script>
+</head>
+<body class="home-page about-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
+
+    <!-- Global premium navigation header -->
+    <header class="navbar">
+
+<div class="logo">
+    <img src="assets/alf-white-logo.png" alt="Awad Law Firm Logo">
+</div>
+
+<nav>
+<a href="index.html" class="">Home</a>
+<div class="nav-dropdown">
+  <a href="about.html" class="nav-dropdown-toggle active">About</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">The Firm</span>
+    <hr class="nav-dropdown-divider">
+    <a href="mission-vision.html" class="nav-dropdown-item">Mission &amp; Vision</a>
+    <a href="about.html" class="nav-dropdown-item active">Firm History</a>
+    <a href="ibrahim-awad.html" class="nav-dropdown-item">Ibrahim Awad</a>
+    <a href="team-experts.html" class="nav-dropdown-item">Team of Experts</a>
+    <a href="why-choose-us.html" class="nav-dropdown-item">Why Choose Us</a>
+    <a href="core-values.html" class="nav-dropdown-item">Core Values</a>
+    <a href="community.html" class="nav-dropdown-item">Community</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="practice-areas.html" class="nav-dropdown-toggle">Practice Areas</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">We Handle</span>
+    <hr class="nav-dropdown-divider">
+    <a href="personal-injury.html" class="nav-dropdown-item">Personal Injury</a>
+    <a href="car-accidents.html" class="nav-dropdown-item">Car Accidents</a>
+    <a href="trucking-accidents.html" class="nav-dropdown-item">Trucking Accidents</a>
+    <a href="motorcycle-accidents.html" class="nav-dropdown-item">Motorcycle Accidents</a>
+    <a href="bicycle-accidents.html" class="nav-dropdown-item">Bicycle Accidents</a>
+    <a href="uber-accidents.html" class="nav-dropdown-item">Uber Accidents</a>
+    <a href="lyft-accidents.html" class="nav-dropdown-item">Lyft Accidents</a>
+    <a href="slip-and-fall.html" class="nav-dropdown-item">Slip &amp; Fall</a>
+    <a href="medical-malpractice.html" class="nav-dropdown-item">Medical Malpractice</a>
+    <a href="wrongful-death.html" class="nav-dropdown-item">Wrongful Death</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="results.html" class="nav-dropdown-toggle">Results</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Our Track Record</span>
+    <hr class="nav-dropdown-divider">
+    <a href="results.html" class="nav-dropdown-item">Case Studies</a>
+    <a href="testimonials.html" class="nav-dropdown-item">Client Testimonials</a>
+    <a href="reviews.html" class="nav-dropdown-item">Reviews</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="#" class="nav-dropdown-toggle">Resources</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Learn More</span>
+    <hr class="nav-dropdown-divider">
+    <a href="tedx.html" class="nav-dropdown-item">TEDx Talk</a>
+    <a href="education.html" class="nav-dropdown-item">Legal Education</a>
+    <a href="newsletter.html" class="nav-dropdown-item">Newsletter</a>
+    <a href="https://www.awadacademy.com/" class="nav-dropdown-item" target="_blank" rel="noopener noreferrer">Awad Academy ↗</a>
+  </div>
+</div>
+<a href="contact.html" class="">Contact</a>
+</nav>
+
+<div class="nav-icons">
+
+<div class="nav-search" aria-label="Search">
+  <span></span>
+  <em>Search here...</em>
+</div>
+
+<a href="contact.html" class="nav-quote-btn">Get Free Quote</a>
+
+<a href="contact.html" class="nav-arrow-btn" aria-label="Get Free Quote">
+  <span>↗</span>
+</a>
+
+<button class="nav-dots-btn" aria-label="Open quick menu" type="button">
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+</button>
+
+<a href="contact.html" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+<path d="m22 7-10 5L2 7"></path>
+</svg>
+
+</a>
+
+
+<a href="contact.html" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+19.79 19.79 0 0 1-8.63-3.07 
+19.5 19.5 0 0 1-6-6 
+19.79 19.79 0 0 1-3.07-8.63 
+2 2 0 0 1 2-2h3
+a2 2 0 0 1 2 1.72
+c.12.91.35 1.8.68 2.65
+a2 2 0 0 1-.45 2.11
+L8.09 9.91
+a16 16 0 0 0 6 6
+l1.43-1.25
+a2 2 0 0 1 2.11-.45
+c.85.33 1.74.56 2.65.68
+A2 2 0 0 1 22 16.92z"></path>
+</svg>
+
+</a>
+
+</div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+    <!-- Majestic Cinematic Hero Section (Reduced Height) -->
+    <section class="relative pt-24 pb-32 lg:pt-28 lg:pb-36 overflow-hidden z-10 bg-brand-dark border-b border-white/5">
+        <!-- Dynamic Colorful Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#060B11] via-[#0C1827] to-[#1a365d] z-0 opacity-95"></div>
+        
+        <!-- Glowing Orbs / Colorful Shapes for the "Wow" Effect -->
+        <div class="absolute inset-0 overflow-hidden z-0 pointer-events-none mix-blend-screen">
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3b82f6]/40 blur-[120px] rounded-full animate-pulse"></div>
+            <div class="absolute -bottom-32 -right-10 w-[700px] h-[700px] bg-brand-primary/30 blur-[150px] rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563eb]/25 blur-[120px] rounded-full animate-slow-spin"></div>
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left: Majestic Hero Typography & Metrics -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase relative shadow-2xl">
+                        <span class="relative flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-primary"></span>
+                        </span>
+                        <span>Georgia's Elite Practice Area Champions</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-heading font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl">
+                        Strategic Injury Law<br>
+                        Solutions for<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-pale to-brand-primary drop-shadow-sm">Maximum Recovery</span>
+                    </h1>
+
+                    <p class="text-base md:text-lg text-white/80 font-medium max-w-xl leading-relaxed drop-shadow-md">
+                        We help injured people protect their rights, recover full compensation, and move forward with absolute confidence.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="contact.html" class="group bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-4 px-8 rounded-full flex items-center transition-all duration-300 shadow-[0_12px_24px_rgba(108,161,230,0.3)] hover:-translate-y-0.5 text-xs tracking-widest uppercase no-underline">
+                            Free Consultation
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="tel:+17062033097" class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-full transition-all duration-300 text-xs tracking-widest uppercase no-underline">
+                            (706) 203-3097
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: High-End Asymmetrical Photo & Glassmorphic Dashboard Collage (The ultimate "Wow") -->
+                <div class="lg:col-span-5 relative flex justify-center items-center">
+                    
+                    <!-- Decorative Spinning Decennial Seal Badge in Hero Background -->
+                    <div class="absolute -top-12 -right-8 w-44 h-44 z-0 pointer-events-none select-none">
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <svg class="absolute w-full h-full animate-slow-spin" viewBox="0 0 100 100">
+                                <defs>
+                                    <path id="heroCirclePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                                </defs>
+                                <text font-size="7.5" font-weight="900" fill="rgba(108, 161, 230, 0.25)" letter-spacing="1.2">
+                                    <textPath href="#heroCirclePath" startOffset="0%">UNREASONABLE HOSPITALITY • EST. 2013 •</textPath>
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Ambient Glow underneath layout -->
+                    <div class="absolute inset-0 bg-brand-primary/20 blur-3xl rounded-[3rem] transform scale-95 pointer-events-none"></div>
+
+                    <!-- Collage Wrapper -->
+                    <div class="relative w-full max-w-sm animate-float z-10">
+                        
+                        <!-- Core Portrait Container -->
+                        <div class="relative rounded-[3rem] overflow-hidden border-4 border-white/20 shadow-2xl bg-brand-navy">
+                            <img src="assets/imbrahimherohome.png" alt="Ibrahim J. Awad" class="w-full h-[350px] md:h-[450px] object-cover object-top filter contrast-105 brightness-95">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/10 to-transparent"></div>
+                        </div>
+
+                        <!-- Glassmorphic Overlay Stat Card 1 (Top Left Overlap) -->
+                        <div class="absolute -top-6 -left-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl max-w-[180px] hidden sm:block">
+                            <div class="text-3xl font-heading font-black text-brand-primary">92%</div>
+                            <p class="text-[10px] text-white/70 font-bold uppercase tracking-widest mt-1">Litigation Success rate after review</p>
+                        </div>
+
+                        <!-- Glassmorphic Overlay Stat Card 2 (Bottom Right Overlap) -->
+                        <div class="absolute -bottom-6 -right-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-5 shadow-2xl max-w-[220px] text-left hidden sm:block">
+                            <div class="flex items-center space-x-2 text-brand-gold mb-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <span class="text-xs font-bold text-white uppercase tracking-wider">Top Rated Firm</span>
+                            </div>
+                            <p class="text-white font-heading font-black text-lg">$70,000,000+</p>
+                            <p class="text-[9px] text-white/60 font-bold uppercase tracking-widest">Recovered for accident victims</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sleek Angled Bottom Divider connecting to content -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+            <svg class="relative block w-full h-[60px] md:h-[120px]" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,120 L1200,120 L1200,0 L0,120 Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Detailed Personal Journey (Ibrahim J. Awad, Esq.) -->
+    <section class="py-24 bg-white relative z-20 overflow-hidden">
+        
+        <!-- Large Elegant Watermark Text in Background -->
+        <div class="absolute top-[20%] left-[-4%] text-[10vw] font-heading font-black text-stroke-white-bg whitespace-nowrap pointer-events-none select-none z-0">
+            FIRM FOUNDER
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+                
+                <!-- Left: Floating Portrait Frame -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="absolute inset-0 bg-brand-primary/15 rounded-[3rem] transform -rotate-3 scale-105 z-0"></div>
+                    <div class="relative z-10 w-full max-w-sm rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-brand-navy">
+                        <img src="assets/ibrahimteam.png" alt="Ibrahim J. Awad, Esq." class="w-full h-[450px] md:h-[550px] object-cover object-top hover:scale-103 transition-transform duration-700">
+                    </div>
+                </div>
+
+                <!-- Right: Deep Career Story Narrative -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand-primary uppercase bg-brand-pale px-4 py-1.5 rounded-full inline-block mb-3">Founder Story</span>
+                        <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-navy leading-none">Ibrahim J. Awad, Esq.</h2>
+                        <p class="text-brand-muted text-sm font-bold uppercase tracking-wider mt-1">Lead Counsel, Karate Attorney</p>
+                    </div>
+
+                    <div class="text-brand-charcoal/90 text-lg leading-relaxed font-medium space-y-6">
+                        <p>
+                            Ibrahim Awad decided to become an attorney long before law school. As a high schooler, Mr. Awad was the cornerstone of his school's mock trial team, leading them to their first Regional Championship in over a decade. After graduating near the top of his class, he attended Dalton State College and began working at the District Attorney's Office in Whitfield County.
+                        </p>
+                        <p>
+                            As an undergraduate, Mr. Awad assisted in the prosecution of over 100 felony cases, including more than a dozen child molestation jury trials, and a murder trial. After earning his Associate's Degree in English from Dalton State College, Mr. Awad transferred to Kennesaw State University to continue his education and receive a Bachelor's Degree in English; he graduated Summa Cum Laude.
+                        </p>
+                        <p>
+                            After Kennesaw State, he attended Georgia State College of Law, where he furthered his real-life legal experience by interning at the DeKalb County Solicitor General's Office. While there, Mr. Awad worked with the Special Victims Unit as well as other Trial Attorneys. He was also an active member of the Student Trial Lawyers Association, where he competed in prestigious trial advocacy competitions across the country, including in Buffalo, New York and Memphis, Tennessee.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Celebrating 10 Years & Outstanding Team Presentation -->
+    <section class="py-28 bg-brand-offwhite relative z-20 border-t border-brand-border/40 overflow-hidden">
+        
+        <!-- Large Elegant Watermark Text in Background -->
+        <div class="absolute bottom-[10%] right-[-5%] text-[10vw] font-heading font-black text-stroke-offwhite-bg whitespace-nowrap pointer-events-none select-none z-0">
+            THE AWAD TEAM
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            
+            <div class="text-center mb-16 space-y-3">
+                <p class="text-brand-primary text-xs font-bold tracking-widest uppercase">Decennial Milestone</p>
+                <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-navy tracking-tight leading-none">
+                    Celebrating 10 Years of Unreasonable Hospitality
+                </h2>
+                <p class="text-brand-muted text-base max-w-3xl mx-auto">
+                    In 2023, the Awad Law Firm celebrated its 10th anniversary. From a small home office to an active staff of over 17 across multiple locations, our focus remains unchanged.
+                </p>
+            </div>
+
+            <!-- Massive Overlapping Picture Frame Container (Focus on Team Picture) -->
+            <div class="relative w-full max-w-5xl mx-auto rounded-[3.5rem] overflow-hidden shadow-2xl border-4 border-white bg-brand-navy group mb-20">
+                <div class="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
+                <!-- Large Team photo representation -->
+                <img src="assets/teamawad.png" alt="The Awad Squad Team Presentation" class="w-full h-[400px] md:h-[600px] object-cover object-center group-hover:scale-102 transition-transform duration-700">
+                
+                <!-- Floating Glass Card Label inside frame -->
+                <div class="absolute bottom-8 left-8 right-8 z-20 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg text-brand-navy">
+                    <div>
+                        <h4 class="font-heading font-black text-lg">The Awad Squad family</h4>
+                        <p class="text-xs text-brand-muted font-bold uppercase tracking-wider mt-0.5">United by a single core mandate: client focus</p>
+                    </div>
+                    <a href="team-experts.html" class="bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-3.5 px-6 rounded-full text-xs tracking-widest uppercase transition-all shadow-md no-underline">
+                        Meet Our Experts
+                    </a>
+                </div>
+            </div>
+
+            <!-- Staggered Client Promise Core Info Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-heading font-black text-brand-navy">A Law Firm you can trust.</h3>
+                    <p class="text-brand-muted text-base leading-relaxed font-medium">
+                        You can be confident that the Awad Law Firm will treat your case with the highest ethical standards. Contact us today, we'd be happy to talk to you about your legal needs. We measure success by what you take home — not us.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-heading font-black text-brand-navy">Unreasonable Hospitality</h3>
+                    <p class="text-brand-muted text-base leading-relaxed font-medium">
+                        If your case resolves before a lawsuit is filed, you will receive equal to or more than our legal fee, with your medical bills completely covered. We believe this is fair, and we serve every client with extraordinary care.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: Connective Process Timeline Pipeline Section -->
+    <section class="py-28 bg-white relative z-20 overflow-hidden border-t border-brand-border/40">
+        
+        <!-- Large Background Outlined Text -->
+        <div class="absolute top-[10%] left-[-2%] text-[12vw] font-heading font-black text-stroke-white-bg whitespace-nowrap pointer-events-none select-none z-0">
+            STRATEGIC PATH
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            
+            <div class="text-center mb-20 space-y-2">
+                <p class="text-brand-primary text-sm font-bold tracking-widest uppercase">The Pipeline</p>
+                <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-navy tracking-tight uppercase">
+                    Our Process
+                </h2>
+            </div>
+
+            <!-- Connecting Laser Line container -->
+            <div class="relative">
+                
+                <!-- Laser line running through cards on large viewports -->
+                <div class="hidden xl:block absolute top-[28%] left-12 right-12 h-1 laser-line rounded-full z-0 pointer-events-none"></div>
+                
+                <!-- 5-Column Dashboard Spreads Grid (Completely Responsive) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 relative z-10">
+                    
+                    <!-- Step 1 -->
+                    <div class="group bg-brand-offwhite p-8 rounded-[2rem] border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-72 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-pale group-hover:bg-brand-primary text-brand-primary group-hover:text-white flex items-center justify-center text-lg font-heading font-black shadow-inner transition-all duration-300 relative z-10">
+                            01
+                        </div>
+                        <div class="mt-6 flex-grow relative z-10">
+                            <h4 class="font-heading font-black text-xl text-brand-navy mb-3 group-hover:text-brand-primary transition-colors duration-300">Treatment</h4>
+                            <p class="text-brand-muted text-sm leading-relaxed font-semibold">Your health is paramount. We ensure you get immediate access to top-tier medical professionals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="group bg-brand-offwhite p-8 rounded-[2rem] border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-72 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-pale group-hover:bg-brand-primary text-brand-primary group-hover:text-white flex items-center justify-center text-lg font-heading font-black shadow-inner transition-all duration-300 relative z-10">
+                            02
+                        </div>
+                        <div class="mt-6 flex-grow relative z-10">
+                            <h4 class="font-heading font-black text-xl text-brand-navy mb-3 group-hover:text-brand-primary transition-colors duration-300">Collecting Records</h4>
+                            <p class="text-brand-muted text-sm leading-relaxed font-semibold">We handle all the red tape, gathering every necessary document to build an undeniable case.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="group bg-brand-offwhite p-8 rounded-[2rem] border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-72 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-pale group-hover:bg-brand-primary text-brand-primary group-hover:text-white flex items-center justify-center text-lg font-heading font-black shadow-inner transition-all duration-300 relative z-10">
+                            03
+                        </div>
+                        <div class="mt-6 flex-grow relative z-10">
+                            <h4 class="font-heading font-black text-xl text-brand-navy mb-3 group-hover:text-brand-primary transition-colors duration-300">Offer of Compromise</h4>
+                            <p class="text-brand-muted text-sm leading-relaxed font-semibold">We calculate absolute maximum value and present an aggressive initial demand.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="group bg-brand-offwhite p-8 rounded-[2rem] border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-72 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-pale group-hover:bg-brand-primary text-brand-primary group-hover:text-white flex items-center justify-center text-lg font-heading font-black shadow-inner transition-all duration-300 relative z-10">
+                            04
+                        </div>
+                        <div class="mt-6 flex-grow relative z-10">
+                            <h4 class="font-heading font-black text-xl text-brand-navy mb-3 group-hover:text-brand-primary transition-colors duration-300">Negotiation</h4>
+                            <p class="text-brand-muted text-sm leading-relaxed font-semibold">We fight tooth and nail against the insurance companies to secure your deserved compensation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="group bg-brand-offwhite p-8 rounded-[2rem] border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between h-72 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-pale group-hover:bg-brand-primary text-brand-primary group-hover:text-white flex items-center justify-center text-lg font-heading font-black shadow-inner transition-all duration-300 relative z-10">
+                            05
+                        </div>
+                        <div class="mt-6 flex-grow relative z-10">
+                            <h4 class="font-heading font-black text-xl text-brand-navy mb-3 group-hover:text-brand-primary transition-colors duration-300">Disbursement</h4>
+                            <p class="text-brand-muted text-sm leading-relaxed font-semibold">Once settled or won in court, we quickly and transparently distribute your recovery funds.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Brand-New Ultra-Premium Asymmetric Mission & Vision Canvas -->
+    <section class="py-28 bg-brand-offwhite relative z-20 overflow-hidden border-t border-brand-border/40">
+        
+        <!-- Outlined background text with letter-spacing correction -->
+        <div class="absolute top-[15%] left-[-4%] text-[10vw] font-heading font-black text-stroke-offwhite-bg whitespace-nowrap pointer-events-none select-none z-0">
+            THE AWAD STANDARD
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+                
+                <!-- Left: Luxury Editorial Header -->
+                <div class="lg:col-span-4 space-y-6 text-left">
+                    <span class="text-xs font-bold tracking-widest text-brand-primary uppercase bg-brand-pale px-4 py-1.5 rounded-full inline-block">Awad Compass</span>
+                    <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-navy tracking-tight leading-tight">
+                        Unbending<br>
+                        Purpose &<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-navy">Structural Legacy</span>
+                    </h2>
+                    <div class="h-1.5 w-16 bg-brand-primary rounded-full"></div>
+                    <p class="text-brand-muted text-sm leading-relaxed font-semibold">
+                        We don't settle for baseline standards. We define the future of premium legal representation with unmatched faith and structural execution.
+                    </p>
+                </div>
+
+                <!-- Right: Sleek Gallery Bento Cards (Completely Redesigned, Different Style) -->
+                <div class="lg:col-span-8 space-y-8">
+                    
+                    <!-- Card 1: Our Purpose -->
+                    <div class="group bg-white rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col sm:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="w-14 h-14 bg-brand-pale rounded-2xl flex items-center justify-center text-brand-primary font-heading font-black text-xl shadow-inner group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <span class="text-[10px] font-bold tracking-widest text-brand-muted uppercase">Our Foundational Mandate</span>
+                            <h3 class="text-2xl font-heading font-black text-brand-navy group-hover:text-brand-primary transition-colors duration-300">Purpose</h3>
+                            <p class="text-brand-muted text-base leading-relaxed font-medium">
+                                To advocate for people who have been injured with excellence, integrity, and faith based conviction. We fight to maximize what our clients receive because seeking full justice for those who have been harmed is the right thing to do.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Our Legacy -->
+                    <div class="group bg-white rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col sm:flex-row gap-6">
+                        <div class="shrink-0">
+                            <div class="w-14 h-14 bg-brand-pale rounded-2xl flex items-center justify-center text-brand-primary font-heading font-black text-xl shadow-inner group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                                <i data-lucide="crown" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <span class="text-[10px] font-bold tracking-widest text-brand-muted uppercase">The Structural Mark We Leave</span>
+                            <h3 class="text-2xl font-heading font-black text-brand-navy group-hover:text-brand-primary transition-colors duration-300">Legacy</h3>
+                            <p class="text-brand-muted text-base leading-relaxed font-medium">
+                                To be the rare law firm that proves lawyers can be both exceptional advocates and exceptional human beings. Guided by faith and driven by excellence, we aspire to set a new standard in our profession where clients are treated with honor, extraordinary care, and unreasonable hospitality.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Frequently Asked Questions -->
+    <section class="py-28 bg-white relative z-20 border-t border-brand-border/40 overflow-hidden">
+        
+        <!-- Large Elegant Watermark Text in Background (Outlines perfected with background match) -->
+        <div class="absolute top-[20%] right-[-4%] text-[11vw] font-heading font-black text-stroke-white-bg whitespace-nowrap pointer-events-none select-none z-0">
+            AWAD JUSTICE
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+                
+                <!-- Left Side Portrait Profile Frame (With Glass indicator) -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="absolute inset-0 bg-brand-primary/15 rounded-[4rem] transform -rotate-3 scale-105 z-0"></div>
+                    <div class="relative z-10 w-full max-w-sm rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white bg-brand-navy group">
+                        <img src="assets/ibrahimaccordion.png" alt="Ibrahim Awad Portrait" class="w-full h-[450px] object-cover object-top group-hover:scale-103 transition-transform duration-700">
+                        
+                        <!-- Floating Glassmorphic tag -->
+                        <div class="absolute bottom-6 left-6 right-6 z-20 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white/30 flex items-center justify-between shadow-lg text-brand-navy">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></div>
+                                <span class="font-heading font-black text-sm tracking-tight">Lead Trial Counsel</span>
+                            </div>
+                            <span class="text-brand-primary font-bold text-xs uppercase tracking-widest">Atlanta • Dalton</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Interactive FAQs Grid -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="space-y-2 mb-8">
+                        <p class="text-brand-primary text-xs font-bold tracking-widest uppercase">Answers You Need</p>
+                        <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-navy tracking-tight">
+                            Frequently Asked <span class="text-brand-primary">Questions</span>
+                        </h2>
+                    </div>
+
+                    <!-- Question 1 -->
+                    <details class="group bg-brand-offwhite border border-brand-border rounded-[1.5rem] overflow-hidden transition-all duration-300 shadow-sm" open>
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-6 text-brand-charcoal hover:text-brand-primary transition-colors text-lg">
+                            <span>What areas of law does The Awad Law Firm specialize in?</span>
+                            <span class="text-brand-primary transition-transform duration-300 group-open:rotate-45 ml-4 shrink-0">
+                                <i data-lucide="plus" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-brand-muted px-6 pb-6 text-sm leading-relaxed border-t border-brand-border/40 pt-4 bg-white/40">
+                            We specialize in personal injury, car accidents, catastrophic injuries, and holding large insurance companies accountable for the harm they cause our clients.
+                        </div>
+                    </details>
+
+                    <!-- Question 2 -->
+                    <details class="group bg-brand-offwhite border border-brand-border rounded-[1.5rem] overflow-hidden transition-all duration-300 shadow-sm">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-6 text-brand-charcoal hover:text-brand-primary transition-colors text-lg">
+                            <span>How can I schedule a consultation with The Awad Law Firm?</span>
+                            <span class="text-brand-primary transition-transform duration-300 group-open:rotate-45 ml-4 shrink-0">
+                                <i data-lucide="plus" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-brand-muted px-6 pb-6 text-sm leading-relaxed border-t border-brand-border/40 pt-4 bg-white/40">
+                            You can easily book a free case evaluation by filling out any message form across our platform, or dialing our active operations centers directly.
+                        </div>
+                    </details>
+
+                    <!-- Question 3 -->
+                    <details class="group bg-brand-offwhite border border-brand-border rounded-[1.5rem] overflow-hidden transition-all duration-300 shadow-sm">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-6 text-brand-charcoal hover:text-brand-primary transition-colors text-lg">
+                            <span>What sets Awad apart from other law firms?</span>
+                            <span class="text-brand-primary transition-transform duration-300 group-open:rotate-45 ml-4 shrink-0">
+                                <i data-lucide="plus" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-brand-muted px-6 pb-6 text-sm leading-relaxed border-t border-brand-border/40 pt-4 bg-white/40">
+                            Our unyielding commitment to Unreasonable Hospitality, coupled with hyper-aggressive litigation methods, transforms ordinary case journeys into record-setting legal wins.
+                        </div>
+                    </details>
+
+                    <!-- Question 4 -->
+                    <details class="group bg-brand-offwhite border border-brand-border rounded-[1.5rem] overflow-hidden transition-all duration-300 shadow-sm">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-6 text-brand-charcoal hover:text-brand-primary transition-colors text-lg">
+                            <span>How much do your legal services cost?</span>
+                            <span class="text-brand-primary transition-transform duration-300 group-open:rotate-45 ml-4 shrink-0">
+                                <i data-lucide="plus" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-brand-muted px-6 pb-6 text-sm leading-relaxed border-t border-brand-border/40 pt-4 bg-white/40">
+                            We operate strictly on a contingency fee framework. This means your first assessment is zero cost, and we only collect legal fees when we successfully claim recovery on your behalf.
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Values & Foundation Callouts Section -->
+    <section class="py-24 bg-brand-offwhite relative z-20 overflow-hidden border-t border-brand-border/40">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Callout 1 -->
+                <div class="bg-white rounded-[2.5rem] p-10 border border-brand-border/60 shadow-sm text-center space-y-4 group hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-pale text-brand-primary flex items-center justify-center mx-auto shadow-inner group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                        <i data-lucide="scale" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-2xl text-brand-navy group-hover:text-brand-primary transition-colors">Nothing Held Back</h3>
+                    <p class="text-brand-muted text-base font-medium leading-relaxed">We believe in leaving no stone unturned. Our evidence retrieval specialists are experts in their field. We will pursue every witness, every video, and every evidence needed to substantiate the legitimacy of your case. Every detail of your story is important.</p>
+                </div>
+
+                <!-- Callout 2 -->
+                <div class="bg-white rounded-[2.5rem] p-10 border border-brand-border/60 shadow-sm text-center space-y-4 group hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-pale text-brand-primary flex items-center justify-center mx-auto shadow-inner group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-2xl text-brand-navy group-hover:text-brand-primary transition-colors">Experts At Our Trade</h3>
+                    <p class="text-brand-muted text-base font-medium leading-relaxed">When our clients hire us, they get an entire team of client care, insurance accountability, and evidence specialists. When you text us, our entire team gets the message, and we answer within 24 hours. We provide Unreasonable Hospitality.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Global premium footer -->
+    <footer class="site-footer">
+  <!-- Newsletter CTA Bar -->
+  <div class="footer-newsletter-bar">
+    <div class="newsletter-left">
+      <svg class="newsletter-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20 30 H80 M50 30 V80 M35 80 H65 M20 50 A15 15 0 0 0 50 50 A15 15 0 0 0 80 50" stroke-dasharray="2 2" />
+        <path d="M30 50 H40 M60 50 H70" />
+      </svg>
+      <div class="newsletter-text-col">
+        <span class="newsletter-kicker">NEWSLETTER</span>
+        <h3 class="newsletter-heading">Sign Up To Get Latest Update</h3>
+      </div>
+    </div>
+    <div class="newsletter-right">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="Enter your Email" class="newsletter-input" required />
+        <button type="submit" class="newsletter-btn">
+          Subscribe
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="site-footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: Pages -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="ibrahim-awad.html">Our Attorney</a></li>
+          <li><a href="practice-areas.html">Practice Areas</a></li>
+          <li><a href="results.html">Case Studies</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Our Services -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Our Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="car-accidents.html">Car Accidents</a></li>
+          <li><a href="trucking-accidents.html">Truck Accidents</a></li>
+          <li><a href="motorcycle-accidents.html">Motorcycle Accidents</a></li>
+          <li><a href="wrongful-death.html">Wrongful Death</a></li>
+          <li><a href="slip-and-fall.html">Slip &amp; Fall</a></li>
+          <li><a href="personal-injury.html">Personal Injury</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Brand Identity (Center) -->
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/alf-white-logo.png" alt="Awad Law Firm" class="footer-logo">
+        </div>
+        <p class="footer-brand-desc">
+          Atlanta personal injury lawyers serving clients across Georgia with focused, relentless advocacy.
+        </p>
+        <div class="footer-social-row">
+          <a href="#" class="social-circle-link" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Twitter">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.95 4.57a10 10 0 0 1-2.82.77 4.96 4.96 0 0 0 2.16-2.72 9.9 9.9 0 0 1-3.13 1.2 4.93 4.93 0 0 0-8.38 4.48A14 14 0 0 1 1.64 3.16a4.93 4.93 0 0 0 1.52 6.57 4.9 4.9 0 0 1-2.23-.61v.06a4.93 4.93 0 0 0 3.95 4.83 4.9 4.9 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.9 9.9 0 0 1 0 19.54a13.9 13.9 0 0 0 7.55 2.21c9.05 0 14-7.5 14-14v-.64a10 10 0 0 0 2.4-2.54z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-3.34-4-3.1-4 0v5.6h-3v-11h3v1.76c1.4-2.58 7-2.78 7 2.47v6.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 4: Location & Offices -->
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-title">Contact & Offices</h4>
+        
+        <!-- Address 1 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Marietta Office</h5>
+            <p>4076 Ebenezer Rd., Marietta, GA</p>
+          </div>
+        </div>
+
+        <!-- Address 2 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Dalton Office</h5>
+            <p>210 North Glenwood Ave., Dalton, GA</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Phone</h5>
+            <p><a href="tel:+17062033097">(706) 203-3097</a></p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Email</h5>
+            <p><a href="mailto:info@theawadlawfirm.com">info@theawadlawfirm.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-bar-inner">
+      <p class="footer-copyright-text">
+        &copy; 2026 Awad Law Firm. All Rights Reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

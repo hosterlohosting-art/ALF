@@ -1,0 +1,12 @@
+# Logs
+*.log
+.codex-local-server.*
+.codex-server.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary/Scratch files
+scratch_*
+*.tmp

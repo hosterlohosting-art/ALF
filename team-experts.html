@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team of Experts | The Awad Law Firm</title>
+    
+    <!-- Local Stylesheets (Preserved) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Outfit (Headings) & Manrope (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Unified "Wow" Theme Config -->
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#060B11',
+                            navy: '#0C1827',
+                            charcoal: '#1A2736',
+                            primary: '#6CA1E6',      /* Sky blue from premium theme */
+                            primaryhover: '#5A8DD0',
+                            pale: '#EAF2FA',         /* Very light blue for card accents */
+                            offwhite: '#F9FAFC',
+                            white: '#FFFFFF',
+                            lightgray: '#F0F4F8',
+                            border: '#E2E8F0',
+                            text: '#0A1118',
+                            muted: '#64748B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #F9FAFC; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6CA1E6; }
+
+        /* Subtle Geometric Background Pattern */
+        .bg-geometric {
+            background-color: #f9fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236ca1e6' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Outlined Text Watermark */
+        .text-stroke-premium {
+            color: #ffffff;
+            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.12);
+            letter-spacing: 0.05em;
+        }
+
+        /* Diagonal Split Gradient Mask for Team Headshots */
+        .team-split-bg {
+            background: linear-gradient(180deg, #EAF2FA 0%, #ffffff 100%);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            transition: background-position 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Shifting split position dynamically on card hover */
+        .group:hover .team-split-bg {
+            background-position: 100% 100%;
+        }
+
+        /* Hero Animation Utilities */
+        @keyframes slow-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-spin {
+            animation: slow-spin 20s linear infinite;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Awad Law Firm",
+      "url": "https://theawadlawfirm.com",
+      "logo": "https://theawadlawfirm.com/assets/awadlawfirmlogo.png",
+      "telephone": "+17062033097",
+      "description": "Top-rated personal injury law firm serving Atlanta, Marietta, and Dalton, Georgia.",
+      "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
+      "serviceArea": { "@type": "State", "name": "Georgia" },
+      "areaServed": [
+        {"@type": "City", "name": "Atlanta"},
+        {"@type": "City", "name": "Marietta"},
+        {"@type": "City", "name": "Dalton"}
+      ],
+      "address": [
+        {"@type": "PostalAddress", "streetAddress": "4076 Ebenezer Rd.", "addressLocality": "Marietta", "addressRegion": "GA", "addressCountry": "US"},
+        {"@type": "PostalAddress", "streetAddress": "210 North Glenwood Ave.", "addressLocality": "Dalton", "addressRegion": "GA", "addressCountry": "US"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://theawadlawfirm.com/index.html"},
+        {"@type": "ListItem", "position": 2, "name": "Team of Experts", "item": "https://theawadlawfirm.com/team-experts.html"}
+      ]
+    }
+    </script>
+</head>
+<body class="home-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
+
+<header class="navbar">
+
+<div class="logo">
+    <img src="assets/alf-white-logo.png" alt="Awad Law Firm Logo">
+</div>
+
+<nav>
+<a href="index.html" class="">Home</a>
+<div class="nav-dropdown">
+  <a href="about.html" class="nav-dropdown-toggle active">About</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">The Firm</span>
+    <hr class="nav-dropdown-divider">
+    <a href="mission-vision.html" class="nav-dropdown-item">Mission &amp; Vision</a>
+    <a href="about.html" class="nav-dropdown-item">Firm History</a>
+    <a href="ibrahim-awad.html" class="nav-dropdown-item">Ibrahim Awad</a>
+    <a href="team-experts.html" class="nav-dropdown-item active">Team of Experts</a>
+    <a href="why-choose-us.html" class="nav-dropdown-item">Why Choose Us</a>
+    <a href="core-values.html" class="nav-dropdown-item">Core Values</a>
+    <a href="community.html" class="nav-dropdown-item">Community</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="practice-areas.html" class="nav-dropdown-toggle">Practice Areas</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">We Handle</span>
+    <hr class="nav-dropdown-divider">
+    <a href="personal-injury.html" class="nav-dropdown-item">Personal Injury</a>
+    <a href="car-accidents.html" class="nav-dropdown-item">Car Accidents</a>
+    <a href="trucking-accidents.html" class="nav-dropdown-item">Trucking Accidents</a>
+    <a href="motorcycle-accidents.html" class="nav-dropdown-item">Motorcycle Accidents</a>
+    <a href="bicycle-accidents.html" class="nav-dropdown-item">Bicycle Accidents</a>
+    <a href="uber-accidents.html" class="nav-dropdown-item">Uber Accidents</a>
+    <a href="lyft-accidents.html" class="nav-dropdown-item">Lyft Accidents</a>
+    <a href="slip-and-fall.html" class="nav-dropdown-item">Slip &amp; Fall</a>
+    <a href="medical-malpractice.html" class="nav-dropdown-item">Medical Malpractice</a>
+    <a href="wrongful-death.html" class="nav-dropdown-item">Wrongful Death</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="results.html" class="nav-dropdown-toggle">Results</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Our Track Record</span>
+    <hr class="nav-dropdown-divider">
+    <a href="results.html" class="nav-dropdown-item">Case Studies</a>
+    <a href="testimonials.html" class="nav-dropdown-item">Client Testimonials</a>
+    <a href="reviews.html" class="nav-dropdown-item">Reviews</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="#" class="nav-dropdown-toggle">Resources</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Learn More</span>
+    <hr class="nav-dropdown-divider">
+    <a href="tedx.html" class="nav-dropdown-item">TEDx Talk</a>
+    <a href="education.html" class="nav-dropdown-item">Legal Education</a>
+    <a href="newsletter.html" class="nav-dropdown-item">Newsletter</a>
+    <a href="https://www.awadacademy.com/" class="nav-dropdown-item" target="_blank" rel="noopener noreferrer">Awad Academy ↗</a>
+  </div>
+</div>
+<a href="contact.html" class="">Contact</a>
+</nav>
+
+<div class="nav-icons">
+
+<div class="nav-search" aria-label="Search">
+  <span></span>
+  <em>Search here...</em>
+</div>
+
+<a href="contact.html" class="nav-quote-btn">Get Free Quote</a>
+
+<a href="contact.html" class="nav-arrow-btn" aria-label="Get Free Quote">
+  <span>↗</span>
+</a>
+
+<button class="nav-dots-btn" aria-label="Open quick menu" type="button">
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+</button>
+
+<a href="contact.html" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+<path d="m22 7-10 5L2 7"></path>
+</svg>
+
+</a>
+
+
+<a href="contact.html" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+19.79 19.79 0 0 1-8.63-3.07 
+19.5 19.5 0 0 1-6-6 
+19.79 19.79 0 0 1-3.07-8.63 
+2 2 0 0 1 2-2h3
+a2 2 0 0 1 2 1.72
+c.12.91.35 1.8.68 2.65
+a2 2 0 0 1-.45 2.11
+L8.09 9.91
+a16 16 0 0 0 6 6
+l1.43-1.25
+a2 2 0 0 1 2.11-.45
+c.85.33 1.74.56 2.65.68
+A2 2 0 0 1 22 16.92z"></path>
+</svg>
+
+</a>
+
+</div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+    <!-- Colorful Branding Hero Section -->
+    <section class="relative pt-32 pb-40 lg:pt-40 lg:pb-48 overflow-hidden z-10 bg-brand-dark">
+        <!-- Dynamic Colorful Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#060B11] via-[#0C1827] to-[#1e3a8a] z-0 opacity-90"></div>
+        
+        <!-- Glowing Orbs / Colorful Shapes for the "Wow" Effect -->
+        <div class="absolute inset-0 overflow-hidden z-0 pointer-events-none mix-blend-screen">
+            <!-- Top Left Vibrant Glow -->
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3b82f6]/40 blur-[120px] rounded-full animate-pulse"></div>
+            <!-- Bottom Right Sky Blue Glow -->
+            <div class="absolute -bottom-32 -right-10 w-[700px] h-[700px] bg-brand-primary/30 blur-[150px] rounded-full"></div>
+            <!-- Center Accent Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563eb]/20 blur-[120px] rounded-full animate-slow-spin"></div>
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10 text-center">
+            <!-- Glassmorphism Tag -->
+            <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-2xl relative">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-primary"></span>
+                </span>
+                <span>The Experts</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl lg:text-[5.5rem] font-heading font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl mb-8">
+                Team of Experts —<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-pale to-brand-primary drop-shadow-sm">The Awad Law Firm</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-white/80 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                Meet the brilliant legal minds, care specialists, and dedicated advocates standing beside you every step of the way.
+            </p>
+        </div>
+
+        <!-- Sleek Angled Bottom Divider connecting to the grid -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+            <svg class="relative block w-full h-[60px] md:h-[120px]" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,120 L1200,120 L1200,0 L0,120 Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Premium Team Layout Section (No Breadcrumbs) -->
+    <section class="py-24 bg-geometric relative z-20 overflow-hidden">
+        
+        <!-- Large Elegant Watermark Text in Background -->
+        <div class="absolute top-[12%] right-[-3%] text-[11vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
+            THE AWAD SQUAD
+        </div>
+
+        <div class="container mx-auto px-6 max-w-[85rem] relative z-10">
+
+            <!-- ==========================================
+                 SECTION 1: THE AWAD SQUAD
+                 ========================================== -->
+            <div class="space-y-16 mb-36">
+                <div class="border-b-2 border-brand-primary/30 pb-6">
+                    <h2 class="text-4xl font-heading font-black text-brand-navy tracking-tight uppercase">
+                        The Awad Squad
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Member 1: Ibrahim J. Awad -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <!-- Shimmer overlay on hover -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/ibrahim.png" alt="Ibrahim J. Awad, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Ibrahim J. Awad, Esq.</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Lead Counsel
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 2: Basher Hassan -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/basher1.png" alt="Basher Hassan, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Basher Hassan, Esq.</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Awad Law Firm Partner
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 3: David Price -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/david.png" alt="David Price, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">David Price, Esq.</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Senior Associate Attorney
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 4: Azima Mohammed -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/azima.png" alt="Azima Mohammed, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Azima Mohammed, Esq.</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Associate Attorney
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 5: Gay Hartley -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/gay.png" alt="Gay Hartley" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Gay Hartley</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Director of Operations
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 6: Marion Day -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/day.png" alt="Marion Day" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Marion Day</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Director of Client Excellence
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 7: Shantrell Ball -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/ball.png" alt="Shantrell Ball" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Shantrell Ball</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Insurance Accountability Manager
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 8: Leland Bridges -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/bridges.png" alt="Leland Bridges" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Leland Bridges</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Chief Support Officer
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 9: Sandra Guzman -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/guzman.png" alt="Sandra Guzman" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Sandra Guzman</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Care Manager
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 10: Devin Spiegelhalter -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/spiegelhalter.png" alt="Devin Spiegelhalter" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Devin Spiegelhalter</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Care Assistant Manager
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 11: Sabrina Portuondo -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/portuondo.png" alt="Sabrina Portuondo" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Sabrina Portuondo</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Intake Manager
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 12: Deanna Marquez -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/marquez.png" alt="Deanna Marquez" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Deanna Marquez</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Evidence Retrieval Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 13: Timothy Melson -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/melson.png" alt="Timothy Melson" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Timothy Melson</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Evidence Retrieval Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 14: Adriana Melgarejo -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/melgarejo.png" alt="Adriana Melgarejo" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Adriana Melgarejo</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Insurance Accountability Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 15: Christina Dixon -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/dixon.png" alt="Christina Dixon" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Christina Dixon</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Payroll and Benefits Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 16: Carley Richards -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/richards.png" alt="Carley Richards" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Carley Richards</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Administrative Assistant
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 17: Genesis Resendiz -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/resendiz.png" alt="Genesis Resendiz" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Genesis Resendiz</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Care Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 18: Isabel Welch -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/welch.png" alt="Isabel Welch" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Isabel Welch</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Care Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 19: Betty Mendez -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/mendez.png" alt="Betty Mendez" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Betty Mendez</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Care Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 20: Sierra Jones -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/jones.png" alt="Sierra Jones" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Sierra Jones</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Care Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 21: Elizabeth Chavarria -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full sm:col-span-2 md:col-span-1 lg:col-span-1">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/chavarria.png" alt="Elizabeth Chavarria" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Elizabeth Chavarria</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Client Care Specialist
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 SECTION 2: THE MEDIA TEAM
+                 ========================================== -->
+            <div class="space-y-16 mb-36 relative">
+                <!-- Watermark for Section 2 -->
+                <div class="absolute top-[20%] left-[-2%] text-[10vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
+                    THE MEDIA TEAM
+                </div>
+
+                <div class="border-b-2 border-brand-primary/30 pb-6 relative z-10">
+                    <h2 class="text-4xl font-heading font-black text-brand-navy tracking-tight uppercase">
+                        The Media Team
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">
+                    
+                    <!-- Member 1: Selvin Navarro -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/navarro.png" alt="Selvin Navarro" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Selvin Navarro</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Brand Manager
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 2: Mehar Hassan -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/hassan.png" alt="Mehar Hassan" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Mehar Hassan</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Creative Developer & Graphic Artist
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 3: John Jabes Salva -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/salva.png" alt="John Jabes Salva" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">John Jabes Salva</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Video Editor
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 4: Tasha Hijara -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/hijara.png" alt="Tasha Hijara" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Tasha Hijara</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Webmaster
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 5: Ella Batilona -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full sm:col-span-2 md:col-span-1 lg:col-span-1">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/batilona.png" alt="Ella Batilona" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Ella Batilona</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Graphic Artist
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 SECTION 3: VIRTUAL ASSISTANTS
+                 ========================================== -->
+            <div class="space-y-16 mb-16 relative">
+                <div class="border-b-2 border-brand-primary/30 pb-6 relative z-10">
+                    <h2 class="text-4xl font-heading font-black text-brand-navy tracking-tight uppercase">
+                        Virtual Assistants
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">
+                    
+                    <!-- Member 1: Edgard Manzanares -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/manzanares.png" alt="Edgard Manzanares" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Edgard Manzanares</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Legal Virtual Assistant
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Member 2: Alvaro Vanegas -->
+                    <div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="assets/vanegas.png" alt="Alvaro Vanegas" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-brand-navy group-hover:text-brand-primary transition-colors duration-300 mb-2">Alvaro Vanegas</h3>
+                            <span class="inline-block mx-auto bg-brand-pale text-brand-primary group-hover:bg-brand-primary group-hover:text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.3)] transition-all duration-300">
+                                Virtual Assistant
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Form Section (Light Blue BG Matching Screenshot) -->
+    <section class="bg-brand-pale text-brand-dark pt-24 pb-24 border-t border-brand-border/40 relative z-20">
+        <div class="container mx-auto px-6 max-w-[80rem]">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Left: Contact Details -->
+                <div class="space-y-12">
+                    <div>
+                        <p class="text-brand-charcoal text-xs font-bold tracking-widest uppercase mb-4">Get In Touch</p>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-tight mb-8 text-brand-primary tracking-tight">Talk to an Experienced<br>Personal Injury Attorney<br>Today</h2>
+                    </div>
+
+                    <div class="space-y-8 text-sm text-brand-charcoal">
+                        <!-- Offices -->
+                        <div>
+                            <p class="font-bold tracking-widest uppercase mb-4">Our Offices</p>
+                            <ul class="space-y-4 font-medium text-base">
+                                <li class="flex items-start">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-brand-primary mr-3 mt-0.5"></i>
+                                    <span>Marietta - 4076 Ebenezer Rd.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-brand-primary mr-3 mt-0.5"></i>
+                                    <span>Dalton - 210 North Glenwood Ave.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div>
+                            <p class="font-bold tracking-widest uppercase mb-4 mt-8">Contact Info</p>
+                            <ul class="space-y-4 font-medium text-base">
+                                <li class="flex items-center">
+                                    <i data-lucide="mail" class="w-5 h-5 text-brand-primary mr-3"></i>
+                                    <a href="#" class="hover:text-brand-primary transition">Email Us</a>
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="phone" class="w-5 h-5 text-brand-primary mr-3"></i>
+                                    <a href="#" class="hover:text-brand-primary transition">(1) (706) 338-3784</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form Card -->
+                <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-brand-border/50 text-brand-dark">
+                    <div class="flex justify-center mb-10 border-b border-brand-border/60 pb-6">
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="scale" class="w-8 h-8 text-brand-dark mb-2"></i>
+                            <div class="font-heading font-black text-xl leading-none tracking-tight">AWAD LAW FIRM</div>
+                        </div>
+                    </div>
+
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message submitted successfully!');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">First Name *</label>
+                                <input type="text" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Last Name *</label>
+                                <input type="text" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Email *</label>
+                                <input type="email" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Phone *</label>
+                                <input type="tel" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Select Type of Practice Area</label>
+                            <div class="relative">
+                                <select class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition text-brand-charcoal appearance-none shadow-sm cursor-pointer">
+                                    <option>Select type of practice area</option>
+                                    <option>Car Accidents</option>
+                                    <option>Trucking Accidents</option>
+                                    <option>Wrongful Death</option>
+                                    <option>Personal Injury</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Message *</label>
+                            <textarea rows="4" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition resize-none shadow-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-4 px-8 rounded-full w-full max-w-[250px] mx-auto transition-colors flex justify-center items-center text-sm tracking-widest uppercase shadow-[0_10px_20px_rgba(108,161,230,0.2)] mt-8 group">
+                            Submit Message <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <!-- Newsletter CTA Bar -->
+  <div class="footer-newsletter-bar">
+    <div class="newsletter-left">
+      <svg class="newsletter-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20 30 H80 M50 30 V80 M35 80 H65 M20 50 A15 15 0 0 0 50 50 A15 15 0 0 0 80 50" stroke-dasharray="2 2" />
+        <path d="M30 50 H40 M60 50 H70" />
+      </svg>
+      <div class="newsletter-text-col">
+        <span class="newsletter-kicker">NEWSLETTER</span>
+        <h3 class="newsletter-heading">Sign Up To Get Latest Update</h3>
+      </div>
+    </div>
+    <div class="newsletter-right">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="Enter your Email" class="newsletter-input" required />
+        <button type="submit" class="newsletter-btn">
+          Subscribe
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="site-footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: Pages -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="ibrahim-awad.html">Our Attorney</a></li>
+          <li><a href="practice-areas.html">Practice Areas</a></li>
+          <li><a href="results.html">Case Studies</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Our Services -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Our Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="car-accidents.html">Car Accidents</a></li>
+          <li><a href="trucking-accidents.html">Truck Accidents</a></li>
+          <li><a href="motorcycle-accidents.html">Motorcycle Accidents</a></li>
+          <li><a href="wrongful-death.html">Wrongful Death</a></li>
+          <li><a href="slip-and-fall.html">Slip &amp; Fall</a></li>
+          <li><a href="personal-injury.html">Personal Injury</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Brand Identity (Center) -->
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/alf-white-logo.png" alt="Awad Law Firm" class="footer-logo">
+        </div>
+        <p class="footer-brand-desc">
+          Atlanta personal injury lawyers serving clients across Georgia with focused, relentless advocacy.
+        </p>
+        <div class="footer-social-row">
+          <a href="#" class="social-circle-link" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Twitter">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.95 4.57a10 10 0 0 1-2.82.77 4.96 4.96 0 0 0 2.16-2.72 9.9 9.9 0 0 1-3.13 1.2 4.93 4.93 0 0 0-8.38 4.48A14 14 0 0 1 1.64 3.16a4.93 4.93 0 0 0 1.52 6.57 4.9 4.9 0 0 1-2.23-.61v.06a4.93 4.93 0 0 0 3.95 4.83 4.9 4.9 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.9 9.9 0 0 1 0 19.54a13.9 13.9 0 0 0 7.55 2.21c9.05 0 14-7.5 14-14v-.64a10 10 0 0 0 2.4-2.54z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-3.34-4-3.1-4 0v5.6h-3v-11h3v1.76c1.4-2.58 7-2.78 7 2.47v6.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 4: Location & Offices -->
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-title">Contact & Offices</h4>
+        
+        <!-- Address 1 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Marietta Office</h5>
+            <p>4076 Ebenezer Rd., Marietta, GA</p>
+          </div>
+        </div>
+
+        <!-- Address 2 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Dalton Office</h5>
+            <p>210 North Glenwood Ave., Dalton, GA</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Phone</h5>
+            <p><a href="tel:+17062033097">(706) 203-3097</a></p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Email</h5>
+            <p><a href="mailto:info@theawadlawfirm.com">info@theawadlawfirm.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-bar-inner">
+      <p class="footer-copyright-text">
+        &copy; 2026 Awad Law Firm. All Rights Reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

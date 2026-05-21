@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awad Law Firm Newsletters | Monthly Legal Insights &mdash; Awad Law Firm</title>
+<meta name="description" content="Browse Awad Law Firm newsletters featuring insights, community events, case updates, and legal education resources.">
+
+<link rel="icon" type="image/png" href="assets/awadlawfirmlogo.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="premium.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- JSON-LD: LegalService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Awad Law Firm",
+  "url": "https://theawadlawfirm.com",
+  "logo": "https://theawadlawfirm.com/assets/awadlawfirmlogo.png",
+  "telephone": "+17062033097",
+  "description": "Top-rated personal injury law firm serving Atlanta, Marietta, and Dalton, Georgia.",
+  "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
+  "serviceArea": { "@type": "State", "name": "Georgia" },
+  "areaServed": [
+    {"@type": "City", "name": "Atlanta"},
+    {"@type": "City", "name": "Marietta"},
+    {"@type": "City", "name": "Dalton"}
+  ]
+}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   NEWSLETTER PAGE — ULTRA-PREMIUM DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --nl-gold: #D4AF37;
+    --nl-gold-light: #E8C84A;
+    --nl-gold-dark: #B8962E;
+    --nl-dark: #0A0A0F;
+    --nl-dark-2: #111118;
+    --nl-dark-3: #1A1A24;
+    --nl-dark-4: #222230;
+    --nl-paper: #F8F6F0;
+    --nl-paper-2: #EDE9E0;
+    --nl-text: #E8E6E0;
+    --nl-text-muted: #8A8A95;
+    --nl-radius: 16px;
+    --nl-transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── HERO SECTION ─── */
+.nl-hero {
+    position: relative;
+    min-height: 92vh;
+    background: linear-gradient(168deg, #05050A 0%, #0C0C18 35%, #111122 65%, #0A0A12 100%) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 120px 24px 80px;
+}
+
+.nl-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 900px 600px at 30% 20%, rgba(212,175,55,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 700px 500px at 75% 70%, rgba(212,175,55,0.04) 0%, transparent 70%),
+        radial-gradient(circle 300px at 50% 50%, rgba(212,175,55,0.03) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Floating particles */
+.nl-hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(212,175,55,0.3), transparent),
+        radial-gradient(1px 1px at 30% 70%, rgba(212,175,55,0.2), transparent),
+        radial-gradient(1.5px 1.5px at 55% 15%, rgba(212,175,55,0.25), transparent),
+        radial-gradient(1px 1px at 80% 55%, rgba(212,175,55,0.2), transparent),
+        radial-gradient(1px 1px at 65% 85%, rgba(212,175,55,0.15), transparent),
+        radial-gradient(1px 1px at 90% 30%, rgba(212,175,55,0.2), transparent),
+        radial-gradient(1.5px 1.5px at 20% 90%, rgba(212,175,55,0.15), transparent),
+        radial-gradient(1px 1px at 45% 45%, rgba(212,175,55,0.1), transparent);
+    animation: nlStarDrift 40s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes nlStarDrift {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+
+.nl-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.nl-hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nl-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 60px;
+    padding: 8px 20px;
+    width: fit-content;
+    color: var(--nl-gold);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    animation: nlFadeUp 0.8s var(--nl-transition) both;
+}
+
+.nl-hero-badge svg {
+    width: 14px; height: 14px;
+    animation: nlPulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes nlPulseGlow {
+    0%, 100% { opacity: 0.7; filter: drop-shadow(0 0 2px rgba(212,175,55,0.3)); }
+    50% { opacity: 1; filter: drop-shadow(0 0 6px rgba(212,175,55,0.6)); }
+}
+
+.nl-hero-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: clamp(38px, 5.5vw, 68px) !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.03em;
+    color: #fff !important;
+    animation: nlFadeUp 0.8s var(--nl-transition) 0.1s both;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nl-hero-title span {
+    background: linear-gradient(135deg, var(--nl-gold) 0%, var(--nl-gold-light) 50%, var(--nl-gold) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: nlGoldShimmer 4s ease-in-out infinite;
+}
+
+@keyframes nlGoldShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.nl-hero-subtitle {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    color: var(--nl-text-muted) !important;
+    max-width: 480px;
+    animation: nlFadeUp 0.8s var(--nl-transition) 0.2s both;
+    margin: 0 !important;
+}
+
+.nl-hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 12px;
+    animation: nlFadeUp 0.8s var(--nl-transition) 0.3s both;
+}
+
+.nl-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nl-stat-number {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    color: var(--nl-gold) !important;
+    line-height: 1;
+}
+
+.nl-stat-label {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: var(--nl-text-muted) !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nl-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--nl-gold) 0%, var(--nl-gold-dark) 100%);
+    color: #000;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    transition: all 0.35s var(--nl-transition);
+    animation: nlFadeUp 0.8s var(--nl-transition) 0.4s both;
+    text-decoration: none;
+}
+
+.nl-hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(212,175,55,0.3);
+}
+
+.nl-hero-cta svg {
+    width: 16px; height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.nl-hero-cta:hover svg {
+    transform: translateX(4px);
+}
+
+/* ─── FEATURED BOOK PREVIEW ─── */
+.nl-hero-book {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: nlFadeUp 1s var(--nl-transition) 0.3s both;
+}
+
+.nl-book-showcase {
+    position: relative;
+    width: 380px;
+    cursor: pointer;
+    transition: transform 0.6s var(--nl-transition);
+}
+
+.nl-book-showcase:hover {
+    transform: perspective(800px) rotateY(-5deg) scale(1.03);
+}
+
+.nl-book-cover {
+    width: 100%;
+    border-radius: 4px 16px 16px 4px;
+    box-shadow:
+        -6px 0 0 0 rgba(180,160,120,0.15),
+        -12px 0 0 0 rgba(160,140,100,0.08),
+        0 25px 60px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(212,175,55,0.1);
+    transition: box-shadow 0.4s ease;
+}
+
+.nl-book-showcase:hover .nl-book-cover {
+    box-shadow:
+        -6px 0 0 0 rgba(180,160,120,0.2),
+        -12px 0 0 0 rgba(160,140,100,0.12),
+        0 30px 80px rgba(0,0,0,0.6),
+        0 0 40px rgba(212,175,55,0.12),
+        0 0 0 1px rgba(212,175,55,0.2);
+}
+
+.nl-book-glow {
+    position: absolute;
+    inset: -40px;
+    background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.nl-book-label {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(212,175,55,0.1);
+    border: 1px solid rgba(212,175,55,0.25);
+    color: var(--nl-gold);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 24px;
+    border-radius: 30px;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes nlFadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SECTION HEADING ─── */
+.nl-section-head {
+    text-align: center;
+    padding: 100px 24px 50px;
+    background: linear-gradient(180deg, var(--nl-dark) 0%, #fff 100%);
+    position: relative;
+}
+
+.nl-section-head::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+}
+
+.nl-section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--nl-gold);
+    margin-bottom: 16px;
+}
+
+.nl-section-kicker::before,
+.nl-section-kicker::after {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--nl-gold);
+    opacity: 0.4;
+}
+
+.nl-section-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: clamp(28px, 4vw, 48px) !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em;
+    color: #fff !important;
+    margin: 0 0 12px !important;
+    line-height: 1.15 !important;
+}
+
+.nl-section-desc {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 15px !important;
+    color: rgba(255,255,255,0.45) !important;
+    max-width: 560px;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+}
+
+/* ─── NEWSLETTER GRID ─── */
+.nl-grid-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 24px 100px;
+    background: #fff;
+}
+
+.nl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+/* ─── NEWSLETTER CARD ─── */
+.nl-card {
+    position: relative;
+    border-radius: var(--nl-radius);
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: all 0.45s var(--nl-transition);
+    cursor: pointer;
+    group: true;
+}
+
+.nl-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12), 0 0 0 1px rgba(212,175,55,0.15);
+}
+
+.nl-card-img-wrap {
+    position: relative;
+    aspect-ratio: 0.77;
+    overflow: hidden;
+    background: #f0ede6;
+}
+
+.nl-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.6s var(--nl-transition);
+}
+
+.nl-card:hover .nl-card-img-wrap img {
+    transform: scale(1.05);
+}
+
+.nl-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(10,10,15,0.92) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px;
+}
+
+.nl-card:hover .nl-card-overlay {
+    opacity: 1;
+}
+
+.nl-card-read-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--nl-gold);
+    color: #000;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: none;
+    transform: translateY(20px);
+    transition: all 0.4s var(--nl-transition);
+}
+
+.nl-card:hover .nl-card-read-btn {
+    transform: translateY(0);
+}
+
+.nl-card-read-btn svg {
+    width: 14px; height: 14px;
+}
+
+.nl-card-info {
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nl-card-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #1C1C1C !important;
+    letter-spacing: -0.01em;
+}
+
+.nl-card-pages {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--nl-text-muted);
+    background: rgba(0,0,0,0.04);
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* ─── FLIPBOOK MODAL ─── */
+.nl-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(5,5,10,0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.nl-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: nlModalIn 0.4s var(--nl-transition);
+}
+
+@keyframes nlModalIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.nl-modal-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px 100px;
+    box-sizing: border-box;
+}
+
+.nl-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nl-modal-close:hover {
+    background: rgba(212,175,55,0.15);
+    border-color: rgba(212,175,55,0.3);
+    color: var(--nl-gold);
+    transform: scale(1.08);
+}
+
+.nl-modal-title-bar {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+    z-index: 10;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.nl-modal-title-bar span {
+    color: var(--nl-gold);
+}
+
+.nl-book-stage {
+    width: min(94vw, 1200px);
+    height: min(80vh, 780px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 2400px;
+}
+
+.nl-book-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+.nl-book-container.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nl-page {
+    background: linear-gradient(180deg, var(--nl-paper) 0%, var(--nl-paper-2) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.nl-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.nl-page-hard {
+    background: #181818;
+}
+
+/* Loading spinner */
+.nl-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.nl-loader-spinner {
+    width: 44px;
+    height: 44px;
+    border: 3px solid rgba(212,175,55,0.15);
+    border-top-color: var(--nl-gold);
+    border-radius: 50%;
+    animation: nlSpin 0.8s linear infinite;
+}
+
+@keyframes nlSpin {
+    to { transform: rotate(360deg); }
+}
+
+.nl-loader-text {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--nl-gold);
+}
+
+/* Navigation bar */
+.nl-nav-bar {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(15,15,22,0.95);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 60px;
+    padding: 10px 24px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 200;
+    backdrop-filter: blur(16px);
+}
+
+.nl-nav-bar.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nl-nav-bar button {
+    appearance: none;
+    border: 1px solid rgba(212,175,55,0.4);
+    background: transparent;
+    color: var(--nl-gold);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.nl-nav-bar button:hover:not(:disabled) {
+    background: var(--nl-gold);
+    color: #000;
+    border-color: var(--nl-gold);
+}
+
+.nl-nav-bar button:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.nl-nav-info {
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    min-width: 110px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+    .nl-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    .nl-hero-text { align-items: center; }
+    .nl-hero-badge { margin: 0 auto; }
+    .nl-hero-subtitle { margin: 0 auto; }
+    .nl-hero-stats { justify-content: center; }
+    .nl-hero-cta { margin: 0 auto; }
+    .nl-book-showcase { width: 300px; }
+    .nl-hero { min-height: auto; padding: 140px 24px 80px; }
+}
+
+@media (max-width: 767px) {
+    .nl-hero { padding: 120px 16px 60px; }
+    .nl-hero-stats { gap: 24px; }
+    .nl-stat-number { font-size: 28px; }
+    .nl-book-showcase { width: 240px; }
+    .nl-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+    .nl-grid-wrap { padding: 20px 16px 60px; }
+    .nl-book-stage { width: min(98vw, 560px); height: min(65vh, 720px); }
+    .nl-modal-close { top: 12px; right: 12px; width: 44px; height: 44px; font-size: 20px; }
+    .nl-nav-bar { padding: 8px 14px; gap: 8px; }
+    .nl-nav-bar button { padding: 8px 14px; font-size: 10px; }
+    .nl-section-head { padding: 70px 16px 40px; }
+}
+</style>
+</head>
+
+<body class="home-page">
+
+<header class="navbar">
+
+<div class="logo">
+    <img src="assets/alf-white-logo.png" alt="Awad Law Firm Logo">
+</div>
+
+<nav>
+<a href="index.html" class="">Home</a>
+<div class="nav-dropdown">
+  <a href="about.html" class="nav-dropdown-toggle">About</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">The Firm</span>
+    <hr class="nav-dropdown-divider">
+    <a href="mission-vision.html" class="nav-dropdown-item">Mission &amp; Vision</a>
+    <a href="about.html" class="nav-dropdown-item">Firm History</a>
+    <a href="ibrahim-awad.html" class="nav-dropdown-item">Ibrahim Awad</a>
+    <a href="team-experts.html" class="nav-dropdown-item">Team of Experts</a>
+    <a href="why-choose-us.html" class="nav-dropdown-item">Why Choose Us</a>
+    <a href="core-values.html" class="nav-dropdown-item">Core Values</a>
+    <a href="community.html" class="nav-dropdown-item">Community</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="practice-areas.html" class="nav-dropdown-toggle">Practice Areas</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">We Handle</span>
+    <hr class="nav-dropdown-divider">
+    <a href="personal-injury.html" class="nav-dropdown-item">Personal Injury</a>
+    <a href="car-accidents.html" class="nav-dropdown-item">Car Accidents</a>
+    <a href="trucking-accidents.html" class="nav-dropdown-item">Trucking Accidents</a>
+    <a href="motorcycle-accidents.html" class="nav-dropdown-item">Motorcycle Accidents</a>
+    <a href="bicycle-accidents.html" class="nav-dropdown-item">Bicycle Accidents</a>
+    <a href="uber-accidents.html" class="nav-dropdown-item">Uber Accidents</a>
+    <a href="lyft-accidents.html" class="nav-dropdown-item">Lyft Accidents</a>
+    <a href="slip-and-fall.html" class="nav-dropdown-item">Slip &amp; Fall</a>
+    <a href="medical-malpractice.html" class="nav-dropdown-item">Medical Malpractice</a>
+    <a href="wrongful-death.html" class="nav-dropdown-item">Wrongful Death</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="results.html" class="nav-dropdown-toggle">Results</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Our Track Record</span>
+    <hr class="nav-dropdown-divider">
+    <a href="results.html" class="nav-dropdown-item">Case Studies</a>
+    <a href="testimonials.html" class="nav-dropdown-item">Client Testimonials</a>
+    <a href="reviews.html" class="nav-dropdown-item">Reviews</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="#" class="nav-dropdown-toggle active">Resources</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Learn More</span>
+    <hr class="nav-dropdown-divider">
+    <a href="tedx.html" class="nav-dropdown-item">TEDx Talk</a>
+    <a href="education.html" class="nav-dropdown-item">Legal Education</a>
+    <a href="newsletter.html" class="nav-dropdown-item active">Newsletter</a>
+    <a href="https://www.awadacademy.com/" class="nav-dropdown-item" target="_blank" rel="noopener noreferrer">Awad Academy ↗</a>
+  </div>
+</div>
+<a href="contact.html" class="">Contact</a>
+</nav>
+
+<div class="nav-icons">
+
+<div class="nav-search" aria-label="Search">
+  <span></span>
+  <em>Search here...</em>
+</div>
+
+<a href="contact.html" class="nav-quote-btn">Get Free Quote</a>
+
+<a href="contact.html" class="nav-arrow-btn" aria-label="Get Free Quote">
+  <span>↗</span>
+</a>
+
+<button class="nav-dots-btn" aria-label="Open quick menu" type="button">
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+</button>
+
+<a href="contact.html" class="nav-btn">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+<path d="m22 7-10 5L2 7"></path>
+</svg>
+</a>
+
+<a href="contact.html" class="nav-btn">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+19.79 19.79 0 0 1-8.63-3.07 
+19.5 19.5 0 0 1-6-6 
+19.79 19.79 0 0 1-3.07-8.63 
+2 2 0 0 1 2-2h3
+a2 2 0 0 1 2 1.72
+c.12.91.35 1.8.68 2.65
+a2 2 0 0 1-.45 2.11
+L8.09 9.91
+a16 16 0 0 0 6 6
+l1.43-1.25
+a2 2 0 0 1 2.11-.45
+c.85.33 1.74.56 2.65.68
+A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</a>
+
+</div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════════════════════ -->
+<section class="nl-hero">
+    <div class="nl-hero-inner">
+        <div class="nl-hero-text">
+            <div class="nl-hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14l-8-4-8 4z"/></svg>
+                Latest Edition
+            </div>
+            <h1 class="nl-hero-title">Our<br><span>Newsletters</span></h1>
+            <p class="nl-hero-subtitle">Stay informed with monthly insights, community updates, and legal education from the Awad Law Firm. Flip through our beautifully crafted editions.</p>
+            <div class="nl-hero-stats">
+                <div class="nl-stat">
+                    <div class="nl-stat-number">18</div>
+                    <div class="nl-stat-label">Editions</div>
+                </div>
+                <div class="nl-stat">
+                    <div class="nl-stat-number">200+</div>
+                    <div class="nl-stat-label">Pages</div>
+                </div>
+                <div class="nl-stat">
+                    <div class="nl-stat-number">2</div>
+                    <div class="nl-stat-label">Years</div>
+                </div>
+            </div>
+            <a href="#all-editions" class="nl-hero-cta">
+                Browse All Editions
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <div class="nl-hero-book">
+            <div class="nl-book-showcase" data-open="nl-may-2026">
+                <div class="nl-book-glow"></div>
+                <img class="nl-book-cover" src="assets/newsletters/may 2026/most-impreesive.png" alt="May 2026 Newsletter Cover">
+                <div class="nl-book-label">✦ Click to Read</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ALL EDITIONS GRID
+     ═══════════════════════════════════════════════════════ -->
+<div class="nl-section-head" id="all-editions">
+    <div class="nl-section-kicker">All Editions</div>
+    <h2 class="nl-section-title">Browse Our Newsletter Archive</h2>
+    <p class="nl-section-desc">Every edition tells a story. Click any cover to open the interactive flipbook reader.</p>
+</div>
+
+<div class="nl-grid-wrap">
+    <div class="nl-grid">
+
+        <!-- April 2026 -->
+        <div class="nl-card" data-open="nl-apr-2026">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/April 2026/Page_01.png" alt="April 2026 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">April 2026</div>
+                <div class="nl-card-pages">12 Pages</div>
+            </div>
+        </div>
+
+        <!-- March 2026 -->
+        <div class="nl-card" data-open="nl-mar-2026">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/March 2026/Page_01.jpg" alt="March 2026 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">March 2026</div>
+                <div class="nl-card-pages">15 Pages</div>
+            </div>
+        </div>
+
+        <!-- February 2026 -->
+        <div class="nl-card" data-open="nl-feb-2026">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/February 2026/Page_01.png" alt="February 2026 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">February 2026</div>
+                <div class="nl-card-pages">12 Pages</div>
+            </div>
+        </div>
+
+        <!-- January 2026 -->
+        <div class="nl-card" data-open="nl-jan-2026">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/January 2026/Page_01.png" alt="January 2026 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">January 2026</div>
+                <div class="nl-card-pages">14 Pages</div>
+            </div>
+        </div>
+
+        <!-- December 2025 -->
+        <div class="nl-card" data-open="nl-dec-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/December 2025/Page_01.png" alt="December 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">December 2025</div>
+                <div class="nl-card-pages">14 Pages</div>
+            </div>
+        </div>
+
+        <!-- November 2025 -->
+        <div class="nl-card" data-open="nl-nov-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/November 2025/Page_01.png" alt="November 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">November 2025</div>
+                <div class="nl-card-pages">14 Pages</div>
+            </div>
+        </div>
+
+        <!-- October 2025 -->
+        <div class="nl-card" data-open="nl-oct-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/October 2025/Page_01.png" alt="October 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">October 2025</div>
+                <div class="nl-card-pages">13 Pages</div>
+            </div>
+        </div>
+
+        <!-- September 2025 -->
+        <div class="nl-card" data-open="nl-sep-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/September 2025/Page_01.png" alt="September 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">September 2025</div>
+                <div class="nl-card-pages">14 Pages</div>
+            </div>
+        </div>
+
+        <!-- August 2025 -->
+        <div class="nl-card" data-open="nl-aug-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/August 2025/Page_01.png" alt="August 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">August 2025</div>
+                <div class="nl-card-pages">19 Pages</div>
+            </div>
+        </div>
+
+        <!-- July 2025 -->
+        <div class="nl-card" data-open="nl-jul-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/July 2025/Page_01.png" alt="July 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">July 2025</div>
+                <div class="nl-card-pages">9 Pages</div>
+            </div>
+        </div>
+
+        <!-- June 2025 -->
+        <div class="nl-card" data-open="nl-jun-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/June 2025/Page_01.png" alt="June 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">June 2025</div>
+                <div class="nl-card-pages">10 Pages</div>
+            </div>
+        </div>
+
+        <!-- May 2025 -->
+        <div class="nl-card" data-open="nl-may-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/May 2025/Page_01.png" alt="May 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">May 2025</div>
+                <div class="nl-card-pages">10 Pages</div>
+            </div>
+        </div>
+
+        <!-- April 2025 -->
+        <div class="nl-card" data-open="nl-apr-2025">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/April 2025/April2025-1.png" alt="April 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">April 2025</div>
+                <div class="nl-card-pages">12 Pages</div>
+            </div>
+        </div>
+
+        <!-- March 2025 -->
+        <div class="nl-card" data-open="nl-mar-2025">
+            <div class="nl-card-img-wrap">
+                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-9.png" alt="March 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">March 2025</div>
+                <div class="nl-card-pages">10 Pages</div>
+            </div>
+        </div>
+
+        <!-- February 2025 -->
+        <div class="nl-card" data-open="nl-feb-2025">
+            <div class="nl-card-img-wrap">
+                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-10.png" alt="February 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">February 2025</div>
+                <div class="nl-card-pages">12 Pages</div>
+            </div>
+        </div>
+
+        <!-- January 2025 -->
+        <div class="nl-card" data-open="nl-jan-2025">
+            <div class="nl-card-img-wrap">
+                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-11.png" alt="January 2025 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">January 2025</div>
+                <div class="nl-card-pages">15 Pages</div>
+            </div>
+        </div>
+
+        <!-- December 2024 -->
+        <div class="nl-card" data-open="nl-dec-2024">
+            <div class="nl-card-img-wrap">
+                <img src="https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-12.png" alt="December 2024 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">December 2024</div>
+                <div class="nl-card-pages">10 Pages</div>
+            </div>
+        </div>
+
+        <!-- October 2024 -->
+        <div class="nl-card" data-open="nl-oct-2024">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/October 2024/Page_01.png" alt="October 2024 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">October 2024</div>
+                <div class="nl-card-pages">15 Pages</div>
+            </div>
+        </div>
+
+        <!-- September 2024 -->
+        <div class="nl-card" data-open="nl-sep-2024">
+            <div class="nl-card-img-wrap">
+                <img src="assets/newsletters/September 2024/Page_01.png" alt="September 2024 Newsletter">
+                <div class="nl-card-overlay">
+                    <div class="nl-card-read-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        Open Flipbook
+                    </div>
+                </div>
+            </div>
+            <div class="nl-card-info">
+                <div class="nl-card-title">September 2024</div>
+                <div class="nl-card-pages">10 Pages</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FLIPBOOK MODALS — DYNAMICALLY POPULATED
+     ═══════════════════════════════════════════════════════ -->
+
+<!-- Single reusable modal -->
+<div class="nl-modal" id="nlModal">
+    <div class="nl-modal-inner">
+        <button class="nl-modal-close" id="nlModalClose">✕</button>
+        <div class="nl-modal-title-bar" id="nlModalTitle"></div>
+        <div class="nl-book-stage">
+            <div class="nl-loader" id="nlLoader">
+                <div class="nl-loader-spinner"></div>
+                <div class="nl-loader-text">Loading Book...</div>
+            </div>
+            <div class="nl-book-container" id="nlBookContainer"></div>
+        </div>
+        <div class="nl-nav-bar" id="nlNavBar">
+            <button id="nlPrev" type="button">◂ Prev</button>
+            <span class="nl-nav-info" id="nlNavInfo">Page 1</span>
+            <button id="nlNext" type="button">Next ▸</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Page-Flip Library -->
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+<script>
+(function () {
+    'use strict';
+
+    console.log("ALF Newsletters: Core script initialized.");
+
+    // ─── Newsletter Data Registry ───
+    const NEWSLETTERS = {
+        'nl-may-2026': {
+            title: 'May 2026 Edition',
+            pages: [
+                "assets/newsletters/may 2026/most-impreesive.png",
+                "assets/newsletters/may 2026/the-visionary-builder.png",
+                "assets/newsletters/may 2026/attorney-awad.png",
+                "assets/newsletters/may 2026/palistory.png",
+                "assets/newsletters/may 2026/brush.png",
+                "assets/newsletters/may 2026/kickin-advice.png",
+                "assets/newsletters/may 2026/client's-Corner.png",
+                "assets/newsletters/may 2026/client's-corner-phillip.png",
+                "assets/newsletters/may 2026/top-3-bonusly.png",
+                "assets/newsletters/may 2026/congratulation-ahmad-ch.png",
+                "assets/newsletters/may 2026/birthday-shoutout.png"
+            ]
+        },
+        'nl-apr-2026': {
+            title: 'April 2026 Edition',
+            pages: Array.from({length: 12}, (_, i) => `assets/newsletters/April 2026/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-mar-2026': {
+            title: 'March 2026 Edition',
+            pages: Array.from({length: 15}, (_, i) => `assets/newsletters/March 2026/Page_${String(i+1).padStart(2,'0')}.jpg`)
+        },
+        'nl-feb-2026': {
+            title: 'February 2026 Edition',
+            pages: Array.from({length: 12}, (_, i) => `assets/newsletters/February 2026/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-jan-2026': {
+            title: 'January 2026 Edition',
+            pages: Array.from({length: 14}, (_, i) => `assets/newsletters/January 2026/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-dec-2025': {
+            title: 'December 2025 Edition',
+            pages: Array.from({length: 14}, (_, i) => `assets/newsletters/December 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-nov-2025': {
+            title: 'November 2025 Edition',
+            pages: Array.from({length: 14}, (_, i) => `assets/newsletters/November 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-oct-2025': {
+            title: 'October 2025 Edition',
+            pages: Array.from({length: 13}, (_, i) => `assets/newsletters/October 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-sep-2025': {
+            title: 'September 2025 Edition',
+            pages: Array.from({length: 14}, (_, i) => `assets/newsletters/September 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-aug-2025': {
+            title: 'August 2025 Edition',
+            pages: Array.from({length: 19}, (_, i) => `assets/newsletters/August 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-jul-2025': {
+            title: 'July 2025 Edition',
+            pages: Array.from({length: 9}, (_, i) => `assets/newsletters/July 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-jun-2025': {
+            title: 'June 2025 Edition',
+            pages: Array.from({length: 10}, (_, i) => `assets/newsletters/June 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-may-2025': {
+            title: 'May 2025 Edition',
+            pages: Array.from({length: 10}, (_, i) => `assets/newsletters/May 2025/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-apr-2025': {
+            title: 'April 2025 Edition',
+            pages: Array.from({length: 12}, (_, i) => `assets/newsletters/April 2025/April2025-${i+1}.png`)
+        },
+        'nl-mar-2025': {
+            title: 'March 2025 Edition',
+            pages: [
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-8.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-8.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-8.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-23.png'
+            ]
+        },
+        'nl-feb-2025': {
+            title: 'February 2025 Edition',
+            pages: [
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-8.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-11.png'
+            ]
+        },
+        'nl-jan-2025': {
+            title: 'January 2025 Edition',
+            pages: [
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-13.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-14.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-11-9.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-12-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-13-10.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-14-6.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-15-3.png'
+            ]
+        },
+        'nl-dec-2024': {
+            title: 'December 2024 Edition',
+            pages: [
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-1-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-2-13.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-3-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-4-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-5-12.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-6-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-7-14.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-8-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-9-11.png',
+                'https://theawadlawfirm.com/wp-content/uploads/2026/03/Artboard-10-15.png'
+            ]
+        },
+        'nl-oct-2024': {
+            title: 'October 2024 Edition',
+            pages: Array.from({length: 15}, (_, i) => `assets/newsletters/October 2024/Page_${String(i+1).padStart(2,'0')}.png`)
+        },
+        'nl-sep-2024': {
+            title: 'September 2024 Edition',
+            pages: Array.from({length: 10}, (_, i) => `assets/newsletters/September 2024/Page_${String(i+1).padStart(2,'0')}.png`)
+        }
+    };
+
+    // ─── DOM References ───
+    const modal = document.getElementById('nlModal');
+    const modalClose = document.getElementById('nlModalClose');
+    const modalTitle = document.getElementById('nlModalTitle');
+    const bookContainer = document.getElementById('nlBookContainer');
+    const loader = document.getElementById('nlLoader');
+    const navBar = document.getElementById('nlNavBar');
+    const prevBtn = document.getElementById('nlPrev');
+    const nextBtn = document.getElementById('nlNext');
+    const navInfo = document.getElementById('nlNavInfo');
+    const bookStage = document.querySelector('.nl-book-stage');
+
+    let currentFlip = null;
+    let resizeTimer = null;
+
+    // Defensive lookup verification
+    if (!modal || !bookContainer || !loader) {
+        console.error("ALF Newsletters: Core DOM Elements are missing! Cannot initialize reader.");
+        return;
+    }
+
+    // ─── Image Preloader ───
+    function preloadImages(urls, done) {
+        if (!urls.length) { done(); return; }
+        let loaded = 0;
+        function check() { if (++loaded >= urls.length) done(); }
+        urls.forEach(function(src) {
+            var img = new Image();
+            img.onload = check;
+            img.onerror = check;
+            img.src = src;
+        });
+    }
+
+    // ─── Build Page HTML for 3D flipbook ───
+    function buildPages(pages) {
+        return pages.map(function(src, i) {
+            var isHard = (i === 0 || i === pages.length - 1);
+            var cls = 'nl-page' + (isHard ? ' nl-page-hard' : '');
+            var density = isHard ? ' data-density="hard"' : '';
+            return '<div class="' + cls + '"' + density + '><img src="' + src + '" alt="Page ' + (i + 1) + '"></div>';
+        }).join('');
+    }
+
+    // ─── Get Book Size ───
+    function getBookSize() {
+        if (!bookStage) return { width: 450, height: 600 };
+        var rect = bookStage.getBoundingClientRect();
+        var isMobile = window.innerWidth < 768;
+        if (isMobile) {
+            return { width: Math.max(260, Math.floor(rect.width * 0.92)), height: Math.max(360, Math.floor(rect.height * 0.94)) };
+        }
+        return { width: Math.max(420, Math.floor(rect.width * 0.44)), height: Math.max(420, Math.floor(rect.height * 0.92)) };
+    }
+
+    // ─── Update UI For standard book ───
+    function updateUI() {
+        if (!currentFlip || !navInfo || !prevBtn || !nextBtn) return;
+        var total = currentFlip.getPageCount();
+        var current = currentFlip.getCurrentPageIndex() + 1;
+        navInfo.textContent = 'Page ' + current + ' of ' + total;
+        prevBtn.disabled = current <= 1;
+        nextBtn.disabled = current >= total;
+    }
+
+    // ─── Build 3D Flipbook ───
+    function buildFlipbook() {
+        var size = getBookSize();
+        
+        // SELECT PAGES BEFORE CONSTRUCTOR INITIALIZATION!
+        // This is critical because St.PageFlip constructor wraps/clears/restructures 
+        // the parent element's inner DOM during instantiation, which can cause 
+        // querySelectorAll to find 0 pages or return empty references afterwards.
+        var pages = bookContainer.querySelectorAll('.nl-page');
+        console.log("ALF Newsletters: Selected pages count before constructor =", pages.length);
+
+        currentFlip = new St.PageFlip(bookContainer, {
+            width: size.width,
+            height: size.height,
+            size: 'fixed',
+            minWidth: 260,
+            maxWidth: 2000,
+            minHeight: 360,
+            maxHeight: 2000,
+            showCover: true,
+            usePortrait: window.innerWidth < 768,
+            flippingTime: 900,
+            maxShadowOpacity: 0.35,
+            drawShadow: true,
+            showPageCorners: true,
+            disableFlipByClick: false,
+            mobileScrollSupport: false,
+            swipeDistance: 16,
+            clickEventForward: true
+        });
+        
+        currentFlip.loadFromHTML(pages);
+        currentFlip.on('flip', updateUI);
+        currentFlip.on('changeOrientation', function() {
+            setTimeout(function() { if (currentFlip) { currentFlip.update(); updateUI(); } }, 80);
+        });
+        updateUI();
+        
+        // Force-draw recalculation to prevent invisible pages during initial layout pass
+        setTimeout(function() {
+            if (currentFlip) {
+                try {
+                    currentFlip.update();
+                } catch(e) {
+                    console.error("ALF Newsletters: PageFlip update error:", e);
+                }
+            }
+        }, 100);
+    }
+
+    // ─── Build Slideshow Fallback (Offline/No-CDN Spread Reader) ───
+    function buildSlideshowFallback(pages) {
+        console.warn("ALF Newsletters: Initializing ultra-premium fail-safe spread reader.");
+        var size = getBookSize();
+        var isMobile = window.innerWidth < 768;
+        var containerWidth = size.width * (isMobile ? 1 : 2);
+        var containerHeight = size.height;
+        
+        bookContainer.style.display = 'flex';
+        bookContainer.style.justifyContent = 'center';
+        bookContainer.style.alignItems = 'center';
+        bookContainer.style.width = '100%';
+        bookContainer.style.height = '100%';
+        
+        var html = '<div class="nl-slideshow-wrap" style="position:relative; width:' + containerWidth + 'px; height:' + containerHeight + 'px; display:flex; justify-content:center; align-items:center; overflow:hidden;">';
+        
+        pages.forEach(function(src, i) {
+            html += '<div class="nl-slide-page" data-page-index="' + i + '" style="position:absolute; inset:0; opacity:0; pointer-events:none; transition:opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1); display:flex; justify-content:center; align-items:center; background:#fbfaf7; border-radius:4px; box-shadow:0 15px 40px rgba(0,0,0,0.45);">';
+            html += '<img src="' + src + '" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:4px;">';
+            html += '</div>';
+        });
+        
+        html += '</div>';
+        bookContainer.innerHTML = html;
+        
+        var currentPageIdx = 0;
+        
+        function showSlide(idx) {
+            currentPageIdx = Math.max(0, Math.min(idx, pages.length - 1));
+            var slides = bookContainer.querySelectorAll('.nl-slide-page');
+            
+            slides.forEach(function(slide, sIdx) {
+                if (isMobile) {
+                    // Mobile is single page view
+                    if (sIdx === currentPageIdx) {
+                        slide.style.opacity = '1';
+                        slide.style.pointerEvents = 'auto';
+                        slide.style.left = '0';
+                        slide.style.width = '100%';
+                    } else {
+                        slide.style.opacity = '0';
+                        slide.style.pointerEvents = 'none';
+                    }
+                } else {
+                    // Desktop: Premium 2-page spread mimicry
+                    var isCover = currentPageIdx === 0;
+                    var isBackCover = currentPageIdx === pages.length - 1;
+                    
+                    if (isCover) {
+                        if (sIdx === 0) {
+                            slide.style.opacity = '1';
+                            slide.style.pointerEvents = 'auto';
+                            slide.style.left = '25%';
+                            slide.style.width = '50%';
+                        } else {
+                            slide.style.opacity = '0';
+                            slide.style.pointerEvents = 'none';
+                        }
+                    } else if (isBackCover) {
+                        if (sIdx === pages.length - 1) {
+                            slide.style.opacity = '1';
+                            slide.style.pointerEvents = 'auto';
+                            slide.style.left = '25%';
+                            slide.style.width = '50%';
+                        } else {
+                            slide.style.opacity = '0';
+                            slide.style.pointerEvents = 'none';
+                        }
+                    } else {
+                        var leftIdx = currentPageIdx;
+                        if (leftIdx % 2 === 0) leftIdx--; // Keep left page odd-indexed
+                        var rightIdx = leftIdx + 1;
+                        
+                        if (sIdx === leftIdx) {
+                            slide.style.opacity = '1';
+                            slide.style.pointerEvents = 'auto';
+                            slide.style.left = '0';
+                            slide.style.width = '50%';
+                            slide.style.borderRight = '1px solid rgba(0,0,0,0.06)';
+                        } else if (sIdx === rightIdx) {
+                            slide.style.opacity = '1';
+                            slide.style.pointerEvents = 'auto';
+                            slide.style.left = '50%';
+                            slide.style.width = '50%';
+                            slide.style.borderLeft = '1px solid rgba(0,0,0,0.06)';
+                        } else {
+                            slide.style.opacity = '0';
+                            slide.style.pointerEvents = 'none';
+                        }
+                    }
+                }
+            });
+            
+            // Update indicator values
+            var currentLabel = '';
+            if (isMobile) {
+                currentLabel = 'Page ' + (currentPageIdx + 1) + ' of ' + pages.length;
+                if (prevBtn) prevBtn.disabled = currentPageIdx <= 0;
+                if (nextBtn) nextBtn.disabled = currentPageIdx >= pages.length - 1;
+            } else {
+                if (currentPageIdx === 0) {
+                    currentLabel = 'Cover (Page 1)';
+                    if (prevBtn) prevBtn.disabled = true;
+                    if (nextBtn) nextBtn.disabled = false;
+                } else if (currentPageIdx === pages.length - 1) {
+                    currentLabel = 'Back Cover (Page ' + pages.length + ')';
+                    if (prevBtn) prevBtn.disabled = false;
+                    if (nextBtn) nextBtn.disabled = true;
+                } else {
+                    var leftP = currentPageIdx;
+                    if (leftP % 2 === 0) leftP--;
+                    var rightP = leftP + 1;
+                    currentLabel = 'Pages ' + (leftP + 1) + '-' + (rightP + 1) + ' of ' + pages.length;
+                    if (prevBtn) prevBtn.disabled = leftP <= 1;
+                    if (nextBtn) nextBtn.disabled = rightP >= pages.length - 2;
+                }
+            }
+            if (navInfo) navInfo.textContent = currentLabel;
+        }
+        
+        showSlide(0);
+        
+        // Define navigation actions on currentFlip mock
+        currentFlip = {
+            flipPrev: function() {
+                if (isMobile) {
+                    showSlide(currentPageIdx - 1);
+                } else {
+                    if (currentPageIdx === pages.length - 1) {
+                        showSlide(pages.length - 2);
+                    } else {
+                        var leftP = currentPageIdx;
+                        if (leftP % 2 === 0) leftP--;
+                        showSlide(leftP - 2);
+                    }
+                }
+            },
+            flipNext: function() {
+                if (isMobile) {
+                    showSlide(currentPageIdx + 1);
+                } else {
+                    if (currentPageIdx === 0) {
+                        showSlide(1);
+                    } else {
+                        var leftP = currentPageIdx;
+                        if (leftP % 2 === 0) leftP--;
+                        showSlide(leftP + 2);
+                    }
+                }
+            },
+            getCurrentPageIndex: function() {
+                return currentPageIdx;
+            },
+            getPageCount: function() {
+                return pages.length;
+            },
+            turnToPage: function(idx) {
+                showSlide(idx);
+            },
+            destroy: function() {
+                bookContainer.style.display = '';
+                bookContainer.style.justifyContent = '';
+                bookContainer.style.alignItems = '';
+                bookContainer.style.width = '';
+                bookContainer.style.height = '';
+            }
+        };
+    }
+
+    // ─── Open Newsletter ───
+    function openNewsletter(id) {
+        console.log("ALF Newsletters: Opening newsletter ID =", id);
+        var data = NEWSLETTERS[id];
+        if (!data) {
+            console.error("ALF Newsletters: No data registry entry found for ID =", id);
+            return;
+        }
+
+        // Set title
+        if (modalTitle) {
+            modalTitle.innerHTML = '<span>✦</span> ' + data.title;
+        }
+
+        // Clear and show modal structure
+        bookContainer.innerHTML = '';
+        bookContainer.classList.remove('visible');
+        loader.style.display = 'flex';
+        if (navBar) navBar.classList.remove('visible');
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Preload and build flipbook
+        setTimeout(function() {
+            preloadImages(data.pages, function() {
+                // Remove previous book if active
+                if (currentFlip) {
+                    try { currentFlip.destroy(); } catch(e) {}
+                    currentFlip = null;
+                }
+
+                // Render page DOMs for 3D reader
+                var isFlipbookSupported = (typeof St !== 'undefined' && St.PageFlip);
+                if (isFlipbookSupported) {
+                    bookContainer.innerHTML = buildPages(data.pages);
+                    bookContainer.classList.add('visible'); // Add visible first to ensure visibility and dimensions!
+                    buildFlipbook();
+                } else {
+                    buildSlideshowFallback(data.pages);
+                }
+
+                requestAnimationFrame(function() {
+                    requestAnimationFrame(function() {
+                        loader.style.display = 'none';
+                        bookContainer.classList.add('visible');
+                        if (navBar) navBar.classList.add('visible');
+                    });
+                });
+            });
+        }, 200);
+    }
+
+    // ─── Close Newsletter ───
+    function closeNewsletter() {
+        console.log("ALF Newsletters: Closing modal reader.");
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (currentFlip) {
+            try { currentFlip.destroy(); } catch(e) {}
+            currentFlip = null;
+        }
+        bookContainer.innerHTML = '';
+        bookContainer.classList.remove('visible');
+        if (navBar) navBar.classList.remove('visible');
+    }
+
+    // ─── Event Listeners — Defensive ───
+
+    // Navigation buttons
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() { if (currentFlip) currentFlip.flipPrev(); });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() { if (currentFlip) currentFlip.flipNext(); });
+    }
+
+    // Close modal triggers
+    if (modalClose) {
+        modalClose.addEventListener('click', closeNewsletter);
+    }
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeNewsletter(); });
+
+    // Escape key listener
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeNewsletter();
+    });
+
+    // Keyboard arrow keys
+    document.addEventListener('keydown', function(e) {
+        if (!modal.classList.contains('active') || !currentFlip) return;
+        if (e.key === 'ArrowLeft') currentFlip.flipPrev();
+        if (e.key === 'ArrowRight') currentFlip.flipNext();
+    });
+
+    // Clicks on grid cards / hero book (Highly Robust, top delegation)
+    document.addEventListener('click', function(e) {
+        var card = e.target.closest('[data-open]');
+        if (card) {
+            console.log("ALF Newsletters: Click registered on target:", card);
+            e.preventDefault();
+            var targetId = card.getAttribute('data-open');
+            openNewsletter(targetId);
+        }
+    });
+
+    // Resize handler
+    window.addEventListener('resize', function() {
+        if (!modal.classList.contains('active') || !currentFlip) return;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            var idx = currentFlip.getCurrentPageIndex();
+            try { currentFlip.destroy(); } catch(e) {}
+            currentFlip = null;
+            
+            var isFlipbookSupported = (typeof St !== 'undefined' && St.PageFlip);
+            var data = NEWSLETTERS[Object.keys(NEWSLETTERS).find(k => modalTitle.textContent.includes(NEWSLETTERS[k].title)) || 'nl-may-2026'];
+            if (!data) return;
+
+            if (isFlipbookSupported) {
+                bookContainer.innerHTML = buildPages(data.pages);
+                buildFlipbook();
+            } else {
+                buildSlideshowFallback(data.pages);
+            }
+
+            setTimeout(function() {
+                if (currentFlip) { currentFlip.turnToPage(idx); updateUI(); }
+            }, 60);
+        }, 200);
+    });
+
+    // ─── Scroll Reveal Animation ───
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.nl-card').forEach(function(card, i) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(40px)';
+        card.style.transition = 'opacity 0.6s ease ' + (i * 0.08) + 's, transform 0.6s ease ' + (i * 0.08) + 's';
+        observer.observe(card);
+    });
+
+})();
+</script>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <!-- Newsletter CTA Bar -->
+  <div class="footer-newsletter-bar">
+    <div class="newsletter-left">
+      <svg class="newsletter-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20 30 H80 M50 30 V80 M35 80 H65 M20 50 A15 15 0 0 0 50 50 A15 15 0 0 0 80 50" stroke-dasharray="2 2" />
+        <path d="M30 50 H40 M60 50 H70" />
+      </svg>
+      <div class="newsletter-text-col">
+        <span class="newsletter-kicker">NEWSLETTER</span>
+        <h3 class="newsletter-heading">Sign Up To Get Latest Update</h3>
+      </div>
+    </div>
+    <div class="newsletter-right">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="Enter your Email" class="newsletter-input" required />
+        <button type="submit" class="newsletter-btn">
+          Subscribe
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="site-footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: Pages -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="ibrahim-awad.html">Our Attorney</a></li>
+          <li><a href="practice-areas.html">Practice Areas</a></li>
+          <li><a href="results.html">Case Studies</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Our Services -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Our Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="car-accidents.html">Car Accidents</a></li>
+          <li><a href="trucking-accidents.html">Truck Accidents</a></li>
+          <li><a href="motorcycle-accidents.html">Motorcycle Accidents</a></li>
+          <li><a href="wrongful-death.html">Wrongful Death</a></li>
+          <li><a href="slip-and-fall.html">Slip &amp; Fall</a></li>
+          <li><a href="personal-injury.html">Personal Injury</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Brand Identity (Center) -->
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/alf-white-logo.png" alt="Awad Law Firm" class="footer-logo">
+        </div>
+        <p class="footer-brand-desc">
+          Atlanta personal injury lawyers serving clients across Georgia with focused, relentless advocacy.
+        </p>
+        <div class="footer-social-row">
+          <a href="#" class="social-circle-link" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Twitter">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.95 4.57a10 10 0 0 1-2.82.77 4.96 4.96 0 0 0 2.16-2.72 9.9 9.9 0 0 1-3.13 1.2 4.93 4.93 0 0 0-8.38 4.48A14 14 0 0 1 1.64 3.16a4.93 4.93 0 0 0 1.52 6.57 4.9 4.9 0 0 1-2.23-.61v.06a4.93 4.93 0 0 0 3.95 4.83 4.9 4.9 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.9 9.9 0 0 1 0 19.54a13.9 13.9 0 0 0 7.55 2.21c9.05 0 14-7.5 14-14v-.64a10 10 0 0 0 2.4-2.54z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-3.34-4-3.1-4 0v5.6h-3v-11h3v1.76c1.4-2.58 7-2.78 7 2.47v6.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 4: Location & Offices -->
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-title">Contact & Offices</h4>
+        
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Marietta Office</h5>
+            <p>4076 Ebenezer Rd., Marietta, GA</p>
+          </div>
+        </div>
+
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Dalton Office</h5>
+            <p>210 North Glenwood Ave., Dalton, GA</p>
+          </div>
+        </div>
+
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Phone</h5>
+            <p><a href="tel:+17062033097">(706) 203-3097</a></p>
+          </div>
+        </div>
+
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Email</h5>
+            <p><a href="mailto:info@theawadlawfirm.com">info@theawadlawfirm.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-bar-inner">
+      <p class="footer-copyright-text">
+        &copy; 2026 Awad Law Firm. All Rights Reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim J. Awad, Esq. | The Awad Law Firm</title>
+    
+    <!-- Local Stylesheets (Preserved) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Outfit (Headings) & Manrope (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Unified "Wow" Theme Config -->
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#060B11',
+                            navy: '#0C1827',
+                            charcoal: '#1A2736',
+                            primary: '#6CA1E6',      /* Sky blue from the screenshot */
+                            primaryhover: '#5A8DD0',
+                            pale: '#EAF2FA',
+                            offwhite: '#F9FAFC',
+                            white: '#FFFFFF',
+                            lightgray: '#F0F4F8',
+                            border: '#E2E8F0',
+                            text: '#0A1118',
+                            muted: '#64748B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #F9FAFC; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6CA1E6; }
+
+        /* Subtle Geometric Background Pattern */
+        .bg-geometric {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236ca1e6' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Outlined Text Watermark */
+        .text-stroke-premium {
+            color: #ffffff;
+            -webkit-text-stroke: 1.5px rgba(108, 161, 230,0.12);
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="home-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
+
+<header class="navbar">
+
+<div class="logo">
+    <img src="assets/alf-white-logo.png" alt="Awad Law Firm Logo">
+</div>
+
+<nav>
+<a href="index.html" class="">Home</a>
+<div class="nav-dropdown">
+  <a href="about.html" class="nav-dropdown-toggle active">About</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">The Firm</span>
+    <hr class="nav-dropdown-divider">
+    <a href="mission-vision.html" class="nav-dropdown-item">Mission &amp; Vision</a>
+    <a href="about.html" class="nav-dropdown-item">Firm History</a>
+    <a href="ibrahim-awad.html" class="nav-dropdown-item active">Ibrahim Awad</a>
+    <a href="team-experts.html" class="nav-dropdown-item">Team of Experts</a>
+    <a href="why-choose-us.html" class="nav-dropdown-item">Why Choose Us</a>
+    <a href="core-values.html" class="nav-dropdown-item">Core Values</a>
+    <a href="community.html" class="nav-dropdown-item">Community</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="practice-areas.html" class="nav-dropdown-toggle">Practice Areas</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">We Handle</span>
+    <hr class="nav-dropdown-divider">
+    <a href="personal-injury.html" class="nav-dropdown-item">Personal Injury</a>
+    <a href="car-accidents.html" class="nav-dropdown-item">Car Accidents</a>
+    <a href="trucking-accidents.html" class="nav-dropdown-item">Trucking Accidents</a>
+    <a href="motorcycle-accidents.html" class="nav-dropdown-item">Motorcycle Accidents</a>
+    <a href="bicycle-accidents.html" class="nav-dropdown-item">Bicycle Accidents</a>
+    <a href="uber-accidents.html" class="nav-dropdown-item">Uber Accidents</a>
+    <a href="lyft-accidents.html" class="nav-dropdown-item">Lyft Accidents</a>
+    <a href="slip-and-fall.html" class="nav-dropdown-item">Slip &amp; Fall</a>
+    <a href="medical-malpractice.html" class="nav-dropdown-item">Medical Malpractice</a>
+    <a href="wrongful-death.html" class="nav-dropdown-item">Wrongful Death</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="results.html" class="nav-dropdown-toggle">Results</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Our Track Record</span>
+    <hr class="nav-dropdown-divider">
+    <a href="results.html" class="nav-dropdown-item">Case Studies</a>
+    <a href="testimonials.html" class="nav-dropdown-item">Client Testimonials</a>
+    <a href="reviews.html" class="nav-dropdown-item">Reviews</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="#" class="nav-dropdown-toggle">Resources</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Learn More</span>
+    <hr class="nav-dropdown-divider">
+    <a href="tedx.html" class="nav-dropdown-item">TEDx Talk</a>
+    <a href="education.html" class="nav-dropdown-item">Legal Education</a>
+    <a href="newsletter.html" class="nav-dropdown-item">Newsletter</a>
+    <a href="https://www.awadacademy.com/" class="nav-dropdown-item" target="_blank" rel="noopener noreferrer">Awad Academy ↗</a>
+  </div>
+</div>
+<a href="contact.html" class="">Contact</a>
+</nav>
+
+<div class="nav-icons">
+
+<div class="nav-search" aria-label="Search">
+  <span></span>
+  <em>Search here...</em>
+</div>
+
+<a href="contact.html" class="nav-quote-btn">Get Free Quote</a>
+
+<a href="contact.html" class="nav-arrow-btn" aria-label="Get Free Quote">
+  <span>↗</span>
+</a>
+
+<button class="nav-dots-btn" aria-label="Open quick menu" type="button">
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+</button>
+
+<a href="contact.html" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+<path d="m22 7-10 5L2 7"></path>
+</svg>
+
+</a>
+
+
+<a href="contact.html" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
+19.79 19.79 0 0 1-8.63-3.07 
+19.5 19.5 0 0 1-6-6 
+19.79 19.79 0 0 1-3.07-8.63 
+2 2 0 0 1 2-2h3
+a2 2 0 0 1 2 1.72
+c.12.91.35 1.8.68 2.65
+a2 2 0 0 1-.45 2.11
+L8.09 9.91
+a16 16 0 0 0 6 6
+l1.43-1.25
+a2 2 0 0 1 2.11-.45
+c.85.33 1.74.56 2.65.68
+A2 2 0 0 1 22 16.92z"></path>
+</svg>
+
+</a>
+
+</div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+    <!-- Premium Profile Layout Section (No Hero, High-End Editorial Style) -->
+    <section class="py-16 md:py-24 bg-geometric relative z-20 overflow-hidden">
+        
+        <!-- Large Elegant Watermark Text in Background -->
+        <div class="absolute top-[20%] right-[-5%] text-[10vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
+            IBRAHIM AWAD
+        </div>
+
+        <div class="container mx-auto px-6 max-w-[85rem] relative z-10">
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="flex items-center space-x-2 text-xs font-bold tracking-widest text-brand-muted uppercase mb-12">
+                <a href="index.html" class="hover:text-brand-primary transition">Home</a>
+                <span>&gt;</span>
+                <a href="#" class="hover:text-brand-primary transition">Our Team</a>
+                <span>&gt;</span>
+                <span class="text-brand-dark">Ibrahim J. Awad, Esq.</span>
+            </div>
+
+            <!-- Profile Info Split Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                
+                <!-- Left Column: Sticky Portrait & Quick Info Card -->
+                <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-10">
+                    <div class="relative max-w-md mx-auto lg:mx-0">
+                        <!-- Custom Blue Blob Shape behind image -->
+                        <div class="absolute inset-0 bg-brand-primary/10 rounded-[3rem] rounded-tr-[8rem] rounded-bl-[8rem] transform -rotate-3 scale-105 transition-transform duration-700 hover:rotate-0 hover:scale-108 z-0"></div>
+                        
+                        <!-- High-End Portrait Wrapper -->
+                        <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] border-4 border-white bg-brand-navy group">
+                            <div class="absolute inset-0 bg-brand-navy/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                            <img src="ibrahim-picture.png" alt="Ibrahim J. Awad, Esq." class="w-full h-[450px] md:h-[550px] object-cover object-top transform group-hover:scale-103 transition-transform duration-700">
+                        </div>
+                    </div>
+
+                    <!-- Quick Details Info Card -->
+                    <div class="bg-white rounded-3xl p-8 border border-brand-border/60 shadow-[0_10px_30px_rgba(0,0,0,0.02)] max-w-md mx-auto lg:mx-0">
+                        <h4 class="text-xs font-bold tracking-widest text-brand-primary uppercase mb-6 border-b border-brand-border/60 pb-3">Contact Information</h4>
+                        
+                        <ul class="space-y-4 text-sm font-medium text-brand-charcoal">
+                            <li class="flex items-center">
+                                <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0">
+                                    <i data-lucide="phone" class="w-4 h-4 text-brand-primary"></i>
+                                </span>
+                                <a href="tel:7063383784" class="hover:text-brand-primary transition">(706) 338-3784</a>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0">
+                                    <i data-lucide="mail" class="w-4 h-4 text-brand-primary"></i>
+                                </span>
+                                <a href="mailto:info@theawadlawfirm.com" class="hover:text-brand-primary transition">info@theawadlawfirm.com</a>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0 mt-0.5">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-brand-primary"></i>
+                                </span>
+                                <span>Atlanta, Marietta & Dalton Offices</span>
+                            </li>
+                        </ul>
+
+                        <!-- Social Networking Links -->
+                        <div class="flex items-center space-x-4 mt-8 pt-6 border-t border-brand-border/60">
+                            <a href="#" class="w-10 h-10 rounded-xl bg-brand-offwhite border border-brand-border/60 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                                <i data-lucide="instagram" class="w-4.5 h-4.5"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-brand-offwhite border border-brand-border/60 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                                <i data-lucide="facebook" class="w-4.5 h-4.5"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-brand-offwhite border border-brand-border/60 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                                <i data-lucide="linkedin" class="w-4.5 h-4.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Biography & Career Narrative -->
+                <div class="lg:col-span-7 space-y-12">
+                    
+                    <!-- Bio Header Text (No Italics, High-End Outlined Feel) -->
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-brand-pale text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
+                            <span>Founder & Managing Partner</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-brand-navy tracking-tight leading-none mb-3">
+                            Ibrahim J. Awad, Esq.
+                        </h1>
+                        <p class="text-sm font-bold tracking-widest text-brand-muted uppercase">Georgia Trial Attorney & Legal Innovator</p>
+                    </div>
+
+                    <!-- Personal Mission Statement Quote Block -->
+                    <div class="relative bg-brand-pale rounded-3xl p-8 md:p-10 border border-brand-primary/20 shadow-[0_15px_30px_rgba(108,161,230,0.08)]">
+                        <i data-lucide="quote" class="w-16 h-16 text-brand-primary/15 absolute top-4 right-6 pointer-events-none"></i>
+                        <p class="text-lg md:text-xl font-medium leading-relaxed text-brand-navy relative z-10">
+                            We fight to set an entirely new standard in our profession—where clients are treated with true honor, extraordinary care, and unreasonable hospitality, and insurance companies are met with ruthless, unmatched preparation.
+                        </p>
+                    </div>
+
+                    <!-- Narrative Blocks -->
+                    <div class="space-y-10 text-brand-charcoal/90 text-lg leading-relaxed font-medium">
+                        
+                        <!-- Ibrahim's Story -->
+                        <div class="space-y-6">
+                            <h3 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy pb-3 border-b border-brand-border">
+                                Ibrahim's Story
+                            </h3>
+                            <p>
+                                Ibrahim Awad decided to become an attorney long before law school. As a high schooler, Mr. Awad was the cornerstone of his school's mock trial team, leading them to their first Regional Championship in over a decade. After graduating near the top of his class, he attended Dalton State College and began working at the District Attorney's Office in Whitfield County.
+                            </p>
+                            <p>
+                                As an undergraduate, Mr. Awad assisted in the prosecution of over 100 felony cases, including more than a dozen child molestation jury trials, and a murder trial. After earning his Associate's Degree in English from Dalton State College, Mr. Awad transferred to Kennesaw State University to continue his education and receive a Bachelor's Degree in English; he graduated Summa Cum Laude.
+                            </p>
+                            <p>
+                                After Kennesaw State, he attended Georgia State College of Law, where he furthered his real-life legal experience by interning at the DeKalb County Solicitor General's Office. While there, Mr. Awad worked with the Special Victims Unit as well as other Trial Attorneys. He was also an active member of the Student Trial Lawyers Association, where he competed in prestigious trial advocacy competitions across the country, including in Buffalo, New York and Memphis, Tennessee.
+                            </p>
+                        </div>
+
+                        <!-- Professional Achievements -->
+                        <div class="space-y-6">
+                            <h3 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy pb-3 border-b border-brand-border">
+                                Experience & Advocacy
+                            </h3>
+                            <p>
+                                During his third year of law school, Mr. Awad worked as a registered mediator under the third-year practice act, resolving complex civil disputes inside courtroom structures. This early experience in negotiation and dispute resolution laid the groundwork for his strategic approach to personal injury cases.
+                            </p>
+                            <p>
+                                Since founding The Awad Law Firm, Ibrahim has dedicated his career to fighting for the rights of injured individuals. He has recovered over $70 million for personal injury victims throughout Georgia, demonstrating time and again that meticulous, trial-ready case preparation is the key to breaking insurance company resistance.
+                            </p>
+                        </div>
+
+                        <!-- Credentials Grid -->
+                        <div class="space-y-6 pt-4">
+                            <h3 class="text-2xl md:text-3xl font-heading font-bold text-brand-navy pb-3 border-b border-brand-border">
+                                Education & Admissions
+                            </h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                                <!-- Education Card -->
+                                <div class="bg-white rounded-2xl p-6 border border-brand-border/60 shadow-sm">
+                                    <div class="flex items-center space-x-3 mb-4 text-brand-primary">
+                                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                                        <h4 class="font-bold tracking-wider uppercase text-brand-navy">Education</h4>
+                                    </div>
+                                    <ul class="space-y-3 font-semibold text-brand-charcoal">
+                                        <li>
+                                            <p class="text-xs text-brand-muted font-bold">Georgia State University College of Law</p>
+                                            <p>Juris Doctor (J.D.)</p>
+                                        </li>
+                                        <li>
+                                            <p class="text-xs text-brand-muted font-bold">Kennesaw State University</p>
+                                            <p>B.A. in English, Summa Cum Laude</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Admissions Card -->
+                                <div class="bg-white rounded-2xl p-6 border border-brand-border/60 shadow-sm">
+                                    <div class="flex items-center space-x-3 mb-4 text-brand-primary">
+                                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                                        <h4 class="font-bold tracking-wider uppercase text-brand-navy">Bar Admissions</h4>
+                                    </div>
+                                    <ul class="space-y-3 font-semibold text-brand-charcoal">
+                                        <li>State Bar of Georgia</li>
+                                        <li>Georgia Supreme Court</li>
+                                        <li>Georgia Court of Appeals</li>
+                                        <li>U.S. District Court, Northern District of Georgia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<footer class="site-footer">
+  <!-- Newsletter CTA Bar -->
+  <div class="footer-newsletter-bar">
+    <div class="newsletter-left">
+      <svg class="newsletter-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20 30 H80 M50 30 V80 M35 80 H65 M20 50 A15 15 0 0 0 50 50 A15 15 0 0 0 80 50" stroke-dasharray="2 2" />
+        <path d="M30 50 H40 M60 50 H70" />
+      </svg>
+      <div class="newsletter-text-col">
+        <span class="newsletter-kicker">NEWSLETTER</span>
+        <h3 class="newsletter-heading">Sign Up To Get Latest Update</h3>
+      </div>
+    </div>
+    <div class="newsletter-right">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="Enter your Email" class="newsletter-input" required />
+        <button type="submit" class="newsletter-btn">
+          Subscribe
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="site-footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: Pages -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="ibrahim-awad.html">Our Attorney</a></li>
+          <li><a href="practice-areas.html">Practice Areas</a></li>
+          <li><a href="results.html">Case Studies</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Our Services -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Our Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="car-accidents.html">Car Accidents</a></li>
+          <li><a href="trucking-accidents.html">Truck Accidents</a></li>
+          <li><a href="motorcycle-accidents.html">Motorcycle Accidents</a></li>
+          <li><a href="wrongful-death.html">Wrongful Death</a></li>
+          <li><a href="slip-and-fall.html">Slip &amp; Fall</a></li>
+          <li><a href="personal-injury.html">Personal Injury</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Brand Identity (Center) -->
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/alf-white-logo.png" alt="Awad Law Firm" class="footer-logo">
+        </div>
+        <p class="footer-brand-desc">
+          Atlanta personal injury lawyers serving clients across Georgia with focused, relentless advocacy.
+        </p>
+        <div class="footer-social-row">
+          <a href="#" class="social-circle-link" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Twitter">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.95 4.57a10 10 0 0 1-2.82.77 4.96 4.96 0 0 0 2.16-2.72 9.9 9.9 0 0 1-3.13 1.2 4.93 4.93 0 0 0-8.38 4.48A14 14 0 0 1 1.64 3.16a4.93 4.93 0 0 0 1.52 6.57 4.9 4.9 0 0 1-2.23-.61v.06a4.93 4.93 0 0 0 3.95 4.83 4.9 4.9 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.9 9.9 0 0 1 0 19.54a13.9 13.9 0 0 0 7.55 2.21c9.05 0 14-7.5 14-14v-.64a10 10 0 0 0 2.4-2.54z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+          </a>
+          <a href="#" class="social-circle-link" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-3.34-4-3.1-4 0v5.6h-3v-11h3v1.76c1.4-2.58 7-2.78 7 2.47v6.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 4: Location & Offices -->
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-title">Contact & Offices</h4>
+        
+        <!-- Address 1 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Marietta Office</h5>
+            <p>4076 Ebenezer Rd., Marietta, GA</p>
+          </div>
+        </div>
+
+        <!-- Address 2 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Dalton Office</h5>
+            <p>210 North Glenwood Ave., Dalton, GA</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Phone</h5>
+            <p><a href="tel:+17062033097">(706) 203-3097</a></p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Email</h5>
+            <p><a href="mailto:info@theawadlawfirm.com">info@theawadlawfirm.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-bar-inner">
+      <p class="footer-copyright-text">
+        &copy; 2026 Awad Law Firm. All Rights Reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- YouTube Video Modal -->
+<div class="yt-modal-backdrop" id="ytModalBackdrop">
+  <div class="yt-modal">
+    <button class="yt-modal-close" id="ytModalClose" aria-label="Close video">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="yt-modal-iframe-wrap">
+      <iframe id="ytModalIframe" src="" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    // Initialize Icons
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
