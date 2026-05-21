@@ -1143,3 +1143,157 @@ if (document.readyState === 'loading') {
     initPremiumNavbar();
   }
 })();
+
+// Testimonials Slider Initializer
+(function initTestimonialsSlider() {
+  function setupSlider() {
+    const grid = document.querySelector('.testimonials-section .t-grid');
+    if (!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll('.t-card'));
+    const dots = Array.from(document.querySelectorAll('.testimonials-section .t-dot'));
+    const prevBtn = document.getElementById('tPrevBtn');
+    const nextBtn = document.getElementById('tNextBtn');
+    if (cards.length === 0) return;
+
+    let currentIndex = 0;
+    
+    function updateSlider() {
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const gap = parseInt(window.getComputedStyle(grid).gap) || 28;
+      
+      const translateX = -(currentIndex * (cardWidth + gap));
+      grid.style.transform = `translateX(${translateX}px)`;
+      
+      // Update dots state
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+      
+      // Update arrows disabled state
+      if (prevBtn) {
+        if (currentIndex === 0) {
+          prevBtn.classList.add('disabled');
+        } else {
+          prevBtn.classList.remove('disabled');
+        }
+      }
+      if (nextBtn) {
+        const maxIdx = getEffectiveMaxIndex();
+        if (currentIndex >= maxIdx) {
+          nextBtn.classList.add('disabled');
+        } else {
+          nextBtn.classList.remove('disabled');
+        }
+      }
+
+      // Update card opacities dynamically (active views have opacity 1)
+      const visibleCount = getVisibleCount();
+      cards.forEach((card, idx) => {
+        if (idx >= currentIndex && idx < currentIndex + visibleCount) {
+          card.style.opacity = '1';
+        } else {
+          card.style.opacity = '0.5';
+        }
+      });
+    }
+
+    function getVisibleCount() {
+      const w = window.innerWidth;
+      if (w >= 1024) return 2; // desktop displays 2 cards
+      return 1; // tablets and mobile display 1 card
+    }
+
+    function getEffectiveMaxIndex() {
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const gap = parseInt(window.getComputedStyle(grid).gap) || 28;
+      const containerWidth = grid.parentElement.getBoundingClientRect().width;
+      
+      const maxIndex = cards.length - Math.floor(containerWidth / (cardWidth + gap));
+      return Math.max(0, maxIndex);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        const maxIdx = getEffectiveMaxIndex();
+        if (currentIndex < maxIdx) {
+          currentIndex++;
+          updateSlider();
+        }
+      });
+    }
+
+    // Dots interaction
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', function() {
+        const maxIdx = getEffectiveMaxIndex();
+        if (idx <= maxIdx) {
+          currentIndex = idx;
+        } else {
+          currentIndex = maxIdx;
+        }
+        updateSlider();
+      });
+    });
+
+    // Touch/swipe gestures for mobile swipe functionality
+    let startX = 0;
+    let isSwiping = false;
+
+    grid.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      isSwiping = true;
+    }, { passive: true });
+
+    grid.addEventListener('touchmove', function(e) {
+      if (!isSwiping) return;
+      const diffX = startX - e.touches[0].clientX;
+      if (Math.abs(diffX) > 50) {
+        if (diffX > 0) {
+          // Swipe left -> Next
+          const maxIdx = getEffectiveMaxIndex();
+          if (currentIndex < maxIdx) {
+            currentIndex++;
+            updateSlider();
+          }
+        } else {
+          // Swipe right -> Prev
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+          }
+        }
+        isSwiping = false;
+      }
+    }, { passive: true });
+
+    grid.addEventListener('touchend', function() {
+      isSwiping = false;
+    });
+
+    // Listen to resize to recalculate dimensions
+    window.addEventListener('resize', updateSlider);
+
+    // Initial run after layout stabilizes
+    setTimeout(updateSlider, 150);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupSlider);
+  } else {
+    setupSlider();
+  }
+})();

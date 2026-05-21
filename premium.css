@@ -4794,17 +4794,27 @@ body.home-page .practice-areas-header h2 {
 body.home-page .discover-pill-btn {
   display: flex !important;
   align-items: center !important;
-  background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: var(--awad-navy, #06162d) !important;
+  border: 1.5px solid var(--awad-gold, #c6a15b) !important;
   border-radius: 999px !important;
   text-decoration: none !important;
   overflow: hidden !important;
+  min-width: 260px !important;
+  padding: 0 !important;
+  justify-content: space-between !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 8px 24px rgba(6, 22, 45, 0.15) !important;
+}
+
+body.home-page .discover-pill-btn:hover {
+  background: var(--awad-gold, #c6a15b) !important;
+  border-color: var(--awad-gold, #c6a15b) !important;
+  box-shadow: 0 12px 30px rgba(198, 161, 91, 0.3) !important;
 }
 
 body.home-page .pill-left {
-  background: #d1a86a !important; /* Premium gold accent label */
-  padding: 10px 24px !important;
+  background: transparent !important;
+  padding: 10px 0 10px 24px !important;
   display: flex !important;
   flex-direction: column !important;
   text-align: left !important;
@@ -4812,50 +4822,54 @@ body.home-page .pill-left {
 }
 
 body.home-page .discover-pill-btn:hover .pill-left {
-  background: #ffffff !important;
+  background: transparent !important;
 }
 
 body.home-page .pill-kicker {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 9px !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 10px !important;
   font-weight: 700 !important;
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--awad-gold, #c6a15b) !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.15em !important;
   line-height: 1 !important;
+  transition: all 0.4s ease !important;
 }
 
 body.home-page .discover-pill-btn:hover .pill-kicker {
-  color: rgba(9, 27, 46, 0.6) !important;
+  color: rgba(6, 22, 45, 0.75) !important;
 }
 
 body.home-page .pill-main {
   font-family: 'Outfit', sans-serif !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
   margin-top: 2px !important;
   line-height: 1.1 !important;
+  transition: all 0.4s ease !important;
 }
 
 body.home-page .discover-pill-btn:hover .pill-main {
-  color: #091b2e !important;
+  color: var(--awad-navy, #06162d) !important;
 }
 
 body.home-page .pill-right {
   width: 44px !important;
   height: 44px !important;
-  background: #ffffff !important;
+  background: var(--awad-gold, #c6a15b) !important;
+  border-radius: 50% !important;
+  margin: 4px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #091b2e !important;
+  color: #ffffff !important;
   flex-shrink: 0 !important;
-  transition: all 0.4s ease !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 body.home-page .discover-pill-btn:hover .pill-right {
-  background: #091b2e !important;
+  background: var(--awad-navy, #06162d) !important;
   color: #ffffff !important;
 }
 
@@ -4864,7 +4878,7 @@ body.home-page .discover-pill-btn svg {
 }
 
 body.home-page .discover-pill-btn:hover svg {
-  transform: translateX(3px) !important;
+  transform: translateX(4px) !important;
 }
 
 /* Practice Columns Grid Layout */
@@ -5037,7 +5051,7 @@ body.home-page .origin-story {
   margin-right: 0 !important;
   padding: 92px max(28px, calc((100vw - 1320px) / 2 + 28px)) 118px !important;
   display: block !important;
-  background: #ffffff !important;
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%) !important; /* Soft luxury beige/cream gradient */
   overflow: hidden !important;
 }
 
@@ -5056,38 +5070,38 @@ body.home-page .origin-header h2 {
 }
 
 body.home-page .origin-subtitle {
-  margin: 0 0 24px !important;
-  color: #b9925a !important;
-  font-family: 'Playfair Display', serif !important;
-  font-size: 24px !important;
-  font-weight: 700 !important;
+  margin: 0 0 20px !important;
+  color: #d1a86a !important; /* Brand gold */
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
   line-height: 1 !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
 }
 
 body.home-page .origin-header h2 {
   margin: 0 0 18px !important;
-  color: #06211e !important;
+  color: #06162c !important; /* Brand navy */
   font-family: 'Playfair Display', serif !important;
   font-size: clamp(48px, 5.3vw, 76px) !important;
   font-weight: 800 !important;
   line-height: 1.02 !important;
-  letter-spacing: 0 !important;
+  letter-spacing: -0.01em !important;
 }
 
 body.home-page .origin-header h2 .blue-italic {
-  color: #06211e !important;
-  font-style: normal !important;
+  color: #d1a86a !important; /* Gold highlight */
+  font-style: italic !important;
 }
 
 body.home-page .origin-description {
   max-width: 790px !important;
   margin: 0 auto !important;
-  color: #8c8c8c !important;
+  color: #6b7280 !important; /* Muted gray for reading */
   font-family: 'Manrope', sans-serif !important;
-  font-size: 20px !important;
-  line-height: 1.6 !important;
+  font-size: 18px !important;
+  line-height: 1.65 !important;
   text-align: center !important;
 }
 
@@ -5118,6 +5132,11 @@ body.home-page .origin-feature-card {
   flex-direction: column !important;
   align-items: flex-start !important;
   gap: 12px !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.home-page .origin-feature-card:hover {
+  transform: translateY(-4px) !important;
 }
 
 body.home-page .origin-feature-column-left .origin-feature-card {
@@ -5125,19 +5144,30 @@ body.home-page .origin-feature-column-left .origin-feature-card {
 }
 
 body.home-page .origin-feature-icon {
-  width: 88px !important;
-  height: 88px !important;
+  width: 80px !important;
+  height: 80px !important;
   display: grid !important;
   place-items: center !important;
   margin-bottom: 12px !important;
-  border-radius: 50% !important;
-  background: #31545a !important;
-  color: #ffffff !important;
+  border-radius: 24px !important; /* Premium rounded square shape */
+  background: linear-gradient(135deg, #06162c 0%, #0c2b54 100%) !important; /* Gold-bordered Navy icon */
+  border: 2px solid rgba(209, 168, 106, 0.25) !important;
+  color: #d1a86a !important; /* Gold icon */
+  box-shadow: 0 10px 25px rgba(6, 22, 44, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.home-page .origin-feature-card:hover .origin-feature-icon {
+  transform: scale(1.08) rotate(4deg) !important;
+  background: linear-gradient(135deg, #d1a86a 0%, #f4dfad 100%) !important; /* Glow gold on card hover */
+  color: #06162c !important;
+  border-color: transparent !important;
+  box-shadow: 0 15px 35px rgba(209, 168, 106, 0.3) !important;
 }
 
 body.home-page .origin-feature-icon svg {
-  width: 38px !important;
-  height: 38px !important;
+  width: 34px !important;
+  height: 34px !important;
   fill: none !important;
   stroke: currentColor !important;
   stroke-width: 1.7 !important;
@@ -5147,39 +5177,44 @@ body.home-page .origin-feature-icon svg {
 
 body.home-page .origin-feature-card h3 {
   margin: 0 !important;
-  color: #06211e !important;
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(28px, 2.4vw, 38px) !important;
+  color: #06162c !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: clamp(22px, 2vw, 28px) !important;
   font-weight: 800 !important;
-  line-height: 1.1 !important;
-  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+  transition: color 0.3s ease !important;
+}
+
+body.home-page .origin-feature-card:hover h3 {
+  color: #d1a86a !important; /* Gold title on hover */
 }
 
 body.home-page .origin-feature-card p {
   max-width: 330px !important;
   margin: 0 !important;
-  color: #919191 !important;
+  color: #6b7280 !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: 18px !important;
-  line-height: 1.55 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
 }
 
 body.home-page .origin-video-container {
   width: 100% !important;
   max-width: none !important;
   border: 0 !important;
-  border-radius: 22px !important;
+  border-radius: 24px !important;
   box-shadow: none !important;
 }
 
 body.home-page .origin-story .video-thumbnail {
   width: 100% !important;
   aspect-ratio: 1 / 1.05 !important;
-  border: 10px solid #b9925a !important;
-  border-radius: 22px !important;
+  border: 8px solid #d1a86a !important; /* Clean gold border */
+  border-radius: 24px !important;
   overflow: hidden !important;
-  box-shadow: 0 24px 60px rgba(6, 33, 30, 0.12) !important;
-  background: #f8f3eb !important;
+  box-shadow: 0 30px 70px rgba(209, 168, 106, 0.15) !important; /* Gold ambient glow */
+  background: #06162c !important;
 }
 
 body.home-page .origin-story .video-thumbnail img {
@@ -5187,30 +5222,36 @@ body.home-page .origin-story .video-thumbnail img {
   height: 100% !important;
   display: block !important;
   object-fit: cover !important;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.home-page .origin-story .video-thumbnail:hover img {
+  transform: scale(1.04) !important;
 }
 
 body.home-page .origin-story .play-button {
-  width: 112px !important;
-  height: 112px !important;
-  border: 3px solid rgba(255, 255, 255, 0.78) !important;
-  outline: 2px solid rgba(255, 255, 255, 0.38) !important;
-  outline-offset: 12px !important;
-  background: rgba(255, 255, 255, 0.18) !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-  backdrop-filter: blur(2px) !important;
+  width: 96px !important;
+  height: 96px !important;
+  border: 2px solid #d1a86a !important;
+  outline: none !important;
+  background: rgba(6, 22, 44, 0.85) !important;
+  color: #d1a86a !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(4px) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 body.home-page .origin-story .play-button svg {
-  width: 42px !important;
-  height: 42px !important;
+  width: 32px !important;
+  height: 32px !important;
   transform: translateX(4px) !important;
 }
 
 body.home-page .origin-story .play-button:hover {
-  transform: translate(-50%, -50%) scale(1.06) !important;
-  background: rgba(255, 255, 255, 0.28) !important;
-  color: #ffffff !important;
+  transform: translate(-50%, -50%) scale(1.1) !important;
+  background: #d1a86a !important; /* Full gold background on hover */
+  color: #06162c !important;
+  box-shadow: 0 20px 45px rgba(209, 168, 106, 0.45) !important;
 }
 
 @media (max-width: 1080px) {
@@ -5283,8 +5324,8 @@ body.home-page .hero-results-section {
   width: 100vw !important;
   margin: 0 0 0 calc(50% - 50vw) !important;
   padding: 106px 0 102px !important;
-  background: #FCFAF7 !important; /* Premium luxury soft cream background */
-  border-bottom: 1px solid #EAE6DF !important;
+  background: linear-gradient(135deg, #040e1b 0%, #06162c 100%) !important; /* Premium dark brand gradient */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   position: relative !important;
   z-index: 1 !important;
   overflow: visible !important;
@@ -5317,22 +5358,22 @@ body.home-page .hero-result-icon-wrapper {
   width: 76px !important;
   height: 76px !important;
   border-radius: 22px !important;
-  background: #FFFFFF !important;
-  border: 1px solid #EAE6DF !important;
-  box-shadow: 0 8px 24px rgba(6, 18, 32, 0.03) !important;
+  background: rgba(255, 255, 255, 0.03) !important; /* Premium glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin-bottom: 24px !important;
-  color: #1F2937 !important; /* Premium charcoal outline color */
+  color: #d1a86a !important; /* Premium brand gold */
   transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 body.home-page .hero-result-col:hover .hero-result-icon-wrapper {
-  background: #FAF6F0 !important; /* Soft luxurious cream-gold */
-  color: #A67C52 !important; /* Premium bronze/gold outline hover */
-  border-color: #A67C52 !important;
-  box-shadow: 0 16px 36px rgba(166, 124, 82, 0.12) !important;
+  background: rgba(209, 168, 106, 0.1) !important; /* Gold tint glass on hover */
+  color: #ffffff !important;
+  border-color: #d1a86a !important;
+  box-shadow: 0 16px 36px rgba(209, 168, 106, 0.2) !important;
 }
 
 body.home-page .hero-result-svg {
@@ -5352,14 +5393,14 @@ body.home-page .hero-result-number {
   font-size: clamp(38px, 3.6vw, 52px) !important;
   font-weight: 800 !important;
   line-height: 1.05 !important;
-  color: #A67C52 !important; /* Luxury brushed gold/bronze color */
+  color: #d1a86a !important; /* Luxurious brand gold */
   margin-bottom: 10px !important;
   letter-spacing: -0.02em !important;
   transition: color 0.35s ease !important;
 }
 
 body.home-page .hero-result-col:hover .hero-result-number {
-  color: #8C6239 !important; /* Luxurious deep bronze-gold on hover */
+  color: #f4dfad !important; /* Luxurious light gold on hover */
 }
 
 body.home-page .hero-result-label {
@@ -5369,7 +5410,7 @@ body.home-page .hero-result-label {
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.12em !important;
-  color: #4B5563 !important; /* Muted modern gray */
+  color: rgba(255, 255, 255, 0.72) !important; /* Clean contrast white text */
 }
 
 body.home-page .hero-results-section + .partners {
@@ -5806,30 +5847,7 @@ body.home-page .practice-areas-header h2::after {
   letter-spacing: 0 !important;
 }
 
-body.home-page .discover-pill-btn {
-  min-width: 260px !important;
-  border: 1px solid rgba(7, 24, 47, 0.12) !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  box-shadow: 0 18px 45px rgba(7, 24, 47, 0.08) !important;
-}
-
-body.home-page .pill-kicker {
-  color: var(--awad-gold) !important;
-  font-family: 'Outfit', sans-serif !important;
-  letter-spacing: 0.18em !important;
-}
-
-body.home-page .pill-main {
-  color: var(--awad-ink) !important;
-  font-family: 'Outfit', sans-serif !important;
-  font-weight: 900 !important;
-}
-
-body.home-page .pill-right {
-  background: linear-gradient(135deg, var(--awad-blue), var(--awad-navy)) !important;
-  color: #ffffff !important;
-}
+/* Preserved premium brand colors for discover-pill-btn */
 
 body.home-page .practice-columns-grid {
   width: min(1320px, calc(100% - 72px)) !important;
@@ -6971,14 +6989,15 @@ body.home-page .t-visual-panel::before {
 }
 
 body.home-page .t-visual-panel img {
-  width: 128% !important;
+  width: 155% !important;
   max-width: none !important;
   height: auto !important;
   position: absolute !important;
   left: 50% !important;
-  bottom: -6px !important;
+  bottom: -50px !important;
   transform: translateX(-50%) !important;
   filter: drop-shadow(0 24px 42px rgba(0, 0, 0, 0.22)) !important;
+  transition: transform 0.4s ease !important;
 }
 
 body.home-page .t-visual-copy {
@@ -7113,14 +7132,25 @@ body.home-page .t-divider {
   display: none !important;
 }
 
+body.home-page .t-slider-wrap {
+  position: relative !important;
+  width: 100% !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 body.home-page .t-grid {
   display: flex !important;
   gap: 28px !important;
-  overflow: hidden !important;
+  overflow: visible !important;
+  width: max-content !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform !important;
 }
 
 body.home-page .t-card {
-  flex: 0 0 min(430px, 44%) !important;
+  flex: 0 0 380px !important;
   min-height: 360px !important;
   padding: 38px 38px 34px !important;
   border: 1px solid rgba(7, 24, 47, 0.06) !important;
@@ -7130,10 +7160,57 @@ body.home-page .t-card {
   display: flex !important;
   flex-direction: column !important;
   gap: 22px !important;
+  transition: opacity 0.4s ease, transform 0.4s ease !important;
 }
 
 body.home-page .t-card:nth-child(n + 3) {
-  opacity: 0.5 !important;
+  opacity: 0.5;
+}
+
+/* Premium testimonial slider arrows */
+body.home-page .t-slider-arrow {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(7, 24, 47, 0.08) !important;
+  color: var(--awad-navy, #06162d) !important;
+  box-shadow: 0 8px 24px rgba(7, 24, 47, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.home-page .t-slider-arrow:hover {
+  background: var(--awad-gold, #c6a15b) !important;
+  border-color: var(--awad-gold, #c6a15b) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(198, 161, 91, 0.3) !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+body.home-page .t-slider-arrow:active {
+  transform: translateY(-50%) scale(0.95) !important;
+}
+
+body.home-page .t-slider-arrow.prev-arrow {
+  left: -26px !important;
+}
+
+body.home-page .t-slider-arrow.next-arrow {
+  right: -26px !important;
+}
+
+body.home-page .t-slider-arrow.disabled {
+  opacity: 0.2 !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
 }
 
 body.home-page .t-card-top {
@@ -7286,17 +7363,22 @@ body.home-page .t-dot.active {
   }
 
   body.home-page .t-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px !important;
     overflow: visible !important;
   }
 
   body.home-page .t-card {
-    flex-basis: auto !important;
-    min-height: 0 !important;
+    flex: 0 0 100% !important;
+    min-height: 330px !important;
   }
 
   body.home-page .t-card:nth-child(n + 3) {
+    display: flex !important;
+  }
+
+  body.home-page .t-slider-arrow {
     display: none !important;
   }
 }
@@ -7322,10 +7404,11 @@ body.home-page .t-visual-copy strong {
 }
 
 body.home-page .t-visual-panel img {
-  width: min(88%, 500px) !important;
+  width: 155% !important;
+  max-width: none !important;
   height: auto !important;
-  left: 54% !important;
-  bottom: -2px !important;
+  left: 50% !important;
+  bottom: -50px !important;
   transform: translateX(-50%) !important;
 }
 
@@ -7343,12 +7426,12 @@ body.home-page .t-header-left h2 {
 }
 
 body.home-page .t-grid {
-  gap: 22px !important;
+  gap: 28px !important;
 }
 
 body.home-page .t-card {
-  flex-basis: min(360px, 38%) !important;
-  min-height: 330px !important;
+  flex: 0 0 380px !important;
+  min-height: 360px !important;
   padding: 30px 30px 28px !important;
   gap: 16px !important;
 }
@@ -9830,11 +9913,42 @@ body.home-page .premium-home-hero {
   }
 
   /* Next section after the pin wrapper */
+  /* Next section after the pin wrapper */
   body.home-page .hero-pin-wrapper + .hero-results-section {
     position: relative !important;
     z-index: 1 !important;
     background: #FCFAF7 !important;
     margin-top: -110px !important;
+  }
+
+  body.home-page .hero-pin-wrapper + .hero-results-section .hero-result-icon-wrapper {
+    background: rgba(6, 22, 44, 0.03) !important;
+    border: 1px solid rgba(6, 22, 44, 0.08) !important;
+    box-shadow: 0 8px 24px rgba(6, 22, 44, 0.04) !important;
+    color: #d1a86a !important;
+  }
+
+  body.home-page .hero-pin-wrapper + .hero-results-section .hero-result-col:hover .hero-result-icon-wrapper {
+    background: rgba(209, 168, 106, 0.12) !important;
+    color: #06162c !important;
+    border-color: #d1a86a !important;
+    box-shadow: 0 16px 36px rgba(209, 168, 106, 0.15) !important;
+  }
+
+  body.home-page .hero-pin-wrapper + .hero-results-section .hero-result-number {
+    color: #c6a15b !important;
+  }
+
+  body.home-page .hero-pin-wrapper + .hero-results-section .hero-result-col:hover .hero-result-number {
+    color: #06162c !important;
+  }
+
+  body.home-page .hero-pin-wrapper + .hero-results-section .hero-result-label {
+    color: rgba(6, 22, 44, 0.72) !important;
+  }
+
+  body.home-page .hero-pin-wrapper + .hero-results-section .hero-result-col:hover .hero-result-label {
+    color: #06162c !important;
   }
 
   body.home-page .partners {
@@ -10899,7 +11013,7 @@ body {
   transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.navbar nav a::after {
+.navbar nav a:not(.nav-dropdown-toggle):not(.nav-dropdown-item)::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -10914,8 +11028,8 @@ body {
   transform-origin: center !important;
 }
 
-.navbar nav a.active::after,
-.navbar nav a:hover::after {
+.navbar nav a:not(.nav-dropdown-toggle):not(.nav-dropdown-item).active::after,
+.navbar nav a:not(.nav-dropdown-toggle):not(.nav-dropdown-item):hover::after {
   transform: translateX(-50%) scaleX(1) !important;
 }
 

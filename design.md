@@ -254,7 +254,7 @@ A key element used to build quick legal authority:
 ## 11. SEO & Accessibility Best Practices
 
 ### SEO Markup
-- Standardize on **exactly one `<h1>` per page** representing the core location-specific legal advocate target (e.g., *Atlanta Personal Injury — Trusted Legal Advocate*).
+- Standardize on **exactly one `<h1>` per page** representing the core location-specific legal advocate target (e.g., *Marietta Personal Injury — Trusted Legal Advocate*).
 - Bulletproof structured data formats (**JSON-LD**) representing `LegalService`, `Organization`, and `BreadcrumbList`.
 
 ### Accessibility Checklist
