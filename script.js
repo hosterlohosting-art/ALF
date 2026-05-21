@@ -612,6 +612,7 @@ if (document.readyState === 'loading') {
   // Accordion for About dropdown on mobile
   navbar.querySelectorAll('.nav-dropdown-toggle').forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
+      if (navbar.classList.contains('nav-functional-ready')) return;
       if (window.innerWidth <= 900) {
         e.preventDefault();
         var dropdown = toggle.closest('.nav-dropdown');
@@ -1150,46 +1151,52 @@ if (document.readyState === 'loading') {
     const grid = document.querySelector('.testimonials-section .t-grid');
     if (!grid) return;
 
-    const cards = Array.from(grid.querySelectorAll('.t-card'));
+    const originalCards = Array.from(grid.querySelectorAll('.t-card'));
     const dots = Array.from(document.querySelectorAll('.testimonials-section .t-dot'));
     const prevBtn = document.getElementById('tPrevBtn');
     const nextBtn = document.getElementById('tNextBtn');
-    if (cards.length === 0) return;
+    if (originalCards.length === 0) return;
+
+    originalCards.forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      grid.appendChild(clone);
+    });
+
+    const cards = Array.from(grid.querySelectorAll('.t-card'));
+    const slideCount = originalCards.length;
 
     let currentIndex = 0;
+    let autoplayTimer = null;
+    let loopResetTimer = null;
     
-    function updateSlider() {
+    function getSlideStep() {
       const cardWidth = cards[0].getBoundingClientRect().width;
       const gap = parseInt(window.getComputedStyle(grid).gap) || 28;
-      
-      const translateX = -(currentIndex * (cardWidth + gap));
+      return cardWidth + gap;
+    }
+
+    function updateSlider(animate = true) {
+      const translateX = -(currentIndex * getSlideStep());
+      if (animate) {
+        grid.style.removeProperty('transition');
+      } else {
+        grid.style.setProperty('transition', 'none', 'important');
+      }
       grid.style.transform = `translateX(${translateX}px)`;
       
       // Update dots state
       dots.forEach((dot, idx) => {
-        if (idx === currentIndex) {
+        dot.style.display = idx < slideCount ? '' : 'none';
+        if (idx === currentIndex % slideCount) {
           dot.classList.add('active');
         } else {
           dot.classList.remove('active');
         }
       });
       
-      // Update arrows disabled state
-      if (prevBtn) {
-        if (currentIndex === 0) {
-          prevBtn.classList.add('disabled');
-        } else {
-          prevBtn.classList.remove('disabled');
-        }
-      }
-      if (nextBtn) {
-        const maxIdx = getEffectiveMaxIndex();
-        if (currentIndex >= maxIdx) {
-          nextBtn.classList.add('disabled');
-        } else {
-          nextBtn.classList.remove('disabled');
-        }
-      }
+      if (prevBtn) prevBtn.classList.remove('disabled');
+      if (nextBtn) nextBtn.classList.remove('disabled');
 
       // Update card opacities dynamically (active views have opacity 1)
       const visibleCount = getVisibleCount();
@@ -1202,52 +1209,77 @@ if (document.readyState === 'loading') {
       });
     }
 
+    function snapIfNeeded() {
+      if (currentIndex >= slideCount) {
+        currentIndex = 0;
+        updateSlider(false);
+        requestAnimationFrame(() => {
+          grid.style.removeProperty('transition');
+        });
+      }
+    }
+
+    function scheduleLoopReset() {
+      if (loopResetTimer) window.clearTimeout(loopResetTimer);
+      loopResetTimer = window.setTimeout(snapIfNeeded, 680);
+    }
+
+    function goNext() {
+      currentIndex++;
+      updateSlider();
+      if (currentIndex >= slideCount) scheduleLoopReset();
+    }
+
+    function goPrev() {
+      if (currentIndex === 0) {
+        currentIndex = slideCount;
+        updateSlider(false);
+        requestAnimationFrame(() => {
+          currentIndex--;
+          updateSlider();
+        });
+        return;
+      }
+
+      currentIndex--;
+      updateSlider();
+    }
+
+    function restartAutoplay() {
+      if (autoplayTimer) window.clearInterval(autoplayTimer);
+      autoplayTimer = window.setInterval(goNext, 3600);
+    }
+
     function getVisibleCount() {
       const w = window.innerWidth;
       if (w >= 1024) return 2; // desktop displays 2 cards
       return 1; // tablets and mobile display 1 card
     }
 
-    function getEffectiveMaxIndex() {
-      const cardWidth = cards[0].getBoundingClientRect().width;
-      const gap = parseInt(window.getComputedStyle(grid).gap) || 28;
-      const containerWidth = grid.parentElement.getBoundingClientRect().width;
-      
-      const maxIndex = cards.length - Math.floor(containerWidth / (cardWidth + gap));
-      return Math.max(0, maxIndex);
-    }
-
     if (prevBtn) {
       prevBtn.addEventListener('click', function() {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateSlider();
-        }
+        goPrev();
+        restartAutoplay();
       });
     }
 
     if (nextBtn) {
       nextBtn.addEventListener('click', function() {
-        const maxIdx = getEffectiveMaxIndex();
-        if (currentIndex < maxIdx) {
-          currentIndex++;
-          updateSlider();
-        }
+        goNext();
+        restartAutoplay();
       });
     }
 
     // Dots interaction
     dots.forEach((dot, idx) => {
       dot.addEventListener('click', function() {
-        const maxIdx = getEffectiveMaxIndex();
-        if (idx <= maxIdx) {
-          currentIndex = idx;
-        } else {
-          currentIndex = maxIdx;
-        }
+        currentIndex = idx % slideCount;
         updateSlider();
+        restartAutoplay();
       });
     });
+
+    grid.addEventListener('transitionend', snapIfNeeded);
 
     // Touch/swipe gestures for mobile swipe functionality
     let startX = 0;
@@ -1264,18 +1296,12 @@ if (document.readyState === 'loading') {
       if (Math.abs(diffX) > 50) {
         if (diffX > 0) {
           // Swipe left -> Next
-          const maxIdx = getEffectiveMaxIndex();
-          if (currentIndex < maxIdx) {
-            currentIndex++;
-            updateSlider();
-          }
+          goNext();
         } else {
           // Swipe right -> Prev
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
-          }
+          goPrev();
         }
+        restartAutoplay();
         isSwiping = false;
       }
     }, { passive: true });
@@ -1289,6 +1315,7 @@ if (document.readyState === 'loading') {
 
     // Initial run after layout stabilizes
     setTimeout(updateSlider, 150);
+    restartAutoplay();
   }
 
   if (document.readyState === 'loading') {

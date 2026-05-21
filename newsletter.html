@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -33,9 +33,9 @@
 </script>
 
 <style>
-/* ═══════════════════════════════════════════════════════
+/* -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�
    NEWSLETTER PAGE &mdash; ULTRA-PREMIUM DESIGN SYSTEM
-   ═══════════════════════════════════════════════════════ */
+   -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-� */
 
 :root {
     --nl-gold: #D4AF37;
@@ -53,16 +53,19 @@
     --nl-transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ─── HERO SECTION ─── */
+/* --- HERO SECTION --- */
 .nl-hero {
     position: relative;
-    min-height: 92vh;
-    background: linear-gradient(168deg, #05050A 0%, #0C0C18 35%, #111122 65%, #0A0A12 100%) !important;
+    min-height: 660px;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(212,175,55,0.16) 0%, transparent 26%),
+        radial-gradient(circle at 86% 18%, rgba(82,151,222,0.16) 0%, transparent 28%),
+        linear-gradient(150deg, #05070d 0%, #0a1424 48%, #06070d 100%) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 120px 24px 80px;
+    padding: 76px 24px 54px;
 }
 
 .nl-hero::before {
@@ -108,14 +111,14 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 64px;
     align-items: center;
 }
 
 .nl-hero-text {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .nl-hero-badge {
@@ -148,7 +151,7 @@
 
 .nl-hero-title {
     font-family: 'Outfit', sans-serif !important;
-    font-size: clamp(38px, 5.5vw, 68px) !important;
+    font-size: clamp(40px, 5vw, 64px) !important;
     font-weight: 800 !important;
     line-height: 1.05 !important;
     letter-spacing: -0.03em;
@@ -176,7 +179,7 @@
     font-family: 'Manrope', sans-serif !important;
     font-size: 17px !important;
     line-height: 1.7 !important;
-    color: var(--nl-text-muted) !important;
+    color: rgba(232, 230, 224, 0.72) !important;
     max-width: 480px;
     animation: nlFadeUp 0.8s var(--nl-transition) 0.2s both;
     margin: 0 !important;
@@ -207,7 +210,7 @@
     font-family: 'Manrope', sans-serif !important;
     font-size: 12px !important;
     font-weight: 600 !important;
-    color: var(--nl-text-muted) !important;
+    color: rgba(232, 230, 224, 0.72) !important;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -247,7 +250,7 @@
     transform: translateX(4px);
 }
 
-/* ─── FEATURED BOOK PREVIEW ─── */
+/* --- FEATURED BOOK PREVIEW --- */
 .nl-hero-book {
     position: relative;
     display: flex;
@@ -319,7 +322,7 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── SECTION HEADING ─── */
+/* --- SECTION HEADING --- */
 .nl-section-head {
     text-align: center;
     padding: 100px 24px 50px;
@@ -376,7 +379,7 @@
     line-height: 1.6 !important;
 }
 
-/* ─── NEWSLETTER GRID ─── */
+/* --- NEWSLETTER GRID --- */
 .nl-grid-wrap {
     max-width: 1300px;
     margin: 0 auto;
@@ -390,7 +393,7 @@
     gap: 32px;
 }
 
-/* ─── NEWSLETTER CARD ─── */
+/* --- NEWSLETTER CARD --- */
 .nl-card {
     position: relative;
     border-radius: var(--nl-radius);
@@ -496,7 +499,7 @@
     white-space: nowrap;
 }
 
-/* ─── FLIPBOOK MODAL ─── */
+/* --- FLIPBOOK MODAL --- */
 .nl-modal {
     display: none;
     position: fixed;
@@ -721,7 +724,7 @@
     white-space: nowrap;
 }
 
-/* ─── RESPONSIVE ─── */
+/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
     .nl-hero-inner {
         grid-template-columns: 1fr;
@@ -739,7 +742,7 @@
 
 @media (max-width: 767px) {
     .nl-hero { padding: 120px 16px 60px; }
-    .nl-hero-stats { gap: 24px; }
+    .nl-hero-stats { gap: 20px; }
     .nl-stat-number { font-size: 28px; }
     .nl-book-showcase { width: 240px; }
     .nl-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
@@ -750,6 +753,220 @@
     .nl-nav-bar button { padding: 8px 14px; font-size: 10px; }
     .nl-section-head { padding: 70px 16px 40px; }
 }
+
+/* --- NEWSLETTER FINAL PREMIUM POLISH --- */
+.nl-hero {
+    min-height: 640px !important;
+    padding: 70px 24px 48px !important;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(212,175,55,0.16) 0%, transparent 26%),
+        radial-gradient(circle at 86% 18%, rgba(82,151,222,0.16) 0%, transparent 28%),
+        linear-gradient(150deg, #05070d 0%, #0a1424 48%, #06070d 100%) !important;
+}
+
+.nl-hero::before {
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+        radial-gradient(ellipse 760px 440px at 32% 18%, rgba(212,175,55,0.08) 0%, transparent 68%),
+        radial-gradient(ellipse 640px 420px at 76% 58%, rgba(91,168,255,0.08) 0%, transparent 70%) !important;
+    background-size: 74px 74px, 74px 74px, auto, auto !important;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.92), rgba(0,0,0,0.18));
+}
+
+.nl-hero-inner {
+    gap: clamp(44px, 6vw, 72px) !important;
+}
+
+.nl-hero-text {
+    gap: 18px !important;
+}
+
+.nl-hero-title {
+    font-size: clamp(42px, 5vw, 66px) !important;
+}
+
+.nl-hero-subtitle {
+    color: rgba(232, 230, 224, 0.74) !important;
+}
+
+.nl-hero-stats {
+    gap: 18px !important;
+    margin-top: 4px !important;
+}
+
+.nl-stat {
+    min-width: 108px !important;
+    padding: 14px 16px !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,0.045) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+
+.nl-book-showcase {
+    width: min(330px, 30vw) !important;
+    animation: nlBookFloat 6s ease-in-out infinite !important;
+}
+
+.nl-book-cover {
+    box-shadow:
+        -6px 0 0 0 rgba(180,160,120,0.16),
+        -12px 0 0 0 rgba(160,140,100,0.09),
+        0 24px 54px rgba(0,0,0,0.46),
+        0 0 0 1px rgba(212,175,55,0.16),
+        0 0 54px rgba(212,175,55,0.08) !important;
+}
+
+.nl-book-glow {
+    background:
+        radial-gradient(ellipse at center, rgba(212,175,55,0.16) 0%, transparent 62%),
+        radial-gradient(ellipse at 70% 20%, rgba(91,168,255,0.12) 0%, transparent 54%) !important;
+}
+
+@keyframes nlBookFloat {
+    0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+    50% { transform: translateY(-12px) rotate(0.8deg); }
+}
+
+.nl-section-head {
+    padding: 70px 24px 44px !important;
+    overflow: hidden !important;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(212,175,55,0.18), transparent 32%),
+        linear-gradient(180deg, #05070d 0%, #101928 58%, #f7f9fc 100%) !important;
+}
+
+.nl-section-head::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -80px;
+    width: min(940px, 86vw);
+    height: 160px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    filter: blur(28px);
+    pointer-events: none;
+}
+
+.nl-section-title {
+    color: #ffffff !important;
+    text-shadow: 0 14px 34px rgba(0,0,0,0.24) !important;
+}
+
+.nl-section-desc {
+    color: rgba(255,255,255,0.72) !important;
+}
+
+.nl-grid-wrap {
+    max-width: none !important;
+    padding: 24px max(24px, calc((100vw - 1300px) / 2 + 24px)) 100px !important;
+    background:
+        linear-gradient(180deg, #f7f9fc 0%, #ffffff 42%, #f6f8fb 100%) !important;
+}
+
+.nl-card {
+    border-radius: 20px !important;
+    background: rgba(255,255,255,0.94) !important;
+    border: 1px solid rgba(7,24,47,0.08) !important;
+    box-shadow: 0 18px 48px rgba(7,24,47,0.08) !important;
+    animation: nlCardRise 0.8s var(--nl-transition) both !important;
+}
+
+.nl-card:hover {
+    transform: translateY(-10px) scale(1.012) !important;
+    box-shadow: 0 28px 70px rgba(7,24,47,0.16), 0 0 0 1px rgba(212,175,55,0.22) !important;
+}
+
+.nl-card:nth-child(2n) { animation-delay: 0.06s !important; }
+.nl-card:nth-child(3n) { animation-delay: 0.12s !important; }
+.nl-card:nth-child(4n) { animation-delay: 0.18s !important; }
+
+@keyframes nlCardRise {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nl-card-img-wrap {
+    background: linear-gradient(135deg, #f0ede6, #ffffff) !important;
+}
+
+.nl-card-info {
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), #ffffff) !important;
+}
+
+@media (max-width: 1024px) {
+    .nl-hero { min-height: auto !important; padding: 110px 24px 56px !important; }
+    .nl-book-showcase { width: min(300px, 64vw) !important; }
+}
+
+@media (max-width: 767px) {
+    .nl-hero { padding: 86px 16px 42px !important; }
+    .nl-hero-inner { gap: 26px !important; }
+    .nl-hero-title { font-size: clamp(38px, 12vw, 48px) !important; }
+    .nl-hero-subtitle { font-size: 15px !important; line-height: 1.55 !important; }
+    .nl-hero-stats { flex-wrap: wrap !important; justify-content: center !important; gap: 10px !important; }
+    .nl-stat { min-width: 88px !important; padding: 10px 12px !important; }
+    .nl-stat-number { font-size: 26px !important; }
+    .nl-book-showcase { width: min(205px, 56vw) !important; }
+    .nl-book-label { bottom: -22px !important; padding: 7px 16px !important; font-size: 9px !important; }
+    .nl-section-head { padding: 56px 16px 34px !important; }
+    .nl-grid-wrap { padding: 20px 16px 64px !important; }
+}
+
+/* --- ARCHIVE HEADER CLEAN PREMIUM OVERRIDE --- */
+.nl-section-head {
+    padding: 64px 24px 34px !important;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(212,175,55,0.12), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%) !important;
+    border-top: 1px solid rgba(7,24,47,0.08) !important;
+    overflow: hidden !important;
+}
+
+.nl-section-head::before {
+    top: 0 !important;
+    height: 5px !important;
+    background: linear-gradient(90deg, transparent 10%, rgba(198,161,91,0.72), rgba(91,168,255,0.34), transparent 90%) !important;
+}
+
+.nl-section-head::after {
+    display: none !important;
+}
+
+.nl-section-kicker {
+    color: #c6a15b !important;
+    margin-bottom: 14px !important;
+}
+
+.nl-section-kicker::before,
+.nl-section-kicker::after {
+    background: #c6a15b !important;
+    opacity: 0.45 !important;
+}
+
+.nl-section-title {
+    color: #07182f !important;
+    text-shadow: none !important;
+}
+
+.nl-section-desc {
+    color: rgba(7,24,47,0.62) !important;
+}
+
+.nl-grid-wrap {
+    padding-top: 18px !important;
+    background:
+        linear-gradient(180deg, #f7f9fc 0%, #ffffff 36%, #f6f8fb 100%) !important;
+}
+
+@media (max-width: 767px) {
+    .nl-section-head {
+        padding: 48px 16px 28px !important;
+    }
+}
 </style>
 </head>
 
@@ -757,9 +974,9 @@
 
 <header class="navbar">
 
-<div class="logo">
+<a href="index.html" class="logo" aria-label="Awad Law Firm home">
     <img src="assets/alf-white-logo.png" alt="Awad Law Firm Logo">
-</div>
+</a>
 
 <nav>
 <a href="index.html" class="">Home</a>
@@ -815,7 +1032,7 @@
     <a href="https://www.awadacademy.com/" class="nav-dropdown-item" target="_blank" rel="noopener noreferrer">Awad Academy &#8599;</a>
   </div>
 </div>
-<a href="contact.html" class="">Contact</a>
+<a href="newsletter.html" class="">Newsletter</a>
 </nav>
 
 <div class="nav-icons">
@@ -873,9 +1090,9 @@ A2 2 0 0 1 22 16.92z"></path>
 
 </header>
 
-<!-- ═══════════════════════════════════════════════════════
+<!-- -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�
      HERO SECTION
-     ═══════════════════════════════════════════════════════ -->
+     -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-� -->
 <section class="nl-hero">
     <div class="nl-hero-inner">
         <div class="nl-hero-text">
@@ -914,9 +1131,9 @@ A2 2 0 0 1 22 16.92z"></path>
     </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
+<!-- -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�
      ALL EDITIONS GRID
-     ═══════════════════════════════════════════════════════ -->
+     -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-� -->
 <div class="nl-section-head" id="all-editions">
     <div class="nl-section-kicker">All Editions</div>
     <h2 class="nl-section-title">Browse Our Newsletter Archive</h2>
@@ -1253,9 +1470,9 @@ A2 2 0 0 1 22 16.92z"></path>
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════════
+<!-- -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�
      FLIPBOOK MODALS &mdash; DYNAMICALLY POPULATED
-     ═══════════════════════════════════════════════════════ -->
+     -�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-�-� -->
 
 <!-- Single reusable modal -->
 <div class="nl-modal" id="nlModal">
@@ -1287,7 +1504,7 @@ A2 2 0 0 1 22 16.92z"></path>
 
     console.log("ALF Newsletters: Core script initialized.");
 
-    // ─── Newsletter Data Registry ───
+    // --- Newsletter Data Registry ---
     const NEWSLETTERS = {
         'nl-may-2026': {
             title: 'May 2026 Edition',
@@ -1434,7 +1651,7 @@ A2 2 0 0 1 22 16.92z"></path>
         }
     };
 
-    // ─── DOM References ───
+    // --- DOM References ---
     const modal = document.getElementById('nlModal');
     const modalClose = document.getElementById('nlModalClose');
     const modalTitle = document.getElementById('nlModalTitle');
@@ -1455,7 +1672,7 @@ A2 2 0 0 1 22 16.92z"></path>
         return;
     }
 
-    // ─── Image Preloader ───
+    // --- Image Preloader ---
     function preloadImages(urls, done) {
         if (!urls.length) { done(); return; }
         let loaded = 0;
@@ -1468,7 +1685,7 @@ A2 2 0 0 1 22 16.92z"></path>
         });
     }
 
-    // ─── Build Page HTML for 3D flipbook ───
+    // --- Build Page HTML for 3D flipbook ---
     function buildPages(pages) {
         return pages.map(function(src, i) {
             var isHard = (i === 0 || i === pages.length - 1);
@@ -1478,7 +1695,7 @@ A2 2 0 0 1 22 16.92z"></path>
         }).join('');
     }
 
-    // ─── Get Book Size ───
+    // --- Get Book Size ---
     function getBookSize() {
         if (!bookStage) return { width: 450, height: 600 };
         var rect = bookStage.getBoundingClientRect();
@@ -1489,7 +1706,7 @@ A2 2 0 0 1 22 16.92z"></path>
         return { width: Math.max(420, Math.floor(rect.width * 0.44)), height: Math.max(420, Math.floor(rect.height * 0.92)) };
     }
 
-    // ─── Update UI For standard book ───
+    // --- Update UI For standard book ---
     function updateUI() {
         if (!currentFlip || !navInfo || !prevBtn || !nextBtn) return;
         var total = currentFlip.getPageCount();
@@ -1499,7 +1716,7 @@ A2 2 0 0 1 22 16.92z"></path>
         nextBtn.disabled = current >= total;
     }
 
-    // ─── Build 3D Flipbook ───
+    // --- Build 3D Flipbook ---
     function buildFlipbook() {
         var size = getBookSize();
         
@@ -1549,7 +1766,7 @@ A2 2 0 0 1 22 16.92z"></path>
         }, 100);
     }
 
-    // ─── Build Slideshow Fallback (Offline/No-CDN Spread Reader) ───
+    // --- Build Slideshow Fallback (Offline/No-CDN Spread Reader) ---
     function buildSlideshowFallback(pages) {
         console.warn("ALF Newsletters: Initializing ultra-premium fail-safe spread reader.");
         var size = getBookSize();
@@ -1718,7 +1935,7 @@ A2 2 0 0 1 22 16.92z"></path>
         };
     }
 
-    // ─── Open Newsletter ───
+    // --- Open Newsletter ---
     function openNewsletter(id) {
         console.log("ALF Newsletters: Opening newsletter ID =", id);
         var data = NEWSLETTERS[id];
@@ -1771,7 +1988,7 @@ A2 2 0 0 1 22 16.92z"></path>
         }, 200);
     }
 
-    // ─── Close Newsletter ───
+    // --- Close Newsletter ---
     function closeNewsletter() {
         console.log("ALF Newsletters: Closing modal reader.");
         modal.classList.remove('active');
@@ -1785,7 +2002,7 @@ A2 2 0 0 1 22 16.92z"></path>
         if (navBar) navBar.classList.remove('visible');
     }
 
-    // ─── Event Listeners &mdash; Defensive ───
+    // --- Event Listeners &mdash; Defensive ---
 
     // Navigation buttons
     if (prevBtn) {
@@ -1850,7 +2067,7 @@ A2 2 0 0 1 22 16.92z"></path>
         }, 200);
     });
 
-    // ─── Scroll Reveal Animation ───
+    // --- Scroll Reveal Animation ---
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
