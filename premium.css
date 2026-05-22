@@ -10708,14 +10708,14 @@ body.home-page h2.contact-heading,
 
 /* 1. Reduce the height of the hero sections of all practice areas globally */
 body.home-page > section.bg-brand-dark:first-of-type {
-  padding-top: 6rem !important; /* Extremely sleek spacing below navbar */
-  padding-bottom: 4.5rem !important; /* Tight, premium bottom spacing */
+  padding-top: 4.5rem !important; /* Extremely sleek spacing below navbar */
+  padding-bottom: 2.5rem !important; /* Tight, premium bottom spacing */
 }
 
 @media (min-width: 1024px) {
   body.home-page > section.bg-brand-dark:first-of-type {
-    padding-top: 7.5rem !important; /* Balanced desktop header clearance */
-    padding-bottom: 5.5rem !important; /* Reduced from 9.5rem for ultra-sleek appearance */
+    padding-top: 5.5rem !important; /* Balanced desktop header clearance */
+    padding-bottom: 3.5rem !important; /* Reduced from 9.5rem for ultra-sleek appearance */
   }
 }
 
