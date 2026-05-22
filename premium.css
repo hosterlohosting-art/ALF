@@ -12013,3 +12013,124 @@ body.home-page .premium-hero-form textarea:focus {
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   GLOBAL SPACING COMPACTNESS OVERRIDES (READABILITY UPGRADE)
+   ========================================================================== */
+
+/* 1. Desktop Section Paddings */
+section,
+.case-steps-section,
+.partners,
+.origin-story,
+.practice-areas,
+.testimonials-section,
+.cs-section,
+.team-section,
+.faq-section,
+.contact-section,
+.pa-section,
+.pd-section,
+.results-section,
+.edu-cards-section,
+.tedx-video-section,
+.core-values-section,
+.mission-vision-section {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+/* Specific exceptions for mixed layouts */
+body.home-page .testimonials-section,
+body.home-page .cs-section[style*="padding: 0"] {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 2. Subpage Tailwind Utility Spacing Overrides (Desktop) */
+@media (min-width: 901px) {
+  section.py-20, section.py-24, section.py-28, section.py-32,
+  div.py-20, div.py-24, div.py-28, div.py-32 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  section.pb-32, section.pb-40, section.pb-48 {
+    padding-bottom: 4.5rem !important;
+  }
+  section.pt-24, section.pt-32, section.pt-40 {
+    padding-top: 4.5rem !important;
+  }
+}
+
+/* 3. Global Section Header Margins (Desktop) */
+.case-steps-header,
+.partners-header,
+.origin-header,
+.practice-areas-header,
+.cs-header,
+.team-heading,
+.faq-header,
+.contact-heading,
+.practice-header,
+.results-header,
+.edu-header,
+.faq-heading,
+.section-title-wrap {
+  margin-bottom: 28px !important;
+}
+
+/* 4. Grid Gaps and Inner Container Spacings (Desktop) */
+.grid.gap-12, .grid.gap-16, .grid.gap-20, .grid.gap-24,
+.grid-4, .grid-3, .results-grid, .team-inner, .faq-inner, .cs-inner {
+  gap: 24px !important;
+}
+
+/* 5. Mobile & Tablet Spacing Overrides (<= 900px) */
+@media (max-width: 900px) {
+  section,
+  .case-steps-section,
+  .partners,
+  .origin-story,
+  .practice-areas,
+  .testimonials-section,
+  .cs-section,
+  .team-section,
+  .faq-section,
+  .contact-section,
+  .pa-section,
+  .pd-section,
+  .results-section,
+  .edu-cards-section,
+  .tedx-video-section,
+  .core-values-section,
+  .mission-vision-section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  section.py-20, section.py-24, section.py-28, section.py-32,
+  div.py-20, div.py-24, div.py-28, div.py-32 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .case-steps-header,
+  .partners-header,
+  .origin-header,
+  .practice-areas-header,
+  .cs-header,
+  .team-heading,
+  .faq-header,
+  .contact-heading,
+  .practice-header,
+  .results-header,
+  .edu-header {
+    margin-bottom: 20px !important;
+  }
+
+  .grid.gap-12, .grid.gap-16, .grid.gap-20, .grid.gap-24,
+  .grid-4, .grid-3, .results-grid {
+    gap: 20px !important;
+  }
+}
+
