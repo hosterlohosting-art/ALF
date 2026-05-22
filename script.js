@@ -1,4 +1,4 @@
-// Navbar Scroll Effect
+﻿// Navbar Scroll Effect
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 50) {
@@ -18,34 +18,51 @@ const youtubePlayer = document.getElementById('youtubePlayer');
 const YOUTUBE_VIDEO_ID = 'JyZ_4v8df8A'; // Origin Story Video
 
 if (playBtn && videoModal && closeBtn && youtubePlayer) {
+let savedScrollY = 0;
+let savedScrollX = 0;
+
+if (videoModal.parentNode !== document.documentElement) {
+  document.documentElement.appendChild(videoModal);
+}
+
 playBtn.addEventListener('click', () => {
+  // Save current scroll position before focus shifts
+  savedScrollY = window.scrollY || window.pageYOffset;
+  savedScrollX = window.scrollX || window.pageXOffset;
+
   // Set the YouTube URL with the video ID
   youtubePlayer.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`;
   videoModal.style.display = 'flex';
+  videoModal.style.position = 'fixed';
+  videoModal.style.inset = '0';
+  videoModal.style.width = '100vw';
+  videoModal.style.height = '100vh';
+  videoModal.style.height = '100dvh';
   document.body.style.overflow = 'hidden';
 });
 
-closeBtn.addEventListener('click', () => {
+function closeHomeVideoModal() {
   videoModal.style.display = 'none';
   youtubePlayer.src = '';
   document.body.style.overflow = 'auto';
-});
+
+  // Restore scroll position to prevent browser scroll-to-top
+  window.scrollTo(savedScrollX, savedScrollY);
+}
+
+closeBtn.addEventListener('click', closeHomeVideoModal);
 
 // Close modal when clicking outside the content
 videoModal.addEventListener('click', (e) => {
   if (e.target === videoModal) {
-    videoModal.style.display = 'none';
-    youtubePlayer.src = '';
-    document.body.style.overflow = 'auto';
+    closeHomeVideoModal();
   }
 });
 
 // Close modal with Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && videoModal.style.display !== 'none') {
-    videoModal.style.display = 'none';
-    youtubePlayer.src = '';
-    document.body.style.overflow = 'auto';
+    closeHomeVideoModal();
   }
 });
 } // end video modal
@@ -170,20 +187,20 @@ updateCarousel();
 setActiveButton(currentIndex, practiceButtons);
 } // end carousel if
 
-/* ══════════════════════════════════════
-   CASE STUDIES — Carousel + Scroll Animation
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CASE STUDIES â€” Carousel + Scroll Animation
    Place before </body>:  <script src="case-studies.js"></script>
-══════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 (function () {
   'use strict';
 
-  /* ── Config ── */
+  /* â”€â”€ Config â”€â”€ */
   const CARDS_PER_VIEW_DESKTOP = 3;
   const CARDS_PER_VIEW_TABLET  = 2;
   const CARDS_PER_VIEW_MOBILE  = 1;
 
-  /* ── Elements ── */
+  /* â”€â”€ Elements â”€â”€ */
   const track    = document.getElementById('csTrack');
   const prevBtn  = document.getElementById('csPrev');
   const nextBtn  = document.getElementById('csNext');
@@ -196,19 +213,19 @@ setActiveButton(currentIndex, practiceButtons);
 
   let currentIndex = 0;
 
-  /* ── Responsive: how many cards visible ── */
+  /* â”€â”€ Responsive: how many cards visible â”€â”€ */
   function getPerView() {
     if (window.innerWidth <= 480) return CARDS_PER_VIEW_MOBILE;
     if (window.innerWidth <= 720) return CARDS_PER_VIEW_TABLET;
     return CARDS_PER_VIEW_DESKTOP;
   }
 
-  /* ── Total "pages" ── */
+  /* â”€â”€ Total "pages" â”€â”€ */
   function maxIndex() {
     return Math.max(0, total - getPerView());
   }
 
-  /* ── Move track ── */
+  /* â”€â”€ Move track â”€â”€ */
   function goTo(index) {
     const perView = getPerView();
     currentIndex = Math.max(0, Math.min(index, maxIndex()));
@@ -226,13 +243,13 @@ setActiveButton(currentIndex, practiceButtons);
     updateButtons();
   }
 
-  /* ── Button states ── */
+  /* â”€â”€ Button states â”€â”€ */
   function updateButtons() {
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex();
   }
 
-  /* ── Dots ── */
+  /* â”€â”€ Dots â”€â”€ */
   function buildDots() {
     dotsWrap.innerHTML = '';
     const pages = maxIndex() + 1;
@@ -252,11 +269,11 @@ setActiveButton(currentIndex, practiceButtons);
     });
   }
 
-  /* ── Button listeners ── */
+  /* â”€â”€ Button listeners â”€â”€ */
   prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
   nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
 
-  /* ── Touch / swipe support ── */
+  /* â”€â”€ Touch / swipe support â”€â”€ */
   let touchStartX = 0;
   let touchEndX   = 0;
 
@@ -272,13 +289,13 @@ setActiveButton(currentIndex, practiceButtons);
     }
   }, { passive: true });
 
-  /* ── Keyboard nav ── */
+  /* â”€â”€ Keyboard nav â”€â”€ */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') goTo(currentIndex + 1);
     if (e.key === 'ArrowLeft')  goTo(currentIndex - 1);
   });
 
-  /* ── Rebuild on resize ── */
+  /* â”€â”€ Rebuild on resize â”€â”€ */
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -288,7 +305,7 @@ setActiveButton(currentIndex, practiceButtons);
     }, 120);
   });
 
-  /* ── Scroll-in animation (IntersectionObserver) ── */
+  /* â”€â”€ Scroll-in animation (IntersectionObserver) â”€â”€ */
   function initScrollAnimation() {
     if (!('IntersectionObserver' in window)) {
       // Fallback: just show everything
@@ -325,15 +342,50 @@ setActiveButton(currentIndex, practiceButtons);
     });
   }
 
-  /* ── Init ── */
+  /* â”€â”€ Init â”€â”€ */
   buildDots();
   goTo(total > getPerView() ? 1 : 0);
   initScrollAnimation();
 })();
 
-/* ══════════════════════════════════════
+/* Floating call widget viewport anchor */
+(function () {
+  'use strict';
+
+  function initFloatingCallAnchor() {
+    var callWidget = document.querySelector('.premium-float-call');
+    if (!callWidget) return;
+
+    if (callWidget.parentNode !== document.documentElement) {
+      document.documentElement.appendChild(callWidget);
+    }
+
+    function positionWidget() {
+      var isMobile = window.innerWidth <= 768;
+      var margin = isMobile ? 20 : 28;
+
+      callWidget.style.setProperty('position', 'fixed', 'important');
+      callWidget.style.setProperty('top', 'auto', 'important');
+      callWidget.style.setProperty('bottom', margin + 'px', 'important');
+      callWidget.style.setProperty('right', margin + 'px', 'important');
+    }
+
+    positionWidget();
+    window.addEventListener('resize', positionWidget);
+    window.addEventListener('orientationchange', positionWidget);
+    setTimeout(positionWidget, 350);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFloatingCallAnchor);
+  } else {
+    initFloatingCallAnchor();
+  }
+})();
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FAQ Accordion
-   ══════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 (function () {
   'use strict';
 
@@ -354,9 +406,9 @@ setActiveButton(currentIndex, practiceButtons);
   });
 })();
 
-/* ══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Team Section Carousel (After CS)
-   ══════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 (function () {
   'use strict';
 
@@ -454,37 +506,37 @@ setActiveButton(currentIndex, practiceButtons);
   });
 })();
 
-/* ──────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    FAQ Accordion Script
-   ────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function initFAQAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
   console.log('FAQ Accordion: Found ' + faqItems.length + ' items');
-  
+
   if (faqItems.length === 0) {
     console.warn('No FAQ items found');
     return;
   }
-  
+
   console.log('Attaching click handler to FAQ items');
-  
+
   faqItems.forEach((item, index) => {
     const question = item.querySelector('.faq-question');
-    
+
     if (!question) {
       console.warn('FAQ question button not found in item ' + index);
       return;
     }
-    
+
     question.addEventListener('click', (e) => {
       console.log('FAQ item ' + index + ' clicked');
       e.stopPropagation();
-      
+
       const isActive = item.classList.contains('active');
-      
+
       // Close all items
       faqItems.forEach(i => i.classList.remove('active'));
-      
+
       // Open clicked item if it wasn't active
       if (!isActive) {
         item.classList.add('active');
@@ -500,9 +552,9 @@ if (document.readyState === 'loading') {
   initFAQAccordion();
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    YouTube Video Modal
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function() {
   function initYTModal() {
     var backdrop = document.getElementById('ytModalBackdrop');
@@ -510,17 +562,35 @@ if (document.readyState === 'loading') {
     var closeBtn = document.getElementById('ytModalClose');
     if (!backdrop || !iframe) return;
 
+    var savedScrollY = 0;
+    var savedScrollX = 0;
+
     function openModal(ytId) {
+      savedScrollY = window.scrollY || window.pageYOffset;
+      savedScrollX = window.scrollX || window.pageXOffset;
+      window.scrollTo(0, 0);
+
       iframe.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0';
       backdrop.classList.add('active');
+      backdrop.style.display = 'flex';
+      backdrop.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
       backdrop.classList.remove('active');
       iframe.src = '';
+      backdrop.style.display = 'none';
+      backdrop.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+
+      // Restore scroll position to prevent browser scroll-to-top
+      window.scrollTo(savedScrollX, savedScrollY);
     }
+
+    // Expose functions globally for testimonials.html or other pages
+    window.openVideoPlayer = openModal;
+    window.closeVideoPlayer = closeModal;
 
     document.querySelectorAll('.cs-video-card').forEach(function(card) {
       var ytId = card.getAttribute('data-yt');
@@ -535,7 +605,11 @@ if (document.readyState === 'loading') {
       if (e.target === backdrop) closeModal();
     });
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape') {
+        if (backdrop.classList.contains('active')) {
+          closeModal();
+        }
+      }
     });
   }
 
@@ -546,9 +620,9 @@ if (document.readyState === 'loading') {
   }
 })();
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Contact Page Animations
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function() {
   function initCPAnimations() {
     var cpEls = document.querySelectorAll('.cp-animate');
@@ -577,9 +651,9 @@ if (document.readyState === 'loading') {
   }
 })();
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Hamburger / Mobile Nav
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function () {
   'use strict';
 
@@ -632,9 +706,9 @@ if (document.readyState === 'loading') {
   });
 })();
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    GLOBAL PREMIUM FORM SUBMISSIONS & TOASTS
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function () {
   'use strict';
 
@@ -650,10 +724,10 @@ if (document.readyState === 'loading') {
 
     var toast = document.createElement('div');
     toast.className = 'premium-toast';
-    
-    var iconHTML = '✓';
+
+    var iconHTML = 'âœ“';
     if (type === 'error' || type === 'warning') {
-      iconHTML = '✦';
+      iconHTML = 'âœ¦';
     }
 
     toast.innerHTML = [
@@ -711,7 +785,7 @@ if (document.readyState === 'loading') {
 
         var isValid = true;
         var requiredInputs = form.querySelectorAll('[required]');
-        
+
         requiredInputs.forEach(function (input) {
           if (!input.value.trim()) {
             isValid = false;
@@ -768,9 +842,9 @@ if (document.readyState === 'loading') {
   }
 })();
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Client Promise Button Navigation
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 (function() {
   const clientPromiseButtons = document.querySelectorAll('.client-promise-btn');
   clientPromiseButtons.forEach(button => {
@@ -787,7 +861,7 @@ if (document.readyState === 'loading') {
     });
   }
 
-  // Learn More on Firm History page → Ibrahim Awad; homepage uses <a href="about.html">.
+  // Learn More on Firm History page â†’ Ibrahim Awad; homepage uses <a href="about.html">.
   const path = window.location.pathname.replace(/\\/g, '/');
   const isAboutPage = /(^|\/)about\.html$/i.test(path);
   const learnMoreBtn = document.querySelector('.origin-story .learn-more-btn');
@@ -829,7 +903,7 @@ if (document.readyState === 'loading') {
       return;
     }
 
-    /* Use the wrapper's scroll position — wrapper is tall, hero is 100vh sticky inside */
+    /* Use the wrapper's scroll position â€” wrapper is tall, hero is 100vh sticky inside */
     var wrapperRect = wrapper.getBoundingClientRect();
     var scrollRange = Math.max(1, wrapper.offsetHeight - window.innerHeight);
     var progress = clamp((-wrapperRect.top) / scrollRange, 0, 1);
@@ -1107,7 +1181,7 @@ if (document.readyState === 'loading') {
         '<a href="contact.html">Free Case Review</a>',
         '<a href="tel:+17062033097">Call (706) 203-3097</a>',
         '<a href="practice-areas.html">Practice Areas</a>',
-        '<a href="testimonials.html">Client Reviews</a>',
+        '<a href="testimonials.html">Video Testimonials</a>',
         '<a href="education.html">Legal Education</a>'
       ].join('');
       navbar.appendChild(quickMenu);
@@ -1152,10 +1226,23 @@ if (document.readyState === 'loading') {
     if (!grid) return;
 
     const originalCards = Array.from(grid.querySelectorAll('.t-card'));
-    const dots = Array.from(document.querySelectorAll('.testimonials-section .t-dot'));
+    const dotsWrap = document.querySelector('.testimonials-section .t-dots');
     const prevBtn = document.getElementById('tPrevBtn');
     const nextBtn = document.getElementById('tNextBtn');
     if (originalCards.length === 0) return;
+
+    const slideCount = originalCards.length;
+
+    if (dotsWrap) {
+      dotsWrap.innerHTML = '';
+      originalCards.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.className = idx === 0 ? 't-dot active' : 't-dot';
+        dotsWrap.appendChild(dot);
+      });
+    }
+
+    const dots = Array.from(document.querySelectorAll('.testimonials-section .t-dot'));
 
     originalCards.forEach((card) => {
       const clone = card.cloneNode(true);
@@ -1164,12 +1251,11 @@ if (document.readyState === 'loading') {
     });
 
     const cards = Array.from(grid.querySelectorAll('.t-card'));
-    const slideCount = originalCards.length;
 
     let currentIndex = 0;
     let autoplayTimer = null;
     let loopResetTimer = null;
-    
+
     function getSlideStep() {
       const cardWidth = cards[0].getBoundingClientRect().width;
       const gap = parseInt(window.getComputedStyle(grid).gap) || 28;
@@ -1184,7 +1270,7 @@ if (document.readyState === 'loading') {
         grid.style.setProperty('transition', 'none', 'important');
       }
       grid.style.transform = `translateX(${translateX}px)`;
-      
+
       // Update dots state
       dots.forEach((dot, idx) => {
         dot.style.display = idx < slideCount ? '' : 'none';
@@ -1194,7 +1280,7 @@ if (document.readyState === 'loading') {
           dot.classList.remove('active');
         }
       });
-      
+
       if (prevBtn) prevBtn.classList.remove('disabled');
       if (nextBtn) nextBtn.classList.remove('disabled');
 
@@ -1322,5 +1408,61 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', setupSlider);
   } else {
     setupSlider();
+  }
+})();
+
+/* Impressive premium dynamic top bar above navbar */
+(function () {
+  'use strict';
+
+  function initPremiumTopBar() {
+    var navbar = document.querySelector('.navbar');
+    if (!navbar || document.querySelector('.premium-top-bar')) return;
+
+    var topBar = document.createElement('div');
+    topBar.className = 'premium-top-bar';
+    topBar.innerHTML = [
+      '<div class="premium-top-bar-inner">',
+      '  <div class="premium-top-bar-left">',
+      '    <span class="top-bar-badge">24/7 Free Consultation</span>',
+      '    <a href="tel:+17063883784" class="top-bar-item">',
+      '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="top-bar-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
+      '      <span>Call 1 (706) 388-3784</span>',
+      '    </a>',
+      '    <a href="sms:+13106930720" class="top-bar-item">',
+      '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="top-bar-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
+      '      <span>Text (310) 693-0720</span>',
+      '    </a>',
+      '  </div>',
+      '  <div class="premium-top-bar-right">',
+      '    <span class="social-label">Follow Us:</span>',
+      '    <div class="social-icons">',
+      '      <a href="https://www.facebook.com/theawadlawfirm" target="_blank" aria-label="Facebook" class="social-icon-link">',
+      '        <svg viewBox="0 0 24 24" class="social-svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>',
+      '      </a>',
+      '      <a href="https://www.linkedin.com/company/theawadlawfirmpc" target="_blank" aria-label="LinkedIn" class="social-icon-link">',
+      '        <svg viewBox="0 0 24 24" class="social-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>',
+      '      </a>',
+      '      <a href="https://x.com/theawadlawfirm" target="_blank" aria-label="Twitter" class="social-icon-link">',
+      '        <svg viewBox="0 0 24 24" class="social-svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>',
+      '      </a>',
+      '      <a href="https://www.youtube.com/@TheAwadLawFirmPCAtlanta" target="_blank" aria-label="YouTube" class="social-icon-link">',
+      '        <svg viewBox="0 0 24 24" class="social-svg"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29.05 29.05 0 0 0 1 12a29.05 29.05 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29.05 29.05 0 0 0 23 12a29.05 29.05 0 0 0-.46-5.58zM9.75 15.02V8.98L15 12l-5.25 3.02z"></path></svg>',
+      '      </a>',
+      '      <a href="https://www.instagram.com/awadlawfirm/" target="_blank" aria-label="Instagram" class="social-icon-link">',
+      '        <svg viewBox="0 0 24 24" class="social-svg-stroke"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>',
+      '      </a>',
+      '    </div>',
+      '  </div>',
+      '</div>'
+    ].join('\n');
+
+    navbar.parentNode.insertBefore(topBar, navbar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPremiumTopBar);
+  } else {
+    initPremiumTopBar();
   }
 })();

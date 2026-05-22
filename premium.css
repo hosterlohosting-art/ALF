@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* User's Color Scheme: Navy, Black, White */
@@ -966,7 +966,7 @@ body.home-page .contact-field textarea:focus {
   }
 }
 
-/* ─── BASE STYLES ─────────────────────────────────────── */
+/* â”€â”€â”€ BASE STYLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 body {
   background-color: var(--color-white);
   color: var(--color-text);
@@ -1015,7 +1015,7 @@ p {
   color: var(--color-muted);
 }
 
-/* ─── LAYOUT SYSTEM ───────────────────────────────────── */
+/* â”€â”€â”€ LAYOUT SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .container {
   width: min(1180px, calc(100% - 40px));
   margin-inline: auto;
@@ -1037,7 +1037,7 @@ section {
   section { padding: 64px 0; }
 }
 
-/* ─── BUTTONS ─────────────────────────────────────────── */
+/* â”€â”€â”€ BUTTONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .btn-primary {
   display: inline-block;
   background: var(--color-primary-action);
@@ -1080,7 +1080,7 @@ section {
   border-color: var(--color-white);
 }
 
-/* ─── NAVBAR ──────────────────────────────────────────── */
+/* â”€â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 header.navbar {
   background: var(--color-white) !important;
   border-bottom: 1px solid var(--color-border) !important;
@@ -1150,7 +1150,7 @@ nav a:hover, .nav-dropdown-toggle:hover {
   height: 24px;
 }
 
-/* ─── HERO SECTION ────────────────────────────────────── */
+/* â”€â”€â”€ HERO SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%) !important;
   padding: 120px 0 80px 0 !important;
@@ -1294,7 +1294,7 @@ textarea.input {
   background: var(--color-action-hover);
 }
 
-/* ─── MEDIA STRIP ─────────────────────────────────────── */
+/* â”€â”€â”€ MEDIA STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .media-strip {
   background: var(--color-off-white);
   padding: 40px 0;
@@ -1331,7 +1331,7 @@ textarea.input {
   object-fit: contain;
 }
 
-/* ─── ABOUT SECTION ───────────────────────────────────── */
+/* â”€â”€â”€ ABOUT SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .section-label {
   display: inline-block;
   font-size: 13px;
@@ -1376,7 +1376,7 @@ textarea.input {
   margin: 0;
 }
 
-/* ─── PRACTICE AREAS CARDS ────────────────────────────── */
+/* â”€â”€â”€ PRACTICE AREAS CARDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -1435,7 +1435,7 @@ textarea.input {
   gap: 12px;
 }
 
-/* ─── PROCESS TIMELINE ────────────────────────────────── */
+/* â”€â”€â”€ PROCESS TIMELINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .process-section {
   background: var(--color-off-white);
 }
@@ -1489,7 +1489,7 @@ textarea.input {
   margin-bottom: 12px;
 }
 
-/* ─── CTA BANNER ──────────────────────────────────────── */
+/* â”€â”€â”€ CTA BANNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cta-banner {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
   color: var(--color-white);
@@ -1509,7 +1509,7 @@ textarea.input {
   margin: 0 auto 48px auto;
 }
 
-/* ─── FOOTER ──────────────────────────────────────────── */
+/* â”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 footer {
   background: var(--color-primary-dark);
   color: var(--color-white);
@@ -1563,7 +1563,7 @@ footer {
   color: rgba(255,255,255,0.5);
 }
 
-/* ─── RESPONSIVE ──────────────────────────────────────── */
+/* â”€â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 991px) {
   .hero .container {
     grid-template-columns: 1fr;
@@ -1573,23 +1573,23 @@ footer {
   .hero-subheadline {
     margin: 0 auto 40px auto;
   }
-  
+
   .hero-cta-group {
     justify-content: center;
   }
-  
+
   .popular-topics {
     justify-content: center;
   }
-  
+
   .process-steps {
     grid-template-columns: 1fr;
   }
-  
+
   .process-step::after {
     display: none;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1599,19 +1599,19 @@ footer {
   header.navbar {
     padding: 0 20px !important;
   }
-  
+
   nav {
     display: none !important; /* Will need a mobile menu implementation */
   }
-  
+
   .header-contact {
     display: none;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
@@ -2583,9 +2583,9 @@ nav > a[href="contact.html"]:hover {
   stroke: var(--hero-blue-bright) !important;
 }
 
-/* Legacy hero min-height removed — wrapper approach controls height via sticky */
-/* Legacy margin-top removed — wrapper approach handles navbar offset */
-/* Legacy ::after clip-path removed — wrapper approach uses next-section shadow */
+/* Legacy hero min-height removed â€” wrapper approach controls height via sticky */
+/* Legacy margin-top removed â€” wrapper approach handles navbar offset */
+/* Legacy ::after clip-path removed â€” wrapper approach uses next-section shadow */
 
 body.home-page .premium-home-hero .premium-hero-bg::after {
   content: "";
@@ -2705,7 +2705,7 @@ body.home-page .premium-primary-btn {
 }
 
 body.home-page .premium-primary-btn::after {
-  content: "↗";
+  content: "â†—";
   display: inline-grid;
   place-items: center;
   width: 46px;
@@ -3113,7 +3113,7 @@ body.home-page .premium-hero-form button {
   }
 }
 
-/* OLD hero pin approach removed — superseded by the wrapper-based
+/* OLD hero pin approach removed â€” superseded by the wrapper-based
    sticky hero system at the bottom of this file (hero-pin-wrapper) */
 
 @media (max-width: 900px) {
@@ -3305,7 +3305,7 @@ body.home-page .practice-areas .btn-secondary {
 }
 
 body.home-page .practice-areas .btn-secondary::after {
-  content: "↗";
+  content: "â†—";
   display: grid;
   width: 46px;
   height: 46px;
@@ -4721,11 +4721,11 @@ body.home-page .contact-item-text a:hover {
     flex-direction: column !important;
     gap: 32px !important;
   }
-  
+
   body.home-page .newsletter-right {
     width: 100% !important;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 40px !important;
@@ -4736,26 +4736,26 @@ body.home-page .contact-item-text a:hover {
   .footer-newsletter-bar {
     padding: 32px 20px !important;
   }
-  
+
   body.home-page .newsletter-heading {
     font-size: 26px !important;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
-  
+
   .footer-col-brand {
     padding: 0 !important;
     align-items: flex-start !important;
     text-align: left !important;
   }
-  
+
   .footer-social-row {
     justify-content: flex-start !important;
   }
-  
+
   .footer-bottom-bar-inner {
     flex-direction: column !important;
     gap: 16px !important;
@@ -5042,7 +5042,7 @@ body.home-page .practice-col-card:hover .card-action-trigger svg {
     align-items: flex-start !important;
     gap: 20px !important;
   }
-  
+
   body.home-page .practice-columns-grid {
     grid-template-columns: 1fr !important;
   }
@@ -7265,7 +7265,7 @@ body.home-page .t-card-top {
 }
 
 body.home-page .t-card-top::before {
-  content: "“" !important;
+  content: "â€œ" !important;
   margin-right: auto !important;
   color: var(--awad-navy, #06162d) !important;
   font-family: Georgia, 'Times New Roman', serif !important;
@@ -7331,7 +7331,7 @@ body.home-page .t-reviewer::before {
 }
 
 body.home-page .t-card:nth-child(even) .t-reviewer::before {
-  content: "★" !important;
+  content: "â˜…" !important;
   background: #00b67a !important;
   color: #ffffff !important;
 }
@@ -9794,7 +9794,7 @@ body.home-page .team-section .team-card:nth-child(1)::after {
   }
 }
 
-/* Final hero scroll stage: pin-wrapper approach — hero pins while Ibrahim fades and form appears */
+/* Final hero scroll stage: pin-wrapper approach â€” hero pins while Ibrahim fades and form appears */
 body.home-page .premium-home-hero {
   --hero-reveal-progress: 0;
   --hero-image-progress: 0;
@@ -9803,7 +9803,7 @@ body.home-page .premium-home-hero {
 }
 
 @media (min-width: 901px) {
-  /* Wrapper provides the scroll range — hero pins inside it */
+  /* Wrapper provides the scroll range â€” hero pins inside it */
   body.home-page .hero-pin-wrapper {
     height: 200vh !important;
     min-height: 1400px !important;
@@ -9812,7 +9812,7 @@ body.home-page .premium-home-hero {
     background: #FCFAF7 !important;
   }
 
-  /* Hero is sticky inside the wrapper — stays pinned below the navbar */
+  /* Hero is sticky inside the wrapper â€” stays pinned below the navbar */
   body.home-page .premium-home-hero {
     position: sticky !important;
     top: 78px !important;
@@ -10271,24 +10271,24 @@ body.home-page .premium-hero-scroll-header {
     display: block !important;
     width: min(100%, 430px) !important;
     max-width: calc(100vw - 28px) !important;
-    height: 190px !important;
-    margin: 30px auto -32px !important; /* Touch slanted border nicely */
+    height: auto !important;
+    margin: 30px auto -94px !important; /* Sit flush with the mobile hero bottom */
     text-align: center !important;
     position: relative !important;
     z-index: 5 !important;
-    overflow: hidden !important;
-    border-radius: 0 0 28px 28px !important;
+    overflow: visible !important;
   }
 
   body.home-page .premium-mobile-team-img {
-    width: 118% !important;
-    height: 118% !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    height: auto !important;
     display: block !important;
     object-fit: contain !important;
     object-position: center bottom !important;
     filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.4)) !important;
     margin: 0 auto !important;
-    transform: translateX(-7%) translateY(8px) !important;
+    transform: translateY(6px) !important;
   }
 }
 
@@ -10314,29 +10314,29 @@ body.home-page .premium-hero-scroll-header {
   }
 }
 
-/* ═══════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TYPOGRAPHY OVERRIDES FOR ABOUT PAGE
-   ═══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-body.about-page h1, 
-body.about-page h2, 
-body.about-page h3, 
-body.about-page h4, 
-body.about-page h5, 
+body.about-page h1,
+body.about-page h2,
+body.about-page h3,
+body.about-page h4,
+body.about-page h5,
 body.about-page h6 {
   font-family: 'Outfit', sans-serif !important;
 }
 
-body.about-page p, 
-body.about-page span, 
-body.about-page a, 
+body.about-page p,
+body.about-page span,
+body.about-page a,
 body.about-page li {
   font-family: 'Manrope', sans-serif !important;
 }
 
-/* ═══════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TEAM OF EXPERTS PAGE RESET & STYLING OVERRIDES
-   ═══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 body.home-page.te-page .te-grid .team-card {
   width: 100% !important;
@@ -10611,9 +10611,9 @@ body.home-page .relative.bg-brand-dark p,
 }
 
 
-/* =─────────────────────────────────────────────
+/* =â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    GLOBAL CONTACT SECTION OVERRIDES & OVERLAP FIXES
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 /* Bulletproof desktop layout preservation and flex distribution */
 .contact-inner {
   max-width: 1240px !important;
@@ -10951,7 +10951,7 @@ body.home-page > section.bg-brand-dark:first-of-type .absolute.bg-brand-primary\
     line-height: 1.12 !important;
     letter-spacing: -0.02em !important;
   }
-  
+
   h2 {
     font-size: clamp(1.65rem, 6.5vw, 2.2rem) !important;
     line-height: 1.18 !important;
@@ -10968,23 +10968,23 @@ body.home-page > section.bg-brand-dark:first-of-type .absolute.bg-brand-primary\
     padding-top: 4.5rem !important;
     padding-bottom: 4.5rem !important;
   }
-  
+
   /* 3. Grid Gap Optimization: prevent overly sparse stacked columns */
   .grid.gap-12, .grid.gap-16, .grid.gap-20, .grid.gap-24 {
     gap: 2.25rem !important;
   }
-  
+
   /* 4. Center-align badges and small details on mobile */
   .inline-flex.items-center.space-x-3.bg-white\/10 {
     margin-bottom: 1.5rem !important;
   }
-  
+
   /* 5. Fluid buttons: make CTA rows wrap beautifully and feel balanced */
   .flex.flex-wrap.gap-4 {
     gap: 0.75rem !important;
     justify-content: center !important;
   }
-  
+
   .flex.flex-wrap.gap-4 a {
     width: 100% !important;
     text-align: center !important;
@@ -11085,7 +11085,7 @@ body {
 .scroll-reveal {
   opacity: 0 !important;
   transform: translateY(28px) !important;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
@@ -11093,7 +11093,7 @@ body {
 .scroll-reveal-left {
   opacity: 0 !important;
   transform: translateX(-28px) !important;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
@@ -11101,7 +11101,7 @@ body {
 .scroll-reveal-right {
   opacity: 0 !important;
   transform: translateX(28px) !important;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
@@ -11109,7 +11109,7 @@ body {
 .scroll-reveal-scale {
   opacity: 0 !important;
   transform: scale(0.96) !important;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
@@ -11201,7 +11201,7 @@ body {
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   border: 1px solid rgba(200, 167, 98, 0.35) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
               0 0 30px rgba(200, 167, 98, 0.12) !important;
   border-radius: 18px !important;
   color: #ffffff !important;
@@ -11308,9 +11308,9 @@ form button[type="submit"] {
 /* Opacity fix for submitting states */
 .submitting-state * { opacity: 0 !important; }
 
-/* ═══════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CASE STUDY GRID RESPONSIVENESS OVERRIDES
-   ═══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media (max-width: 1100px) {
   body.home-page .case-study-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -11323,17 +11323,17 @@ form button[type="submit"] {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
-  
+
   body.home-page .case-study-tile,
   body.home-page .case-study-stat {
     min-height: 240px !important;
   }
 }
 
-/* ═══════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PREMIUM DESIGN POLISH & RESPONSIVENESS PATCH
    FOR OUR TEAM MEMBERS SECTION (HOME PAGE)
-   ═══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* 1. Core Card Aesthetics & Transitions */
 body.home-page .team-card,
@@ -11343,8 +11343,8 @@ body.home-page .team-section .team-card {
   background: linear-gradient(145deg, #ffffff 0%, #f5f9fc 100%) !important;
   box-shadow: 0 10px 30px rgba(6, 22, 45, 0.03), 0 1px 3px rgba(198, 161, 91, 0.05) !important;
   transform: none !important;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
   z-index: 1 !important;
   position: relative !important;
@@ -11371,7 +11371,7 @@ body.home-page .team-section .team-photo img {
   object-position: center top !important;
   filter: grayscale(0.85) contrast(1.02) !important;
   transform: translate(-8%, -5%) scale(1) !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
@@ -11440,7 +11440,7 @@ body.home-page .team-section .team-card:nth-child(1) .team-role {
 
 /* 6. High-End Social Frosted Gold Badge */
 body.home-page .team-section .team-card::after {
-  content: "CONNECT →" !important;
+  content: "CONNECT â†’" !important;
   position: absolute !important;
   right: 18px !important;
   bottom: 18px !important;
@@ -11456,7 +11456,7 @@ body.home-page .team-section .team-card::after {
   border-radius: 999px !important;
   opacity: 0 !important;
   transform: translateY(5px) !important;
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   box-shadow: 0 4px 12px rgba(198, 161, 91, 0.25) !important;
   backdrop-filter: blur(4px) !important;
@@ -11481,7 +11481,7 @@ body.home-page .team-card:hover::after {
     grid-auto-rows: minmax(320px, auto) !important;
     gap: 20px !important;
   }
-  
+
   body.home-page .team-card:nth-child(1) {
     grid-column: span 2 !important;
     grid-row: auto !important;
@@ -11492,7 +11492,7 @@ body.home-page .team-card:hover::after {
   body.home-page .team-inner {
     width: calc(100% - 32px) !important;
   }
-  
+
   body.home-page .team-track,
   body.home-page .team-track[style] {
     grid-template-columns: 1fr !important;
@@ -11500,29 +11500,29 @@ body.home-page .team-card:hover::after {
     grid-auto-rows: auto !important;
     gap: 16px !important;
   }
-  
+
   body.home-page .team-card:nth-child(1) {
     grid-column: span 1 !important;
     grid-row: auto !important;
   }
-  
+
   body.home-page .team-card {
     aspect-ratio: 4 / 5 !important;
     height: auto !important;
   }
-  
+
   body.home-page .team-section .team-card .team-name {
     font-size: 20px !important;
   }
-  
+
   body.home-page .team-section .team-card:nth-child(1) .team-name {
     font-size: 26px !important;
   }
 }
 
-/* ═══════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    8. PREMIUM TYPOGRAPHY & ALIGNMENT REFINEMENT
-   ═══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 body.home-page .team-heading {
   max-width: 900px !important;
   margin: 0 auto 48px !important;
@@ -11580,9 +11580,9 @@ body.home-page .team-all-btn {
   }
 }
 
-/* ═══════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    9. NAVIGATION DOUBLE UNDERLINE BUGFIX
-   ═══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 /* Disable legacy underline (::before) on top-level navbar links to prevent double lines */
 .navbar nav a::before,
 .navbar .nav-dropdown-toggle::before {
@@ -11647,7 +11647,7 @@ body.home-page .premium-home-hero h1 {
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
-  animation: 
+  animation:
     heroFadeUp 0.95s cubic-bezier(0.16, 1, 0.3, 1) both,
     headlineShimmer 9s infinite linear !important;
   animation-delay: 0.2s, 2.5s !important;
@@ -11704,7 +11704,7 @@ body.home-page .premium-video-note {
       filter: none;
     }
   }
-  
+
   body.home-page .premium-home-hero .premium-hero-bg img {
     animation: heroImgFadeInMobile 1.2s cubic-bezier(0.16, 1, 0.3, 1) both !important;
     animation-delay: 0.25s;
@@ -11739,8 +11739,8 @@ body.home-page .premium-primary-btn::before {
 
 body.home-page .premium-primary-btn:hover {
   transform: translateY(-2px) scale(1.012) !important;
-  box-shadow: 
-    0 28px 65px rgba(91,168,255,0.48), 
+  box-shadow:
+    0 28px 65px rgba(91,168,255,0.48),
     inset 0 1px 0 rgba(255,255,255,0.6) !important;
 }
 
@@ -11811,7 +11811,7 @@ body.home-page .premium-hero-bg::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background: 
+  background:
     radial-gradient(circle at 20% 30%, rgba(14, 52, 98, 0.72) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(91, 168, 255, 0.18) 0%, transparent 60%) !important;
   z-index: 1 !important;
@@ -11864,8 +11864,8 @@ body.home-page .premium-hero-stat {
 body.home-page .premium-hero-stat:hover {
   transform: translateY(-6px) scale(1.015) !important;
   border-color: rgba(120, 189, 255, 0.35) !important;
-  box-shadow: 
-    0 38px 80px rgba(0, 0, 0, 0.38), 
+  box-shadow:
+    0 38px 80px rgba(0, 0, 0, 0.38),
     0 0 25px rgba(91, 168, 255, 0.18) !important;
 }
 
@@ -11949,7 +11949,7 @@ body.home-page .premium-hero-form textarea:focus {
   outline: none !important;
   border-color: rgba(91, 168, 255, 0.85) !important;
   background: rgba(8, 25, 49, 0.88) !important;
-  box-shadow: 
+  box-shadow:
     0 0 22px rgba(91, 168, 255, 0.24),
     inset 0 1px 3px rgba(0, 0, 0, 0.25) !important;
   transform: translateY(-1px) !important;

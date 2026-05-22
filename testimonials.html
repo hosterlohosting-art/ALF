@@ -1,27 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Our Clients Say | The Awad Law Firm</title>
-    
-    <link rel="icon" type="image/png" href="assets/awadlawfirmlogo.png">
-    
+    <title>Video Testimonials | The Awad Law Firm</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
     <!-- Local Stylesheets (Preserved) -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="premium.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts: Outfit (Headings) & Manrope (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Schema Markup (SEO Preserved) -->
     <script type="application/ld+json">
     {
@@ -30,7 +30,7 @@
       "name": "Awad Law Firm",
       "url": "https://theawadlawfirm.com",
       "logo": "https://theawadlawfirm.com/assets/awadlawfirmlogo.png",
-      "telephone": "+17062033097",
+      "telephone": "+17063883784",
       "description": "Top-rated personal injury law firm serving Marietta, Marietta, and Dalton, Georgia.",
       "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
       "serviceArea": { "@type": "State", "name": "Georgia" },
@@ -52,7 +52,7 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://theawadlawfirm.com/index.html"},
         {"@type": "ListItem", "position": 2, "name": "Results", "item": "https://theawadlawfirm.com/results.html"},
-        {"@type": "ListItem", "position": 3, "name": "Testimonials", "item": "https://theawadlawfirm.com/testimonials.html"}
+        {"@type": "ListItem", "position": 3, "name": "Video Testimonials", "item": "https://theawadlawfirm.com/testimonials.html"}
       ]
     }
     </script>
@@ -93,21 +93,21 @@
     <style>
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #F9FAFC; }
-        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 5px; }
+        ::-webkit-scrollbar-track { background: #060B11; }
+        ::-webkit-scrollbar-thumb { background: #1A2736; border-radius: 5px; border: 2px solid #060B11; }
         ::-webkit-scrollbar-thumb:hover { background: #6CA1E6; }
 
-        /* Outlined Text Watermark on White Background (Squeezing fixed with bg-match & letter spacing) */
+        /* Outlined Text Watermark on White Background */
         .text-stroke-white-bg {
             color: #ffffff;
-            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.15);
+            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.12);
             letter-spacing: 0.08em;
         }
 
         /* Outlined Text Watermark on Off-White Background */
         .text-stroke-offwhite-bg {
             color: #F9FAFC;
-            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.15);
+            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.12);
             letter-spacing: 0.08em;
         }
 
@@ -117,37 +117,20 @@
             to { transform: rotate(360deg); }
         }
         .animate-slow-spin {
-            animation: slow-spin 20s linear infinite;
+            animation: slow-spin 25s linear infinite;
         }
 
-        /* Gold Star Shimmer Animation */
-        @keyframes star-shimmer {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.15); filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.6)); }
+        /* Shimmer Play Ripple effect */
+        @keyframes play-ripple {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
         }
-        .shimmer-star {
-            animation: star-shimmer 2s ease-in-out infinite;
-        }
-
-        /* Hide scrollbar for video carousel but allow scrolling */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Floating Animation for Bento Grid Panels */
-        @keyframes subtle-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        .animate-float-slow {
-            animation: subtle-float 6s ease-in-out infinite;
-        }
-        .animate-float-delayed {
-            animation: subtle-float 6s ease-in-out infinite;
-            animation-delay: 3s;
+        .animate-ripple {
+            animation: play-ripple 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
         }
     </style>
 </head>
-<body class="home-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
+<body class="home-page bg-brand-dark text-white font-body antialiased overflow-x-hidden">
 
     <!-- ==========================================
          EXACT HOMEPAGE HEADER NAVIGATION
@@ -197,7 +180,7 @@
     <span class="nav-dropdown-label">Our Track Record</span>
     <hr class="nav-dropdown-divider">
     <a href="results.html" class="nav-dropdown-item">Case Studies</a>
-    <a href="testimonials.html" class="nav-dropdown-item active">Client Testimonials</a>
+    <a href="testimonials.html" class="nav-dropdown-item active">Video Testimonials</a>
     <a href="reviews.html" class="nav-dropdown-item">Reviews</a>
   </div>
 </div>
@@ -247,10 +230,10 @@
 <a href="contact.html" class="nav-btn">
 
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M22 16.92v3a2 2 0 0 1-2.18 2 
-19.79 19.79 0 0 1-8.63-3.07 
-19.5 19.5 0 0 1-6-6 
-19.79 19.79 0 0 1-3.07-8.63 
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2
+19.79 19.79 0 0 1-8.63-3.07
+19.5 19.5 0 0 1-6-6
+19.79 19.79 0 0 1-3.07-8.63
 2 2 0 0 1 2-2h3
 a2 2 0 0 1 2 1.72
 c.12.91.35 1.8.68 2.65
@@ -275,536 +258,435 @@ A2 2 0 0 1 22 16.92z"></path>
 
 </header>
 
-    <!-- Premium Testimonials Hero Section -->
-    <section class="relative pt-32 pb-44 lg:pt-40 lg:pb-52 overflow-hidden z-10 bg-brand-dark">
+    <!-- Premium Cinematic Spotlight Hero Section (Optimized/Shortened Height) -->
+    <section class="relative pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden z-10 bg-brand-dark border-b border-white/5">
         <!-- Dynamic Colorful Gradient Background -->
         <div class="absolute inset-0 bg-gradient-to-br from-[#060B11] via-[#0C1827] to-[#1a365d] z-0 opacity-95"></div>
-        
+
         <!-- Glowing Orbs / Colorful Shapes for the "Wow" Effect -->
         <div class="absolute inset-0 overflow-hidden z-0 pointer-events-none mix-blend-screen">
             <!-- Top Left Vibrant Glow -->
-            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3b82f6]/40 blur-[120px] rounded-full animate-pulse"></div>
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3b82f6]/30 blur-[120px] rounded-full animate-pulse"></div>
             <!-- Bottom Right Sky Blue Glow -->
-            <div class="absolute -bottom-32 -right-10 w-[700px] h-[700px] bg-brand-primary/30 blur-[150px] rounded-full"></div>
+            <div class="absolute -bottom-32 -right-10 w-[700px] h-[700px] bg-brand-primary/25 blur-[150px] rounded-full"></div>
             <!-- Center Accent Glow -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563eb]/25 blur-[120px] rounded-full animate-slow-spin"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563eb]/20 blur-[120px] rounded-full animate-slow-spin"></div>
         </div>
 
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Left: Hero Headline and Description -->
-                <div class="lg:col-span-7 text-left space-y-8">
+
+                <!-- Left: Hero Headline and CTAs -->
+                <div class="lg:col-span-7 text-left space-y-6">
                     <!-- Glassmorphism Tag -->
-                    <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4 shadow-2xl relative">
-                        <span class="relative flex h-3 w-3">
+                    <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-2xl relative">
+                        <span class="relative flex h-2.5 w-2.5">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-primary"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-primary"></span>
                         </span>
-                        <span>Client Praises & Reviews</span>
+                        <span>Now Playing: Premium Client Broadcasts</span>
                     </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-heading font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl">
-                        What Our<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-pale to-brand-primary drop-shadow-sm">Clients Say</span>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4.8rem] font-heading font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl">
+                        Case Story<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-white to-brand-pale drop-shadow-sm">Video Testimonials</span>
                     </h1>
 
-                    <p class="text-lg md:text-xl text-white/80 font-medium max-w-2xl leading-relaxed drop-shadow-md">
-                        Real stories, real recovery, and real justice. Discover why injured individuals throughout Georgia trust us to champion their claims.
+                    <p class="text-base md:text-lg text-white/80 font-medium max-w-2xl leading-relaxed drop-shadow-md">
+                        Explore real, unscripted testimonials from the clients we fought for. See how the Awad Squad holds multi-billion dollar insurance firms accountable to win maximum recovery.
                     </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#video-grid-section" class="group bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-4 px-8 rounded-full flex items-center transition-all duration-300 shadow-[0_10px_20px_rgba(108,161,230,0.3)] hover:-translate-y-0.5 text-xs tracking-widest uppercase">
+                            Browse the Vault
+                            <i data-lucide="arrow-down" class="w-4 h-4 ml-2 animate-bounce"></i>
+                        </a>
+                        <button class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-full transition-all duration-300 text-xs tracking-widest uppercase flex items-center space-x-2">
+                            <i data-lucide="award" class="w-4 h-4 text-brand-primary"></i>
+                            <span>15 Featured Victories</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Right: Ultra-Premium Asymmetric Bento-Glass Trust Dashboard -->
-                <div class="lg:col-span-5 relative grid grid-cols-12 gap-4">
-                    
-                    <!-- Decorative background glow for the Bento grid -->
-                    <div class="absolute inset-0 bg-brand-primary/10 blur-3xl rounded-[3rem] transform scale-95 pointer-events-none"></div>
-                    
-                    <!-- Panel 1: Primary Score Card (Frosted Glass) -->
-                    <div class="col-span-7 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 shadow-2xl flex flex-col justify-between h-56 animate-float-slow group hover:border-brand-primary/40 transition-colors duration-300">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold tracking-widest text-white/60 uppercase">Scorecard</span>
-                            <div class="w-2.5 h-2.5 rounded-full bg-brand-primary animate-pulse"></div>
+                <!-- Right: Active Cinematic Showcase Preview -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="absolute inset-0 bg-brand-primary/15 blur-3xl rounded-[3rem] transform scale-95 pointer-events-none"></div>
+
+                    <div onclick="openVideoPlayer('w0f3OkycnvU')" class="relative z-10 w-full max-w-sm rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/10 bg-brand-navy group cursor-pointer">
+                        <img id="featured-thumb" src="https://img.youtube.com/vi/w0f3OkycnvU/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/w0f3OkycnvU/hqdefault.jpg';" alt="Featured Story Thumbnail" class="w-full h-64 object-cover object-center filter group-hover:scale-103 transition-transform duration-1000 brightness-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
+
+                        <!-- Pulse Play Center Badge -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(108,161,230,0.4)] group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                            </div>
                         </div>
-                        <div class="my-auto">
-                            <div class="text-5xl font-heading font-black text-white leading-none">5.0</div>
-                            <p class="text-xs text-brand-primary font-bold uppercase tracking-widest mt-2">Verified Rating</p>
-                        </div>
-                        <div class="flex items-center space-x-1 text-brand-gold">
-                            <i data-lucide="star" class="w-4 h-4 fill-current shimmer-star" style="animation-delay: 0.1s"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current shimmer-star" style="animation-delay: 0.2s"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current shimmer-star" style="animation-delay: 0.3s"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current shimmer-star" style="animation-delay: 0.4s"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current shimmer-star" style="animation-delay: 0.5s"></i>
+
+                        <!-- Card text layer -->
+                        <div class="absolute bottom-6 left-6 right-6 text-white text-left">
+                            <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Featured Victory</span>
+                            <h4 class="font-heading font-black text-lg leading-tight">I Trust Him With My Life</h4>
                         </div>
                     </div>
-
-                    <!-- Panel 2: Verified Volume Card -->
-                    <div class="col-span-5 bg-gradient-to-br from-brand-charcoal to-brand-navy rounded-[2.5rem] p-6 border border-white/5 shadow-2xl flex flex-col justify-between h-56 animate-float-delayed group hover:border-brand-primary/30 transition-colors duration-300">
-                        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/10 text-brand-primary">
-                            <i data-lucide="users" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-heading font-black text-white leading-none">120+</div>
-                            <p class="text-[10px] text-white/50 font-bold uppercase tracking-widest mt-1.5">Client Cases</p>
-                        </div>
-                    </div>
-
-                    <!-- Panel 3: Premium Launch Actions -->
-                    <div class="col-span-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4 hover:border-brand-primary/40 transition-colors duration-300">
-                        <div class="text-left space-y-1">
-                            <h4 class="text-sm font-heading font-black text-white">Share Your Story</h4>
-                            <p class="text-xs text-white/50 font-semibold">Help other injured Georgians find justice.</p>
-                        </div>
-                        <div class="flex items-center space-x-3 w-full sm:w-auto">
-                            <a href="contact.html" class="flex-1 sm:flex-initial bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-3 px-6 rounded-full text-xs tracking-widest uppercase transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 whitespace-nowrap">
-                                <i data-lucide="google" class="w-4 h-4 text-white"></i>
-                                <span>Write a Review</span>
-                            </a>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
         </div>
 
-        <!-- Sleek Angled Bottom Divider connecting to the content -->
+        <!-- Sleek Angled Bottom Divider connecting to content -->
         <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
             <svg class="relative block w-full h-[60px] md:h-[120px]" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,120 L1200,120 L1200,0 L0,120 Z" fill="#ffffff"></path>
+                <path d="M0,120 L1200,120 L1200,0 L0,120 Z" fill="#0C1827"></path>
             </svg>
         </div>
     </section>
 
-    <!-- Written Client Praise Cards Grid (Luxury Overhaul) -->
-    <section class="py-24 bg-white relative z-20 overflow-hidden">
-        
-        <!-- Large Elegant Watermark Text in Background (Outlines perfected with white color hide-overlapping trick) -->
-        <div class="absolute top-[20%] right-[-5%] text-[10vw] font-heading font-black text-stroke-white-bg whitespace-nowrap pointer-events-none select-none z-0">
-            AWAD ADVOCACY
+    <!-- Main Vault Directory Section -->
+    <section id="video-grid-section" class="py-24 bg-brand-navy relative z-20 overflow-hidden">
+
+        <!-- Large Elegant Watermark Text in Background -->
+        <div class="absolute top-[15%] right-[-5%] text-[10vw] font-heading font-black text-stroke-white-bg whitespace-nowrap pointer-events-none select-none z-0 opacity-5">
+            PROVEN RESULTS
         </div>
 
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
-            
-            <div class="text-center mb-12">
-                <p class="text-brand-primary text-xs font-bold tracking-widest uppercase mb-3">Praise In Writing</p>
-                <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-navy tracking-tight leading-none mb-10">
-                    The Voices of Triumph
-                </h2>
-                
-                <!-- Wow Factor: Category Filter Buttons -->
-                <div class="flex flex-wrap items-center justify-center gap-3 max-w-3xl mx-auto">
-                    <button data-filter="all" class="filter-btn bg-brand-primary text-white font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300 shadow-[0_8px_20px_rgba(108,161,230,0.3)]">
-                        All Reviews
-                    </button>
-                    <button data-filter="car-accidents" class="filter-btn bg-white text-brand-navy border border-brand-border hover:border-brand-primary/40 hover:bg-brand-pale/50 font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300">
-                        Car Accidents
-                    </button>
-                    <button data-filter="premises-liability" class="filter-btn bg-white text-brand-navy border border-brand-border hover:border-brand-primary/40 hover:bg-brand-pale/50 font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300">
-                        Premises Liability
-                    </button>
-                    <button data-filter="personal-injury" class="filter-btn bg-white text-brand-navy border border-brand-border hover:border-brand-primary/40 hover:bg-brand-pale/50 font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300">
-                        Personal Injury
-                    </button>
-                </div>
+
+            <!-- Category Filtering Bar -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-20">
+                <button onclick="filterVault('all')" class="filter-btn bg-brand-primary text-white font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300 shadow-[0_8px_20px_rgba(108,161,230,0.3)]">
+                    All Stories
+                </button>
+                <button onclick="filterVault('car-accidents')" class="filter-btn bg-brand-dark text-white/70 border border-white/10 hover:border-brand-primary/40 hover:bg-brand-charcoal font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300">
+                    Car Wrecks
+                </button>
+                <button onclick="filterVault('big-wins')" class="filter-btn bg-brand-dark text-white/70 border border-white/10 hover:border-brand-primary/40 hover:bg-brand-charcoal font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300">
+                    Big Wins
+                </button>
+                <button onclick="filterVault('personal-injury')" class="filter-btn bg-brand-dark text-white/70 border border-white/10 hover:border-brand-primary/40 hover:bg-brand-charcoal font-bold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition-all duration-300">
+                    Personal Injury
+                </button>
             </div>
 
-            <!-- Luxury Masonry-Style Columns Grid (Strictly Mobile-Responsive) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 transition-all duration-500" id="reviews-container">
-                
-                <!-- Card 1 (Personal Injury) -->
-                <div data-category="personal-injury" class="review-card group bg-brand-offwhite rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.15)] transition-all duration-300 flex flex-col justify-between relative overflow-hidden h-full">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pale rounded-bl-[8rem] group-hover:bg-brand-primary/10 transition-colors duration-500 z-0"></div>
-                    <i data-lucide="quote" class="w-16 h-16 text-brand-primary/10 absolute top-8 right-8 z-10 pointer-events-none"></i>
-                    
-                    <div class="space-y-6 relative z-10">
-                        <div class="flex items-center space-x-1 text-brand-gold">
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+            <!-- Majestic 4-Column Video Grid -->
+            <div id="vault-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                <!-- Video 1 -->
+                <div data-category="big-wins" onclick="openVideoPlayer('w0f3OkycnvU')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/w0f3OkycnvU/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/w0f3OkycnvU/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
                         </div>
-                        
-                        <p class="text-brand-charcoal text-base md:text-lg leading-relaxed font-medium">
-                            Let me start off by stating my case was resolved perfectly! Mr. Awad and his team of professionals operate like a well oiled machine. Each and every step is intentional. Everyone is on the same page, which is hard to find when looking for an attorney.
-                        </p>
-                    </div>
-
-                    <div class="pt-8 border-t border-brand-border mt-8 flex justify-between items-center relative z-10">
-                        <div>
-                            <h4 class="font-heading font-black text-brand-navy text-lg leading-none">Anthony J.</h4>
-                            <span class="text-xs text-brand-muted font-bold uppercase mt-1 inline-block tracking-wider">San Francisco, CA</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-primary tracking-widest uppercase">3 Months Ago</span>
-                    </div>
-                </div>
-
-                <!-- Card 2 (Car Accidents) -->
-                <div data-category="car-accidents" class="review-card group bg-brand-offwhite rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.15)] transition-all duration-300 flex flex-col justify-between relative overflow-hidden h-full">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pale rounded-bl-[8rem] group-hover:bg-brand-primary/10 transition-colors duration-500 z-0"></div>
-                    <i data-lucide="quote" class="w-16 h-16 text-brand-primary/10 absolute top-8 right-8 z-10 pointer-events-none"></i>
-                    
-                    <div class="space-y-6 relative z-10">
-                        <div class="flex items-center space-x-1 text-brand-gold">
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        </div>
-                        
-                        <p class="text-brand-charcoal text-base md:text-lg leading-relaxed font-medium">
-                            If you're looking for a law firm that will go over and beyond, the Awad Law Firm is it. It was my first time going through an incident like this. After calling Ibrahim Awad at The Awad Law Firm, I felt someone would be there to help me in my situation...
-                        </p>
-                    </div>
-
-                    <div class="pt-8 border-t border-brand-border mt-8 flex justify-between items-center relative z-10">
-                        <div>
-                            <h4 class="font-heading font-black text-brand-navy text-lg leading-none">Luna S.</h4>
-                            <span class="text-xs text-brand-muted font-bold uppercase mt-1 inline-block tracking-wider">Lawrenceville, GA</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-primary tracking-widest uppercase">4 Months Ago</span>
-                    </div>
-                </div>
-
-                <!-- Card 3 (Premises Liability) -->
-                <div data-category="premises-liability" class="review-card group bg-brand-offwhite rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col justify-between relative overflow-hidden h-full">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pale rounded-bl-[8rem] group-hover:bg-brand-primary/10 transition-colors duration-500 z-0"></div>
-                    <i data-lucide="quote" class="w-16 h-16 text-brand-primary/10 absolute top-8 right-8 z-10 pointer-events-none"></i>
-                    
-                    <div class="space-y-6 relative z-10">
-                        <div class="flex items-center space-x-1 text-brand-gold">
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        </div>
-                        
-                        <p class="text-brand-charcoal text-base md:text-lg leading-relaxed font-medium">
-                            I find Mr. Awad to be the most honest, compassionate, caring premises liability attorney. It was a pleasure to deal with since the initial consultation. He focused his practice on providing exceptional legal representation having been injured in a slip and fall.
-                        </p>
-                    </div>
-
-                    <div class="pt-8 border-t border-brand-border mt-8 flex justify-between items-center relative z-10">
-                        <div>
-                            <h4 class="font-heading font-black text-brand-navy text-lg leading-none">Ibis S.</h4>
-                            <span class="text-xs text-brand-muted font-bold uppercase mt-1 inline-block tracking-wider">Acworth, GA</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-primary tracking-widest uppercase">4 Months Ago</span>
-                    </div>
-                </div>
-
-                <!-- Card 4 (Personal Injury) -->
-                <div data-category="personal-injury" class="review-card group bg-brand-offwhite rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col justify-between relative overflow-hidden h-full">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pale rounded-bl-[8rem] group-hover:bg-brand-primary/10 transition-colors duration-500 z-0"></div>
-                    <i data-lucide="quote" class="w-16 h-16 text-brand-primary/10 absolute top-8 right-8 z-10 pointer-events-none"></i>
-                    
-                    <div class="space-y-6 relative z-10">
-                        <div class="flex items-center space-x-1 text-brand-gold">
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        </div>
-                        
-                        <p class="text-brand-charcoal text-base md:text-lg leading-relaxed font-medium">
-                            Ibrahim J Awad is a man who has shown compassion throughout my entire case. An attorney who has attributes of honesty and transparency which is rare in his industry. If you are searching for an attorney who believes in you and has your best interest along with a great success rate. Then you need to contact his office.
-                        </p>
-                    </div>
-
-                    <div class="pt-8 border-t border-brand-border mt-8 flex justify-between items-center relative z-10">
-                        <div>
-                            <h4 class="font-heading font-black text-brand-navy text-lg leading-none">Adrena H.</h4>
-                            <span class="text-xs text-brand-muted font-bold uppercase mt-1 inline-block tracking-wider">Kennesaw, GA</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-primary tracking-widest uppercase">6 Months Ago</span>
-                    </div>
-                </div>
-
-                <!-- Card 5 (Car Accidents) -->
-                <div data-category="car-accidents" class="review-card group bg-brand-offwhite rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col justify-between relative overflow-hidden h-full">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pale rounded-bl-[8rem] group-hover:bg-brand-primary/10 transition-colors duration-500 z-0"></div>
-                    <i data-lucide="quote" class="w-16 h-16 text-brand-primary/10 absolute top-8 right-8 z-10 pointer-events-none"></i>
-                    
-                    <div class="space-y-6 relative z-10">
-                        <div class="flex items-center space-x-1 text-brand-gold">
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        </div>
-                        
-                        <p class="text-brand-charcoal text-base md:text-lg leading-relaxed font-medium">
-                            Absolutely incredible experience after my trucking accident. They negotiated directly with the insurance commercial handlers and got me more than three times what I initially expected. Ibrahim and the squad answered my texts immediately.
-                        </p>
-                    </div>
-
-                    <div class="pt-8 border-t border-brand-border mt-8 flex justify-between items-center relative z-10">
-                        <div>
-                            <h4 class="font-heading font-black text-brand-navy text-lg leading-none">Marcus G.</h4>
-                            <span class="text-xs text-brand-muted font-bold uppercase mt-1 inline-block tracking-wider">Marietta, GA</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-primary tracking-widest uppercase">1 Month Ago</span>
-                    </div>
-                </div>
-
-                <!-- Card 6 (Premises Liability) -->
-                <div data-category="premises-liability" class="review-card group bg-brand-offwhite rounded-[2.5rem] p-8 md:p-10 border border-brand-border/60 hover:border-brand-primary/40 hover:bg-white hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col justify-between relative overflow-hidden h-full">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pale rounded-bl-[8rem] group-hover:bg-brand-primary/10 transition-colors duration-500 z-0"></div>
-                    <i data-lucide="quote" class="w-16 h-16 text-brand-primary/10 absolute top-8 right-8 z-10 pointer-events-none"></i>
-                    
-                    <div class="space-y-6 relative z-10">
-                        <div class="flex items-center space-x-1 text-brand-gold">
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        </div>
-                        
-                        <p class="text-brand-charcoal text-base md:text-lg leading-relaxed font-medium">
-                            If you have been injured on someone else's premises, hire the Karate Attorney! He literally treats you like family. Unreasonable hospitality is not just a slogan, it is their exact standard of operational excellence. Truly thankful!
-                        </p>
-                    </div>
-
-                    <div class="pt-8 border-t border-brand-border mt-8 flex justify-between items-center relative z-10">
-                        <div>
-                            <h4 class="font-heading font-black text-brand-navy text-lg leading-none">Sophia K.</h4>
-                            <span class="text-xs text-brand-muted font-bold uppercase mt-1 inline-block tracking-wider">Dalton, GA</span>
-                        </div>
-                        <span class="text-xs font-bold text-brand-primary tracking-widest uppercase">2 Months Ago</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Wow Factor: Call To Action Banner For Reviewing On Google -->
-    <section class="py-20 bg-brand-pale relative overflow-hidden z-20 border-t border-brand-border/40">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-pale via-brand-pale/50 to-brand-offwhite z-0"></div>
-        <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center space-y-6">
-            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-brand-border/50 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <i data-lucide="star" class="w-8 h-8 text-brand-gold fill-current shimmer-star"></i>
-            </div>
-            <h3 class="text-3xl md:text-4xl font-heading font-black text-brand-navy">Have We Helped You Secure Justice?</h3>
-            <p class="text-brand-muted text-lg max-w-2xl mx-auto">Your story helps other injured Georgians find the aggressive advocacy they deserve. Please take a moment to rate us on Google.</p>
-            <div class="pt-4">
-                <a href="contact.html" class="inline-flex items-center space-x-3 bg-[#1A2736] hover:bg-[#0C1827] text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-[0_10px_20px_rgba(12,24,39,0.15)] hover:-translate-y-0.5 group">
-                    <i data-lucide="google" class="w-5 h-5 text-brand-primary"></i>
-                    <span>Review Us on Google</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Video Testimonials Showcase -->
-    <section class="py-24 bg-brand-offwhite relative z-20 overflow-hidden border-t border-brand-border/40">
-        
-        <!-- Large Elegant Watermark Text in Background (Outlines perfected with offwhite color hide-overlapping trick) -->
-        <div class="absolute top-[20%] left-[-5%] text-[10vw] font-heading font-black text-stroke-offwhite-bg whitespace-nowrap pointer-events-none select-none z-0">
-            CLIENT VOICES
-        </div>
-
-        <div class="container mx-auto px-6 max-w-[90rem] relative z-10">
-            
-            <div class="flex flex-col sm:flex-row justify-between items-end sm:items-center mb-16 gap-4">
-                <div class="space-y-3 text-left">
-                    <p class="text-brand-primary text-xs font-bold tracking-widest uppercase">Cinematic Stories</p>
-                    <h2 class="text-4xl font-heading font-black text-brand-navy tracking-tight leading-none">Video Testimonials</h2>
-                </div>
-                
-                <!-- Carousel Controls (Now fully operational with JS script below) -->
-                <div class="flex space-x-3">
-                    <button id="btn-prev" class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-muted hover:border-brand-primary hover:text-brand-primary hover:bg-white transition-all duration-300 hover:shadow-md bg-transparent">
-                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                    </button>
-                    <button id="btn-next" class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-muted hover:border-brand-primary hover:text-brand-primary hover:bg-white transition-all duration-300 hover:shadow-md bg-transparent">
-                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Video Cards Scroll Wrapper with unique ID -->
-            <div id="video-slider" class="flex overflow-x-auto gap-8 hide-scrollbar pb-8 snap-x snap-mandatory">
-                
-                <!-- Video Card 1: 795k Win -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="t7gQ7Zm1gEM">
-                    <img src="assets/CaseStudies/795kwin.png" alt="795K Win Case Study" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Video Card 2: Convenient & Stress-Free -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="3vrME_Ft0LM">
-                    <img src="assets/CaseStudies/convenient.png" alt="Convenient & Stress-Free Experience" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
-                            </div>
-                        </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Case Victory</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">I Trust Him With My Life</h4>
                     </div>
                 </div>
 
-                <!-- Video Card 3: Exceptional Representation -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="B-XaQyIk1zY">
-                    <img src="assets/CaseStudies/exceptional.png" alt="Exceptional Representation" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
+                <!-- Video 2 -->
+                <div data-category="personal-injury" onclick="openVideoPlayer('_XNC4Z_lsqo')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/_XNC4Z_lsqo/hqdefault.jpg" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Video Card 4: Felt Heard and Respected -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="WZus3ozMpug">
-                    <img src="assets/CaseStudies/feltheared.png" alt="Felt Heard & Respected" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
-                            </div>
-                        </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Personal Injury</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">The Best Service of My Life</h4>
                     </div>
                 </div>
 
-                <!-- Video Card 5: Attentive Care -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="OvFu1m1b5A0">
-                    <img src="assets/CaseStudies/feltheared2.png" alt="Attentive Care" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
+                <!-- Video 3 -->
+                <div data-category="big-wins" onclick="openVideoPlayer('bfaxPZsVW4Q')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/bfaxPZsVW4Q/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/bfaxPZsVW4Q/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Video Card 6: From Scared to Relief -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="Q1ceEQYopq4">
-                    <img src="assets/CaseStudies/FROM SCARED TO RELIEF.png" alt="From Scared to Relief" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
-                            </div>
-                        </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Big Win</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">From Injury to Victory</h4>
                     </div>
                 </div>
 
-                <!-- Video Card 7: Guided Through the Storm -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="bfaxPZsVW4Q">
-                    <img src="assets/CaseStudies/frominjury.png" alt="Guided Through the Storm" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
+                <!-- Video 4 -->
+                <div data-category="personal-injury" onclick="openVideoPlayer('WZus3ozMpug')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/WZus3ozMpug/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/WZus3ozMpug/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Video Card 8: Guided with Compassion -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="3FyRvgdsqyk">
-                    <img src="assets/CaseStudies/guidedwithcare.png" alt="Guided with Compassion" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
-                            </div>
-                        </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Personal Injury</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Left to Drown</h4>
                     </div>
                 </div>
 
-                <!-- Video Card 9: Justice Served -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="gDRtLNQhghM">
-                    <img src="assets/CaseStudies/justiceserved.png" alt="Justice Served" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
+                <!-- Video 5 -->
+                <div data-category="car-accidents" onclick="openVideoPlayer('Y6auo_fIrFo')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/Y6auo_fIrFo/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/Y6auo_fIrFo/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Video Card 10: The Best Legal Support -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="_XNC4Z_lsqo">
-                    <img src="assets/CaseStudies/thebest.png" alt="The Best Legal Support" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
-                            </div>
-                        </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Car Accidents</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">True Fighter, True Results</h4>
                     </div>
                 </div>
 
-                <!-- Video Card 11: A True Triumph -->
-                <div class="cs-video-card relative min-w-[300px] md:min-w-[420px] flex-1 rounded-[2.5rem] overflow-hidden shadow-lg group cursor-pointer snap-start border-4 border-white" data-yt="VF6EHAitoh8">
-                    <img src="assets/CaseStudies/triumph.png" alt="A True Triumph" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="relative flex items-center justify-center">
-                            <span class="animate-ping absolute inline-flex h-20 w-20 rounded-full bg-brand-primary/30 opacity-75"></span>
-                            <div class="relative w-18 h-18 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_30px_rgba(108,161,230,0.5)]">
-                                <i data-lucide="play" class="w-7 h-7 text-white ml-1 fill-current"></i>
+                <!-- Video 6 -->
+                <div data-category="car-accidents" onclick="openVideoPlayer('0NJHrgECzYY')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/0NJHrgECzYY/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/0NJHrgECzYY/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Car Accidents</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Sweet Treat, Sudden Crash</h4>
+                    </div>
+                </div>
+
+                <!-- Video 7 -->
+                <div data-category="personal-injury" onclick="openVideoPlayer('B-XaQyIk1zY')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/B-XaQyIk1zY/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/B-XaQyIk1zY/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Personal Injury</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Exceptional Service, Every Step</h4>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <div data-category="car-accidents" onclick="openVideoPlayer('3FyRvgdsqyk')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/3FyRvgdsqyk/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/3FyRvgdsqyk/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Car Accidents</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Guided with Care</h4>
+                    </div>
+                </div>
+
+                <!-- Video 9 -->
+                <div data-category="personal-injury" onclick="openVideoPlayer('gDRtLNQhghM')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/gDRtLNQhghM/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/gDRtLNQhghM/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Personal Injury</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Justice Served. Healing Secured.</h4>
+                    </div>
+                </div>
+
+                <!-- Video 10 -->
+                <div data-category="car-accidents" onclick="openVideoPlayer('VF6EHAitoh8')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/VF6EHAitoh8/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/VF6EHAitoh8/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Car Accidents</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">From Trauma to Triumph</h4>
+                    </div>
+                </div>
+
+                <!-- Video 11 -->
+                <div data-category="personal-injury" onclick="openVideoPlayer('ArMb0k515qk')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/ArMb0k515qk/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/ArMb0k515qk/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Personal Injury</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Karate Attorney Stepped In</h4>
+                    </div>
+                </div>
+
+                <!-- Video 12 -->
+                <div data-category="car-accidents" onclick="openVideoPlayer('Q1ceEQYopq4')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/Q1ceEQYopq4/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/Q1ceEQYopq4/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Car Accidents</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Scared to Very Happy</h4>
+                    </div>
+                </div>
+
+                <!-- Video 13 -->
+                <div data-category="car-accidents" onclick="openVideoPlayer('3vrME_Ft0LM')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/3vrME_Ft0LM/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/3vrME_Ft0LM/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Car Accidents</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">Convenient. Caring. Committed</h4>
+                    </div>
+                </div>
+
+                <!-- Video 14 -->
+                <div data-category="personal-injury" onclick="openVideoPlayer('OvFu1m1b5A0')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/OvFu1m1b5A0/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/OvFu1m1b5A0/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Personal Injury</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">I Felt Heard & Protected</h4>
+                    </div>
+                </div>
+
+                <!-- Video 15 -->
+                <div data-category="big-wins" onclick="openVideoPlayer('t7gQ7Zm1gEM')" class="vault-card group bg-brand-dark rounded-[2rem] border border-white/5 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_45px_rgba(108,161,230,0.15)] transition-all duration-500 flex flex-col h-full cursor-pointer relative overflow-hidden">
+                    <div class="relative overflow-hidden h-48 bg-brand-navy z-10 select-none">
+                        <img src="https://img.youtube.com/vi/t7gQ7Zm1gEM/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/t7gQ7Zm1gEM/hqdefault.jpg';" alt="Thumbnail" class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-brand-dark/10 transition-colors z-10"></div>
+                        <div class="absolute top-4 right-4 z-20 bg-brand-dark/80 backdrop-blur-md border border-white/10 text-white text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+                            Watch Video
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <span class="absolute w-12 h-12 rounded-full bg-brand-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700 pointer-events-none animate-ripple"></span>
+                            <div class="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110 duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative z-10 bg-brand-dark border-t border-white/5">
+                        <span class="text-brand-primary text-[10px] font-bold tracking-widest uppercase block mb-1">Big Win</span>
+                        <h4 class="font-heading font-black text-white text-base leading-tight group-hover:text-brand-primary transition-colors duration-300">795K Settlement Victory</h4>
                     </div>
                 </div>
 
             </div>
-
-            <!-- Carousel Pagination Indicators with IDs -->
-            <div id="carousel-dots" class="flex justify-center items-center space-x-2 mt-4">
-                <div class="carousel-dot w-4 h-2.5 rounded-full bg-brand-primary cursor-pointer shadow-[0_0_10px_rgba(108,161,230,0.5)] transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-2 rounded-full bg-brand-border cursor-pointer hover:bg-brand-primary/50 transition-all duration-300"></div>
-            </div>
-
         </div>
     </section>
 
@@ -893,7 +775,7 @@ A2 2 0 0 1 22 16.92z"></path>
       <!-- Col 4: Location & Offices -->
       <div class="footer-col footer-col-contact">
         <h4 class="footer-col-title">Contact & Offices</h4>
-        
+
         <!-- Address 1 -->
         <div class="footer-contact-item">
           <div class="contact-circle-badge">
@@ -931,7 +813,7 @@ A2 2 0 0 1 22 16.92z"></path>
           </div>
           <div class="contact-item-text">
             <h5>Phone</h5>
-            <p><a href="tel:+17062033097">(706) 203-3097</a></p>
+            <p><a href="tel:+17063883784">(706) 388-3784</a></p>
           </div>
         </div>
 
@@ -945,7 +827,7 @@ A2 2 0 0 1 22 16.92z"></path>
           </div>
           <div class="contact-item-text">
             <h5>Email</h5>
-            <p><a href="mailto:info@theawadlawfirm.com">info@theawadlawfirm.com</a></p>
+            <p><a href="mailto:ibrahim@theawadlawfirm.com">ibrahim@theawadlawfirm.com</a></p>
           </div>
         </div>
       </div>
@@ -988,84 +870,57 @@ A2 2 0 0 1 22 16.92z"></path>
     <!-- Scripts -->
     <script src="script.js"></script>
     <script>
-        // Initialize Icons
-        lucide.createIcons();
+        // Filter the Video Vault
+        function filterVault(category) {
+            const cards = document.querySelectorAll('.vault-card');
+            const buttons = document.querySelectorAll('.filter-btn');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. High-End Written Review Category Filtering
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const reviewCards = document.querySelectorAll('.review-card');
-
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update active styling
-                    filterButtons.forEach(b => {
-                        b.classList.remove('bg-brand-primary', 'text-white', 'shadow-[0_8px_20px_rgba(108,161,230,0.3)]');
-                        b.classList.add('bg-white', 'text-brand-navy', 'border', 'border-brand-border');
-                    });
+            // Update active button classes
+            buttons.forEach(btn => {
+                const onclickAttr = btn.getAttribute('onclick');
+                if (onclickAttr && onclickAttr.includes(`'${category}'`)) {
                     btn.classList.add('bg-brand-primary', 'text-white', 'shadow-[0_8px_20px_rgba(108,161,230,0.3)]');
-                    btn.classList.remove('bg-white', 'text-brand-navy', 'border', 'border-brand-border');
-
-                    const filter = btn.getAttribute('data-filter');
-
-                    reviewCards.forEach(card => {
-                        card.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'flex';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0) scale(1)';
-                            }, 50);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(15px) scale(0.95)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 400);
-                        }
-                    });
-                });
+                    btn.classList.remove('bg-brand-dark', 'text-white/70', 'border', 'border-white/10');
+                } else {
+                    btn.classList.remove('bg-brand-primary', 'text-white', 'shadow-[0_8px_20px_rgba(108,161,230,0.3)]');
+                    btn.classList.add('bg-brand-dark', 'text-white/70', 'border', 'border-white/10');
+                }
             });
 
-            // 2. High-Performance Video Carousel Logic
-            const slider = document.getElementById('video-slider');
-            const btnPrev = document.getElementById('btn-prev');
-            const btnNext = document.getElementById('btn-next');
-            const dots = document.querySelectorAll('.carousel-dot');
+            // Show/hide cards with premium fade and scaling transition
+            cards.forEach(card => {
+                card.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(15px) scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 500);
+                }
+            });
+        }
 
-            if (slider && btnPrev && btnNext) {
-                const getScrollStep = () => {
-                    const firstCard = slider.querySelector('.snap-start');
-                    return firstCard ? firstCard.offsetWidth + 32 : 452; // Card width + gap
-                };
-
-                btnPrev.addEventListener('click', () => {
-                    slider.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-                });
-
-                btnNext.addEventListener('click', () => {
-                    slider.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-                });
-
-                // Dynamically highlight active carousel pagination dots on scroll
-                slider.addEventListener('scroll', () => {
-                    const scrollPosition = slider.scrollLeft;
-                    const step = getScrollStep();
-                    const activeIndex = Math.round(scrollPosition / step);
-
-                    dots.forEach((dot, idx) => {
-                        if (idx === activeIndex) {
-                            dot.classList.add('bg-brand-primary', 'w-4');
-                            dot.classList.remove('bg-brand-border', 'w-2');
-                        } else {
-                            dot.classList.add('bg-brand-border', 'w-2');
-                            dot.classList.remove('bg-brand-primary', 'w-4');
-                        }
-                    });
-                });
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lucide Icons
+            lucide.createIcons();
         });
     </script>
+<a class="premium-float-call" href="tel:+17063883784" aria-label="Call Awad Law Firm at (706) 388-3784">
+  <span class="float-call-pulse" aria-hidden="true"></span>
+  <span class="float-call-pulse-2" aria-hidden="true"></span>
+  <span class="float-call-content">
+    <svg class="float-call-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.18L9.09 10.91a16 16 0 0 0 4 4l1.67-1.25a2 2 0 0 1 2.18-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <span class="float-call-text">(706) 388-3784</span>
+  </span>
+</a>
 </body>
 </html>
-

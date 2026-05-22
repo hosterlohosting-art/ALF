@@ -1,11 +1,11 @@
-from pathlib import Path
+﻿from pathlib import Path
 
 from reportlab.graphics.barcode import qr
 from PIL import Image, ImageDraw
 
 
-URL = "https://www.youtube.com/shorts/weAW5eURn8I"
-OUTPUT = Path("assets/youtube-shorts-qr.png")
+URL = "https://www.youtube.com/watch?v=Y6auo_fIrFo"
+OUTPUT = Path("assets/youtube-car-accident-qr.png")
 
 
 def create_static_qr_code(url: str, output: Path) -> None:

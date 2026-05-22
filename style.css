@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
 
 :root {
   --navy: #0A192F;
@@ -99,7 +99,7 @@ color:inherit;
   position: relative;
   overflow: hidden;
   min-height: 700px;
-  background: 
+  background:
     radial-gradient(circle at 80% 20%, rgba(0, 119, 255, 0.1), transparent 50%),
     linear-gradient(135deg, var(--navy) 0%, #02060c 100%);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -637,7 +637,7 @@ object-fit:contain;
   cursor: pointer;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
+  box-shadow:
     0 8px 32px 0 rgba(31, 38, 135, 0.37),
     inset 0 0 20px rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
@@ -710,13 +710,18 @@ object-fit:contain;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(5, 8, 14, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 1000000;
+  overflow: hidden;
+  overscroll-behavior: contain;
   animation: fadeIn 0.3s ease;
 }
 
@@ -731,12 +736,21 @@ object-fit:contain;
 
 .video-modal-content {
   position: relative;
-  width: 90%;
+  width: min(92vw, 980px);
   max-width: 900px;
   background: #000;
-  border-radius: 15px;
+  border-radius: 18px;
   overflow: hidden;
+  border: 1px solid rgba(214, 183, 96, 0.35);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.62), 0 0 0 8px rgba(214,183,96,0.08);
   animation: slideUp 0.3s ease;
+}
+
+.video-modal-content iframe {
+  display: block;
+  width: 100%;
+  height: min(56.25vw, 552px);
+  max-height: calc(100dvh - 96px);
 }
 
 @keyframes slideUp {
@@ -899,7 +913,7 @@ object-fit:contain;
   display: none;
 }
 
-/* nth-child defaults removed — JS controls all positioning */
+/* nth-child defaults removed â€” JS controls all positioning */
 
 .carousel-card img {
   position: relative;
@@ -984,7 +998,7 @@ object-fit:contain;
   color: white;
   border-color: #7eaee5;
 }
-/* ── Testimonials Section ── */
+/* â”€â”€ Testimonials Section â”€â”€ */
 /* Requires: https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap */
 
 :root {
@@ -1220,11 +1234,11 @@ object-fit:contain;
   color: var(--text-muted);
   font-style: italic;
 }
-/* ══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CASE STUDIES SECTION
    Font needed in <head>:
    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-══════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .cs-section {
   font-family: var(--awad-sans);
@@ -1239,7 +1253,7 @@ object-fit:contain;
   padding: 0 32px;
 }
 
-/* ── Heading row ── */
+/* â”€â”€ Heading row â”€â”€ */
 .cs-heading-row {
   display: flex;
   align-items: center;
@@ -1288,7 +1302,7 @@ object-fit:contain;
   transform: none;
 }
 
-/* ── Track wrapper ── */
+/* â”€â”€ Track wrapper â”€â”€ */
 .cs-track-wrapper {
   overflow: hidden;
 }
@@ -1300,7 +1314,7 @@ object-fit:contain;
   will-change: transform;
 }
 
-/* ── Card ── */
+/* â”€â”€ Card â”€â”€ */
 .cs-card {
   flex: 0 0 calc((100% - 40px) / 3);
   display: flex;
@@ -1312,7 +1326,7 @@ object-fit:contain;
   border-radius: 18px;
   position: relative;
   background: #ffffff;
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.08),
     0 12px 24px rgba(0, 0, 0, 0.06),
     0 8px 16px rgba(0, 0, 0, 0.04),
@@ -1324,7 +1338,7 @@ object-fit:contain;
 
 .cs-card:hover {
   transform: translateY(-12px) rotateX(2deg) rotateY(-1deg);
-  box-shadow: 
+  box-shadow:
     0 40px 80px rgba(0, 0, 0, 0.15),
     0 24px 48px rgba(0, 0, 0, 0.12),
     0 12px 24px rgba(0, 0, 0, 0.08),
@@ -1354,7 +1368,7 @@ object-fit:contain;
 .cs-card:nth-child(14) { transition-delay: 0.96s; }
 .cs-card:nth-child(15) { transition-delay: 1.03s; }
 
-/* ── Thumbnail ── */
+/* â”€â”€ Thumbnail â”€â”€ */
 .cs-thumb {
   position: relative;
   border-radius: 16px;
@@ -1476,11 +1490,16 @@ object-fit:contain;
 .yt-modal-backdrop {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.82);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  overscroll-behavior: contain;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -1495,6 +1514,7 @@ object-fit:contain;
   position: relative;
   width: 90vw;
   max-width: 960px;
+  max-height: calc(100dvh - 96px);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0,0,0,0.6);
@@ -1532,6 +1552,7 @@ object-fit:contain;
 .yt-modal-iframe-wrap {
   position: relative;
   width: 100%;
+  max-height: calc(100dvh - 96px);
   padding-top: 56.25%;
 }
 
@@ -1595,7 +1616,7 @@ object-fit:contain;
   letter-spacing: -0.01em;
 }
 
-/* ── Below-card title ── */
+/* â”€â”€ Below-card title â”€â”€ */
 .cs-card-title {
   font-size: 13.5px;
   font-weight: 500;
@@ -1604,7 +1625,7 @@ object-fit:contain;
   padding: 0 2px;
 }
 
-/* ── Dots ── */
+/* â”€â”€ Dots â”€â”€ */
 .cs-dots {
   display: flex;
   justify-content: center;
@@ -1626,7 +1647,7 @@ object-fit:contain;
   transform: scale(1.35);
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 720px) {
   .cs-card {
     flex: 0 0 calc((100% - 20px) / 2);
@@ -1642,9 +1663,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Team Section (After Case Studies)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .team-section{
   background: linear-gradient(
     180deg,
@@ -1838,7 +1859,7 @@ object-fit:contain;
   display: block;
 }
 
-/* Tighter crop in source — scale down; anchor to bottom so shoulders/suit meet the card edge like other photos */
+/* Tighter crop in source â€” scale down; anchor to bottom so shoulders/suit meet the card edge like other photos */
 .team-photo img.team-photo-fit-looser{
   width: 100%;
   height: 100%;
@@ -1894,9 +1915,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    FAQ Section (After Team)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .faq-section{
   background: linear-gradient(180deg, #e7f2ff 0%, #f2f8ff 55%, #f7fcff 100%);
   padding: 86px 0 112px;
@@ -2071,9 +2092,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Team of Experts Page
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .te-section {
   background: linear-gradient(180deg, #e8f1f8 0%, #dce9f5 40%, #eef4fa 100%);
   padding: 60px 0 80px;
@@ -2199,9 +2220,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Five Steps Section (Why Choose Us)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .five-steps-section {
   background: #ffffff;
   padding: 70px 0 80px;
@@ -2382,9 +2403,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Community Page
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .community-section {
   background: linear-gradient(180deg, #e8f1f8 0%, #dce9f5 40%, #eef4fa 100%);
   padding: 60px 0 80px;
@@ -2537,7 +2558,7 @@ object-fit:contain;
   transform: translateX(-50%) translateY(-2px);
 }
 
-/* ── Community Article Section ── */
+/* â”€â”€ Community Article Section â”€â”€ */
 .community-article-section {
   background: #ffffff;
   padding: 70px 0 80px;
@@ -2617,9 +2638,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Ibrahim Awad Bio Page
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .bio-section {
   background: linear-gradient(135deg, #e8f1f8 0%, #dce9f5 50%, #eef4fa 100%);
   padding: 60px 0 80px;
@@ -2720,7 +2741,7 @@ object-fit:contain;
   height: 340px;
   border-radius: 28px;
   overflow: hidden;
-  background: 
+  background:
     linear-gradient(160deg, rgba(220, 235, 248, 0.85) 0%, rgba(200, 225, 245, 0.75) 50%, rgba(235, 243, 250, 0.9) 100%),
     url('assets/brokenefffect.png') center/cover no-repeat;
   border: 1.5px solid rgba(126, 174, 229, 0.22);
@@ -2845,9 +2866,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Footer (thin dark bar)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .site-footer{
   background: #070707;
   padding: 0;
@@ -2860,9 +2881,9 @@ object-fit:contain;
   letter-spacing: 0.02em;
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Anniversary Section (About Page)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .anniversary-section {
   background: linear-gradient(135deg, rgba(91, 159, 216, 0.05) 0%, rgba(126, 174, 229, 0.05) 100%);
   padding: 80px 0;
@@ -2931,7 +2952,7 @@ object-fit:contain;
   border-radius: 24px;
   padding: 50px;
   background: linear-gradient(135deg, #ffffff 0%, rgba(126, 174, 229, 0.08) 100%);
-  box-shadow: 
+  box-shadow:
     /* Top-left highlight */
     inset 0 1px 0 rgba(255, 255, 255, 0.95),
     inset 0 -1px 0 rgba(91, 159, 216, 0.2),
@@ -3008,7 +3029,7 @@ object-fit:contain;
 
 .anniversary-right:hover {
   border-color: #5b9fd8;
-  box-shadow: 
+  box-shadow:
     /* Enhanced 3D block shadows on hover */
     12px 12px 0px rgba(91, 159, 216, 0.2),
     24px 24px 0px rgba(91, 159, 216, 0.12),
@@ -3049,9 +3070,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    FAQ Section with Image (After Anniversary)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .faq-with-image-section {
   padding: 80px 0;
   background: white;
@@ -3340,9 +3361,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    The Process Section (After FAQ)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .process-section {
   background: linear-gradient(to bottom right, #ffffff 0%, #dce9f5 100%);
   padding: 80px 0;
@@ -3506,9 +3527,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Why Choose Us Section (After Process)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .why-choose-section {
   background: linear-gradient(135deg, #d6e8f8 0%, #e8f1f8 100%);
   padding: 80px 0;
@@ -3614,9 +3635,9 @@ object-fit:contain;
 }
 
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Core Values Section
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .core-values-section {
   background: linear-gradient(135deg, #d6e8f8 0%, #e8f1f8 100%);
   padding: 80px 0;
@@ -3795,9 +3816,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Mission & Vision Section
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .mission-vision-section {
   position: relative;
   padding: 100px 0 80px 0;
@@ -3895,7 +3916,7 @@ object-fit:contain;
   min-height: 280px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 30px 80px rgba(126, 174, 229, 0.3), 
+  box-shadow: 0 30px 80px rgba(126, 174, 229, 0.3),
               0 0 60px rgba(126, 174, 229, 0.2),
               inset 0 0 40px rgba(0, 0, 0, 0.1);
 }
@@ -4081,9 +4102,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Client Promise Section (After Mission & Vision)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .client-promise-section {
   position: relative;
   padding: 40px 0 0 0;
@@ -4322,9 +4343,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Contact Section (After FAQ)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .contact-section{
   background: linear-gradient(to right, #dce9f5 0%, #f0f6fc 40%, #ffffff 100%);
   padding: 54px 0 60px;
@@ -4585,9 +4606,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Practice Areas Page
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .pa-hero {
   display: none;
 }
@@ -4748,9 +4769,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Practice Detail Page (Car Accidents, etc.)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .pd-section {
   background: #ffffff;
   padding: 50px 0 60px;
@@ -4797,9 +4818,9 @@ object-fit:contain;
   font-family: var(--awad-sans);
 }
 
-/* ═══════════════════════════════════════════
-   RESULTS PAGE — GLASSMORPHISM CARDS
-   ═══════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESULTS PAGE â€” GLASSMORPHISM CARDS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .results-section {
   position: relative;
@@ -5073,11 +5094,11 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Contact Page (cp-)
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* ── Animations ── */
+/* â”€â”€ Animations â”€â”€ */
 @keyframes cpFadeUp {
   from { opacity: 0; transform: translateY(36px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -5134,7 +5155,7 @@ object-fit:contain;
   animation: cpScaleX 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
-/* ── Hero ── */
+/* â”€â”€ Hero â”€â”€ */
 .cp-hero {
   position: relative;
   padding: 120px 0 80px;
@@ -5193,7 +5214,7 @@ object-fit:contain;
   transform-origin: center;
 }
 
-/* ── Info Cards ── */
+/* â”€â”€ Info Cards â”€â”€ */
 .cp-info {
   background: linear-gradient(135deg, #eaf2fb 0%, #f0f6ff 50%, #e8f0fe 100%);
   padding: 40px 0 50px;
@@ -5256,7 +5277,7 @@ object-fit:contain;
   font-weight: 400;
 }
 
-/* ── Main Section ── */
+/* â”€â”€ Main Section â”€â”€ */
 .cp-main {
   background: linear-gradient(to right, #dce9f5 0%, #f0f6fc 40%, #ffffff 100%);
   padding: 60px 0 70px;
@@ -5271,7 +5292,7 @@ object-fit:contain;
   align-items: start;
 }
 
-/* ── Left: Offices ── */
+/* â”€â”€ Left: Offices â”€â”€ */
 .cp-left {}
 
 .cp-offices-heading {
@@ -5332,7 +5353,7 @@ object-fit:contain;
   box-shadow: 0 8px 30px rgba(0,0,0,0.06);
 }
 
-/* ── Right: Form Card ── */
+/* â”€â”€ Right: Form Card â”€â”€ */
 .cp-form-card {
   background: rgba(255,255,255,0.98);
   border: 1px solid rgba(210,225,245,0.9);
@@ -5481,7 +5502,7 @@ object-fit:contain;
   transform: translateY(0);
 }
 
-/* ── CTA Banner ── */
+/* â”€â”€ CTA Banner â”€â”€ */
 .cp-cta {
   background: linear-gradient(135deg, #eaf2fb 0%, #dde9f7 50%, #e4eef9 100%);
   padding: 60px 32px;
@@ -5525,7 +5546,7 @@ object-fit:contain;
   box-shadow: 0 20px 50px rgba(109,166,227,0.4);
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 920px) {
   .cp-main-inner {
     grid-template-columns: 1fr;
@@ -5543,11 +5564,11 @@ object-fit:contain;
   }
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HAMBURGER + MOBILE NAV
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* Hamburger button – hidden on desktop */
+/* Hamburger button â€“ hidden on desktop */
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -5578,7 +5599,7 @@ object-fit:contain;
 .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Mobile breakpoint ── */
+/* â”€â”€ Mobile breakpoint â”€â”€ */
 @media (max-width: 900px) {
 
   /* Navbar */
@@ -5604,7 +5625,7 @@ object-fit:contain;
     height: 54px;
   }
 
-  /* ── Open state: slide-down nav panel ── */
+  /* â”€â”€ Open state: slide-down nav panel â”€â”€ */
   .navbar.nav-open > nav {
     display: flex !important;
     flex-direction: column;
@@ -5703,7 +5724,7 @@ object-fit:contain;
     position: relative;
   }
 
-  /* ══════════════ Section / Layout fixes ══════════════ */
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• Section / Layout fixes â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
   /* Hero */
   .hero {
@@ -5876,9 +5897,9 @@ object-fit:contain;
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    SEO: Breadcrumb Navigation
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .breadcrumb {
   background: #f5f8fc;
   border-bottom: 1px solid #e2e8f0;
@@ -5924,9 +5945,9 @@ object-fit:contain;
   font-weight: 600;
 }
 
-/* ─────────────────────────────────────────────
-   SEO: Footer — Location Addresses
-───────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   SEO: Footer â€” Location Addresses
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .footer-locations {
   display: flex;
   justify-content: center;
@@ -5962,9 +5983,9 @@ object-fit:contain;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    SEO: Hub Back-Link Banner (Spoke Pages)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hub-backlink {
   background: linear-gradient(135deg, #e8f1fb 0%, #d4e5f4 100%);
   border-left: 4px solid #7eaee5;
@@ -5999,9 +6020,9 @@ object-fit:contain;
   color: #2d6fa3;
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    SEO: Related Case Results (Spoke Pages)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .related-results {
   background: #ffffff;
   border: 1px solid #dce9f5;
@@ -6073,11 +6094,11 @@ object-fit:contain;
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    EDUCATION PAGE
-═══════════════════════════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Hero ── */
+/* â”€â”€ Hero â”€â”€ */
 .edu-hero {
   background: linear-gradient(180deg, #e8f1f8 0%, #dce9f5 40%, #eef4fa 100%);
   padding: 82px 0 90px;
@@ -6178,7 +6199,7 @@ object-fit:contain;
   transform: translateY(-2px);
 }
 
-/* ── Stats Bar ── */
+/* â”€â”€ Stats Bar â”€â”€ */
 .edu-stats {
   background: #ffffff;
   border-bottom: 1px solid #e2eaf3;
@@ -6217,7 +6238,7 @@ object-fit:contain;
   line-height: 1.45;
 }
 
-/* ── Article Cards Section ── */
+/* â”€â”€ Article Cards Section â”€â”€ */
 .edu-cards-section {
   background: linear-gradient(180deg, #e8f1f8 0%, #dce9f5 40%, #eef4fa 100%);
   padding: 74px 0 82px;
@@ -6270,7 +6291,7 @@ object-fit:contain;
   max-width: 620px;
 }
 
-/* ── Deep Article Sections ── */
+/* â”€â”€ Deep Article Sections â”€â”€ */
 .edu-deep {
   background: #f5f8fc;
   padding: 74px 0 82px;
@@ -6361,7 +6382,7 @@ object-fit:contain;
   border-color: #2a6098;
 }
 
-/* ── Checklist CTA ── */
+/* â”€â”€ Checklist CTA â”€â”€ */
 .edu-checklist {
   background: linear-gradient(100deg, #2a4565 0%, #1b2b42 100%);
   padding: 62px 0 66px;
@@ -6442,7 +6463,7 @@ object-fit:contain;
   box-shadow: 0 6px 24px rgba(91, 159, 216, 0.5);
 }
 
-/* ── FAQ Accordion ── */
+/* â”€â”€ FAQ Accordion â”€â”€ */
 .edu-faq {
   background: linear-gradient(180deg, #e8f1f8 0%, #eef4fa 100%);
   padding: 74px 0 82px;
@@ -6546,7 +6567,7 @@ object-fit:contain;
   color: #1b2b42;
 }
 
-/* ── Education Responsive ── */
+/* â”€â”€ Education Responsive â”€â”€ */
 @media (max-width: 900px) {
   .edu-checklist-inner {
     flex-direction: column;
@@ -6598,11 +6619,11 @@ object-fit:contain;
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TEDX PAGE
-═══════════════════════════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Hero ── */
+/* â”€â”€ Hero â”€â”€ */
 .tedx-hero {
   background: linear-gradient(180deg, #e8f1f8 0%, #dce9f5 40%, #eef4fa 100%);
   padding: 90px 0 100px;
@@ -6729,7 +6750,7 @@ object-fit:contain;
   box-shadow: 0 8px 28px rgba(91, 159, 216, 0.52);
 }
 
-/* ── Video Section ── */
+/* â”€â”€ Video Section â”€â”€ */
 .tedx-video-section {
   background: #f5f8fc;
   padding: 80px 0 90px;
@@ -6786,7 +6807,7 @@ object-fit:contain;
   letter-spacing: 0.04em;
 }
 
-/* ── Video embed (legacy, kept for other pages) ── */
+/* â”€â”€ Video embed (legacy, kept for other pages) â”€â”€ */
 .tedx-embed-wrap {
   position: relative;
   width: 100%;
@@ -6803,7 +6824,7 @@ object-fit:contain;
   border: none;
 }
 
-/* ── Custom Click-to-Play Player ── */
+/* â”€â”€ Custom Click-to-Play Player â”€â”€ */
 .tedx-player {
   position: relative;
   width: 100%;
@@ -6934,7 +6955,7 @@ object-fit:contain;
   display: block;
 }
 
-/* ── About the Talk ── */
+/* â”€â”€ About the Talk â”€â”€ */
 .tedx-about {
   background: linear-gradient(180deg, #e8f1f8 0%, #dce9f5 40%, #eef4fa 100%);
   padding: 80px 0 88px;
@@ -7016,7 +7037,7 @@ object-fit:contain;
   margin: 0;
 }
 
-/* ── Pullquote ── */
+/* â”€â”€ Pullquote â”€â”€ */
 .tedx-quote {
   background: linear-gradient(135deg, #0d1c2e 0%, #1a2e46 100%);
   padding: 72px 0 76px;
@@ -7081,7 +7102,7 @@ object-fit:contain;
   color: #7eaee5;
 }
 
-/* ── Speaker Section ── */
+/* â”€â”€ Speaker Section â”€â”€ */
 .tedx-speaker {
   background: #ffffff;
   padding: 80px 0 88px;
@@ -7181,7 +7202,7 @@ object-fit:contain;
   transform: translateY(-2px);
 }
 
-/* ── Key Takeaways ── */
+/* â”€â”€ Key Takeaways â”€â”€ */
 .tedx-takeaways {
   background: linear-gradient(180deg, #e8f1f8 0%, #dce9f5 40%, #eef4fa 100%);
   padding: 80px 0 88px;
@@ -7257,7 +7278,7 @@ object-fit:contain;
   margin: 0;
 }
 
-/* ── TEDx Responsive ── */
+/* â”€â”€ TEDx Responsive â”€â”€ */
 @media (max-width: 900px) {
   .tedx-about-inner {
     grid-template-columns: 1fr;
@@ -8127,7 +8148,7 @@ nav a::before,
   position: relative;
   overflow: hidden;
   min-height: 700px;
-  background: 
+  background:
     radial-gradient(circle at 80% 20%, rgba(0, 119, 255, 0.1), transparent 50%),
     linear-gradient(135deg, var(--navy) 0%, #02060c 100%);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -10300,6 +10321,24 @@ body {
   }
 }
 
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PHASE 2 PREMIUM STYLE REFINEMENTS & RESILIENT FALLBACKS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+/* 1. Global Page Entrance Reveal (Transition Fallback) */
+@keyframes globalPageReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: globalPageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
 /* Home page only: CEO Lawyer-inspired cleanup */
 body.home-page {
   --home-bg: #f7f9fc;
@@ -10523,6 +10562,26 @@ body.home-page .partners h2 {
   max-width: 900px;
   margin-bottom: 26px;
 }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PHASE 2 PREMIUM STYLE REFINEMENTS & RESILIENT FALLBACKS
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+/* 1. Global Page Entrance Reveal (Transition Fallback) */
+@keyframes globalPageReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: globalPageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+/* 2. Navigation Double Underline Override (Resilient Fallback) */
 
 body.home-page .logo-card,
 body.home-page .t-card,
@@ -10783,6 +10842,20 @@ body.home-page .logo img {
   height: 76px;
 }
 
+/* 1. Global Page Entrance Reveal (Transition Fallback) */
+@keyframes globalPageReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: globalPageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
 body.home-page .navbar nav {
   gap: 34px;
   font-size: 15px;
@@ -10978,7 +11051,7 @@ body.home-page .hero-phone-cta {
 }
 
 body.home-page .hero-phone-cta::before {
-  content: "☎";
+  content: "â˜Ž";
   color: #d6b760;
   font-size: 28px;
 }
@@ -11032,6 +11105,20 @@ body.home-page .hero-rating-copy {
 body.home-page .hero-rating-copy strong {
   color: #ffffff;
   letter-spacing: 0.12em;
+}
+
+/* 1. Global Page Entrance Reveal (Transition Fallback) */
+@keyframes globalPageReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: globalPageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
 }
 
 body.home-page .hero-right {
@@ -11298,6 +11385,20 @@ body.home-page .hero {
   background-position: center 34%;
 }
 
+/* 1. Global Page Entrance Reveal (Transition Fallback) */
+@keyframes globalPageReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: globalPageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
 body.home-page .hero::before {
   background:
     linear-gradient(90deg, rgba(0,0,0,0.22), rgba(0,0,0,0.04) 46%, rgba(0,0,0,0.18)),
@@ -11542,6 +11643,20 @@ body.home-page .hero {
   background-position: center;
 }
 
+/* 1. Global Page Entrance Reveal (Transition Fallback) */
+@keyframes globalPageReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: globalPageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
 body.home-page .hero::before {
   background:
     linear-gradient(90deg, rgba(7,16,31,0.58), rgba(7,16,31,0.14) 52%, rgba(7,16,31,0.42));
@@ -11784,6 +11899,28 @@ body.home-page .hero-phone-cta span {
   letter-spacing: 0.13em;
 }
 
+/* 1. Global Page Entrance Reveal (Transition Fallback) */
+@keyframes globalPageReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+body {
+  animation: globalPageReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+/* Offset margins for sticky header anchor navigation */
+#video-grid-section,
+#all-editions {
+  scroll-margin-top: 100px !important;
+}
+
 body.home-page .hero-phone-cta strong {
   font-family: 'Outfit', 'Manrope', Arial, sans-serif !important;
   font-size: 24px;
@@ -12009,9 +12146,9 @@ body.home-page .hero-intake button:hover {
   }
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PHASE 2 PREMIUM STYLE REFINEMENTS & RESILIENT FALLBACKS
-   ══════════════════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* 1. Global Page Entrance Reveal (Transition Fallback) */
 @keyframes globalPageReveal {
@@ -12021,7 +12158,7 @@ body.home-page .hero-intake button:hover {
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
@@ -12136,22 +12273,22 @@ body {
   body {
     overflow-x: hidden !important;
   }
-  
+
   .five-steps-row {
     gap: 12px !important;
   }
-  
+
   .five-steps-number {
     width: 48px !important;
     height: 48px !important;
     font-size: 18px !important;
     top: -24px !important;
   }
-  
+
   .five-steps-card-title {
     font-size: 16px !important;
   }
-  
+
   .five-steps-card-desc {
     font-size: 13px !important;
   }
@@ -12161,23 +12298,23 @@ body {
   body {
     overflow-x: hidden !important;
   }
-  
+
   .five-steps-card {
     padding: 24px 12px 16px !important;
   }
-  
+
   .awad-reviews {
     padding: 16px 8px !important;
   }
-  
+
   .awad-reviews .ar-hero-title {
     font-size: 20px !important;
   }
-  
+
   .awad-reviews .ar-rating-row {
     padding: 10px 14px !important;
   }
-  
+
   .awad-reviews .ar-big-score {
     font-size: 36px !important;
   }
