@@ -2846,11 +2846,11 @@ body.home-page .premium-play-dot {
   place-items: center;
   margin-bottom: 28px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 25%, #ffffff 0%, #eaf6ff 44%, #aacfee 100%);
-  color: #06162d;
+  background: radial-gradient(circle at 35% 25%, #ff5252 0%, #e60000 55%, #b30000 100%);
+  color: #ffffff;
   font-size: 28px;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+  box-shadow: 0 24px 60px rgba(230, 0, 0, 0.35);
+  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 300ms ease;
 }
 
 body.home-page .partners {
@@ -10103,16 +10103,17 @@ body.home-page .premium-mobile-team-wrap {
     width: 60px !important;
     height: 60px !important;
     border-radius: 50% !important;
-    background: radial-gradient(circle at 35% 25%, #ffffff 0%, #eaf6ff 44%, #aacfee 100%) !important;
-    color: #06162d !important;
+    background: radial-gradient(circle at 35% 25%, #ff5252 0%, #e60000 55%, #b30000 100%) !important;
+    color: #ffffff !important;
     font-size: 18px !important;
     display: grid !important;
     place-items: center !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+    box-shadow: 0 10px 25px rgba(230, 0, 0, 0.35) !important;
     cursor: pointer !important;
     animation: playButtonPulse 2.8s ease-in-out infinite !important;
     position: relative !important;
     z-index: 2 !important;
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 300ms ease !important;
   }
 
   body.home-page .premium-mobile-video-wrap .premium-play-dot::before {
@@ -10120,7 +10121,7 @@ body.home-page .premium-mobile-team-wrap {
     position: absolute !important;
     inset: -6px !important;
     border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.24) !important;
+    background: rgba(230, 0, 0, 0.28) !important;
     z-index: -1 !important;
     animation: mobileRipple 2.8s ease-in-out infinite !important;
   }
@@ -10130,7 +10131,7 @@ body.home-page .premium-mobile-team-wrap {
     position: absolute !important;
     inset: -12px !important;
     border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(230, 0, 0, 0.12) !important;
     z-index: -2 !important;
     animation: mobileRipple 2.8s ease-in-out infinite !important;
     animation-delay: 1.4s !important;
@@ -11778,7 +11779,7 @@ body.home-page .premium-play-dot::before {
   position: absolute !important;
   inset: -6px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.24) !important;
+  background: rgba(230, 0, 0, 0.28) !important;
   z-index: -1 !important;
   animation: luxuryRipple 3.5s ease-in-out infinite !important;
 }
@@ -11787,7 +11788,7 @@ body.home-page .premium-play-dot::after {
   position: absolute !important;
   inset: -12px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(230, 0, 0, 0.12) !important;
   z-index: -2 !important;
   animation: luxuryRipple 3.5s ease-in-out infinite !important;
   animation-delay: 1.75s !important;
@@ -12132,5 +12133,33 @@ body.home-page .cs-section[style*="padding: 0"] {
   .grid-4, .grid-3, .results-grid {
     gap: 20px !important;
   }
+}
+
+/* ==========================================================================
+   TEDX VIDEO PLAY LINK HOVER ACTIONS & GRAPHIC SHIFTS
+   ========================================================================== */
+
+body.home-page a.premium-video-note,
+body.home-page a.premium-mobile-video-wrap {
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+}
+
+body.home-page a.premium-video-note p,
+body.home-page a.premium-mobile-video-wrap p {
+  transition: color 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+body.home-page a.premium-video-note:hover .premium-play-dot,
+body.home-page a.premium-mobile-video-wrap:hover .premium-play-dot {
+  transform: scale(1.08) !important;
+  box-shadow: 0 20px 50px rgba(230, 0, 0, 0.6) !important;
+}
+
+body.home-page a.premium-video-note:hover p,
+body.home-page a.premium-mobile-video-wrap:hover p {
+  color: #ff3333 !important;
+  text-shadow: 0 0 12px rgba(230, 0, 0, 0.3) !important;
 }
 
