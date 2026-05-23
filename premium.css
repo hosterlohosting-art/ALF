@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* User's Color Scheme: Navy, Black, White */
@@ -2705,7 +2705,7 @@ body.home-page .premium-primary-btn {
 }
 
 body.home-page .premium-primary-btn::after {
-  content: "â†—";
+  content: "\2197";
   display: inline-grid;
   place-items: center;
   width: 46px;
@@ -3305,7 +3305,7 @@ body.home-page .practice-areas .btn-secondary {
 }
 
 body.home-page .practice-areas .btn-secondary::after {
-  content: "â†—";
+  content: "\2197";
   display: grid;
   width: 46px;
   height: 46px;
@@ -5402,6 +5402,7 @@ body.home-page .hero-result-icon-wrapper {
   margin-bottom: 24px !important;
   color: #d1a86a !important; /* Premium brand gold */
   transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
 }
 
 body.home-page .hero-result-col:hover .hero-result-icon-wrapper {
@@ -5409,6 +5410,18 @@ body.home-page .hero-result-col:hover .hero-result-icon-wrapper {
   color: #ffffff !important;
   border-color: #d1a86a !important;
   box-shadow: 0 16px 36px rgba(209, 168, 106, 0.2) !important;
+}
+
+body.home-page .hero-result-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: inherit !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.home-page .hero-result-col:hover .hero-result-img {
+  transform: scale(1.12) !important;
 }
 
 body.home-page .hero-result-svg {
@@ -7265,7 +7278,7 @@ body.home-page .t-card-top {
 }
 
 body.home-page .t-card-top::before {
-  content: "â€œ" !important;
+  content: "\201C" !important;
   margin-right: auto !important;
   color: var(--awad-navy, #06162d) !important;
   font-family: Georgia, 'Times New Roman', serif !important;
@@ -7331,7 +7344,7 @@ body.home-page .t-reviewer::before {
 }
 
 body.home-page .t-card:nth-child(even) .t-reviewer::before {
-  content: "â˜…" !important;
+  content: "\2605" !important;
   background: #00b67a !important;
   color: #ffffff !important;
 }
@@ -11440,7 +11453,7 @@ body.home-page .team-section .team-card:nth-child(1) .team-role {
 
 /* 6. High-End Social Frosted Gold Badge */
 body.home-page .team-section .team-card::after {
-  content: "CONNECT â†’" !important;
+  content: "CONNECT \2192" !important;
   position: absolute !important;
   right: 18px !important;
   bottom: 18px !important;
@@ -13160,14 +13173,14 @@ body.home-page .testimonials-section .t-visual-panel img {
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-top: 42px !important;
-    padding-bottom: 44px !important;
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
   }
 
   body.home-page .origin-header,
-  body.home-page .t-head,
+  body.home-page .t-header,
   body.home-page .case-study-hero-copy,
   body.home-page .team-heading,
   body.home-page .faq-heading {
@@ -13175,13 +13188,13 @@ body.home-page .testimonials-section .t-visual-panel img {
     max-width: 380px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-bottom: 22px !important;
+    margin-bottom: 14px !important;
     text-align: center !important;
     align-items: center !important;
   }
 
   body.home-page .origin-header h2,
-  body.home-page .t-title,
+  body.home-page .t-header-left h2,
   body.home-page .case-study-hero-copy h2,
   body.home-page .team-title,
   body.home-page .faq-title,
@@ -13249,23 +13262,64 @@ body.home-page .testimonials-section .t-visual-panel img {
     padding: 0 !important;
   }
 
-  body.home-page .testimonials-section .t-top {
-    gap: 14px !important;
-    margin-bottom: 18px !important;
-    justify-content: center !important;
+  body.home-page .t-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+  }
+
+  body.home-page .t-header-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  body.home-page .t-header-left h2 {
+    font-size: clamp(30px, 8vw, 38px) !important;
+    line-height: 1.1 !important;
+    margin: 10px 0 !important;
     text-align: center !important;
   }
 
+  body.home-page .t-review-sources {
+    margin-top: 8px !important;
+    margin-bottom: 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  body.home-page .t-header-right {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+    margin-bottom: 18px !important;
+  }
+
   body.home-page .testimonials-section .t-view-all {
-    width: 132px !important;
-    height: 50px !important;
+    width: auto !important;
+    min-width: 154px !important;
+    height: 48px !important;
+    padding: 0 24px !important;
     margin: 0 auto !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 999px !important;
   }
 
   body.home-page .t-slider-wrap {
     width: min(100%, 350px) !important;
     max-width: 350px !important;
-    min-height: 350px !important;
+    min-height: 0 !important;
     margin: 0 auto !important;
     overflow: hidden !important;
   }
@@ -13280,7 +13334,7 @@ body.home-page .testimonials-section .t-visual-panel img {
     flex: 0 0 min(350px, calc(100vw - 56px)) !important;
     width: min(350px, calc(100vw - 56px)) !important;
     max-width: min(350px, calc(100vw - 56px)) !important;
-    min-height: 330px !important;
+    min-height: 0 !important;
     padding: 22px 18px !important;
     border-radius: 20px !important;
     box-sizing: border-box !important;
@@ -13302,13 +13356,17 @@ body.home-page .testimonials-section .t-visual-panel img {
     overflow: hidden !important;
   }
 
+  body.home-page .case-study-showcase {
+    padding: 0 0 8px !important;
+  }
+
   body.home-page .case-study-hero {
     display: block !important;
     width: min(100% - 28px, 380px) !important;
     max-width: 380px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding: 24px 18px !important;
+    padding: 18px 14px !important;
     border-radius: 24px !important;
     text-align: center !important;
   }
@@ -13319,9 +13377,18 @@ body.home-page .testimonials-section .t-visual-panel img {
   }
 
   body.home-page .case-study-feature-video {
-    margin-top: 18px !important;
-    min-height: 240px !important;
+    margin-top: 20px !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
     border-radius: 20px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .case-study-feature-video img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
 
   body.home-page .case-study-grid {
@@ -13398,16 +13465,33 @@ body.home-page .testimonials-section .t-visual-panel img {
     flex: 0 0 154px !important;
   }
 
-  body.home-page .team-section .team-card .team-name {
-    font-size: 14px !important;
-    line-height: 1.12 !important;
-    margin: 10px 8px 0 !important;
+  body.home-page .team-section .team-card .team-name,
+  body.home-page .team-section .team-card:nth-child(1) .team-name {
+    position: absolute !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 34px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    margin: 0 !important;
     text-align: left !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
   }
 
-  body.home-page .team-section .team-card .team-role {
-    font-size: 9px !important;
-    margin: 6px 8px 0 !important;
+  body.home-page .team-section .team-card .team-role,
+  body.home-page .team-section .team-card:nth-child(1) .team-role {
+    position: absolute !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 8px !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    line-height: 1.05 !important;
+    margin: 0 !important;
+    text-transform: uppercase !important;
+    color: var(--awad-gold, #c6a15b) !important;
+    letter-spacing: 0.04em !important;
   }
 
   body.home-page .team-section .team-card::after {

@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
 
 :root {
   --navy: #0A192F;
@@ -11051,7 +11051,7 @@ body.home-page .hero-phone-cta {
 }
 
 body.home-page .hero-phone-cta::before {
-  content: "â˜Ž";
+  content: "\260E";
   color: #d6b760;
   font-size: 28px;
 }
