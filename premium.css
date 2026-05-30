@@ -2627,14 +2627,14 @@ body.home-page .premium-hero-bg img {
   max-height: 720px !important;
   object-fit: contain !important;
   opacity: 1 !important;
-  transform: translateX(-40%) !important;
+  transform: translateX(-12%) !important;
   filter: brightness(1.06) contrast(1.02) drop-shadow(0 40px 90px rgba(0,0,0,0.38)) !important;
   transition: opacity 520ms ease, transform 520ms ease, filter 520ms ease !important;
 }
 
 body.home-page.hero-form-visible .premium-hero-bg img {
   opacity: 0.13 !important;
-  transform: translateX(-40%) translateY(36px) scale(0.98) !important;
+  transform: translateX(-12%) translateY(36px) scale(0.98) !important;
   filter: blur(2px) brightness(0.8) drop-shadow(0 40px 90px rgba(0,0,0,0.18)) !important;
 }
 
@@ -3054,7 +3054,7 @@ body.home-page .premium-hero-form button {
 
   body.home-page .premium-hero-bg img {
     opacity: calc(1 - var(--hero-image-progress)) !important;
-    transform: translateX(-40%) translateY(calc(var(--hero-image-progress) * 38px)) scale(calc(1 - (var(--hero-image-progress) * 0.02))) !important;
+    transform: translateX(-12%) translateY(calc(var(--hero-image-progress) * 38px)) scale(calc(1 - (var(--hero-image-progress) * 0.02))) !important;
     filter: blur(calc(var(--hero-image-progress) * 2px)) brightness(calc(1.06 - (var(--hero-image-progress) * 0.24))) drop-shadow(0 40px 90px rgba(0,0,0,0.24)) !important;
     transition: opacity 0.8s ease !important;
   }
@@ -9872,7 +9872,7 @@ body.home-page .premium-home-hero {
     left: 51% !important;
     width: clamp(380px, 29vw, 540px) !important;
     max-height: calc(100vh - 86px) !important;
-    transform: translateX(-40%) translateY(calc(var(--hero-image-progress) * 42px)) scale(calc(1 - (var(--hero-image-progress) * 0.025))) !important;
+    transform: translateX(-12%) translateY(calc(var(--hero-image-progress) * 42px)) scale(calc(1 - (var(--hero-image-progress) * 0.025))) !important;
     filter: blur(calc(var(--hero-image-progress) * 2.5px)) brightness(calc(1.06 - (var(--hero-image-progress) * 0.26))) drop-shadow(0 40px 90px rgba(0, 0, 0, 0.24)) !important;
     transition: none !important;
     pointer-events: none !important;
@@ -11630,12 +11630,12 @@ body.home-page .team-all-btn {
 @keyframes heroImgFadeIn {
   0% {
     opacity: 0;
-    transform: translateX(-40%) translateY(32px) scale(0.96) !important;
+    transform: translateX(-12%) translateY(32px) scale(0.96) !important;
     filter: blur(12px) brightness(1.18) contrast(0.98) saturate(1.03) drop-shadow(0 40px 90px rgba(0,0,0,0)) !important;
   }
   100% {
     opacity: calc(1 - var(--hero-image-progress)) !important;
-    transform: translateX(-40%) translateY(calc(var(--hero-image-progress) * 42px)) scale(calc(1 - (var(--hero-image-progress) * 0.025))) !important;
+    transform: translateX(-12%) translateY(calc(var(--hero-image-progress) * 42px)) scale(calc(1 - (var(--hero-image-progress) * 0.025))) !important;
     filter: blur(calc(var(--hero-image-progress) * 2.5px)) brightness(calc(1.06 - (var(--hero-image-progress) * 0.26))) drop-shadow(0 40px 90px rgba(0, 0, 0, 0.24)) !important;
   }
 }
@@ -13629,3 +13629,147 @@ body.home-page .testimonials-section .t-visual-panel img {
     min-height: 210px !important;
   }
 }
+
+/* ==========================================================================
+   LIVE PREMIUM WEBSITE ANIMATIONS & INTERACTIVE MICRO-STATES
+   ========================================================================== */
+
+/* 1. Subtle Background Pulsing Aurora Lights */
+@keyframes premiumAuroraGlow {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    filter: opacity(0.28) blur(36px);
+  }
+  50% {
+    transform: scale(1.08) translate(3%, 2%);
+    filter: opacity(0.38) blur(42px);
+  }
+}
+
+.premium-hero-bg::before {
+  animation: premiumAuroraGlow 12s ease-in-out infinite !important;
+}
+
+/* 2. Entrance Animation for Hero Subcopy and Actions */
+@keyframes premiumFadeUpEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.home-page .premium-hero-subcopy {
+  animation: premiumFadeUpEntrance 0.85s cubic-bezier(0.19, 1, 0.22, 1) both !important;
+  animation-delay: 0.22s !important;
+}
+
+body.home-page .premium-hero-actions {
+  animation: premiumFadeUpEntrance 0.85s cubic-bezier(0.19, 1, 0.22, 1) both !important;
+  animation-delay: 0.32s !important;
+}
+
+body.home-page .premium-service-chips {
+  animation: premiumFadeUpEntrance 0.85s cubic-bezier(0.19, 1, 0.22, 1) both !important;
+  animation-delay: 0.42s !important;
+}
+
+/* 3. Infinite Floating Float-Call & CTA Button Pulse */
+@keyframes premiumGlowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(108, 161, 230, 0.44);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(108, 161, 230, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(108, 161, 230, 0);
+  }
+}
+
+body.home-page .premium-primary-btn:hover,
+body.home-page .nav-quote-btn:hover,
+.community-article-cta-box a:first-child:hover {
+  animation: premiumGlowPulse 1.8s infinite !important;
+}
+
+/* 4. Interactive Hover Lift Animations for Practice Areas & Cards */
+body.home-page .practice-col-card {
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.45s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+body.home-page .practice-col-card:hover {
+  transform: translateY(-8px) scale(1.015) !important;
+  box-shadow: 0 24px 60px rgba(6, 22, 44, 0.22) !important;
+  z-index: 10 !important;
+}
+
+body.home-page .practice-col-card:hover .card-bg-image {
+  transform: scale(1.06) !important;
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+/* 5. Elegant Hover Accent Lines for Nav items */
+.navbar nav a {
+  position: relative !important;
+  transition: color 0.3s ease !important;
+}
+
+.navbar nav a::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: var(--awad-blue, #6CA1E6) !important;
+  transform: scaleX(0) !important;
+  transform-origin: right !important;
+  transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+.navbar nav a:hover::after {
+  transform: scaleX(1) !important;
+  transform-origin: left !important;
+}
+
+/* 6. High-converting CTA Box Subtle Glow Pulse */
+@keyframes ctaPulse {
+  0%, 100% {
+    border-left-color: #6CA1E6;
+    box-shadow: 0 4px 18px rgba(108, 161, 230, 0.05);
+  }
+  50% {
+    border-left-color: #b3d1ff;
+    box-shadow: 0 4px 28px rgba(108, 161, 230, 0.16);
+  }
+}
+
+.community-article-cta-box {
+  animation: ctaPulse 4s ease-in-out infinite !important;
+  transition: transform 0.3s ease !important;
+}
+
+.community-article-cta-box:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* 7. Hover lifts for origin features and claim processes */
+body.home-page .origin-feature-card {
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+body.home-page .origin-feature-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(63, 143, 219, 0.36) !important;
+  box-shadow: 0 16px 36px rgba(6, 22, 44, 0.08) !important;
+}
+
+body.home-page .origin-feature-card:hover .origin-feature-icon svg {
+  transform: scale(1.1) rotate(3deg) !important;
+  transition: transform 0.3s ease !important;
+}
+
