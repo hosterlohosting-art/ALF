@@ -50,6 +50,8 @@
     RewriteRule ^why-choose-us\.html$ /why-choose-us/ [R=301,L,NC]
     RewriteRule ^contact\.html$ /contact/ [R=301,L,NC]
     RewriteRule ^newsletter\.html$ /newsletter/ [R=301,L,NC]
+    RewriteRule ^article-average-settlement\.html$ /average-car-accident-settlement-georgia/ [R=301,L,NC]
+    RewriteRule ^article-distracted-driver\.html$ /distracted-driver-accident-georgia/ [R=301,L,NC]
     RewriteRule ^(.*?)\.html$ /$1/ [R=301,L,NC]
 
     # --- 4. INTERNAL REWRITES (clean SLUGS TO HTML FILES) ---
@@ -78,4 +80,6 @@
     RewriteRule ^why-choose-us/?$ why-choose-us.html [NC,L]
     RewriteRule ^contact/?$ contact.html [NC,L]
     RewriteRule ^newsletter/?$ newsletter.html [NC,L]
+    RewriteRule ^average-car-accident-settlement-georgia/?$ article-average-settlement.html [NC,L]
+    RewriteRule ^distracted-driver-accident-georgia/?$ article-distracted-driver.html [NC,L]
 </IfModule>

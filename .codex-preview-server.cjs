@@ -56,7 +56,9 @@ const cleanSlugMap = {
   '/edu-guide-costly-mistakes/': 'edu-guide-costly-mistakes.html',
   '/edu-guide-insurance-adjusters/': 'edu-guide-insurance-adjusters.html',
   '/edu-guide-statute-of-limitations/': 'edu-guide-statute-of-limitations.html',
-  '/team-members/ibrahim-awad/': 'ibrahim-awad.html'
+  '/team-members/ibrahim-awad/': 'ibrahim-awad.html',
+  '/average-car-accident-settlement-georgia/': 'article-average-settlement.html',
+  '/distracted-driver-accident-georgia/': 'article-distracted-driver.html'
 };
 
 http.createServer((req, res) => {
