@@ -13733,19 +13733,41 @@ body.home-page .practice-col-card:hover .card-bg-image {
   transform: translateY(-2px) !important;
 }
 
-/* 7. Hover lifts for origin features and claim processes */
+/* 7. Hover lifts and premium transitions for origin features */
 body.home-page .origin-feature-card {
-  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
 }
 
 body.home-page .origin-feature-card:hover {
   transform: translateY(-6px) !important;
-  border-color: rgba(63, 143, 219, 0.36) !important;
-  box-shadow: 0 16px 36px rgba(6, 22, 44, 0.08) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.home-page .origin-feature-icon {
+  background: linear-gradient(135deg, var(--awad-blue, #3f8fdb), var(--awad-navy, #06162d)) !important;
+  border: 2px solid rgba(209, 168, 106, 0.25) !important;
+  color: var(--awad-gold, #d1a86a) !important;
+  box-shadow: 0 10px 25px rgba(6, 22, 44, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+body.home-page .origin-feature-card:hover .origin-feature-icon {
+  transform: scale(1.08) rotate(4deg) !important;
+  background: linear-gradient(135deg, var(--awad-gold, #d1a86a) 0%, #f4dfad 100%) !important;
+  color: var(--awad-navy, #06162d) !important;
+  border-color: transparent !important;
+  box-shadow: 0 15px 35px rgba(209, 168, 106, 0.35) !important;
 }
 
 body.home-page .origin-feature-card:hover .origin-feature-icon svg {
   transform: scale(1.1) rotate(3deg) !important;
   transition: transform 0.3s ease !important;
 }
+
 
