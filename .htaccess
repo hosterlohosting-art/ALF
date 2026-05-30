@@ -1,0 +1,81 @@
+# ----------------------------------------------------------------------
+# Awad Law Firm - SEO-Safe Production .htaccess Configuration
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # --- 1. SERVER-LEVEL STAGING NOINDEX (X-Robots-Tag) ---
+    # Injects noindex, nofollow to all requests on .cloud staging or local dev.
+    # Excludes the final live domain: theawadlawfirm.com
+    <IfModule mod_headers.c>
+        RewriteCond %{HTTP_HOST} !^theawadlawfirm\.com$ [NC]
+        RewriteRule ^ - [E=NOINDEX_HEADER:1]
+        
+        Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX_HEADER
+    </IfModule>
+
+    # --- 2. FORCE TRAILING SLASH ON clean SLUGS ---
+    # Redirects any request lacking a trailing slash to directory format
+    # (except physical files like style.css, images, or index.html requests).
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+    # --- 3. 301 DIRECT REDIRECTS FOR DIRECT HTML REQUESTS ---
+    # Any direct browser hits to legacy .html files are 301 redirected to clean slugs.
+    RewriteCond %{THE_REQUEST} \s/+(.*?)\.html[\s?] [NC]
+    RewriteRule ^about\.html$ /about-the-awad-law-firm-history/ [R=301,L,NC]
+    RewriteRule ^team-experts\.html$ /team-members/ [R=301,L,NC]
+    RewriteRule ^mission-vision\.html$ /awad-law-firm-4/ [R=301,L,NC]
+    RewriteRule ^car-accidents\.html$ /car-accident/ [R=301,L,NC]
+    RewriteRule ^trucking-accidents\.html$ /truck-accident/ [R=301,L,NC]
+    RewriteRule ^motorcycle-accidents\.html$ /motorcycle-accident/ [R=301,L,NC]
+    RewriteRule ^bicycle-accidents\.html$ /bicycle-accident/ [R=301,L,NC]
+    RewriteRule ^uber-accidents\.html$ /uber-accident/ [R=301,L,NC]
+    RewriteRule ^lyft-accidents\.html$ /lyft-accident/ [R=301,L,NC]
+    RewriteRule ^slip-and-fall\.html$ /slip-and-fall/ [R=301,L,NC]
+    RewriteRule ^medical-malpractice\.html$ /medical-malpractice/ [R=301,L,NC]
+    RewriteRule ^wrongful-death\.html$ /wrongful-death/ [R=301,L,NC]
+    RewriteRule ^personal-injury\.html$ /personal-injury/ [R=301,L,NC]
+    RewriteRule ^practice-areas\.html$ /practice-areas/ [R=301,L,NC]
+    RewriteRule ^results\.html$ /results/ [R=301,L,NC]
+    RewriteRule ^testimonials\.html$ /testimonials/ [R=301,L,NC]
+    RewriteRule ^reviews\.html$ /reviews/ [R=301,L,NC]
+    RewriteRule ^tedx\.html$ /video-library/ [R=301,L,NC]
+    RewriteRule ^education\.html$ /resources/ [R=301,L,NC]
+    RewriteRule ^core-values\.html$ /core-values/ [R=301,L,NC]
+    RewriteRule ^community\.html$ /community/ [R=301,L,NC]
+    RewriteRule ^why-choose-us\.html$ /why-choose-us/ [R=301,L,NC]
+    RewriteRule ^contact\.html$ /contact/ [R=301,L,NC]
+    RewriteRule ^newsletter\.html$ /newsletter/ [R=301,L,NC]
+    RewriteRule ^(.*?)\.html$ /$1/ [R=301,L,NC]
+
+    # --- 4. INTERNAL REWRITES (clean SLUGS TO HTML FILES) ---
+    # Maps user-facing clean directory requests to serve the raw static file.
+    RewriteRule ^about-the-awad-law-firm-history/?$ about.html [NC,L]
+    RewriteRule ^team-members/?$ team-experts.html [NC,L]
+    RewriteRule ^awad-law-firm-4/?$ mission-vision.html [NC,L]
+    RewriteRule ^car-accident/?$ car-accidents.html [NC,L]
+    RewriteRule ^truck-accident/?$ trucking-accidents.html [NC,L]
+    RewriteRule ^motorcycle-accident/?$ motorcycle-accidents.html [NC,L]
+    RewriteRule ^bicycle-accident/?$ bicycle-accidents.html [NC,L]
+    RewriteRule ^uber-accident/?$ uber-accidents.html [NC,L]
+    RewriteRule ^lyft-accident/?$ lyft-accidents.html [NC,L]
+    RewriteRule ^slip-and-fall/?$ slip-and-fall.html [NC,L]
+    RewriteRule ^medical-malpractice/?$ medical-malpractice.html [NC,L]
+    RewriteRule ^wrongful-death/?$ wrongful-death.html [NC,L]
+    RewriteRule ^personal-injury/?$ personal-injury.html [NC,L]
+    RewriteRule ^practice-areas/?$ practice-areas.html [NC,L]
+    RewriteRule ^results/?$ results.html [NC,L]
+    RewriteRule ^testimonials/?$ testimonials.html [NC,L]
+    RewriteRule ^reviews/?$ reviews.html [NC,L]
+    RewriteRule ^video-library/?$ tedx.html [NC,L]
+    RewriteRule ^resources/?$ education.html [NC,L]
+    RewriteRule ^core-values/?$ core-values.html [NC,L]
+    RewriteRule ^community/?$ community.html [NC,L]
+    RewriteRule ^why-choose-us/?$ why-choose-us.html [NC,L]
+    RewriteRule ^contact/?$ contact.html [NC,L]
+    RewriteRule ^newsletter/?$ newsletter.html [NC,L]
+</IfModule>

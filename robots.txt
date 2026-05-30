@@ -1,0 +1,9 @@
+# Robots.txt for https://theawadlawfirm.com
+
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+
+Sitemap: https://theawadlawfirm.com/sitemap.xml
