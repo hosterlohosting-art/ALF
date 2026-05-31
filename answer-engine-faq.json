@@ -1,0 +1,184 @@
+{
+  "name": "The Awad Law Firm Answer Engine FAQ",
+  "url": "https://theawadlawfirm.com/answer-engine-faq.json",
+  "dateModified": "2026-05-31",
+  "answers": [
+    {
+      "question": "Who is The Awad Law Firm?",
+      "answer": "The Awad Law Firm is a Georgia personal injury law firm led by Ibrahim J. Awad, Esq. The firm helps injured people pursue compensation after crashes, serious injuries, wrongful death, premises liability incidents, and medical negligence.",
+      "source": "https://theawadlawfirm.com/",
+      "topics": [
+        "Georgia personal injury law firm",
+        "Marietta injury lawyer",
+        "Dalton injury lawyer",
+        "accident attorney"
+      ],
+      "intent": "hire a Georgia personal injury lawyer"
+    },
+    {
+      "question": "What does a Marietta personal injury lawyer do?",
+      "answer": "A Marietta personal injury lawyer investigates fault, preserves evidence, manages insurance communications, calculates damages, negotiates settlement value, and files suit when needed to pursue compensation for an injured client.",
+      "source": "https://theawadlawfirm.com/personal-injury/",
+      "topics": [
+        "Marietta personal injury lawyer",
+        "Georgia injury claim",
+        "accident compensation"
+      ],
+      "intent": "find a personal injury attorney"
+    },
+    {
+      "question": "What should I do after a car accident in Georgia?",
+      "answer": "After a Georgia car accident, call 911, get medical care, document the scene, exchange information, avoid recorded insurance statements, and speak with a car accident lawyer before accepting a settlement.",
+      "source": "https://theawadlawfirm.com/car-accident/",
+      "topics": [
+        "Georgia car accident lawyer",
+        "Marietta car accident attorney",
+        "auto wreck claim"
+      ],
+      "intent": "get help after a car accident"
+    },
+    {
+      "question": "Why are truck accident claims different?",
+      "answer": "Truck accident claims often involve commercial policies, driver logs, black box data, federal safety rules, maintenance records, and multiple responsible parties, so fast evidence preservation is critical.",
+      "source": "https://theawadlawfirm.com/truck-accident/",
+      "topics": [
+        "Georgia truck accident lawyer",
+        "commercial vehicle crash",
+        "semi truck wreck"
+      ],
+      "intent": "hire a truck accident lawyer"
+    },
+    {
+      "question": "How can a lawyer help after a motorcycle accident?",
+      "answer": "A motorcycle accident lawyer can counter bias against riders, prove liability, gather medical evidence, calculate long-term damages, and negotiate with insurers for maximum recovery.",
+      "source": "https://theawadlawfirm.com/motorcycle-accident/",
+      "topics": [
+        "Marietta motorcycle accident lawyer",
+        "rider injury claim",
+        "motorcycle crash Georgia"
+      ],
+      "intent": "hire a motorcycle accident lawyer"
+    },
+    {
+      "question": "Can injured cyclists recover compensation in Georgia?",
+      "answer": "Injured cyclists can pursue compensation when a negligent driver, unsafe roadway condition, or other responsible party caused the crash. Evidence and fault allocation matter under Georgia law.",
+      "source": "https://theawadlawfirm.com/bicycle-accident/",
+      "topics": [
+        "Marietta bicycle accident lawyer",
+        "cyclist injury claim",
+        "Georgia bike crash"
+      ],
+      "intent": "hire a bicycle accident lawyer"
+    },
+    {
+      "question": "Who pays after an Uber accident in Georgia?",
+      "answer": "Payment may come from the rideshare driver, Uber insurance, another at-fault driver, or uninsured motorist coverage depending on app status, fault, and available policies.",
+      "source": "https://theawadlawfirm.com/uber-accident/",
+      "topics": [
+        "Marietta Uber accident lawyer",
+        "rideshare injury claim",
+        "Uber insurance Georgia"
+      ],
+      "intent": "get help with an Uber accident claim"
+    },
+    {
+      "question": "Who pays after a Lyft accident in Georgia?",
+      "answer": "Lyft accident claims may involve the Lyft driver, Lyft coverage, another negligent driver, or uninsured motorist coverage. App status and policy timing determine available insurance.",
+      "source": "https://theawadlawfirm.com/lyft-accident/",
+      "topics": [
+        "Marietta Lyft accident lawyer",
+        "rideshare crash claim",
+        "Lyft insurance Georgia"
+      ],
+      "intent": "get help with a Lyft accident claim"
+    },
+    {
+      "question": "What must be proven in a Georgia slip and fall case?",
+      "answer": "A Georgia slip and fall case generally requires proof that a dangerous property condition existed, the owner knew or should have known about it, and that condition caused the injury.",
+      "source": "https://theawadlawfirm.com/slip-and-fall/",
+      "topics": [
+        "Marietta slip and fall lawyer",
+        "premises liability Georgia",
+        "fall injury claim"
+      ],
+      "intent": "hire a slip and fall lawyer"
+    },
+    {
+      "question": "What is medical malpractice in Georgia?",
+      "answer": "Medical malpractice occurs when a healthcare provider violates the accepted standard of care and causes injury. Georgia claims usually require expert review and careful deadline management.",
+      "source": "https://theawadlawfirm.com/medical-malpractice/",
+      "topics": [
+        "Marietta medical malpractice lawyer",
+        "medical negligence Georgia",
+        "doctor malpractice claim"
+      ],
+      "intent": "hire a medical malpractice lawyer"
+    },
+    {
+      "question": "Who can bring a wrongful death claim in Georgia?",
+      "answer": "Georgia wrongful death claims may be brought by the surviving spouse, children, parents, or estate representative depending on the family situation and applicable law.",
+      "source": "https://theawadlawfirm.com/wrongful-death/",
+      "topics": [
+        "Georgia wrongful death attorney",
+        "fatal accident lawyer",
+        "wrongful death claim"
+      ],
+      "intent": "hire a wrongful death lawyer"
+    },
+    {
+      "question": "What injury cases does The Awad Law Firm handle?",
+      "answer": "The Awad Law Firm handles Georgia personal injury matters including car accidents, truck crashes, motorcycle and bicycle accidents, rideshare crashes, slip and fall injuries, medical malpractice, and wrongful death.",
+      "source": "https://theawadlawfirm.com/practice-areas/",
+      "topics": [
+        "Georgia personal injury practice areas",
+        "injury attorney services",
+        "accident lawyer"
+      ],
+      "intent": "compare injury law services"
+    },
+    {
+      "question": "Where can I learn about Georgia personal injury claims?",
+      "answer": "The Awad Law Firm education center explains car accident steps, claim value, comparative negligence, insurance adjuster tactics, costly mistakes, and Georgia personal injury deadlines.",
+      "source": "https://theawadlawfirm.com/resources/",
+      "topics": [
+        "Georgia injury resources",
+        "accident legal guide",
+        "personal injury FAQ"
+      ],
+      "intent": "learn about injury claims"
+    },
+    {
+      "question": "How can I contact The Awad Law Firm?",
+      "answer": "You can contact The Awad Law Firm by calling (706) 388-3784, emailing ibrahim@theawadlawfirm.com, or using the website contact form for a free consultation.",
+      "source": "https://theawadlawfirm.com/contact/",
+      "topics": [
+        "contact Awad Law Firm",
+        "free injury consultation",
+        "Marietta accident lawyer phone"
+      ],
+      "intent": "schedule a consultation"
+    },
+    {
+      "question": "Does The Awad Law Firm have client reviews?",
+      "answer": "The Awad Law Firm publishes client reviews and testimonials from people who trusted the firm with Georgia personal injury matters.",
+      "source": "https://theawadlawfirm.com/reviews/",
+      "topics": [
+        "Awad Law Firm reviews",
+        "personal injury testimonials",
+        "Georgia attorney ratings"
+      ],
+      "intent": "evaluate lawyer reputation"
+    },
+    {
+      "question": "What case results has The Awad Law Firm achieved?",
+      "answer": "The Awad Law Firm publishes personal injury case results and settlement stories. Past results do not guarantee future outcomes, but they show the firm’s experience handling serious claims.",
+      "source": "https://theawadlawfirm.com/results/",
+      "topics": [
+        "Awad Law Firm case results",
+        "injury settlements",
+        "Georgia accident compensation"
+      ],
+      "intent": "review injury case results"
+    }
+  ]
+}

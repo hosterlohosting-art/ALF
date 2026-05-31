@@ -1,8 +1,14 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-site-facts.json
+Allow: /answer-engine-faq.json
+Allow: /ai-search-overview/
 
 # Keep non-public utility and temporary files out of search.
 Disallow: /assets/newsletters/*/Page_*
 Disallow: /scratch_view_images.html
 
 Sitemap: https://theawadlawfirm.com/sitemap.xml
+Host: https://theawadlawfirm.com
