@@ -6,6 +6,11 @@
     RewriteEngine On
     RewriteBase /
 
+    # --- 0. CANONICAL HOST + HTTPS ---
+    RewriteCond %{HTTPS} !=on [OR]
+    RewriteCond %{HTTP_HOST} ^www\.theawadlawfirm\.com$ [NC]
+    RewriteRule ^ https://theawadlawfirm.com%{REQUEST_URI} [R=301,L]
+
     # --- 1. SERVER-LEVEL STAGING NOINDEX (X-Robots-Tag) ---
     # Injects noindex, nofollow to all requests on .cloud staging or local dev.
     # Excludes the final live domain: theawadlawfirm.com
@@ -50,6 +55,8 @@
     RewriteRule ^why-choose-us\.html$ /why-choose-us/ [R=301,L,NC]
     RewriteRule ^contact\.html$ /contact/ [R=301,L,NC]
     RewriteRule ^newsletter\.html$ /newsletter/ [R=301,L,NC]
+    RewriteRule ^privacy-policy\.html$ /privacy-policy/ [R=301,L,NC]
+    RewriteRule ^terms-of-service\.html$ /terms-of-service/ [R=301,L,NC]
     RewriteRule ^article-average-settlement\.html$ /average-car-accident-settlement-georgia/ [R=301,L,NC]
     RewriteRule ^article-distracted-driver\.html$ /distracted-driver-accident-georgia/ [R=301,L,NC]
     RewriteRule ^(.*?)\.html$ /$1/ [R=301,L,NC]
@@ -80,6 +87,24 @@
     RewriteRule ^why-choose-us/?$ why-choose-us.html [NC,L]
     RewriteRule ^contact/?$ contact.html [NC,L]
     RewriteRule ^newsletter/?$ newsletter.html [NC,L]
+    RewriteRule ^privacy-policy/?$ privacy-policy.html [NC,L]
+    RewriteRule ^terms-of-service/?$ terms-of-service.html [NC,L]
     RewriteRule ^average-car-accident-settlement-georgia/?$ article-average-settlement.html [NC,L]
     RewriteRule ^distracted-driver-accident-georgia/?$ article-distracted-driver.html [NC,L]
+    RewriteRule ^community-accident-report/?$ community-accident-report.html [NC,L]
+    RewriteRule ^community-ajp/?$ community-ajp.html [NC,L]
+    RewriteRule ^community-anti-bullying/?$ community-anti-bullying.html [NC,L]
+    RewriteRule ^community-islamic-relief/?$ community-islamic-relief.html [NC,L]
+    RewriteRule ^community-lowball/?$ community-lowball.html [NC,L]
+    RewriteRule ^community-tacos/?$ community-tacos.html [NC,L]
+    RewriteRule ^community-wanted-my-phone/?$ community-wanted-my-phone.html [NC,L]
+    RewriteRule ^community-window-tint/?$ community-window-tint.html [NC,L]
+    RewriteRule ^community-yaqeen/?$ community-yaqeen.html [NC,L]
+    RewriteRule ^edu-guide-car-accident/?$ edu-guide-car-accident.html [NC,L]
+    RewriteRule ^edu-guide-claim-worth/?$ edu-guide-claim-worth.html [NC,L]
+    RewriteRule ^edu-guide-comparative-negligence/?$ edu-guide-comparative-negligence.html [NC,L]
+    RewriteRule ^edu-guide-costly-mistakes/?$ edu-guide-costly-mistakes.html [NC,L]
+    RewriteRule ^edu-guide-insurance-adjusters/?$ edu-guide-insurance-adjusters.html [NC,L]
+    RewriteRule ^edu-guide-statute-of-limitations/?$ edu-guide-statute-of-limitations.html [NC,L]
+    RewriteRule ^team-members/ibrahim-awad/?$ ibrahim-awad.html [NC,L]
 </IfModule>

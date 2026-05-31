@@ -13771,3 +13771,42 @@ body.home-page .origin-feature-card:hover .origin-feature-icon svg {
 }
 
 
+.footer-seo-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.footer-seo-links-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.footer-seo-links h4 {
+  margin: 0 0 12px;
+  color: #fff;
+  font: 800 13px/1.2 "Outfit", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-seo-links a {
+  display: block;
+  margin: 8px 0;
+  color: rgba(255, 255, 255, 0.72);
+  font: 600 14px/1.4 "Manrope", sans-serif;
+  text-decoration: none;
+}
+
+.footer-seo-links a:hover {
+  color: #fff;
+}
+
+@media (max-width: 780px) {
+  .footer-seo-links-inner {
+    grid-template-columns: 1fr;
+  }
+}
