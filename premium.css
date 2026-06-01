@@ -13830,3 +13830,29 @@ body.home-page .origin-feature-card:hover .origin-feature-icon svg {
     grid-template-columns: 1fr;
   }
 }
+
+/* Tighten internal page mobile spacing. Tailwind utility sections were leaving
+   oversized vertical gaps on subpages at phone widths. */
+@media (max-width: 768px) {
+  body.home-page section[class*="py-"]:not(.premium-home-hero):not(.hero),
+  body.home-page div[class*="py-"]:not(.premium-home-hero):not(.hero) {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  body.home-page section[class*="pt-"]:not(.premium-home-hero):not(.hero) {
+    padding-top: 1.75rem !important;
+  }
+
+  body.home-page section[class*="pb-"]:not(.premium-home-hero):not(.hero) {
+    padding-bottom: 1.75rem !important;
+  }
+
+  body.home-page .container,
+  body.home-page .max-w-7xl,
+  body.home-page .max-w-6xl,
+  body.home-page .max-w-5xl {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
