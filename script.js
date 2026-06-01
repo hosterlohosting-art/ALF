@@ -1179,7 +1179,7 @@ if (document.readyState === 'loading') {
       quickMenu.className = 'nav-quick-menu';
       quickMenu.innerHTML = [
         '<a href="contact.html">Free Case Review</a>',
-        '<a href="tel:+17062033097">Call (706) 203-3097</a>',
+        '<a href="tel:+17063883784">Call 1 (706) 388-3784</a>',
         '<a href="practice-areas.html">Practice Areas</a>',
         '<a href="testimonials.html">Video Testimonials</a>',
         '<a href="education.html">Legal Education</a>'
