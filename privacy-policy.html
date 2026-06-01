@@ -1,39 +1,596 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | The Awad Law Firm</title>
-  <meta name="description" content="Read The Awad Law Firm privacy policy for how information submitted through this website may be collected, used, and protected.">
-  <meta name="keywords" content="Awad Law Firm privacy policy, legal website privacy, Georgia law firm privacy">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://theawadlawfirm.com/privacy-policy/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Privacy Policy | The Awad Law Firm">
-  <meta property="og:description" content="Read The Awad Law Firm privacy policy for how information submitted through this website may be collected, used, and protected.">
-  <meta property="og:url" content="https://theawadlawfirm.com/privacy-policy/">
-  <meta property="og:site_name" content="The Awad Law Firm">
-  <meta property="og:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Privacy Policy | The Awad Law Firm">
-  <meta name="twitter:description" content="Read The Awad Law Firm privacy policy for how information submitted through this website may be collected, used, and protected.">
-  <meta name="twitter:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/premium.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | The Awad Law Firm</title>
+    <meta name="description" content="Read The Awad Law Firm privacy policy for how information submitted through this website may be collected, used, and protected.">
+    <meta name="keywords" content="Awad Law Firm privacy policy, legal website privacy, Georgia law firm privacy">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://theawadlawfirm.com/privacy-policy/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy Policy | The Awad Law Firm">
+    <meta property="og:description" content="Read The Awad Law Firm privacy policy for how information submitted through this website may be collected, used, and protected.">
+    <meta property="og:url" content="https://theawadlawfirm.com/privacy-policy/">
+    <meta property="og:site_name" content="The Awad Law Firm">
+    <meta property="og:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy | The Awad Law Firm">
+    <meta name="twitter:description" content="Read The Awad Law Firm privacy policy for how information submitted through this website may be collected, used, and protected.">
+    <meta name="twitter:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
+
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/premium.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Outfit & Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Unified "Wow" Theme Config -->
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#060B11',
+                            navy: '#0C1827',
+                            charcoal: '#1A2736',
+                            primary: '#6CA1E6',
+                            primaryhover: '#5A8DD0',
+                            pale: '#EAF2FA',
+                            offwhite: '#F9FAFC',
+                            white: '#FFFFFF',
+                            lightgray: '#F0F4F8',
+                            border: '#E2E8F0',
+                            text: '#0A1118',
+                            muted: '#64748B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #F9FAFC; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6CA1E6; }
+
+        /* Hero Animation Utilities */
+        @keyframes slow-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-spin {
+            animation: slow-spin 20s linear infinite;
+        }
+        
+        .legal-content h2 {
+            font-family: 'Outfit', sans-serif;
+            color: #0C1827;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #6CA1E6;
+            padding-left: 12px;
+        }
+        .legal-content p {
+            font-family: 'Manrope', sans-serif;
+            color: #64748B;
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+        .legal-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        .legal-content li {
+            font-family: 'Manrope', sans-serif;
+            color: #64748B;
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            font-weight: 500;
+        }
+        .legal-content li::before {
+            content: "•";
+            color: #6CA1E6;
+            font-weight: bold;
+            font-size: 1.25rem;
+            position: absolute;
+            left: 0.25rem;
+            top: -0.1rem;
+        }
+        .legal-content a {
+            color: #6CA1E6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .legal-content a:hover {
+            color: #5A8DD0;
+            text-decoration: underline;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://theawadlawfirm.com/privacy-policy/#webpage",
+      "url": "https://theawadlawfirm.com/privacy-policy/",
+      "name": "Privacy Policy | The Awad Law Firm",
+      "description": "Read The Awad Law Firm privacy policy for how information submitted through this website may be collected, used, and protected."
+    }
+    </script>
 </head>
-<body class="home-page">
-  <main class="community-article-main" style="max-width: 920px; margin: 0 auto; padding: 120px 24px 80px;">
-    <a href="/" style="display:inline-block; margin-bottom:32px; color:#6CA1E6; font-weight:800; text-decoration:none;">&larr; Back to Home</a>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: May 31, 2026</p>
-    <p>The Awad Law Firm respects your privacy. Information you submit through this website, including contact forms, consultation requests, email links, and phone links, may be used to respond to your inquiry, evaluate a potential legal matter, and improve our client service.</p>
-    <h2>Information We Collect</h2>
-    <p>We may collect your name, contact information, case details you voluntarily provide, device/browser data, and basic analytics information about how visitors use the website.</p>
-    <h2>How We Use Information</h2>
-    <p>We use submitted information to communicate with you, schedule consultations, review potential claims, maintain website security, and improve our legal resources. Submitting a form does not create an attorney-client relationship.</p>
-    <h2>Contact</h2>
-    <p>For privacy questions, contact us at <a href="mailto:ibrahim@theawadlawfirm.com">ibrahim@theawadlawfirm.com</a> or call <a href="tel:(706) 388-3784">(706) 388-3784</a>.</p>
-  </main>
+<body class="home-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
+
+<header class="navbar">
+    <a href="/" class="logo" aria-label="Awad Law Firm home">
+        <img src="/assets/alf-white-logo.png" alt="Awad Law Firm Logo" loading="lazy" decoding="async">
+    </a>
+
+    <nav>
+        <a href="/" class="">Home</a>
+        <div class="nav-dropdown">
+            <a href="/about-the-awad-law-firm-history/" class="nav-dropdown-toggle">About</a>
+            <div class="nav-dropdown-menu">
+                <span class="nav-dropdown-label">The Firm</span>
+                <hr class="nav-dropdown-divider">
+                <a href="/awad-law-firm-4/" class="nav-dropdown-item">Mission &amp; Vision</a>
+                <a href="/about-the-awad-law-firm-history/" class="nav-dropdown-item">Firm History</a>
+                <a href="/team-members/ibrahim-awad/" class="nav-dropdown-item">Ibrahim Awad</a>
+                <a href="/team-members/" class="nav-dropdown-item">Team of Experts</a>
+                <a href="/why-choose-us/" class="nav-dropdown-item">Why Choose Us</a>
+                <a href="/core-values/" class="nav-dropdown-item">Core Values</a>
+                <a href="/community/" class="nav-dropdown-item">Community</a>
+            </div>
+        </div>
+        <div class="nav-dropdown">
+            <a href="/practice-areas/" class="nav-dropdown-toggle">Practice Areas</a>
+            <div class="nav-dropdown-menu">
+                <span class="nav-dropdown-label">We Handle</span>
+                <hr class="nav-dropdown-divider">
+                <a href="/personal-injury/" class="nav-dropdown-item">Personal Injury</a>
+                <a href="/car-accident/" class="nav-dropdown-item">Car Accidents</a>
+                <a href="/truck-accident/" class="nav-dropdown-item">Trucking Accidents</a>
+                <a href="/motorcycle-accident/" class="nav-dropdown-item">Motorcycle Accidents</a>
+                <a href="/bicycle-accident/" class="nav-dropdown-item">Bicycle Accidents</a>
+                <a href="/uber-accident/" class="nav-dropdown-item">Uber Accidents</a>
+                <a href="/lyft-accident/" class="nav-dropdown-item">Lyft Accidents</a>
+                <a href="/slip-and-fall/" class="nav-dropdown-item">Slip &amp; Fall</a>
+                <a href="/medical-malpractice/" class="nav-dropdown-item">Medical Malpractice</a>
+                <a href="/wrongful-death/" class="nav-dropdown-item">Wrongful Death</a>
+            </div>
+        </div>
+        <div class="nav-dropdown">
+            <a href="/results/" class="nav-dropdown-toggle">Results</a>
+            <div class="nav-dropdown-menu">
+                <span class="nav-dropdown-label">Our Track Record</span>
+                <hr class="nav-dropdown-divider">
+                <a href="/results/" class="nav-dropdown-item">Case Studies</a>
+                <a href="/testimonials/" class="nav-dropdown-item">Video Testimonials</a>
+                <a href="/reviews/" class="nav-dropdown-item">Reviews</a>
+            </div>
+        </div>
+        <div class="nav-dropdown">
+            <a href="/resources/" class="nav-dropdown-toggle">Resources</a>
+            <div class="nav-dropdown-menu">
+                <span class="nav-dropdown-label">Learn More</span>
+                <hr class="nav-dropdown-divider">
+                <a href="/video-library/" class="nav-dropdown-item">TEDx Talk</a>
+                <a href="/resources/" class="nav-dropdown-item">Legal Education</a>
+                <a href="/newsletter/" class="nav-dropdown-item">Newsletter</a>
+                <a href="https://www.awadacademy.com/" class="nav-dropdown-item" target="_blank" rel="noopener noreferrer">Awad Academy &#8599;</a>
+            </div>
+        </div>
+        <a href="/newsletter/" class="">Newsletter</a>
+    </nav>
+
+    <div class="nav-icons">
+        <div class="nav-search" aria-label="Search">
+            <span></span>
+            <em>Search here...</em>
+        </div>
+        <a href="/contact/" class="nav-quote-btn">Get Free Quote</a>
+        <a href="/contact/" class="nav-arrow-btn" aria-label="Get Free Quote">
+            <span>&#8599;</span>
+        </a>
+        <button class="nav-dots-btn" aria-label="Open quick menu" type="button">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </button>
+        <a href="/contact/" class="nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-10 5L2 7"></path>
+            </svg>
+        </a>
+        <a href="/contact/" class="nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63 2 2 0 0 1 2-2h3a2 2 0 0 1 2 1.72c.12.91.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.25a2 2 0 0 1 2.11-.45c.85.33 1.74.56 2.65.68A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<!-- Colorful Branding Hero Section -->
+<section class="relative pt-32 pb-40 lg:pt-40 lg:pb-48 overflow-hidden z-10 bg-brand-dark">
+    <!-- Dynamic Colorful Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#060B11] via-[#0C1827] to-[#1e3a8a] z-0 opacity-90"></div>
+
+    <!-- Glowing Orbs / Colorful Shapes for the "Wow" Effect -->
+    <div class="absolute inset-0 overflow-hidden z-0 pointer-events-none mix-blend-screen">
+        <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3b82f6]/40 blur-[120px] rounded-full animate-pulse"></div>
+        <div class="absolute -bottom-32 -right-10 w-[700px] h-[700px] bg-brand-primary/30 blur-[150px] rounded-full"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563eb]/20 blur-[120px] rounded-full animate-slow-spin"></div>
+    </div>
+
+    <div class="container mx-auto px-6 max-w-7xl relative z-10 text-center">
+        <!-- Glassmorphism Tag -->
+        <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-2xl relative">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-primary"></span>
+            </span>
+            <span>Security &amp; Trust</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-[5.5rem] font-heading font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl mb-8">
+            Privacy Policy &mdash;<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-pale to-brand-primary drop-shadow-sm">The Awad Law Firm</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/80 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            At The Awad Law Firm, we respect your privacy and are fully committed to protecting the personal information you share with us.
+        </p>
+    </div>
+
+    <!-- Sleek Angled Bottom Divider connecting to the grid -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+        <svg class="relative block w-full h-[60px] md:h-[120px]" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,120 L1200,120 L1200,0 L0,120 Z" fill="#F9FAFC"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="breadcrumb" style="background: #F9FAFC; padding-top: 2rem;">
+  <ol class="breadcrumb-list" style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;">
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Privacy Policy</li>
+  </ol>
+</nav>
+
+<!-- Content Section -->
+<section class="py-12 pb-24 bg-brand-offwhite relative z-20">
+    <div class="container mx-auto px-6 max-w-[56rem]">
+        <div class="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-brand-border/40">
+            
+            <div class="legal-content">
+                <div class="flex items-center justify-between border-b border-brand-border/80 pb-6 mb-8">
+                    <span class="text-xs font-bold tracking-widest text-brand-muted uppercase">Official Document</span>
+                    <span class="text-xs font-semibold text-brand-muted">Last updated: May 31, 2026</span>
+                </div>
+
+                <p class="text-lg leading-relaxed font-semibold text-brand-charcoal mb-8">
+                    The Awad Law Firm respects your privacy. Information you submit through this website, including contact forms, consultation requests, email links, and phone links, may be used to respond to your inquiry, evaluate a potential legal matter, and improve our client service.
+                </p>
+
+                <h2>1. Information We Collect</h2>
+                <p>
+                    We may collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our services, when you contact us, or when you submit case details. This information may include:
+                </p>
+                <ul>
+                    <li><strong>Contact Details:</strong> Your name, email address, phone number, and physical mailing address.</li>
+                    <li><strong>Case-Related Information:</strong> Information about legal issues, incident descriptions, medical treatments, and other details you share when inquiring about representation.</li>
+                    <li><strong>Technical Data:</strong> Device and browser data, IP address, and basic analytics information about how visitors navigate and interact with our website.</li>
+                </ul>
+
+                <h2>2. How We Use Information</h2>
+                <p>
+                    We use the information we collect or receive to provide, improve, and secure our legal services and communications. Specifically, we use your data to:
+                </p>
+                <ul>
+                    <li>Communicate with you and respond to your consultation inquiries.</li>
+                    <li>Schedule and manage personal injury consultations.</li>
+                    <li>Review and evaluate potential legal claims for representation.</li>
+                    <li>Maintain website security, verify safety, and prevent fraudulent activity.</li>
+                    <li>Improve our website, design system, articles, and legal resources for our visitors.</li>
+                </ul>
+                <p>
+                    <em>Note: Submitting an inquiry or case form through this website does not create an attorney-client relationship. An attorney-client relationship is only established through an executed written agreement signed by both parties.</em>
+                </p>
+
+                <h2>3. Sharing of Information</h2>
+                <p>
+                    The Awad Law Firm is dedicated to maintaining the absolute confidentiality of your legal inquiries. We do not sell, rent, or trade your personal information to third parties. We may only disclose or share information in the following limited circumstances:
+                </p>
+                <ul>
+                    <li>With trusted service providers and IT partners who assist in maintaining our website or secure case management platforms, subject to strict confidentiality agreements.</li>
+                    <li>When required by law, subpoena, or standard judicial proceedings, or to protect the safety, rights, and security of our clients or the public.</li>
+                </ul>
+
+                <h2>4. Data Protection &amp; Security</h2>
+                <p>
+                    We implement highly secure administrative, technical, and physical safeguards designed to protect the security of any personal information we process. While we employ industry-standard encryption and security measures, no electronic transmission over the internet can be guaranteed 100% secure. Therefore, we encourage caution when transmitting extremely sensitive or confidential medical and legal records via public forms.
+                </p>
+
+                <h2>5. Your Rights &amp; Choices</h2>
+                <p>
+                    You have choices regarding how we communicate with you and process your information:
+                </p>
+                <ul>
+                    <li>You can opt out of receiving email newsletters or marketing updates from us by clicking the unsubscribe link in our mailings or contacting us directly.</li>
+                    <li>You can request to update, correct, or delete the contact information you provided to us by sending an email request.</li>
+                    <li>You can configure your browser settings to reject cookies or notify you when a cookie is placed, though some features of the website may function differently as a result.</li>
+                </ul>
+
+                <h2>6. Contact Us</h2>
+                <p>
+                    If you have any questions or concerns about this Privacy Policy, or if you would like to exercise any of your preferences, please contact our team at:
+                </p>
+                
+                <div class="mt-8 bg-brand-pale/40 border border-brand-primary/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div>
+                        <h4 class="font-heading font-black text-brand-navy text-lg mb-1">The Awad Law Firm, P.C.</h4>
+                        <p class="text-sm text-brand-muted font-medium mb-0">Focused, relentless personal injury representation across Georgia.</p>
+                    </div>
+                    <div class="flex flex-col gap-2 shrink-0">
+                        <a href="mailto:ibrahim@theawadlawfirm.com" class="flex items-center text-brand-primary font-bold text-sm hover:underline">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i> ibrahim@theawadlawfirm.com
+                        </a>
+                        <a href="tel:(706) 388-3784" class="flex items-center text-brand-primary font-bold text-sm hover:underline">
+                            <i data-lucide="phone" class="w-4 h-4 mr-2"></i> (706) 388-3784
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Bottom Pre-Footer CTA -->
+<section class="py-20 bg-gradient-to-b from-brand-offwhite to-brand-pale/60 border-t border-brand-border/40">
+    <div class="container mx-auto px-6 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Ready to Discuss Your Case?</h2>
+        <p class="text-brand-muted text-lg mb-8">Our team of experienced attorneys is ready to listen. Your first consultation is free.</p>
+
+        <a href="tel:(706) 388-3784" class="bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-4 px-8 rounded-full transition-all duration-300 flex items-center justify-center mx-auto shadow-[0_10px_20px_rgba(108,161,230,0.25)] hover:shadow-[0_15px_30px_rgba(108,161,230,0.4)] hover:-translate-y-0.5 max-w-[280px] text-sm tracking-widest uppercase no-underline">
+            <i data-lucide="phone-call" class="w-5 h-5 mr-3"></i>
+            Call (706) 388-3784
+        </a>
+    </div>
+</section>
+
+<footer class="site-footer">
+  <!-- Newsletter CTA Bar -->
+  <div class="footer-newsletter-bar">
+    <div class="newsletter-left">
+      <svg class="newsletter-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20 30 H80 M50 30 V80 M35 80 H65 M20 50 A15 15 0 0 0 50 50 A15 15 0 0 0 80 50" stroke-dasharray="2 2" />
+        <path d="M30 50 H40 M60 50 H70" />
+      </svg>
+      <div class="newsletter-text-col">
+        <span class="newsletter-kicker">NEWSLETTER</span>
+        <h3 class="newsletter-heading">Sign Up To Get Latest Update</h3>
+      </div>
+    </div>
+    <div class="newsletter-right">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="Enter your Email" class="newsletter-input" required />
+        <button type="submit" class="newsletter-btn">
+          Subscribe
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="site-footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: Pages -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-the-awad-law-firm-history/">About Us</a></li>
+          <li><a href="/team-members/ibrahim-awad/">Our Attorney</a></li>
+          <li><a href="/practice-areas/">Practice Areas</a></li>
+          <li><a href="/results/">Case Studies</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Our Services -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Our Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="/car-accident/">Car Accidents</a></li>
+          <li><a href="/truck-accident/">Truck Accidents</a></li>
+          <li><a href="/motorcycle-accident/">Motorcycle Accidents</a></li>
+          <li><a href="/wrongful-death/">Wrongful Death</a></li>
+          <li><a href="/slip-and-fall/">Slip &amp; Fall</a></li>
+          <li><a href="/personal-injury/">Personal Injury</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Brand Identity (Center) -->
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="/assets/alf-white-logo.png" alt="Awad Law Firm" class="footer-logo" decoding="async">
+        </div>
+        <p class="footer-brand-desc">
+          Marietta personal injury lawyers serving clients across Georgia with focused, relentless advocacy.
+        </p>
+        <div class="footer-social-row">
+          <a href="https://www.facebook.com/theawadlawfirm" class="social-circle-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/theawadlawfirm" class="social-circle-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-awad-law-firm/" class="social-circle-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-3.34-4-3.1-4 0v5.6h-3v-11h3v1.76c1.4-2.58 7-2.78 7 2.47v6.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 4: Location & Offices -->
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-title">Contact & Offices</h4>
+
+        <!-- Address 1 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Marietta Office</h5>
+            <p>4076 Ebenezer Rd., Marietta, GA</p>
+          </div>
+        </div>
+
+        <!-- Address 2 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Dalton Office</h5>
+            <p>210 North Glenwood Ave., Dalton, GA</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Phone</h5>
+            <p><a href="tel:(706) 388-3784">(706) 388-3784</a></p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Email</h5>
+            <p><a href="mailto:ibrahim@theawadlawfirm.com">ibrahim@theawadlawfirm.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-seo-links" aria-label="Helpful internal links">
+    <div class="footer-seo-links-inner">
+      <div>
+        <h4>Georgia Injury Lawyers</h4>
+        <a href="/personal-injury/">Personal Injury Lawyer</a>
+        <a href="/car-accident/">Car Accident Lawyer</a>
+        <a href="/truck-accident/">Truck Accident Lawyer</a>
+        <a href="/slip-and-fall/">Slip and Fall Lawyer</a>
+      </div>
+      <div>
+        <h4>Accident Guides</h4>
+        <a href="/edu-guide-car-accident/">What to Do After a Crash</a>
+        <a href="/average-car-accident-settlement-georgia/">Average Settlement in Georgia</a>
+        <a href="/edu-guide-comparative-negligence/">Comparative Negligence</a>
+        <a href="/edu-guide-statute-of-limitations/">Georgia Injury Deadlines</a>
+      </div>
+      <div>
+        <h4>Trust Signals</h4>
+        <a href="/results/">Case Results</a>
+        <a href="/reviews/">Client Reviews</a>
+        <a href="/testimonials/">Video Testimonials</a>
+        <a href="/team-members/ibrahim-awad/">Attorney Ibrahim Awad</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-bar-inner">
+      <p class="footer-copyright-text">
+        &copy; 2026 Awad Law Firm. All Rights Reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <span>|</span>
+        <a href="/terms-of-service/">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+
+<script>
+    // Initialize Icons
+    lucide.createIcons();
+</script>
+<a class="premium-float-call" href="tel:(706) 388-3784" aria-label="Call Awad Law Firm at (706) 388-3784">
+  <span class="float-call-pulse" aria-hidden="true"></span>
+  <span class="float-call-pulse-2" aria-hidden="true"></span>
+  <span class="float-call-content">
+    <svg class="float-call-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.18L9.09 10.91a16 16 0 0 0 4 4l1.67-1.25a2 2 0 0 1 2.18-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <span class="float-call-text">(706) 388-3784</span>
+  </span>
+ </a>
 </body>
 </html>

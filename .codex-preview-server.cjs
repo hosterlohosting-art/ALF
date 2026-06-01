@@ -58,7 +58,10 @@ const cleanSlugMap = {
   '/edu-guide-statute-of-limitations/': 'edu-guide-statute-of-limitations.html',
   '/team-members/ibrahim-awad/': 'ibrahim-awad.html',
   '/average-car-accident-settlement-georgia/': 'article-average-settlement.html',
-  '/distracted-driver-accident-georgia/': 'article-distracted-driver.html'
+  '/distracted-driver-accident-georgia/': 'article-distracted-driver.html',
+  '/privacy-policy/': 'privacy-policy.html',
+  '/terms-of-service/': 'terms-of-service.html',
+  '/personnel_category/team-awad/': 'personnel_category/team-awad/index.html'
 };
 
 http.createServer((req, res) => {
