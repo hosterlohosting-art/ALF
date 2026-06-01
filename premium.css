@@ -12414,7 +12414,12 @@ body.home-page a.premium-mobile-video-wrap {
     max-width: 360px !important;
     pointer-events: auto !important; /* CRITICAL FIX: Ensure clickable on mobile! */
     position: relative !important;
-    z-index: 15 !important;
+    z-index: 99 !important; /* Elevated z-index to sit above absolute positioning overlaps */
+    cursor: pointer !important;
+  }
+
+  body.home-page a.premium-mobile-video-wrap * {
+    pointer-events: auto !important;
   }
 
   body.home-page a.premium-mobile-video-wrap .premium-video-card-content {
