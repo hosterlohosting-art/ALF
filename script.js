@@ -660,12 +660,37 @@ if (document.readyState === 'loading') {
   var hamburger = document.getElementById('navHamburger');
   var navbar    = document.querySelector('.navbar');
   if (!hamburger || !navbar) return;
+  var lockedScrollY = 0;
+
+  function lockPageScroll() {
+    lockedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + lockedScrollY + 'px';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function unlockPageScroll() {
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, lockedScrollY);
+  }
 
   function closeMenu() {
     navbar.classList.remove('nav-open');
     hamburger.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    unlockPageScroll();
   }
 
   // Toggle menu
@@ -673,7 +698,11 @@ if (document.readyState === 'loading') {
     var isOpen = navbar.classList.toggle('nav-open');
     hamburger.classList.toggle('open', isOpen);
     hamburger.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (isOpen) {
+      lockPageScroll();
+    } else {
+      unlockPageScroll();
+    }
   });
 
   // Close when a non-toggle link is clicked

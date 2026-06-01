@@ -13856,3 +13856,33 @@ body.home-page .origin-feature-card:hover .origin-feature-icon svg {
     margin-bottom: 0 !important;
   }
 }
+
+/* Keep the mobile hamburger menu pinned to the viewport while the page behind it
+   is locked. The menu itself can scroll internally when its links overflow. */
+@media (max-width: 900px) {
+  html.menu-open,
+  body.menu-open {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+  }
+
+  body.menu-open .navbar.nav-open > nav {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    z-index: 10000 !important;
+  }
+
+  body.menu-open .navbar.nav-open .nav-hamburger {
+    position: fixed !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 10001 !important;
+  }
+}
