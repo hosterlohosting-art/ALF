@@ -2705,19 +2705,23 @@ body.home-page .premium-primary-btn {
 }
 
 body.home-page .premium-primary-btn::after {
-  content: "\2197";
-  display: inline-grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  margin-right: -22px;
-  margin-left: 14px;
-  border-radius: 50%;
+  content: "" !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 46px !important;
+  height: 46px !important;
+  margin-right: -22px !important;
+  margin-left: 14px !important;
+  border-radius: 50% !important;
   background:
     radial-gradient(circle at 30% 25%, rgba(255,255,255,0.22), transparent 30%),
-    linear-gradient(135deg, #020912 0%, #0c2a52 100%);
-  color: #ffffff;
-  box-shadow: 0 0 0 5px rgba(120,189,255,0.26);
+    linear-gradient(135deg, #020912 0%, #0c2a52 100%) !important;
+  box-shadow: 0 0 0 5px rgba(120,189,255,0.26) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'%3E%3C/line%3E%3Cpolyline points='7 7 17 7 17 17'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
 }
 
 body.home-page .premium-phone-btn {
@@ -10201,6 +10205,15 @@ body.home-page .premium-hero-scroll-header {
     box-sizing: border-box !important;
   }
 
+  body.home-page .premium-home-hero .premium-primary-btn::after {
+    width: 32px !important;
+    height: 32px !important;
+    margin-right: -12px !important;
+    margin-left: 10px !important;
+    background-size: 13px 13px !important;
+    box-shadow: 0 0 0 3px rgba(120,189,255,0.26) !important;
+  }
+
   body.home-page .premium-home-hero .premium-phone-btn {
     background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -11912,6 +11925,16 @@ body.home-page .premium-side-tags a:nth-child(3) {
 body.home-page .premium-play-dot {
   position: relative !important;
   z-index: 1 !important;
+  padding: 0 !important;
+  padding-left: 0 !important;
+}
+
+body.home-page .play-triangle-svg {
+  width: 32% !important;
+  height: 32% !important;
+  display: block !important;
+  fill: #ffffff !important;
+  margin-left: 4% !important;
 }
 body.home-page .premium-play-dot::before {
   content: "" !important;
