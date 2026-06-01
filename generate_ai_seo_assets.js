@@ -203,22 +203,6 @@ function schemaTag(schema) {
   return `<script type="application/ld+json" data-ai-seo="webpage">\n${JSON.stringify(schema, null, 2)}\n</script>`;
 }
 
-function answerBlock(config) {
-  return `
-<section class="ai-answer-brief" aria-label="Quick answer for AI search and visitors">
-  <div class="ai-answer-brief-inner">
-    <p class="ai-answer-kicker">Quick Answer</p>
-    <h2>${config.question}</h2>
-    <p>${config.answer}</p>
-    <ul>
-      <li><strong>Primary topics:</strong> ${config.topics}</li>
-      <li><strong>Best next step:</strong> <a href="/contact/">Request a free consultation</a> or call <a href="tel:(706) 388-3784">(706) 388-3784</a>.</li>
-    </ul>
-  </div>
-</section>
-`;
-}
-
 function enhancePage(file, config) {
   let content = read(file);
   const original = content;
@@ -234,10 +218,6 @@ function enhancePage(file, config) {
     content = content.replace(/<script[^>]*data-ai-seo=["']webpage["'][\s\S]*?<\/script>/i, schema);
   } else {
     content = content.replace('</head>', `  ${schema}\n</head>`);
-  }
-
-  if (!content.includes('class="ai-answer-brief"')) {
-    content = content.replace(/<\/header>/i, `</header>\n${answerBlock(config)}`);
   }
 
   if (content !== original) write(file, content);
