@@ -9869,7 +9869,7 @@ body.home-page .premium-home-hero {
     top: auto !important;
     right: auto !important;
     bottom: -6px !important;
-    left: 51% !important;
+    left: 47% !important;
     width: clamp(380px, 29vw, 540px) !important;
     max-height: calc(100vh - 86px) !important;
     transform: translateX(-12%) translateY(calc(var(--hero-image-progress) * 42px)) scale(calc(1 - (var(--hero-image-progress) * 0.025))) !important;
