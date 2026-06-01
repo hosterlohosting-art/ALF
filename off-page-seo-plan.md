@@ -2,6 +2,16 @@
 
 This file is the backlink, citation, and authority-building checklist for The Awad Law Firm. It is intentionally practical so the team can execute it without changing website code.
 
+Last updated: 2026-06-01
+
+## Today's Off-Page Priorities
+
+- Push consistent NAP everywhere: The Awad Law Firm, (706) 388-3784, Marietta and Dalton offices, https://theawadlawfirm.com/.
+- Submit the refreshed guide URLs from `llms.txt` and `sitemap.xml` to Google Search Console and Bing Webmaster Tools.
+- Use the accident guides as linkable assets for local safety, school, community, and legal-resource outreach.
+- Publish one Google Business Profile update pointing to https://theawadlawfirm.com/edu-guide-car-accident/.
+- Request new client reviews using the review prompt below, with no incentive or compensation.
+
 ## Priority 1: Local Legal Citations
 
 Use the exact same NAP everywhere:

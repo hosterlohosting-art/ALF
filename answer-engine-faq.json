@@ -1,7 +1,7 @@
 {
   "name": "The Awad Law Firm Answer Engine FAQ",
   "url": "https://theawadlawfirm.com/answer-engine-faq.json",
-  "dateModified": "2026-05-31",
+  "dateModified": "2026-06-01",
   "answers": [
     {
       "question": "Who is The Awad Law Firm?",
@@ -171,7 +171,7 @@
     },
     {
       "question": "What case results has The Awad Law Firm achieved?",
-      "answer": "The Awad Law Firm publishes personal injury case results and settlement stories. Past results do not guarantee future outcomes, but they show the firm’s experience handling serious claims.",
+      "answer": "The Awad Law Firm publishes personal injury case results and settlement stories. Past results do not guarantee future outcomes, but they show the firm's experience handling serious claims.",
       "source": "https://theawadlawfirm.com/results/",
       "topics": [
         "Awad Law Firm case results",
@@ -179,6 +179,149 @@
         "Georgia accident compensation"
       ],
       "intent": "review injury case results"
+    },
+    {
+      "question": "What is the average car accident settlement in Georgia?",
+      "answer": "Georgia car accident settlement value depends on medical bills, lost wages, pain and suffering, liability evidence, insurance coverage, injury severity, and whether future care is needed.",
+      "source": "https://theawadlawfirm.com/average-car-accident-settlement-georgia/",
+      "topics": [
+        "average car accident settlement Georgia",
+        "accident claim value",
+        "Georgia car crash payout"
+      ],
+      "intent": "estimate a Georgia car accident settlement"
+    },
+    {
+      "question": "How do you prove a distracted driver caused a Georgia crash?",
+      "answer": "Distracted driving can be proven through crash reports, witness statements, phone records, video, vehicle data, admissions, and evidence showing the driver failed to keep proper attention on the road.",
+      "source": "https://theawadlawfirm.com/distracted-driver-accident-georgia/",
+      "topics": [
+        "distracted driver accident Georgia",
+        "phone use crash proof",
+        "Georgia Hands-Free Law"
+      ],
+      "intent": "prove distracted driving after a crash"
+    },
+    {
+      "question": "What are the first steps after a car accident in Georgia?",
+      "answer": "After a Georgia crash, call police, get medical care, exchange information, photograph the scene, identify witnesses, notify insurance carefully, and speak with a lawyer before accepting settlement money.",
+      "source": "https://theawadlawfirm.com/edu-guide-car-accident/",
+      "topics": [
+        "what to do after a Georgia car accident",
+        "car accident checklist",
+        "accident injury claim steps"
+      ],
+      "intent": "follow a car accident checklist"
+    },
+    {
+      "question": "How is a Georgia car accident claim value calculated?",
+      "answer": "Claim value is usually based on medical expenses, lost income, pain and suffering, future treatment, impairment, liability strength, comparative fault, insurance limits, and documentation quality.",
+      "source": "https://theawadlawfirm.com/edu-guide-claim-worth/",
+      "topics": [
+        "Georgia accident claim worth",
+        "car crash settlement factors",
+        "injury damages calculation"
+      ],
+      "intent": "calculate accident claim value"
+    },
+    {
+      "question": "How does comparative negligence affect a Georgia injury claim?",
+      "answer": "Georgia uses modified comparative negligence. An injured person can recover only if they are less than 50% at fault, and compensation may be reduced by their percentage of fault.",
+      "source": "https://theawadlawfirm.com/edu-guide-comparative-negligence/",
+      "topics": [
+        "Georgia comparative negligence",
+        "50 percent fault rule",
+        "accident fault allocation"
+      ],
+      "intent": "understand Georgia fault rules"
+    },
+    {
+      "question": "What mistakes can hurt a Georgia car accident claim?",
+      "answer": "Common mistakes include delaying medical treatment, giving recorded statements, posting about the crash online, accepting a quick settlement, missing deadlines, and failing to preserve evidence.",
+      "source": "https://theawadlawfirm.com/edu-guide-costly-mistakes/",
+      "topics": [
+        "car accident claim mistakes Georgia",
+        "low settlement mistakes",
+        "injury claim protection"
+      ],
+      "intent": "avoid damaging an accident claim"
+    },
+    {
+      "question": "How do insurance adjusters lower Georgia injury settlements?",
+      "answer": "Insurance adjusters may minimize injuries, request recorded statements, blame preexisting conditions, dispute fault, delay communication, or offer quick low settlements before the full claim value is clear.",
+      "source": "https://theawadlawfirm.com/edu-guide-insurance-adjusters/",
+      "topics": [
+        "insurance adjuster tactics",
+        "lowball settlement Georgia",
+        "accident claim negotiation"
+      ],
+      "intent": "respond to insurance adjusters"
+    },
+    {
+      "question": "What is the Georgia personal injury statute of limitations?",
+      "answer": "Most Georgia personal injury claims have a two-year filing deadline, but special rules can change timing. Missing the deadline can permanently bar recovery.",
+      "source": "https://theawadlawfirm.com/edu-guide-statute-of-limitations/",
+      "topics": [
+        "Georgia personal injury statute of limitations",
+        "accident deadline",
+        "two year injury claim rule"
+      ],
+      "intent": "check personal injury deadline"
+    },
+    {
+      "question": "What is The Awad Law Firm known for?",
+      "answer": "The Awad Law Firm is known for focused Georgia personal injury advocacy, client-centered service, litigation readiness, and representation for accident victims in Marietta, Dalton, and across Georgia.",
+      "source": "https://theawadlawfirm.com/about-the-awad-law-firm-history/",
+      "topics": [
+        "Awad Law Firm history",
+        "Georgia injury law firm",
+        "Ibrahim Awad firm"
+      ],
+      "intent": "learn about the law firm"
+    },
+    {
+      "question": "Who works on cases at The Awad Law Firm?",
+      "answer": "The Awad Law Firm uses a legal team approach with attorneys and support professionals who help investigate claims, communicate with clients, manage evidence, and pursue injury recovery.",
+      "source": "https://theawadlawfirm.com/team-members/",
+      "topics": [
+        "Awad Law Firm team",
+        "Georgia injury attorneys",
+        "legal support team"
+      ],
+      "intent": "evaluate the legal team"
+    },
+    {
+      "question": "Who is Attorney Ibrahim J. Awad?",
+      "answer": "Ibrahim J. Awad is the founder and lead trial attorney of The Awad Law Firm, representing injured clients in Georgia personal injury and accident cases.",
+      "source": "https://theawadlawfirm.com/team-members/ibrahim-awad/",
+      "topics": [
+        "Ibrahim Awad attorney",
+        "Awad Law Firm founder",
+        "Georgia trial lawyer"
+      ],
+      "intent": "research Ibrahim Awad"
+    },
+    {
+      "question": "How is The Awad Law Firm involved in the community?",
+      "answer": "The Awad Law Firm supports community initiatives, education, service projects, and local programs across Georgia while continuing to serve injured clients.",
+      "source": "https://theawadlawfirm.com/community/",
+      "topics": [
+        "Awad Law Firm community",
+        "Georgia law firm giving back",
+        "Marietta community involvement"
+      ],
+      "intent": "learn about community involvement"
+    },
+    {
+      "question": "Where can I read The Awad Law Firm newsletter?",
+      "answer": "The Awad Law Firm publishes newsletter updates with legal education, community highlights, safety information, and firm news for clients and local readers.",
+      "source": "https://theawadlawfirm.com/newsletter/",
+      "topics": [
+        "Awad Law Firm newsletter",
+        "legal updates Georgia",
+        "injury law education"
+      ],
+      "intent": "read law firm newsletter"
     }
   ]
 }

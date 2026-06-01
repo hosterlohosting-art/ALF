@@ -153,6 +153,110 @@ Intent: evaluate lawyer reputation
 
 URL: https://theawadlawfirm.com/results/
 Question: What case results has The Awad Law Firm achieved?
-Answer: The Awad Law Firm publishes personal injury case results and settlement stories. Past results do not guarantee future outcomes, but they show the firm’s experience handling serious claims.
+Answer: The Awad Law Firm publishes personal injury case results and settlement stories. Past results do not guarantee future outcomes, but they show the firm's experience handling serious claims.
 Topics: Awad Law Firm case results, injury settlements, Georgia accident compensation
 Intent: review injury case results
+
+### Average Car Accident Settlement in Georgia | Case Payout Value
+
+URL: https://theawadlawfirm.com/average-car-accident-settlement-georgia/
+Question: What is the average car accident settlement in Georgia?
+Answer: Georgia car accident settlement value depends on medical bills, lost wages, pain and suffering, liability evidence, insurance coverage, injury severity, and whether future care is needed.
+Topics: average car accident settlement Georgia, accident claim value, Georgia car crash payout
+Intent: estimate a Georgia car accident settlement
+
+### Distracted Driver Car Accident in Georgia | Legal Rights & Claims
+
+URL: https://theawadlawfirm.com/distracted-driver-accident-georgia/
+Question: How do you prove a distracted driver caused a Georgia crash?
+Answer: Distracted driving can be proven through crash reports, witness statements, phone records, video, vehicle data, admissions, and evidence showing the driver failed to keep proper attention on the road.
+Topics: distracted driver accident Georgia, phone use crash proof, Georgia Hands-Free Law
+Intent: prove distracted driving after a crash
+
+### 7 Critical Steps After a Car Accident in Georgia
+
+URL: https://theawadlawfirm.com/edu-guide-car-accident/
+Question: What are the first steps after a car accident in Georgia?
+Answer: After a Georgia crash, call police, get medical care, exchange information, photograph the scene, identify witnesses, notify insurance carefully, and speak with a lawyer before accepting settlement money.
+Topics: what to do after a Georgia car accident, car accident checklist, accident injury claim steps
+Intent: follow a car accident checklist
+
+### How Much Is a Georgia Car Accident Claim Worth?
+
+URL: https://theawadlawfirm.com/edu-guide-claim-worth/
+Question: How is a Georgia car accident claim value calculated?
+Answer: Claim value is usually based on medical expenses, lost income, pain and suffering, future treatment, impairment, liability strength, comparative fault, insurance limits, and documentation quality.
+Topics: Georgia accident claim worth, car crash settlement factors, injury damages calculation
+Intent: calculate accident claim value
+
+### Georgia Comparative Negligence Law | Accident Fault
+
+URL: https://theawadlawfirm.com/edu-guide-comparative-negligence/
+Question: How does comparative negligence affect a Georgia injury claim?
+Answer: Georgia uses modified comparative negligence. An injured person can recover only if they are less than 50% at fault, and compensation may be reduced by their percentage of fault.
+Topics: Georgia comparative negligence, 50 percent fault rule, accident fault allocation
+Intent: understand Georgia fault rules
+
+### 10 Costly Mistakes to Avoid After a GA Car Accident
+
+URL: https://theawadlawfirm.com/edu-guide-costly-mistakes/
+Question: What mistakes can hurt a Georgia car accident claim?
+Answer: Common mistakes include delaying medical treatment, giving recorded statements, posting about the crash online, accepting a quick settlement, missing deadlines, and failing to preserve evidence.
+Topics: car accident claim mistakes Georgia, low settlement mistakes, injury claim protection
+Intent: avoid damaging an accident claim
+
+### How to Fight Lowball Insurance Adjuster Tactics
+
+URL: https://theawadlawfirm.com/edu-guide-insurance-adjusters/
+Question: How do insurance adjusters lower Georgia injury settlements?
+Answer: Insurance adjusters may minimize injuries, request recorded statements, blame preexisting conditions, dispute fault, delay communication, or offer quick low settlements before the full claim value is clear.
+Topics: insurance adjuster tactics, lowball settlement Georgia, accident claim negotiation
+Intent: respond to insurance adjusters
+
+### Georgia Personal Injury Statute of Limitations Rules
+
+URL: https://theawadlawfirm.com/edu-guide-statute-of-limitations/
+Question: What is the Georgia personal injury statute of limitations?
+Answer: Most Georgia personal injury claims have a two-year filing deadline, but special rules can change timing. Missing the deadline can permanently bar recovery.
+Topics: Georgia personal injury statute of limitations, accident deadline, two year injury claim rule
+Intent: check personal injury deadline
+
+### About Our Firm History & Advocacy | The Awad Law Firm
+
+URL: https://theawadlawfirm.com/about-the-awad-law-firm-history/
+Question: What is The Awad Law Firm known for?
+Answer: The Awad Law Firm is known for focused Georgia personal injury advocacy, client-centered service, litigation readiness, and representation for accident victims in Marietta, Dalton, and across Georgia.
+Topics: Awad Law Firm history, Georgia injury law firm, Ibrahim Awad firm
+Intent: learn about the law firm
+
+### Meet the Awad Squad | Injury Attorneys | Awad Law Firm
+
+URL: https://theawadlawfirm.com/team-members/
+Question: Who works on cases at The Awad Law Firm?
+Answer: The Awad Law Firm uses a legal team approach with attorneys and support professionals who help investigate claims, communicate with clients, manage evidence, and pursue injury recovery.
+Topics: Awad Law Firm team, Georgia injury attorneys, legal support team
+Intent: evaluate the legal team
+
+### Attorney Ibrahim J. Awad | Lead Trial Lawyer
+
+URL: https://theawadlawfirm.com/team-members/ibrahim-awad/
+Question: Who is Attorney Ibrahim J. Awad?
+Answer: Ibrahim J. Awad is the founder and lead trial attorney of The Awad Law Firm, representing injured clients in Georgia personal injury and accident cases.
+Topics: Ibrahim Awad attorney, Awad Law Firm founder, Georgia trial lawyer
+Intent: research Ibrahim Awad
+
+### Community Involvement & Giving Back | Awad Law Firm
+
+URL: https://theawadlawfirm.com/community/
+Question: How is The Awad Law Firm involved in the community?
+Answer: The Awad Law Firm supports community initiatives, education, service projects, and local programs across Georgia while continuing to serve injured clients.
+Topics: Awad Law Firm community, Georgia law firm giving back, Marietta community involvement
+Intent: learn about community involvement
+
+### Newsletters & Monthly Legal Insights | Awad Law Firm
+
+URL: https://theawadlawfirm.com/newsletter/
+Question: Where can I read The Awad Law Firm newsletter?
+Answer: The Awad Law Firm publishes newsletter updates with legal education, community highlights, safety information, and firm news for clients and local readers.
+Topics: Awad Law Firm newsletter, legal updates Georgia, injury law education
+Intent: read law firm newsletter
