@@ -13514,7 +13514,23 @@ body.home-page .testimonials-section .t-visual-panel img {
     margin-left: auto !important;
     margin-right: auto !important;
     gap: 20px !important;
-    text-align: center !important;
+    text-align: left !important;
+  }
+
+  body.home-page .contact-left {
+    text-align: left !important;
+  }
+
+  body.home-page .contact-kicker {
+    text-align: left !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.home-page .contact-heading {
+    text-align: left !important;
+    font-size: clamp(28px, 7.5vw, 36px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 14px !important;
   }
 
   body.home-page .contact-heading br,
@@ -13522,8 +13538,37 @@ body.home-page .testimonials-section .t-visual-panel img {
     display: none !important;
   }
 
+  body.home-page .contact-intro {
+    text-align: left !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
   body.home-page .contact-group {
-    margin-top: 18px !important;
+    margin-top: 14px !important;
+    margin-bottom: 14px !important;
+    text-align: left !important;
+  }
+
+  body.home-page .contact-group-title {
+    text-align: left !important;
+    margin-bottom: 6px !important;
+  }
+
+  body.home-page .contact-list {
+    text-align: left !important;
+  }
+
+  body.home-page .contact-list-item {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+  }
+
+  body.home-page .contact-info-row {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
   }
 
   body.home-page .contact-list,
