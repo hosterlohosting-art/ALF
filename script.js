@@ -868,8 +868,10 @@ if (document.readyState === 'loading') {
           var oidInput = document.createElement('input');
           oidInput.type = 'hidden';
           oidInput.name = 'oid';
-          oidInput.value = 'YOUR_SF_ORG_ID';
+          oidInput.value = '00DF00000008J4B';
           form.appendChild(oidInput);
+        } else {
+          form.querySelector('[name="oid"]').value = '00DF00000008J4B';
         }
         if (!form.querySelector('[name="retURL"]')) {
           var retURLInput = document.createElement('input');
@@ -883,6 +885,20 @@ if (document.readyState === 'loading') {
           descInput.type = 'hidden';
           descInput.name = 'description';
           form.appendChild(descInput);
+        }
+
+        // Add dynamic honeypot field to block automated spam bots
+        if (!form.querySelector('[name="website_url_hp"]')) {
+          var hpContainer = document.createElement('div');
+          hpContainer.style.display = 'none';
+          hpContainer.style.visibility = 'hidden';
+          var hpInput = document.createElement('input');
+          hpInput.type = 'text';
+          hpInput.name = 'website_url_hp';
+          hpInput.tabIndex = -1;
+          hpInput.autocomplete = 'off';
+          hpContainer.appendChild(hpInput);
+          form.appendChild(hpContainer);
         }
       }
 
@@ -918,6 +934,49 @@ if (document.readyState === 'loading') {
 
         submitBtn.classList.add('submitting-state');
 
+        // Bot honeypot check
+        var hpInput = form.querySelector('[name="website_url_hp"]');
+        if (hpInput && hpInput.value.trim() !== '') {
+          console.warn('Spam submission blocked by honeypot.');
+          setTimeout(function () {
+            submitBtn.classList.remove('submitting-state');
+            form.reset();
+            showToast(
+              'EVALUATION SUBMITTED SECURELY',
+              'Thank you. An expert attorney will contact you within 15 minutes.',
+              'success'
+            );
+          }, 1500);
+          return;
+        }
+
+        // Keyword solicitation screen
+        var msgText = form.querySelector('[name="message"]');
+        if (msgText && msgText.value) {
+          var spamKeywords = [
+            ' seo ', 'guest post', 'guest-post', 'link building', 'ranking on google',
+            'business growth', 'increase traffic', 'digital marketing', 'lead generation service',
+            'cryptocurrency', 'forex trading', 'wealth creation', 'click here'
+          ];
+          var msgLower = msgText.value.toLowerCase();
+          var isSpam = spamKeywords.some(function (keyword) {
+            return msgLower.indexOf(keyword) !== -1;
+          });
+          if (isSpam) {
+            console.warn('Spam solicitation blocked by keyword filter.');
+            setTimeout(function () {
+              submitBtn.classList.remove('submitting-state');
+              form.reset();
+              showToast(
+                'EVALUATION SUBMITTED SECURELY',
+                'Thank you. An expert attorney will contact you within 15 minutes.',
+                'success'
+              );
+            }, 1500);
+            return;
+          }
+        }
+
         // Web-to-Lead: Map variables and submit natively to the background iframe
         if (form.getAttribute('target') === 'salesforce_submissions') {
           // Temporarily rename fields to standard Web-to-Lead API field names
@@ -932,9 +991,9 @@ if (document.readyState === 'loading') {
           if (caseSelect && caseSelect.value) {
             descVal += 'Practice/Case Area: ' + caseSelect.value + '\n';
           }
-          var msgText = form.querySelector('[name="message"]');
-          if (msgText && msgText.value) {
-            descVal += 'Message: ' + msgText.value;
+          var msgTextObj = form.querySelector('[name="message"]');
+          if (msgTextObj && msgTextObj.value) {
+            descVal += 'Message: ' + msgTextObj.value;
           }
           var descInput = form.querySelector('[name="description"]');
           if (descInput) {
