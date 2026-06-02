@@ -400,25 +400,28 @@ A2 2 0 0 1 22 16.92z"></path>
         </div>
       </a>
 
-      <form class="premium-hero-form" action="contact.html">
+      <form class="premium-hero-form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" target="salesforce_submissions">
+        <input type="hidden" name="oid" value="YOUR_SF_ORG_ID">
+        <input type="hidden" name="retURL" value="https://theawadlawfirm.com/">
+        <input type="hidden" name="description" value="">
         <p class="premium-form-kicker">Free Case Evaluation</p>
         <h2>Tell us what happened.</h2>
         <div class="premium-form-grid">
-          <input type="text" name="first_name" placeholder="First name*" aria-label="First Name">
-          <input type="text" name="last_name" placeholder="Last Name*" aria-label="Last Name">
+          <input type="text" name="first_name" placeholder="First name*" aria-label="First Name" required>
+          <input type="text" name="last_name" placeholder="Last Name*" aria-label="Last Name" required>
         </div>
-        <input type="email" name="email" placeholder="Email*" aria-label="Email">
-        <input type="tel" name="phone" placeholder="Phone*" aria-label="Phone Number">
+        <input type="email" name="email" placeholder="Email*" aria-label="Email" required>
+        <input type="tel" name="phone" placeholder="Phone*" aria-label="Phone Number" required>
         <select name="case_type" aria-label="Case Type">
-          <option value="">Car Accident</option>
-          <option>Truck Accident</option>
-          <option>Motorcycle Accident</option>
-          <option>Slip and Fall</option>
-          <option>Medical Malpractice</option>
-          <option>Wrongful Death</option>
-          <option>Other</option>
+          <option value="Car Accident">Car Accident</option>
+          <option value="Truck Accident">Truck Accident</option>
+          <option value="Motorcycle Accident">Motorcycle Accident</option>
+          <option value="Slip and Fall">Slip and Fall</option>
+          <option value="Medical Malpractice">Medical Malpractice</option>
+          <option value="Wrongful Death">Wrongful Death</option>
+          <option value="Other">Other</option>
         </select>
-        <textarea name="message" placeholder="Message*" aria-label="Tell us what happened"></textarea>
+        <textarea name="message" placeholder="Message*" aria-label="Tell us what happened" required></textarea>
         <button type="submit">Submit Case Review</button>
       </form>
     </div>
@@ -1835,15 +1838,18 @@ A2 2 0 0 1 22 16.92z"></path>
           </div>
         </div>
 
-        <form class="contact-form" onsubmit="event.preventDefault();">
+        <form class="contact-form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" target="salesforce_submissions">
+          <input type="hidden" name="oid" value="YOUR_SF_ORG_ID">
+          <input type="hidden" name="retURL" value="https://theawadlawfirm.com/">
+          <input type="hidden" name="description" value="">
           <div class="contact-row contact-row-2">
             <label class="contact-field">
               <span class="contact-label">FIRST NAME *</span>
-              <input type="text" name="firstName" required />
+              <input type="text" name="first_name" required />
             </label>
             <label class="contact-field">
               <span class="contact-label">LAST NAME *</span>
-              <input type="text" name="lastName" required />
+              <input type="text" name="last_name" required />
             </label>
           </div>
 
@@ -1862,15 +1868,15 @@ A2 2 0 0 1 22 16.92z"></path>
             <span class="contact-label">SELECT TYPE OF PRACTICE AREA</span>
             <select name="practiceArea">
               <option value="" selected>Select type of practice area</option>
-              <option value="car">Car Accidents</option>
-              <option value="truck">Trucking Accidents</option>
-              <option value="motorcycle">Motorcycle Accidents</option>
-              <option value="slip">Slip and Fall</option>
-              <option value="uber">Uber Accidents</option>
-              <option value="wrongful">Wrongful Death</option>
-              <option value="lyft">Lyft Accident</option>
-              <option value="medical">Medical Malpractice</option>
-              <option value="personal">Personal Injury</option>
+              <option value="Car Accidents">Car Accidents</option>
+              <option value="Trucking Accidents">Trucking Accidents</option>
+              <option value="Motorcycle Accidents">Motorcycle Accidents</option>
+              <option value="Slip and Fall">Slip and Fall</option>
+              <option value="Uber Accidents">Uber Accidents</option>
+              <option value="Wrongful Death">Wrongful Death</option>
+              <option value="Lyft Accidents">Lyft Accidents</option>
+              <option value="Medical Malpractice">Medical Malpractice</option>
+              <option value="Personal Injury">Personal Injury</option>
             </select>
           </label>
 
@@ -2183,6 +2189,7 @@ A2 2 0 0 1 22 16.92z"></path>
     <span class="float-call-text">(706) 388-3784</span>
   </span>
 </a>
+<iframe name="salesforce_submissions" id="salesforce_submissions" style="display:none;"></iframe>
 </body>
 </html>
 

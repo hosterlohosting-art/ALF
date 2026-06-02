@@ -826,9 +826,64 @@ if (document.readyState === 'loading') {
     var forms = document.querySelectorAll('form');
     console.log('Premium Forms System: Intercepting ' + forms.length + ' forms');
 
+    // Create the hidden iframe if any case form exists on the page
+    var isAnyCaseForm = false;
+    forms.forEach(function (form) {
+      if (
+        form.classList.contains('premium-hero-form') ||
+        form.classList.contains('space-y-6') ||
+        form.classList.contains('contact-form')
+      ) {
+        isAnyCaseForm = true;
+      }
+    });
+
+    if (isAnyCaseForm && !document.getElementById('salesforce_submissions')) {
+      var iframe = document.createElement('iframe');
+      iframe.name = 'salesforce_submissions';
+      iframe.id = 'salesforce_submissions';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+
     forms.forEach(function (form) {
       if (form.classList.contains('nav-search') || form.closest('.nav-search')) {
         return;
+      }
+
+      // Check if this is a case evaluation form
+      var isCaseForm =
+        form.classList.contains('premium-hero-form') ||
+        form.classList.contains('space-y-6') ||
+        form.classList.contains('contact-form');
+
+      if (isCaseForm) {
+        // Upgrade properties dynamically to submit to Salesforce Web-to-Lead
+        form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+        form.method = 'POST';
+        form.target = 'salesforce_submissions';
+
+        // Add standard Web-to-Lead hidden fields dynamically if not present
+        if (!form.querySelector('[name="oid"]')) {
+          var oidInput = document.createElement('input');
+          oidInput.type = 'hidden';
+          oidInput.name = 'oid';
+          oidInput.value = 'YOUR_SF_ORG_ID';
+          form.appendChild(oidInput);
+        }
+        if (!form.querySelector('[name="retURL"]')) {
+          var retURLInput = document.createElement('input');
+          retURLInput.type = 'hidden';
+          retURLInput.name = 'retURL';
+          retURLInput.value = 'https://theawadlawfirm.com/';
+          form.appendChild(retURLInput);
+        }
+        if (!form.querySelector('[name="description"]')) {
+          var descInput = document.createElement('input');
+          descInput.type = 'hidden';
+          descInput.name = 'description';
+          form.appendChild(descInput);
+        }
       }
 
       if (form.getAttribute('onsubmit')) {
@@ -862,6 +917,36 @@ if (document.readyState === 'loading') {
         if (!submitBtn || submitBtn.classList.contains('submitting-state')) return;
 
         submitBtn.classList.add('submitting-state');
+
+        // Web-to-Lead: Map variables and submit natively to the background iframe
+        if (form.getAttribute('target') === 'salesforce_submissions') {
+          // Temporarily rename fields to standard Web-to-Lead API field names
+          var fNameInput = form.querySelector('[name="firstName"]');
+          if (fNameInput) fNameInput.name = 'first_name';
+
+          var lNameInput = form.querySelector('[name="lastName"]');
+          if (lNameInput) lNameInput.name = 'last_name';
+
+          var descVal = '';
+          var caseSelect = form.querySelector('[name="case_type"]') || form.querySelector('[name="practiceArea"]');
+          if (caseSelect && caseSelect.value) {
+            descVal += 'Practice/Case Area: ' + caseSelect.value + '\n';
+          }
+          var msgText = form.querySelector('[name="message"]');
+          if (msgText && msgText.value) {
+            descVal += 'Message: ' + msgText.value;
+          }
+          var descInput = form.querySelector('[name="description"]');
+          if (descInput) {
+            descInput.value = descVal;
+          }
+
+          form.submit();
+
+          // Restore native field names to keep the DOM state clean for future submissions
+          if (fNameInput) fNameInput.name = 'firstName';
+          if (lNameInput) lNameInput.name = 'lastName';
+        }
 
         setTimeout(function () {
           submitBtn.classList.remove('submitting-state');
