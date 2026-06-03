@@ -26,6 +26,7 @@ const routes = {
   'community': 'community.html',
   'why-choose-us': 'why-choose-us.html',
   'contact': 'contact.html',
+  'search': 'search.html',
   'newsletter': 'newsletter.html',
   'privacy-policy': 'privacy-policy.html',
   'terms-of-service': 'terms-of-service.html',

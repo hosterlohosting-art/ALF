@@ -32,6 +32,7 @@ const cleanSlugMap = {
   '/personal-injury/': 'personal-injury.html',
   '/practice-areas/': 'practice-areas.html',
   '/contact/': 'contact.html',
+  '/search/': 'search.html',
   '/reviews/': 'reviews.html',
   '/testimonials/': 'testimonials.html',
   '/video-library/': 'tedx.html',

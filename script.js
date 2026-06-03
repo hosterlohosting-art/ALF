@@ -1355,16 +1355,38 @@ if (document.readyState === 'loading') {
       input.type = 'search';
       input.placeholder = label ? label.textContent.trim() : 'Search here...';
       input.setAttribute('aria-label', 'Search');
+      search.setAttribute('role', 'search');
+      search.setAttribute('tabindex', '0');
       search.appendChild(input);
 
-      search.addEventListener('click', function () {
+      function openSearch() {
         search.classList.add('open');
         input.focus();
+      }
+
+      function submitSearch() {
+        var query = input.value.trim();
+        if (!query) return;
+        window.location.href = '/search/?q=' + encodeURIComponent(query);
+      }
+
+      search.addEventListener('click', function () {
+        openSearch();
       });
+
+      search.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' && document.activeElement !== input) {
+          event.preventDefault();
+          openSearch();
+        }
+      });
+
+      input.addEventListener('focus', openSearch);
 
       input.addEventListener('keydown', function (event) {
         if (event.key === 'Enter' && input.value.trim()) {
-          window.location.href = 'education.html?search=' + encodeURIComponent(input.value.trim());
+          event.preventDefault();
+          submitSearch();
         }
         if (event.key === 'Escape') {
           input.value = '';
@@ -1416,6 +1438,47 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initPremiumNavbar);
   } else {
     initPremiumNavbar();
+  }
+})();
+
+/* Team member deep links for site search results */
+(function () {
+  'use strict';
+
+  function slugify(text) {
+    return String(text || '')
+      .toLowerCase()
+      .replace(/,\s*esq\.?/g, '')
+      .replace(/&/g, ' and ')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
+  function initTeamAnchors() {
+    var cards = document.querySelectorAll('h3.font-heading');
+    if (!cards.length) return;
+
+    cards.forEach(function (heading) {
+      var card = heading.closest('.group.bg-white');
+      if (!card || card.id) return;
+      var slug = slugify(heading.textContent);
+      if (slug) card.id = slug;
+    });
+
+    if (window.location.hash) {
+      var target = document.getElementById(window.location.hash.slice(1));
+      if (target) {
+        setTimeout(function () {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 80);
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTeamAnchors);
+  } else {
+    initTeamAnchors();
   }
 })();
 
