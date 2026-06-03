@@ -386,25 +386,7 @@ setActiveButton(currentIndex, practiceButtons);
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FAQ Accordion
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-(function () {
-  'use strict';
 
-  const items = document.querySelectorAll('.faq-item');
-  if (!items || items.length === 0) return;
-
-  items.forEach((item) => {
-    const btn = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    if (!btn || !answer) return;
-
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      item.classList.toggle('open', !isOpen);
-      btn.setAttribute('aria-expanded', String(!isOpen));
-      answer.setAttribute('aria-hidden', String(isOpen));
-    });
-  });
-})();
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Team Section Carousel (After CS)
@@ -518,13 +500,12 @@ function initFAQAccordion() {
     return;
   }
 
-  console.log('Attaching click handler to FAQ items');
-
   faqItems.forEach((item, index) => {
     const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
 
-    if (!question) {
-      console.warn('FAQ question button not found in item ' + index);
+    if (!question || !answer) {
+      console.warn('FAQ elements not found in item ' + index);
       return;
     }
 
@@ -532,14 +513,22 @@ function initFAQAccordion() {
       console.log('FAQ item ' + index + ' clicked');
       e.stopPropagation();
 
-      const isActive = item.classList.contains('active');
+      const isActive = item.classList.contains('active') || item.classList.contains('open');
 
-      // Close all items
-      faqItems.forEach(i => i.classList.remove('active'));
+      // Close all other items
+      faqItems.forEach(i => {
+        i.classList.remove('active', 'open');
+        const btn = i.querySelector('.faq-question');
+        const ans = i.querySelector('.faq-answer');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        if (ans) ans.setAttribute('aria-hidden', 'true');
+      });
 
       // Open clicked item if it wasn't active
       if (!isActive) {
-        item.classList.add('active');
+        item.classList.add('active', 'open');
+        question.setAttribute('aria-expanded', 'true');
+        answer.setAttribute('aria-hidden', 'false');
       }
     });
   });
