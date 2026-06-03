@@ -229,7 +229,8 @@
             border: 1px solid rgba(108, 161, 230, 0.18) !important;
             border-radius: 30px !important;
             padding: 12px !important;
-            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) !important;
+            background: #ffffff !important;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.5s ease !important;
             box-shadow: 0 20px 48px rgba(12, 24, 39, 0.08) !important;
             isolation: isolate;
         }
@@ -248,8 +249,9 @@
         }
 
         .team-page .grid > .group.bg-white:hover {
-            transform: translateY(-9px) !important;
-            box-shadow: 0 30px 70px rgba(12, 24, 39, 0.15) !important;
+            transform: translateY(-8px) !important;
+            border-color: rgba(108, 161, 230, 0.5) !important;
+            box-shadow: 0 25px 60px rgba(12, 24, 39, 0.12) !important;
         }
 
         .team-page .grid > .group.bg-white:hover::before {
@@ -274,7 +276,11 @@
             filter: none !important;
             object-fit: contain !important;
             object-position: center center !important;
-            transform: none !important;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        }
+
+        .team-page .grid > .group.bg-white:hover .team-split-bg img {
+            transform: scale(1.04) !important;
         }
 
         .team-page .grid > .group.bg-white h3 {
