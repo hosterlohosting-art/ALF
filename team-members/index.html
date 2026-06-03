@@ -167,52 +167,6 @@
             text-transform: uppercase;
         }
 
-        .team-page .team-intro-panel {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr) repeat(3, minmax(150px, 0.36fr));
-            gap: 18px;
-            align-items: stretch;
-            margin-bottom: 54px;
-        }
-
-        .team-page .team-intro-copy,
-        .team-page .team-proof-card {
-            border: 1px solid rgba(108, 161, 230, 0.16);
-            border-radius: 28px;
-            background: rgba(255, 255, 255, 0.86);
-            box-shadow: 0 28px 70px rgba(12, 24, 39, 0.08);
-        }
-
-        .team-page .team-intro-copy {
-            padding: 32px;
-        }
-
-        .team-page .team-intro-copy p {
-            margin: 0;
-            color: #40516a;
-            font: 700 17px/1.75 "Manrope", sans-serif;
-        }
-
-        .team-page .team-proof-card {
-            padding: 24px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .team-page .team-proof-card strong {
-            color: #0c1827;
-            font: 900 26px/1 "Outfit", sans-serif;
-        }
-
-        .team-page .team-proof-card span {
-            margin-top: 9px;
-            color: #64748b;
-            font: 800 11px/1.35 "Manrope", sans-serif;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
         .team-page .bg-geometric {
             background:
                 radial-gradient(circle at 12% 8%, rgba(108, 161, 230, 0.16), transparent 30%),
@@ -339,13 +293,8 @@
         }
 
         @media (max-width: 900px) {
-            .team-page .team-hero-stats,
-            .team-page .team-intro-panel {
+            .team-page .team-hero-stats {
                 grid-template-columns: 1fr;
-            }
-
-            .team-page .team-intro-copy {
-                padding: 24px;
             }
 
             .team-page .team-split-bg {
@@ -683,26 +632,6 @@ A2 2 0 0 1 22 16.92z"></path>
         </div>
 
         <div class="container mx-auto px-6 max-w-[85rem] relative z-10">
-
-            <div class="team-intro-panel">
-                <div class="team-intro-copy">
-                    <p>
-                        Every case is supported by a coordinated team: attorneys shaping the strategy, client-care professionals keeping communication clear, and media/support specialists helping the firm educate and serve the community with consistency.
-                    </p>
-                </div>
-                <div class="team-proof-card">
-                    <strong>Strategy</strong>
-                    <span>Evidence, liability, and negotiation focus</span>
-                </div>
-                <div class="team-proof-card">
-                    <strong>Care</strong>
-                    <span>Human communication through every step</span>
-                </div>
-                <div class="team-proof-card">
-                    <strong>Action</strong>
-                    <span>Fast follow-through from intake to resolution</span>
-                </div>
-            </div>
 
             <!-- ==========================================
                  SECTION 1: THE AWAD SQUAD
