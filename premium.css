@@ -9948,7 +9948,8 @@ body.home-page .premium-home-hero {
   body.home-page .premium-home-hero .premium-hero-copy h1 {
     max-width: 590px !important;
     font-size: clamp(54px, 4.95vw, 82px) !important;
-    line-height: 1.02 !important;
+    line-height: 1.08 !important;
+    padding-bottom: 0.08em !important;
   }
 
   body.home-page .premium-home-hero .premium-hero-subcopy {
