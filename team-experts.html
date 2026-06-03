@@ -81,6 +81,11 @@
             transition: background-position 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Clean up JPEG background noise/grain under mix-blend-multiply by making near-white pixels pure white */
+        .team-split-bg img {
+            filter: contrast(1.08) brightness(1.04) saturate(0.96) !important;
+        }
+
         /* Shifting split position dynamically on card hover */
         .group:hover .team-split-bg {
             background-position: 100% 100%;
