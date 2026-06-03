@@ -99,6 +99,283 @@
         .animate-slow-spin {
             animation: slow-spin 20s linear infinite;
         }
+
+        body.team-page {
+            background: #f3f7fb;
+        }
+
+        @media (min-width: 1024px) {
+            body.home-page.team-page > section.bg-brand-dark:first-of-type {
+                padding-bottom: 16rem !important;
+            }
+        }
+
+        .team-page .team-hero-kicker {
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
+        .team-page .team-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            max-width: 600px;
+            margin: 32px auto 0;
+        }
+
+        .team-page .team-hero-stat {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 20px 18px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .team-page .team-hero-stat::before {
+            content: "";
+            position: absolute;
+            inset: -60% auto auto -30%;
+            width: 150px;
+            height: 150px;
+            border-radius: 999px;
+            background: rgba(108, 161, 230, 0.3);
+            filter: blur(28px);
+        }
+
+        .team-page .team-hero-stat strong {
+            position: relative;
+            display: block;
+            color: #ffffff;
+            font: 900 34px/1 "Outfit", sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .team-page .team-hero-stat span {
+            position: relative;
+            display: block;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, 0.68);
+            font: 800 11px/1.35 "Manrope", sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .team-page .team-intro-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) repeat(3, minmax(150px, 0.36fr));
+            gap: 18px;
+            align-items: stretch;
+            margin-bottom: 54px;
+        }
+
+        .team-page .team-intro-copy,
+        .team-page .team-proof-card {
+            border: 1px solid rgba(108, 161, 230, 0.16);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: 0 28px 70px rgba(12, 24, 39, 0.08);
+        }
+
+        .team-page .team-intro-copy {
+            padding: 32px;
+        }
+
+        .team-page .team-intro-copy p {
+            margin: 0;
+            color: #40516a;
+            font: 700 17px/1.75 "Manrope", sans-serif;
+        }
+
+        .team-page .team-proof-card {
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .team-page .team-proof-card strong {
+            color: #0c1827;
+            font: 900 26px/1 "Outfit", sans-serif;
+        }
+
+        .team-page .team-proof-card span {
+            margin-top: 9px;
+            color: #64748b;
+            font: 800 11px/1.35 "Manrope", sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .team-page .bg-geometric {
+            background:
+                radial-gradient(circle at 12% 8%, rgba(108, 161, 230, 0.16), transparent 30%),
+                radial-gradient(circle at 88% 12%, rgba(198, 161, 91, 0.12), transparent 26%),
+                linear-gradient(180deg, #ffffff 0%, #f5f9ff 38%, #eef5fb 100%);
+        }
+
+        .team-page .text-stroke-premium {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(12, 24, 39, 0.055);
+        }
+
+        .team-page .space-y-16.mb-36,
+        .team-page .space-y-16.mb-16 {
+            margin-bottom: 76px !important;
+        }
+
+        .team-page .border-b-2.border-brand-primary\/30 {
+            position: relative;
+            border: 0 !important;
+            padding: 0 !important;
+            margin-bottom: 30px !important;
+        }
+
+        .team-page .border-b-2.border-brand-primary\/30::before {
+            content: "Meet the people behind the work";
+            display: inline-flex;
+            margin-bottom: 12px;
+            padding: 8px 13px;
+            border-radius: 999px;
+            background: rgba(108, 161, 230, 0.12);
+            color: #477dbb;
+            font: 900 11px/1 "Manrope", sans-serif;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .team-page .border-b-2.border-brand-primary\/30 h2 {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 0 !important;
+            color: #0c1827 !important;
+            font-size: clamp(34px, 4vw, 54px) !important;
+            letter-spacing: -0.035em !important;
+            text-transform: none !important;
+        }
+
+        .team-page .border-b-2.border-brand-primary\/30 h2::after {
+            content: "";
+            height: 2px;
+            flex: 1;
+            min-width: 80px;
+            background: linear-gradient(90deg, rgba(108, 161, 230, 0.5), transparent);
+        }
+
+        .team-page .grid > .group.bg-white {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(108, 161, 230, 0.18) !important;
+            border-radius: 30px !important;
+            padding: 12px !important;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) !important;
+            box-shadow: 0 20px 48px rgba(12, 24, 39, 0.08) !important;
+            isolation: isolate;
+        }
+
+        .team-page .grid > .group.bg-white::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background:
+                radial-gradient(circle at 18% 0%, rgba(108, 161, 230, 0.22), transparent 34%),
+                linear-gradient(180deg, transparent 45%, rgba(12, 24, 39, 0.04));
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: -1;
+        }
+
+        .team-page .grid > .group.bg-white:hover {
+            transform: translateY(-9px) !important;
+            box-shadow: 0 30px 70px rgba(12, 24, 39, 0.15) !important;
+        }
+
+        .team-page .grid > .group.bg-white:hover::before {
+            opacity: 1;
+        }
+
+        .team-page .team-split-bg {
+            height: 330px !important;
+            margin-bottom: 18px !important;
+            border-radius: 24px !important;
+            background:
+                radial-gradient(circle at 50% 8%, rgba(255, 255, 255, 0.98), rgba(234, 242, 250, 0.94) 42%, rgba(108, 161, 230, 0.2) 100%) !important;
+        }
+
+        .team-page .team-split-bg::after {
+            content: "";
+            position: absolute;
+            inset: auto 14px 14px;
+            height: 36%;
+            border-radius: 20px;
+            background: linear-gradient(180deg, transparent, rgba(6, 11, 17, 0.2));
+            z-index: 11;
+            pointer-events: none;
+        }
+
+        .team-page .team-split-bg img {
+            mix-blend-mode: normal !important;
+            object-position: center top;
+        }
+
+        .team-page .grid > .group.bg-white h3 {
+            font-size: 22px !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.02em;
+        }
+
+        .team-page .grid > .group.bg-white span.inline-block {
+            max-width: 100%;
+            white-space: normal;
+            border-color: rgba(108, 161, 230, 0.2) !important;
+            background: rgba(234, 242, 250, 0.72) !important;
+            color: #40516a !important;
+            line-height: 1.35 !important;
+        }
+
+        @media (max-width: 900px) {
+            .team-page .team-hero-stats,
+            .team-page .team-intro-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .team-page .team-intro-copy {
+                padding: 24px;
+            }
+
+            .team-page .team-split-bg {
+                height: 300px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .team-page .team-hero-stats {
+                margin-top: 26px;
+                gap: 10px;
+            }
+
+            .team-page .team-hero-stat {
+                padding: 17px 15px;
+            }
+
+            .team-page .team-hero-stat strong {
+                font-size: 28px;
+            }
+
+            .team-page .border-b-2.border-brand-primary\/30 h2 {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .team-page .border-b-2.border-brand-primary\/30 h2::after {
+                width: 92px;
+                flex: none;
+            }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -208,7 +485,7 @@
   <meta name="description" content="Meet our elite team of attorneys, client care managers, and legal support specialists fighting for maximum injury compensation across Georgia.">
   <link rel="canonical" href="https://theawadlawfirm.com/team-members/">
 </head>
-<body class="home-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
+<body class="home-page team-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
 
 <header class="navbar">
 
@@ -350,7 +627,7 @@ A2 2 0 0 1 22 16.92z"></path>
 
         <div class="container mx-auto px-6 max-w-7xl relative z-10 text-center">
             <!-- Glassmorphism Tag -->
-            <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-2xl relative">
+            <div class="team-hero-kicker inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-2xl relative">
                 <span class="relative flex h-3 w-3">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-primary"></span>
@@ -366,6 +643,21 @@ A2 2 0 0 1 22 16.92z"></path>
             <p class="text-lg md:text-xl text-white/80 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                 Meet the brilliant legal minds, care specialists, and dedicated advocates standing beside you every step of the way.
             </p>
+
+            <div class="team-hero-stats" aria-label="Awad Law Firm team highlights">
+                <div class="team-hero-stat">
+                    <strong>30+</strong>
+                    <span>Focused team members</span>
+                </div>
+                <div class="team-hero-stat">
+                    <strong>2</strong>
+                    <span>Georgia office hubs</span>
+                </div>
+                <div class="team-hero-stat">
+                    <strong>24/7</strong>
+                    <span>Client-first response</span>
+                </div>
+            </div>
         </div>
 
         <!-- Sleek Angled Bottom Divider connecting to the grid -->
@@ -385,6 +677,26 @@ A2 2 0 0 1 22 16.92z"></path>
         </div>
 
         <div class="container mx-auto px-6 max-w-[85rem] relative z-10">
+
+            <div class="team-intro-panel">
+                <div class="team-intro-copy">
+                    <p>
+                        Every case is supported by a coordinated team: attorneys shaping the strategy, client-care professionals keeping communication clear, and media/support specialists helping the firm educate and serve the community with consistency.
+                    </p>
+                </div>
+                <div class="team-proof-card">
+                    <strong>Strategy</strong>
+                    <span>Evidence, liability, and negotiation focus</span>
+                </div>
+                <div class="team-proof-card">
+                    <strong>Care</strong>
+                    <span>Human communication through every step</span>
+                </div>
+                <div class="team-proof-card">
+                    <strong>Action</strong>
+                    <span>Fast follow-through from intake to resolution</span>
+                </div>
+            </div>
 
             <!-- ==========================================
                  SECTION 1: THE AWAD SQUAD
