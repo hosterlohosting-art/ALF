@@ -669,7 +669,7 @@ if (document.readyState === 'loading') {
     mobileFooter.innerHTML = [
       '<a href="tel:+14044482225" class="mobile-nav-phone" aria-label="Call The Awad Law Firm">',
       '  <span class="mobile-nav-phone-label">Call Now</span>',
-      '  <strong>404 - HIT BACK</strong>',
+      '  <strong>404-HIT-BACK</strong>',
       '</a>',
       '<div class="mobile-nav-socials" aria-label="Follow The Awad Law Firm">',
       '  <a href="https://www.facebook.com/theawadlawfirm" target="_blank" rel="noopener noreferrer" aria-label="Facebook">',
@@ -1379,7 +1379,7 @@ if (document.readyState === 'loading') {
       quickMenu.className = 'nav-quick-menu';
       quickMenu.innerHTML = [
         '<a href="contact.html">Free Case Review</a>',
-        '<a href="tel:+14044482225">Call 404 - HIT BACK</a>',
+        '<a href="tel:+14044482225">Call 404-HIT-BACK</a>',
         '<a href="practice-areas.html">Practice Areas</a>',
         '<a href="testimonials.html">Video Testimonials</a>',
         '<a href="education.html">Legal Education</a>'
@@ -1627,7 +1627,7 @@ if (document.readyState === 'loading') {
       '    <span class="top-bar-badge">24/7 Free Consultation</span>',
       '    <a href="tel:+14044482225" class="top-bar-item">',
       '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="top-bar-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
-      '      <span>Call 404 - HIT BACK</span>',
+      '      <span>Call 404-HIT-BACK</span>',
       '    </a>',
       '    <a href="sms:+13106930720" class="top-bar-item">',
       '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="top-bar-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
@@ -1680,7 +1680,7 @@ if (document.readyState === 'loading') {
       '<div class="float-call-pulse-2"></div>',
       '<div class="float-call-content">',
       '  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="float-call-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
-      '  <span class="float-call-text">404 - HIT BACK</span>',
+      '  <span class="float-call-text">404-HIT-BACK</span>',
       '</div>'
     ].join('\n');
 
