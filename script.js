@@ -1092,7 +1092,7 @@ if (document.readyState === 'loading') {
       return;
     }
 
-    /* Use the wrapper's scroll position â€” wrapper is tall, hero is 100vh sticky inside */
+    /* Use the wrapper's scroll position — wrapper is tall, hero is 100vh sticky inside */
     var wrapperRect = wrapper.getBoundingClientRect();
     var scrollRange = Math.max(1, wrapper.offsetHeight - window.innerHeight);
     var progress = clamp((-wrapperRect.top) / scrollRange, 0, 1);
@@ -1174,8 +1174,8 @@ if (document.readyState === 'loading') {
     // Stagger layout containers (grids, flex rows) dynamically for premium feel
     var layoutContainers = document.querySelectorAll('.grid, [class*="grid-"], .flex-wrap, .anniversary-grid, .five-steps-card-wrap');
     layoutContainers.forEach(function (container) {
-      // Avoid footer or navbar sections from being animated as blocks
-      if (container.closest('.navbar') || container.closest('.site-footer')) return;
+      // Avoid footer, navbar or team page sections from being animated as blocks
+      if (container.closest('.navbar') || container.closest('.site-footer') || container.closest('.team-page')) return;
 
       var children = Array.from(container.children).filter(function (child) {
         return child.tagName !== 'SCRIPT' && child.tagName !== 'STYLE' && !child.classList.contains('hidden');
@@ -1203,7 +1203,7 @@ if (document.readyState === 'loading') {
     // Make headings slide in gracefully
     var headers = document.querySelectorAll('h2, h3, .section-title, .subtitle');
     headers.forEach(function (header) {
-      if (header.closest('.navbar') || header.closest('.site-footer')) return;
+      if (header.closest('.navbar') || header.closest('.site-footer') || header.closest('.team-page')) return;
       if (!header.classList.contains('scroll-reveal') &&
           !header.classList.contains('scroll-reveal-left') &&
           !header.classList.contains('scroll-reveal-right')) {
@@ -1214,6 +1214,7 @@ if (document.readyState === 'loading') {
     // Retrofit legacy selectors with standard scroll-reveal classes
     var legacyElements = document.querySelectorAll(revealSelectors.join(','));
     legacyElements.forEach(function (el) {
+      if (el.closest('.navbar') || el.closest('.site-footer') || el.closest('.team-page')) return;
       if (!el.classList.contains('scroll-reveal') &&
           !el.classList.contains('scroll-reveal-left') &&
           !el.classList.contains('scroll-reveal-right') &&
