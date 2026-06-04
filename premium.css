@@ -6009,7 +6009,7 @@ body.home-page .origin-subtitle {
 body.home-page .origin-header h2 {
   color: var(--awad-ink) !important;
   font-family: 'Outfit', sans-serif !important;
-  font-size: clamp(42px, 5.4vw, 72px) !important;
+  font-size: clamp(36px, 4.8vw, 60px) !important;
   font-weight: 900 !important;
   letter-spacing: -0.04em !important;
 }
