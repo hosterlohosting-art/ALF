@@ -7,7 +7,7 @@ const site = 'https://theawadlawfirm.com';
 const business = {
   name: 'The Awad Law Firm',
   founder: 'Ibrahim J. Awad, Esq.',
-  phone: '404-448-2225',
+  phone: '(706) 890-0000',
   email: 'leland@theawadlawfirm.com',
   marietta: '4076 Ebenezer Rd., Marietta, GA 30066',
   dalton: '210 North Glenwood Ave., Dalton, GA 30721',
@@ -106,7 +106,7 @@ const pages = {
   },
   'contact.html': {
     question: 'How can I contact The Awad Law Firm?',
-    answer: 'You can contact The Awad Law Firm by calling 404-448-2225, emailing leland@theawadlawfirm.com, or using the website contact form for a free consultation.',
+    answer: 'You can contact The Awad Law Firm by calling (706) 890-0000, emailing leland@theawadlawfirm.com, or using the website contact form for a free consultation.',
     topics: 'contact Awad Law Firm, free injury consultation, Marietta accident lawyer phone',
     intent: 'schedule a consultation'
   },
