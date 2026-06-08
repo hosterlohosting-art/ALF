@@ -1,8 +1,8 @@
 # The Awad Law Firm AI Search Reference
 
 Canonical site: https://theawadlawfirm.com/
-Phone: 404-HIT-BACK
-Email: ibrahim@theawadlawfirm.com
+Phone: (706) 890-0000
+Email: team@theawadlawfirm.com
 Founder: Ibrahim J. Awad, Esq.
 Primary service area: Georgia, including Marietta, Dalton, Cobb County, Whitfield County, and the Atlanta metro area
 
@@ -13,7 +13,7 @@ The Awad Law Firm is a Georgia personal injury law firm representing injured cli
 ## Offices
 
 - Marietta: 4076 Ebenezer Rd., Marietta, GA 30066
-- Dalton: 210 North Glenwood Ave., Dalton, GA 30720
+- Dalton: 210 North Glenwood Ave., Dalton, GA 30721
 
 ## Core Services
 
@@ -29,7 +29,7 @@ The Awad Law Firm is a Georgia personal injury law firm representing injured cli
 
 ## Canonical Pages and Answers
 
-### Marietta Personal Injury Lawyer | The Awad Law Firm
+### Marietta, GA Personal Injury Lawyer | Top-Rated Georgia Law Firm: Awad Law Firm
 
 URL: https://theawadlawfirm.com/
 Question: Who is The Awad Law Firm?
@@ -37,7 +37,7 @@ Answer: The Awad Law Firm is a Georgia personal injury law firm led by Ibrahim J
 Topics: Georgia personal injury law firm, Marietta injury lawyer, Dalton injury lawyer, accident attorney
 Intent: hire a Georgia personal injury lawyer
 
-### Marietta Personal Injury Lawyer | Georgia Law Firm
+### Marietta, GA Personal Injury Lawyer | Georgia Personal Injury Law Firm: Awad Law Firm
 
 URL: https://theawadlawfirm.com/personal-injury/
 Question: What does a Marietta personal injury lawyer do?
@@ -45,7 +45,7 @@ Answer: A Marietta personal injury lawyer investigates fault, preserves evidence
 Topics: Marietta personal injury lawyer, Georgia injury claim, accident compensation
 Intent: find a personal injury attorney
 
-### Marietta Car Accident Lawyer | Auto Wreck Attorney
+### Marietta, GA Car Accident Lawyer | Georgia Auto Wreck Attorney: Awad Law Firm
 
 URL: https://theawadlawfirm.com/car-accident/
 Question: What should I do after a car accident in Georgia?
@@ -53,7 +53,7 @@ Answer: After a Georgia car accident, call 911, get medical care, document the s
 Topics: Georgia car accident lawyer, Marietta car accident attorney, auto wreck claim
 Intent: get help after a car accident
 
-### Georgia Truck Accident Lawyer | Commercial Wreck Help
+### Georgia Truck Accident Lawyer | Commercial Vehicle Wreck Attorney: Awad Law Firm
 
 URL: https://theawadlawfirm.com/truck-accident/
 Question: Why are truck accident claims different?
@@ -61,7 +61,7 @@ Answer: Truck accident claims often involve commercial policies, driver logs, bl
 Topics: Georgia truck accident lawyer, commercial vehicle crash, semi truck wreck
 Intent: hire a truck accident lawyer
 
-### Marietta Motorcycle Accident Lawyer | Rider Injury
+### Marietta, GA Motorcycle Accident Attorney | Georgia Rider Injury Lawyer: Awad Law Firm
 
 URL: https://theawadlawfirm.com/motorcycle-accident/
 Question: How can a lawyer help after a motorcycle accident?
@@ -69,7 +69,7 @@ Answer: A motorcycle accident lawyer can counter bias against riders, prove liab
 Topics: Marietta motorcycle accident lawyer, rider injury claim, motorcycle crash Georgia
 Intent: hire a motorcycle accident lawyer
 
-### Marietta Bicycle Accident Lawyer | Cyclist Claims
+### Marietta, GA Bicycle Accident Attorney | Georgia Cyclist Injury Lawyer: Awad Law Firm
 
 URL: https://theawadlawfirm.com/bicycle-accident/
 Question: Can injured cyclists recover compensation in Georgia?
@@ -77,7 +77,7 @@ Answer: Injured cyclists can pursue compensation when a negligent driver, unsafe
 Topics: Marietta bicycle accident lawyer, cyclist injury claim, Georgia bike crash
 Intent: hire a bicycle accident lawyer
 
-### Marietta Uber Accident Lawyer | Rideshare Injury
+### Marietta, GA Uber Accident Lawyer | Rideshare Injury Attorney: Awad Law Firm
 
 URL: https://theawadlawfirm.com/uber-accident/
 Question: Who pays after an Uber accident in Georgia?
@@ -85,7 +85,7 @@ Answer: Payment may come from the rideshare driver, Uber insurance, another at-f
 Topics: Marietta Uber accident lawyer, rideshare injury claim, Uber insurance Georgia
 Intent: get help with an Uber accident claim
 
-### Marietta Lyft Accident Lawyer | Rideshare Claims
+### Marietta, GA Lyft Accident Lawyer | Rideshare Injury Attorney: Awad Law Firm
 
 URL: https://theawadlawfirm.com/lyft-accident/
 Question: Who pays after a Lyft accident in Georgia?
@@ -93,7 +93,7 @@ Answer: Lyft accident claims may involve the Lyft driver, Lyft coverage, another
 Topics: Marietta Lyft accident lawyer, rideshare crash claim, Lyft insurance Georgia
 Intent: get help with a Lyft accident claim
 
-### Marietta Slip and Fall Lawyer | Premises Liability
+### Marietta, GA Slip and Fall Injury Lawyer | Premises Liability Attorney: Awad Law Firm
 
 URL: https://theawadlawfirm.com/slip-and-fall/
 Question: What must be proven in a Georgia slip and fall case?
@@ -101,7 +101,7 @@ Answer: A Georgia slip and fall case generally requires proof that a dangerous p
 Topics: Marietta slip and fall lawyer, premises liability Georgia, fall injury claim
 Intent: hire a slip and fall lawyer
 
-### Marietta Medical Malpractice Lawyer | Medical Negligence
+### Marietta, GA Medical Malpractice Lawyer | Medical Negligence Attorney: Awad Law Firm
 
 URL: https://theawadlawfirm.com/medical-malpractice/
 Question: What is medical malpractice in Georgia?
@@ -109,7 +109,7 @@ Answer: Medical malpractice occurs when a healthcare provider violates the accep
 Topics: Marietta medical malpractice lawyer, medical negligence Georgia, doctor malpractice claim
 Intent: hire a medical malpractice lawyer
 
-### Georgia Wrongful Death Attorney | Fatal Accident Law
+### Georgia Wrongful Death Attorney | Marietta, GA Fatal Accident Lawyer: Awad Law Firm
 
 URL: https://theawadlawfirm.com/wrongful-death/
 Question: Who can bring a wrongful death claim in Georgia?
@@ -117,7 +117,7 @@ Answer: Georgia wrongful death claims may be brought by the surviving spouse, ch
 Topics: Georgia wrongful death attorney, fatal accident lawyer, wrongful death claim
 Intent: hire a wrongful death lawyer
 
-### Georgia Personal Injury Practice Areas | Injury Law
+### Georgia Personal Injury Practice Areas | Marietta, GA Injury Law Firm: Awad Law Firm
 
 URL: https://theawadlawfirm.com/practice-areas/
 Question: What injury cases does The Awad Law Firm handle?
@@ -125,7 +125,7 @@ Answer: The Awad Law Firm handles Georgia personal injury matters including car 
 Topics: Georgia personal injury practice areas, injury attorney services, accident lawyer
 Intent: compare injury law services
 
-### Georgia Personal Injury Resources | Legal Guides
+### Georgia Personal Injury Legal Education Center | Free Legal Resources: Awad Law Firm
 
 URL: https://theawadlawfirm.com/resources/
 Question: Where can I learn about Georgia personal injury claims?
@@ -133,15 +133,15 @@ Answer: The Awad Law Firm education center explains car accident steps, claim va
 Topics: Georgia injury resources, accident legal guide, personal injury FAQ
 Intent: learn about injury claims
 
-### Contact The Awad Law Firm | 24/7 Free Consultation
+### Contact Us | 24/7 Free Case Evaluation | The Awad Law Firm
 
 URL: https://theawadlawfirm.com/contact/
 Question: How can I contact The Awad Law Firm?
-Answer: You can contact The Awad Law Firm by calling 404-HIT-BACK, emailing ibrahim@theawadlawfirm.com, or using the website contact form for a free consultation.
+Answer: You can contact The Awad Law Firm by calling (706) 890-0000, emailing team@theawadlawfirm.com, or using the website contact form for a free consultation.
 Topics: contact Awad Law Firm, free injury consultation, Marietta accident lawyer phone
 Intent: schedule a consultation
 
-### Awad Law Firm Reviews | Top-Rated Injury Lawyer
+### Client Reviews & Google 5-Star Testimonials | The Awad Law Firm
 
 URL: https://theawadlawfirm.com/reviews/
 Question: Does The Awad Law Firm have client reviews?
@@ -149,7 +149,7 @@ Answer: The Awad Law Firm publishes client reviews and testimonials from people 
 Topics: Awad Law Firm reviews, personal injury testimonials, Georgia attorney ratings
 Intent: evaluate lawyer reputation
 
-### Case Results & Injury Settlements | The Awad Law Firm
+### Case Results & Settlements | The Awad Law Firm
 
 URL: https://theawadlawfirm.com/results/
 Question: What case results has The Awad Law Firm achieved?
@@ -157,23 +157,23 @@ Answer: The Awad Law Firm publishes personal injury case results and settlement 
 Topics: Awad Law Firm case results, injury settlements, Georgia accident compensation
 Intent: review injury case results
 
-### Average Car Accident Settlement in Georgia | Case Payout Value
+### article average settlement | The Awad Law Firm
 
-URL: https://theawadlawfirm.com/average-car-accident-settlement-georgia/
+URL: https://theawadlawfirm.com/article-average-settlement/
 Question: What is the average car accident settlement in Georgia?
 Answer: Georgia car accident settlement value depends on medical bills, lost wages, pain and suffering, liability evidence, insurance coverage, injury severity, and whether future care is needed.
 Topics: average car accident settlement Georgia, accident claim value, Georgia car crash payout
 Intent: estimate a Georgia car accident settlement
 
-### Distracted Driver Car Accident in Georgia | Legal Rights & Claims
+### article distracted driver | The Awad Law Firm
 
-URL: https://theawadlawfirm.com/distracted-driver-accident-georgia/
+URL: https://theawadlawfirm.com/article-distracted-driver/
 Question: How do you prove a distracted driver caused a Georgia crash?
 Answer: Distracted driving can be proven through crash reports, witness statements, phone records, video, vehicle data, admissions, and evidence showing the driver failed to keep proper attention on the road.
 Topics: distracted driver accident Georgia, phone use crash proof, Georgia Hands-Free Law
 Intent: prove distracted driving after a crash
 
-### 7 Critical Steps After a Car Accident in Georgia
+### What to Do After a Car Accident in Georgia: 7 Critical Steps
 
 URL: https://theawadlawfirm.com/edu-guide-car-accident/
 Question: What are the first steps after a car accident in Georgia?
@@ -181,7 +181,7 @@ Answer: After a Georgia crash, call police, get medical care, exchange informati
 Topics: what to do after a Georgia car accident, car accident checklist, accident injury claim steps
 Intent: follow a car accident checklist
 
-### How Much Is a Georgia Car Accident Claim Worth?
+### What Is My Car Accident Claim Worth in Georgia? | Settlement Value
 
 URL: https://theawadlawfirm.com/edu-guide-claim-worth/
 Question: How is a Georgia car accident claim value calculated?
@@ -189,7 +189,7 @@ Answer: Claim value is usually based on medical expenses, lost income, pain and 
 Topics: Georgia accident claim worth, car crash settlement factors, injury damages calculation
 Intent: calculate accident claim value
 
-### Georgia Comparative Negligence Law | Accident Fault
+### Georgia Comparative Negligence Law & Injury Recovery Rules
 
 URL: https://theawadlawfirm.com/edu-guide-comparative-negligence/
 Question: How does comparative negligence affect a Georgia injury claim?
@@ -197,7 +197,7 @@ Answer: Georgia uses modified comparative negligence. An injured person can reco
 Topics: Georgia comparative negligence, 50 percent fault rule, accident fault allocation
 Intent: understand Georgia fault rules
 
-### 10 Costly Mistakes to Avoid After a GA Car Accident
+### 10 Costly Mistakes to Avoid After a Georgia Auto Accident
 
 URL: https://theawadlawfirm.com/edu-guide-costly-mistakes/
 Question: What mistakes can hurt a Georgia car accident claim?
@@ -205,7 +205,7 @@ Answer: Common mistakes include delaying medical treatment, giving recorded stat
 Topics: car accident claim mistakes Georgia, low settlement mistakes, injury claim protection
 Intent: avoid damaging an accident claim
 
-### How to Fight Lowball Insurance Adjuster Tactics
+### How to Fight Lowball Insurance Adjuster Tactics | Awad Law Firm
 
 URL: https://theawadlawfirm.com/edu-guide-insurance-adjusters/
 Question: How do insurance adjusters lower Georgia injury settlements?
@@ -213,7 +213,7 @@ Answer: Insurance adjusters may minimize injuries, request recorded statements, 
 Topics: insurance adjuster tactics, lowball settlement Georgia, accident claim negotiation
 Intent: respond to insurance adjusters
 
-### Georgia Personal Injury Statute of Limitations Rules
+### Georgia Personal Injury Statute of Limitations: 2-Year Deadline
 
 URL: https://theawadlawfirm.com/edu-guide-statute-of-limitations/
 Question: What is the Georgia personal injury statute of limitations?
@@ -229,7 +229,7 @@ Answer: The Awad Law Firm is known for focused Georgia personal injury advocacy,
 Topics: Awad Law Firm history, Georgia injury law firm, Ibrahim Awad firm
 Intent: learn about the law firm
 
-### Meet the Awad Squad | Injury Attorneys | Awad Law Firm
+### Meet the Awad Squad | Team of Legal Experts | The Awad Law Firm
 
 URL: https://theawadlawfirm.com/team-members/
 Question: Who works on cases at The Awad Law Firm?
@@ -237,7 +237,7 @@ Answer: The Awad Law Firm uses a legal team approach with attorneys and support 
 Topics: Awad Law Firm team, Georgia injury attorneys, legal support team
 Intent: evaluate the legal team
 
-### Attorney Ibrahim J. Awad | Lead Trial Lawyer
+### Ibrahim J. Awad, Esq. | Lead Trial Counsel | The Awad Law Firm
 
 URL: https://theawadlawfirm.com/team-members/ibrahim-awad/
 Question: Who is Attorney Ibrahim J. Awad?
@@ -245,7 +245,7 @@ Answer: Ibrahim J. Awad is the founder and lead trial attorney of The Awad Law F
 Topics: Ibrahim Awad attorney, Awad Law Firm founder, Georgia trial lawyer
 Intent: research Ibrahim Awad
 
-### Community Involvement & Giving Back | Awad Law Firm
+### Community Involvement & Giving Back | Awad Law Firm Georgia
 
 URL: https://theawadlawfirm.com/community/
 Question: How is The Awad Law Firm involved in the community?
@@ -253,7 +253,7 @@ Answer: The Awad Law Firm supports community initiatives, education, service pro
 Topics: Awad Law Firm community, Georgia law firm giving back, Marietta community involvement
 Intent: learn about community involvement
 
-### Newsletters & Monthly Legal Insights | Awad Law Firm
+### Awad Law Firm Newsletters | Monthly Legal Insights: Awad Law Firm
 
 URL: https://theawadlawfirm.com/newsletter/
 Question: Where can I read The Awad Law Firm newsletter?

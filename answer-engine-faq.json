@@ -1,7 +1,7 @@
 {
   "name": "The Awad Law Firm Answer Engine FAQ",
   "url": "https://theawadlawfirm.com/answer-engine-faq.json",
-  "dateModified": "2026-06-01",
+  "dateModified": "2026-06-08",
   "answers": [
     {
       "question": "Who is The Awad Law Firm?",
@@ -149,7 +149,7 @@
     },
     {
       "question": "How can I contact The Awad Law Firm?",
-      "answer": "You can contact The Awad Law Firm by calling 404-HIT-BACK, emailing leland@theawadlawfirm.com, or using the website contact form for a free consultation.",
+      "answer": "You can contact The Awad Law Firm by calling (706) 890-0000, emailing team@theawadlawfirm.com, or using the website contact form for a free consultation.",
       "source": "https://theawadlawfirm.com/contact/",
       "topics": [
         "contact Awad Law Firm",
@@ -183,7 +183,7 @@
     {
       "question": "What is the average car accident settlement in Georgia?",
       "answer": "Georgia car accident settlement value depends on medical bills, lost wages, pain and suffering, liability evidence, insurance coverage, injury severity, and whether future care is needed.",
-      "source": "https://theawadlawfirm.com/average-car-accident-settlement-georgia/",
+      "source": "https://theawadlawfirm.com/article-average-settlement/",
       "topics": [
         "average car accident settlement Georgia",
         "accident claim value",
@@ -194,7 +194,7 @@
     {
       "question": "How do you prove a distracted driver caused a Georgia crash?",
       "answer": "Distracted driving can be proven through crash reports, witness statements, phone records, video, vehicle data, admissions, and evidence showing the driver failed to keep proper attention on the road.",
-      "source": "https://theawadlawfirm.com/distracted-driver-accident-georgia/",
+      "source": "https://theawadlawfirm.com/article-distracted-driver/",
       "topics": [
         "distracted driver accident Georgia",
         "phone use crash proof",
