@@ -363,6 +363,69 @@
         .ar-badge-yelp      { background: #D32323; }
         .ar-badge-facebook  { background: #1877F2; }
         .ar-badge-glassdoor { background: #0CAA41; }
+
+        /* Reviews Pagination Styling */
+        .ar-load-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .ar-load-btn {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 0.9rem 2.2rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            user-select: none;
+        }
+
+        #ar-load-more {
+            background-color: #1A2736;
+            color: #ffffff;
+            border: 2px solid #1A2736;
+            box-shadow: 0 8px 16px rgba(26, 39, 54, 0.12);
+        }
+
+        #ar-load-more:hover {
+            background-color: #0C1827;
+            border-color: #0C1827;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(12, 24, 39, 0.18);
+        }
+
+        #ar-load-more:active {
+            transform: translateY(0);
+        }
+
+        #ar-prev-page, #ar-next-page {
+            background-color: transparent;
+            color: #1A2736;
+            border: 2px solid rgba(26, 39, 54, 0.2);
+            padding: 0.9rem 1.8rem;
+        }
+
+        #ar-prev-page:hover, #ar-next-page:hover {
+            background-color: rgba(26, 39, 54, 0.05);
+            border-color: #1A2736;
+            color: #1A2736;
+        }
+
+        .ar-gone {
+            display: none !important;
+        }
     </style>
   
   
@@ -676,7 +739,7 @@ A2 2 0 0 1 22 16.92z"></path>
                         <p class="text-xs text-white/50 font-semibold">Help other injured Georgians find justice.</p>
                     </div>
                     <div class="flex items-center space-x-3 w-full sm:w-auto">
-                        <a href="/contact/" class="flex-1 sm:flex-initial bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-3 px-6 rounded-full text-xs tracking-widest uppercase transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 whitespace-nowrap">
+                        <a href="https://www.google.com/maps/place/The+Awad+Law+Firm,+P.C./@34.0523394,-84.5813276,12z/data=!4m12!1m2!2m1!1sgoogle+reviews+marietta+the+awad+law+firm!3m8!1s0x88f56b2b6fe0a0fb:0x50bb58d4ae5c22d4!8m2!3d34.0504051!4d-84.5254389!9m1!1b1!15sCilnb29nbGUgcmV2aWV3cyBtYXJpZXR0YSB0aGUgYXdhZCBsYXcgZmlybSIFOAGIAQFaHCIabWFyaWV0dGEgdGhlIGF3YWQgbGF3IGZpcm2SARZwZXJzb25hbF9pbmp1cnlfbGF3eWVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5RYkUwM05WaFJFQUXgAQD6AQQIABAb!16s%2Fg%2F11lfh1r77x?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-initial bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-3 px-6 rounded-full text-xs tracking-widest uppercase transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 whitespace-nowrap">
                             <i data-lucide="star" class="w-4 h-4 text-white"></i>
                             <span>Write a Review</span>
                         </a>
@@ -3854,7 +3917,7 @@ A2 2 0 0 1 22 16.92z"></path>
         <h3 class="text-3xl md:text-4xl font-heading font-black text-brand-navy">Have We Helped You Secure Justice?</h3>
         <p class="text-brand-muted text-lg max-w-2xl mx-auto">Your story helps other injured Georgians find the aggressive advocacy they deserve. Please take a moment to rate us on Google.</p>
         <div class="pt-4">
-            <a href="/contact/" class="inline-flex items-center space-x-3 bg-[#1A2736] hover:bg-[#0C1827] text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-[0_10px_20px_rgba(12,24,39,0.15)] hover:-translate-y-0.5 group">
+            <a href="https://www.google.com/maps/place/The+Awad+Law+Firm,+P.C./@34.0523394,-84.5813276,12z/data=!4m12!1m2!2m1!1sgoogle+reviews+marietta+the+awad+law+firm!3m8!1s0x88f56b2b6fe0a0fb:0x50bb58d4ae5c22d4!8m2!3d34.0504051!4d-84.5254389!9m1!1b1!15sCilnb29nbGUgcmV2aWV3cyBtYXJpZXR0YSB0aGUgYXdhZCBsYXcgZmlybSIFOAGIAQFaHCIabWFyaWV0dGEgdGhlIGF3YWQgbGF3IGZpcm2SARZwZXJzb25hbF9pbmp1cnlfbGF3eWVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5RYkUwM05WaFJFQUXgAQD6AQQIABAb!16s%2Fg%2F11lfh1r77x?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-3 bg-[#1A2736] hover:bg-[#0C1827] text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-[0_10px_20px_rgba(12,24,39,0.15)] hover:-translate-y-0.5 group">
                 <i data-lucide="google" class="w-5 h-5 text-brand-primary"></i>
                 <span>Review Us on Google</span>
                 <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"></i>
