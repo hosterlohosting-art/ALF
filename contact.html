@@ -349,21 +349,15 @@ A2 2 0 0 1 22 16.92z"></path>
                         </div>
                     </div>
 
-                    <!-- Map Placeholder -->
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-border/60 h-64 relative group cursor-pointer">
-                        <div class="absolute inset-0 bg-brand-navy/5 group-hover:bg-transparent transition-colors z-10"></div>
-                        <!-- Placeholder for actual Google Maps iframe -->
-                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop" alt="Map View" class="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500" loading="lazy" decoding="async">
-
-                        <div class="absolute top-4 left-4 z-20 bg-white shadow-md rounded-lg px-4 py-2 flex items-center text-sm font-bold text-brand-primary">
-                            Open in Maps <i data-lucide="external-link" class="w-3.5 h-3.5 ml-1.5"></i>
-                        </div>
-
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-red-500 group-hover:-translate-y-6 transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 drop-shadow-md">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
+                    <!-- Interactive Google Map -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-border/60 h-64 relative">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=the%20awad%20law%20firm%20marietta&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
 
