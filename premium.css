@@ -9902,9 +9902,9 @@ body.home-page .premium-home-hero {
     right: auto !important;
     bottom: -6px !important;
     left: 50.5% !important;
-    width: clamp(390px, 28vw, 530px) !important;
+    width: clamp(430px, 30vw, 540px) !important;
     max-height: calc(100vh - 86px) !important;
-    transform: translateX(-24%) translateY(0) scale(1) !important;
+    transform: translateX(-25%) translateY(0) scale(1) !important;
     filter: blur(0px) brightness(1.06) drop-shadow(0 40px 90px rgba(0, 0, 0, 0.24)) !important;
     pointer-events: none !important;
     transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
@@ -9915,7 +9915,7 @@ body.home-page .premium-home-hero {
   body.home-page.hero-form-visible .premium-home-hero .premium-hero-bg img.hero-bg-single,
   body.home-page.hero-reveal-complete .premium-home-hero .premium-hero-bg img.hero-bg-single {
     opacity: 0 !important;
-    transform: translateX(-24%) translateY(42px) scale(0.975) !important;
+    transform: translateX(-25%) translateY(42px) scale(0.975) !important;
     filter: blur(2.5px) brightness(0.8) drop-shadow(0 40px 90px rgba(0, 0, 0, 0.24)) !important;
   }
 
