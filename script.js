@@ -835,6 +835,30 @@ if (document.readyState === 'loading') {
       document.body.appendChild(iframe);
     }
 
+    if (isAnyCaseForm) {
+      // Define Callback for hCaptcha explicit rendering
+      window.onloadHCaptchaCallback = function () {
+        var captchaElements = document.querySelectorAll('.h-captcha');
+        captchaElements.forEach(function (el) {
+          if (!el.getAttribute('data-hcaptcha-id')) {
+            var widgetId = hcaptcha.render(el, {
+              sitekey: el.getAttribute('data-sitekey') || '10000000-ffff-ffff-ffff-ffffffffffff'
+            });
+            el.setAttribute('data-hcaptcha-id', widgetId);
+          }
+        });
+      };
+
+      // Load hCaptcha script dynamically
+      if (!document.querySelector('script[src*="hcaptcha.com"]')) {
+        var hcaptchaScript = document.createElement('script');
+        hcaptchaScript.src = 'https://js.hcaptcha.com/1/api.js?onload=onloadHCaptchaCallback&render=explicit';
+        hcaptchaScript.async = true;
+        hcaptchaScript.defer = true;
+        document.head.appendChild(hcaptchaScript);
+      }
+    }
+
     forms.forEach(function (form) {
       if (form.classList.contains('nav-search') || form.closest('.nav-search')) {
         return;
@@ -889,6 +913,28 @@ if (document.readyState === 'loading') {
           hpContainer.appendChild(hpInput);
           form.appendChild(hpContainer);
         }
+
+        // Dynamically inject hCaptcha container
+        var submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+        if (submitBtn && !form.querySelector('.h-captcha')) {
+          var captchaDiv = document.createElement('div');
+          captchaDiv.className = 'h-captcha';
+          captchaDiv.setAttribute('data-sitekey', '10000000-ffff-ffff-ffff-ffffffffffff');
+          captchaDiv.style.display = 'flex';
+          captchaDiv.style.justifyContent = 'center';
+          captchaDiv.style.marginBottom = '20px';
+
+          var insertTarget = submitBtn.parentElement && submitBtn.parentElement !== form ? submitBtn.parentElement : submitBtn;
+          insertTarget.parentNode.insertBefore(captchaDiv, insertTarget);
+
+          // If hCaptcha library is already loaded, render it immediately
+          if (typeof hcaptcha !== 'undefined') {
+            var widgetId = hcaptcha.render(captchaDiv, {
+              sitekey: '10000000-ffff-ffff-ffff-ffffffffffff'
+            });
+            captchaDiv.setAttribute('data-hcaptcha-id', widgetId);
+          }
+        }
       }
 
       if (form.getAttribute('onsubmit')) {
@@ -921,6 +967,18 @@ if (document.readyState === 'loading') {
         var submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
         if (!submitBtn || submitBtn.classList.contains('submitting-state')) return;
 
+        // hCaptcha client-side validation check
+        if (isCaseForm && typeof hcaptcha !== 'undefined') {
+          var captchaContainer = form.querySelector('.h-captcha');
+          var widgetId = captchaContainer ? captchaContainer.getAttribute('data-hcaptcha-id') : null;
+          var response = widgetId ? hcaptcha.getResponse(widgetId) : hcaptcha.getResponse();
+
+          if (!response) {
+            showToast('Security Verification Required', 'Please complete the hCaptcha check first.', 'warning');
+            return;
+          }
+        }
+
         submitBtn.classList.add('submitting-state');
 
         // Bot honeypot check
@@ -930,6 +988,11 @@ if (document.readyState === 'loading') {
           setTimeout(function () {
             submitBtn.classList.remove('submitting-state');
             form.reset();
+            if (typeof hcaptcha !== 'undefined') {
+              var captchaContainer = form.querySelector('.h-captcha');
+              var widgetId = captchaContainer ? captchaContainer.getAttribute('data-hcaptcha-id') : null;
+              if (widgetId) hcaptcha.reset(widgetId);
+            }
             showToast(
               'EVALUATION SUBMITTED SECURELY',
               'Thank you. An expert attorney will contact you within 15 minutes.',
@@ -956,6 +1019,11 @@ if (document.readyState === 'loading') {
             setTimeout(function () {
               submitBtn.classList.remove('submitting-state');
               form.reset();
+              if (typeof hcaptcha !== 'undefined') {
+                var captchaContainer = form.querySelector('.h-captcha');
+                var widgetId = captchaContainer ? captchaContainer.getAttribute('data-hcaptcha-id') : null;
+                if (widgetId) hcaptcha.reset(widgetId);
+              }
               showToast(
                 'EVALUATION SUBMITTED SECURELY',
                 'Thank you. An expert attorney will contact you within 15 minutes.',
@@ -1038,6 +1106,13 @@ if (document.readyState === 'loading') {
         setTimeout(function () {
           submitBtn.classList.remove('submitting-state');
           form.reset();
+
+          // Reset hCaptcha if present
+          if (typeof hcaptcha !== 'undefined') {
+            var captchaContainer = form.querySelector('.h-captcha');
+            var widgetId = captchaContainer ? captchaContainer.getAttribute('data-hcaptcha-id') : null;
+            if (widgetId) hcaptcha.reset(widgetId);
+          }
 
           if (form.classList.contains('newsletter-form')) {
             showToast(
