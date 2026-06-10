@@ -388,10 +388,25 @@
         <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navy mb-4">Ready to Discuss Your Case?</h2>
         <p class="text-brand-muted text-lg mb-8">Our experienced attorneys are ready to listen. Your first consultation is free.</p>
 
-        <a href="tel:+17068900000" class="bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-4 px-8 rounded-full transition-all duration-300 flex items-center justify-center mx-auto shadow-[0_10px_20px_rgba(108,161,230,0.25)] hover:shadow-[0_15px_30px_rgba(108,161,230,0.4)] hover:-translate-y-0.5 max-w-[280px] text-sm tracking-widest uppercase no-underline">
-            <i data-lucide="phone-call" class="w-5 h-5 mr-3"></i>
-            Call (706) 890-0000
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-2xl mx-auto">
+            <!-- Call Button -->
+            <a href="tel:+17068900000" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-4 px-8 rounded-full transition-all duration-300 flex items-center justify-center shadow-[0_10px_20px_rgba(108,161,230,0.25)] hover:shadow-[0_15px_30px_rgba(108,161,230,0.4)] hover:-translate-y-0.5 text-sm tracking-widest uppercase no-underline">
+                <i data-lucide="phone-call" class="w-5 h-5 mr-3 shrink-0"></i>
+                Call (706) 890-0000
+            </a>
+            
+            <!-- SMS Button -->
+            <a href="sms:+17068900000" class="w-full sm:w-auto bg-brand-navy hover:bg-brand-dark text-white border border-brand-primary/20 font-bold py-4 px-8 rounded-full transition-all duration-300 flex items-center justify-center shadow-[0_10px_20px_rgba(12,24,39,0.15)] hover:shadow-[0_15px_30px_rgba(12,24,39,0.3)] hover:-translate-y-0.5 text-sm tracking-widest uppercase no-underline">
+                <i data-lucide="message-square" class="w-5 h-5 mr-3 shrink-0 text-brand-primary"></i>
+                SMS (706) 890-0000
+            </a>
+            
+            <!-- Email Button -->
+            <a href="mailto:team@theawadlawfirm.com" class="w-full sm:w-auto bg-white hover:bg-brand-pale text-brand-navy border border-brand-border font-bold py-4 px-8 rounded-full transition-all duration-300 flex items-center justify-center shadow-[0_10px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 text-sm tracking-widest uppercase no-underline">
+                <i data-lucide="mail" class="w-5 h-5 mr-3 shrink-0 text-brand-primary"></i>
+                Email Us
+            </a>
+        </div>
     </div>
 </section>
 

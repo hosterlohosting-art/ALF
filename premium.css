@@ -6859,7 +6859,7 @@ body.home-page .faq-subtitle {
   max-width: 780px !important;
   margin-top: 14px !important;
   color: var(--awad-muted, #5d6a78) !important;
-  font-size: clamp(15px, 1.05vw, 18px) !important;
+  font-size: clamp(16px, 1.15vw, 20px) !important;
   font-weight: 600 !important;
   line-height: 1.55 !important;
 }
@@ -12217,7 +12217,7 @@ body.home-page .premium-hero-form textarea:focus {
     background: transparent !important;
     box-shadow: none !important;
     color: rgba(255, 255, 255, 0.76) !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
     font-weight: 800 !important;
     letter-spacing: 0.01em !important;
     text-transform: none !important;
@@ -13003,10 +13003,10 @@ body.home-page a.premium-mobile-video-wrap {
 
 /* Homepage reviews portrait final framing */
 body.home-page .testimonials-section .t-visual-panel img {
-  width: min(560px, 82%) !important;
+  width: min(680px, 98%) !important;
   height: auto !important;
   max-width: none !important;
-  left: 60% !important;
+  left: 68% !important;
   right: auto !important;
   bottom: -22px !important;
   top: auto !important;
@@ -13017,16 +13017,16 @@ body.home-page .testimonials-section .t-visual-panel img {
 
 @media (max-width: 1120px) {
   body.home-page .testimonials-section .t-visual-panel img {
-    width: min(430px, 68%) !important;
-    left: 68% !important;
+    width: min(520px, 82%) !important;
+    left: 72% !important;
     bottom: -18px !important;
   }
 }
 
 @media (max-width: 760px) {
   body.home-page .testimonials-section .t-visual-panel img {
-    width: min(360px, 72%) !important;
-    left: 70% !important;
+    width: min(420px, 85%) !important;
+    left: 74% !important;
     bottom: -16px !important;
   }
 }
@@ -13537,7 +13537,7 @@ body.home-page .testimonials-section .t-visual-panel img {
   body.home-page .team-intro,
   body.home-page .faq-subtitle,
   body.home-page .contact-intro {
-    font-size: 14px !important;
+    font-size: 15px !important;
     line-height: 1.55 !important;
   }
 
@@ -14961,3 +14961,109 @@ body.home-page .faq-title {
 body.home-page .faq-question-text {
   font-weight: 600 !important;
 }
+
+/* Larger section eyebrow labels across the site */
+.partners-kicker,
+.origin-subtitle,
+.premium-eyebrow,
+.premium-form-kicker,
+.case-study-kicker,
+.team-label,
+.faq-label,
+.contact-kicker,
+.newsletter-kicker,
+.t-label,
+.t-header-left .t-label,
+.edu-section-kicker,
+.tedx-section-kicker,
+.site-search-kicker,
+.pa-kicker,
+.results-label,
+.process-label,
+.community-kicker,
+.te-kicker,
+.five-steps-kicker,
+.cp-form-label {
+  font-size: clamp(16px, 1.15vw, 20px) !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.16em !important;
+}
+
+body.home-page .partners-kicker,
+body.home-page .origin-subtitle,
+body.home-page .premium-eyebrow,
+body.home-page .premium-form-kicker,
+body.home-page .case-study-kicker,
+body.home-page .team-label,
+body.home-page .faq-label,
+body.home-page .contact-kicker,
+body.home-page .newsletter-kicker,
+body.home-page .t-label,
+body.home-page .t-header-left .t-label,
+body.home-page .edu-section-kicker,
+body.home-page .tedx-section-kicker,
+body.home-page .site-search-kicker,
+body.home-page .pa-kicker,
+body.home-page .results-label,
+body.home-page .process-label,
+body.home-page .community-kicker,
+body.home-page .te-kicker,
+body.home-page .five-steps-kicker,
+body.home-page .cp-form-label {
+  font-size: clamp(16px, 1.15vw, 20px) !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.16em !important;
+}
+
+@media (max-width: 768px) {
+  .partners-kicker,
+  .origin-subtitle,
+  .premium-eyebrow,
+  .premium-form-kicker,
+  .case-study-kicker,
+  .team-label,
+  .faq-label,
+  .contact-kicker,
+  .newsletter-kicker,
+  .t-label,
+  .t-header-left .t-label,
+  .edu-section-kicker,
+  .tedx-section-kicker,
+  .site-search-kicker,
+  .pa-kicker,
+  .results-label,
+  .process-label,
+  .community-kicker,
+  .te-kicker,
+  .five-steps-kicker,
+  .cp-form-label {
+    font-size: 14px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  body.home-page .partners-kicker,
+  body.home-page .origin-subtitle,
+  body.home-page .premium-eyebrow,
+  body.home-page .premium-form-kicker,
+  body.home-page .case-study-kicker,
+  body.home-page .team-label,
+  body.home-page .faq-label,
+  body.home-page .contact-kicker,
+  body.home-page .newsletter-kicker,
+  body.home-page .t-label,
+  body.home-page .t-header-left .t-label,
+  body.home-page .edu-section-kicker,
+  body.home-page .tedx-section-kicker,
+  body.home-page .site-search-kicker,
+  body.home-page .pa-kicker,
+  body.home-page .results-label,
+  body.home-page .process-label,
+  body.home-page .community-kicker,
+  body.home-page .te-kicker,
+  body.home-page .five-steps-kicker,
+  body.home-page .cp-form-label {
+    font-size: 14px !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+

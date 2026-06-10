@@ -1,79 +1,140 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Core Values | Trust, Honor, and Conviction | The Awad Law Firm</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Core Values | Trust, Honor, and Conviction | The Awad Law Firm</title>
 
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/style.css">
+    <!-- Local Stylesheets (Preserved) -->
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/premium.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Awad Law Firm",
-  "url": "https://theawadlawfirm.com",
-  "logo": "https://theawadlawfirm.com/assets/awadlawfirmlogo.png",
-  "telephone": "(706) 890-0000",
-  "description": "Top-rated personal injury law firm serving Marietta and Dalton, Georgia.",
-  "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
-  "serviceArea": { "@type": "State", "name": "Georgia" },
-  "areaServed": [
-    {"@type": "City", "name": "Marietta"},
-    {"@type": "City", "name": "Marietta"},
-    {"@type": "City", "name": "Dalton"}
-  ],
-  "address": [
-    {"@type": "PostalAddress", "streetAddress": "4076 Ebenezer Rd.", "addressLocality": "Marietta", "addressRegion": "GA", "addressCountry": "US"},
-    {"@type": "PostalAddress", "streetAddress": "210 North Glenwood Ave.", "addressLocality": "Dalton", "addressRegion": "GA", "addressCountry": "US"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://theawadlawfirm.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Core Values", "item": "https://theawadlawfirm.com/core-values/"}
-  ]
-}
-</script>
-  
-  
-  
-  
-  
-  
-  
-  <meta name="keywords" content="Awad Law Firm Core Values, Faith-Based Law Firm, Legal Excellence">
-  
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Our Core Values | Trust, Honor, and Conviction | The Awad Law Firm">
-  <meta property="og:description" content="Learn about the core values that guide The Awad Law Firm: faith-based conviction, client honor, and relentless excellence in injury advocacy.">
-  <meta property="og:url" content="https://theawadlawfirm.com/core-values/">
-  <meta property="og:site_name" content="The Awad Law Firm">
-  <meta property="og:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Our Core Values | Trust, Honor, and Conviction | The Awad Law Firm">
-  <meta name="twitter:description" content="Learn about the core values that guide The Awad Law Firm: faith-based conviction, client honor, and relentless excellence in injury advocacy.">
-  <meta name="twitter:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
-  <meta name="description" content="Learn about the core values that guide The Awad Law Firm: faith-based conviction, client honor, and relentless excellence in injury advocacy.">
-  <link rel="canonical" href="https://theawadlawfirm.com/core-values/">
-</head>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<body class="home-page">
+    <!-- Google Fonts: Outfit (Headings) & Manrope (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Unified "Wow" Theme Config -->
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#060B11',
+                            navy: '#0C1827',
+                            charcoal: '#1A2736',
+                            primary: '#6CA1E6',      /* Sky blue accent */
+                            primaryhover: '#5A8DD0',
+                            pale: '#EAF2FA',         /* Soft pale blue background */
+                            offwhite: '#F9FAFC',
+                            white: '#FFFFFF',
+                            lightgray: '#F0F4F8',
+                            border: '#E2E8F0',
+                            text: '#0A1118',
+                            muted: '#64748B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #F9FAFC; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6CA1E6; }
+
+        /* Hero Animation Utilities */
+        @keyframes slow-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-spin {
+            animation: slow-spin 20s linear infinite;
+        }
+
+        /* Subtle Geometric Background Pattern */
+        .bg-geometric {
+            background-color: #f9fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236ca1e6' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Ultra-Premium Outlined Text Effect for Watermark */
+        .text-stroke-premium {
+            color: #ffffff;
+            -webkit-text-stroke: 2px rgba(108, 161, 230, 0.15);
+            letter-spacing: 0.05em;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Awad Law Firm",
+      "url": "https://theawadlawfirm.com",
+      "logo": "https://theawadlawfirm.com/assets/awadlawfirmlogo.png",
+      "telephone": "(706) 890-0000",
+      "description": "Top-rated personal injury law firm serving Marietta and Dalton, Georgia.",
+      "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
+      "serviceArea": { "@type": "State", "name": "Georgia" },
+      "areaServed": [
+        {"@type": "City", "name": "Marietta"},
+        {"@type": "City", "name": "Marietta"},
+        {"@type": "City", "name": "Dalton"}
+      ],
+      "address": [
+        {"@type": "PostalAddress", "streetAddress": "4076 Ebenezer Rd.", "addressLocality": "Marietta", "addressRegion": "GA", "addressCountry": "US"},
+        {"@type": "PostalAddress", "streetAddress": "210 North Glenwood Ave.", "addressLocality": "Dalton", "addressRegion": "GA", "addressCountry": "US"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://theawadlawfirm.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Core Values", "item": "https://theawadlawfirm.com/core-values/"}
+      ]
+    }
+    </script>
+    <meta name="keywords" content="Awad Law Firm Core Values, Faith-Based Law Firm, Legal Excellence">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Core Values | Trust, Honor, and Conviction | The Awad Law Firm">
+    <meta property="og:description" content="Learn about the core values that guide The Awad Law Firm: faith-based conviction, client honor, and relentless excellence in injury advocacy.">
+    <meta property="og:url" content="https://theawadlawfirm.com/core-values/">
+    <meta property="og:site_name" content="The Awad Law Firm">
+    <meta property="og:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Core Values | Trust, Honor, and Conviction | The Awad Law Firm">
+    <meta name="twitter:description" content="Learn about the core values that guide The Awad Law Firm: faith-based conviction, client honor, and relentless excellence in injury advocacy.">
+    <meta name="twitter:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
+    <meta name="description" content="Learn about the core values that guide The Awad Law Firm: faith-based conviction, client honor, and relentless excellence in injury advocacy.">
+    <link rel="canonical" href="https://theawadlawfirm.com/core-values/">
+</head>
+<body class="home-page bg-brand-offwhite text-brand-text font-body antialiased overflow-x-hidden">
 
 <header class="navbar">
-
 <a href="/" class="logo" aria-label="Awad Law Firm home">
     <img src="/assets/alf-white-logo.png" alt="Awad Law Firm Logo" loading="lazy" decoding="async">
 </a>
-
 <nav>
 <a href="/" class="">Home</a>
 <div class="nav-dropdown">
@@ -133,36 +194,26 @@
 </nav>
 
 <div class="nav-icons">
-
 <div class="nav-search" aria-label="Search">
   <span></span>
   <em>Search here...</em>
 </div>
-
 <a href="/contact/" class="nav-quote-btn">Free Consultation</a>
-
 <a href="/contact/" class="nav-arrow-btn" aria-label="Free Consultation">
   <span>&#8599;</span>
 </a>
-
 <button class="nav-dots-btn" aria-label="Open quick menu" type="button">
   <span></span><span></span><span></span>
   <span></span><span></span><span></span>
   <span></span><span></span><span></span>
 </button>
-
 <a href="/contact/" class="nav-btn">
-
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 <rect x="2" y="4" width="20" height="16" rx="2"></rect>
 <path d="m22 7-10 5L2 7"></path>
 </svg>
-
 </a>
-
-
 <a href="/contact/" class="nav-btn">
-
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 <path d="M22 16.92v3a2 2 0 0 1-2.18 2
 19.79 19.79 0 0 1-8.63-3.07
@@ -179,198 +230,249 @@ a2 2 0 0 1 2.11-.45
 c.85.33 1.74.56 2.65.68
 A2 2 0 0 1 22 16.92z"></path>
 </svg>
-
 </a>
-
 </div>
 
-  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
+<button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 </header>
 
-<!-- Breadcrumb -->
-<nav aria-label="Breadcrumb" class="breadcrumb">
-  <ol class="breadcrumb-list">
-    <li><a href="/">Home</a></li>
-    <li aria-current="page">Core Values</li>
-  </ol>
-</nav>
+    <!-- Colorful Branding Hero Section (Consistent with other pages) -->
+    <section class="relative pt-32 pb-40 lg:pt-40 lg:pb-48 overflow-hidden z-10 bg-brand-dark">
+        <!-- Dynamic Colorful Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#060B11] via-[#0C1827] to-[#1e3a8a] z-0 opacity-90"></div>
 
-<!-- Core Values Section -->
-<section class="core-values-section">
-  <div class="core-values-background">
-    <img src="/assets/brokenefffect.png" alt="Background Pattern" class="core-values-bg-image" loading="lazy" decoding="async">
-  </div>
-
-  <div class="core-values-inner">
-    <div class="core-values-header">
-      <h1>AWAD LAW FIRM<br><span class="growth-text">GROWTH</span> Core Values</h1>
-    </div>
-
-    <div class="core-values-container">
-      <div class="core-value-item">
-        <div class="core-value-letter">G</div>
-        <div class="core-value-content">
-          <h3>GRIT</h3>
-          <p>Grit is determined to win. Personal injury cases often involve powerful insurance companies that have rigged people all give up or settle for less than they deserve. At The Awad Law Firm, grit means we do not quit. We pursue every avenue available to secure justice for our clients and remain steadfast in the face of obstacles.</p>
-        </div>
-      </div>
-
-      <div class="core-value-item">
-        <div class="core-value-letter">R</div>
-        <div class="core-value-content">
-          <h3>RESPECT</h3>
-          <p>We fight relentlessly for the people we represent. Personal injury cases often involve powerful insurance companies that have rigged people all give up or settle for less than they deserve. At The Awad Law Firm, grit means we do not quit. We pursue every avenue available to secure justice for our clients and remain steadfast in the face of obstacles.</p>
-        </div>
-      </div>
-
-      <div class="core-value-item">
-        <div class="core-value-letter">O</div>
-        <div class="core-value-content">
-          <h3>OWNERSHIP</h3>
-          <p>We take full responsibility for our work, our communication, and our results. Ownership means being proactive, accountable, and committed to following through on every promise we make.</p>
-        </div>
-      </div>
-
-      <div class="core-value-item">
-        <div class="core-value-letter">W</div>
-        <div class="core-value-content">
-          <h3>WINNING ATTITUDE</h3>
-          <p>We take full responsibility for our work, our communication, and our results. Ownership means being proactive, accountable, and committed to following through on every promise we make.</p>
-        </div>
-      </div>
-
-      <div class="core-value-item">
-        <div class="core-value-letter">T</div>
-        <div class="core-value-content">
-          <h3>TEAMWORK</h3>
-          <p>No single lawyer wins a case alone. True success comes from collaboration, communication, and mutual support among a dedicated team. Attorneys, paralegals, client care specialists, and staff work together with a shared mission to deliver extraordinary service and exceptional results.</p>
-        </div>
-      </div>
-
-      <div class="core-value-item">
-        <div class="core-value-letter">H</div>
-        <div class="core-value-content">
-          <h3>HUMILITY</h3>
-          <p>Humility reminds us that the trust our clients place in us is a privilege. We approach our work with gratitude, respect, and a commitment to continual improvement. Guided by faith and service, we remain grounded in the understanding that our role is to advocate for others with integrity and compassion.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section class="contact-section">
-  <div class="contact-inner">
-    <div class="contact-grid">
-      <div class="contact-left">
-        <div class="contact-kicker">GET IN TOUCH</div>
-        <h2 class="contact-heading">
-          Talk to an Experienced<br>
-          Personal Injury Attorney<br>
-          Today
-        </h2>
-
-        <div class="contact-group">
-          <div class="contact-group-title">OFFICES</div>
-          <ul class="contact-list">
-            <li class="contact-list-item">
-              <span class="contact-icon contact-icon-pin" aria-hidden="true"></span>
-              <span>Marietta, GA: 4076 Ebenezer Rd.</span>
-            </li>
-            <li class="contact-list-item">
-              <span class="contact-icon contact-icon-pin" aria-hidden="true"></span>
-              <span>Dalton, GA: 210 North Glenwood Ave.</span>
-            </li>
-          </ul>
+        <!-- Glowing Orbs / Colorful Shapes for the "Wow" Effect -->
+        <div class="absolute inset-0 overflow-hidden z-0 pointer-events-none mix-blend-screen">
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3b82f6]/40 blur-[120px] rounded-full animate-pulse"></div>
+            <div class="absolute -bottom-32 -right-10 w-[700px] h-[700px] bg-brand-primary/30 blur-[150px] rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563eb]/20 blur-[120px] rounded-full animate-slow-spin"></div>
         </div>
 
-        <div class="contact-group">
-          <div class="contact-group-title">CONTACT INFO</div>
-          <div class="contact-info">
-            <div class="contact-info-row">
-              <span class="contact-icon contact-icon-mail" aria-hidden="true"></span>
-              <span>Email Us</span>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10 text-center">
+            <!-- Glassmorphism Tag -->
+            <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-2xl relative">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-primary"></span>
+                </span>
+                <span>Our Principles</span>
             </div>
 
-            <div class="contact-info-row">
-              <span class="contact-icon contact-icon-phone" aria-hidden="true"></span>
-              <span>(706) 890-0000</span>
-            </div>
-          </div>
-        </div>
-      </div>
+            <h1 class="text-5xl md:text-6xl lg:text-[5.5rem] font-heading font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl mb-8">
+                Our Core Values:<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-pale to-brand-primary drop-shadow-sm">The GROWTH Standard</span>
+            </h1>
 
-      <div class="contact-form-card">
-        <div class="contact-form-brand">
-          <div class="contact-form-brand-mark">
-            <img src="/assets/awadlawfirmlogo.png" alt="Awad Law Firm" class="contact-form-logo" decoding="async">
-          </div>
+            <p class="text-lg md:text-xl text-white/80 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                These principles guide every case we handle, every client we fight for, and every decision we make at The Awad Law Firm.
+            </p>
         </div>
 
-        <form class="contact-form" onsubmit="event.preventDefault();">
-          <div class="contact-row contact-row-2">
-            <label class="contact-field">
-              <span class="contact-label">FIRST NAME *</span>
-              <input type="text" name="firstName" required />
-            </label>
-            <label class="contact-field">
-              <span class="contact-label">LAST NAME *</span>
-              <input type="text" name="lastName" required />
-            </label>
-          </div>
-
-          <div class="contact-row contact-row-2">
-            <label class="contact-field">
-              <span class="contact-label">EMAIL *</span>
-              <input type="email" name="email" required />
-            </label>
-            <label class="contact-field">
-              <span class="contact-label">PHONE *</span>
-              <input type="tel" name="phone" required />
-            </label>
-          </div>
-
-          <label class="contact-field contact-field-full">
-            <span class="contact-label">SELECT TYPE OF PRACTICE AREA</span>
-            <select name="practiceArea">
-              <option value="" selected>Select type of practice area</option>
-              <option value="car">Car Accidents</option>
-              <option value="truck">Trucking Accidents</option>
-              <option value="motorcycle">Motorcycle Accidents</option>
-              <option value="slip">Slip and Fall</option>
-              <option value="uber">Uber Accidents</option>
-              <option value="wrongful">Wrongful Death</option>
-              <option value="lyft">Lyft Accident</option>
-              <option value="medical">Medical Malpractice</option>
-              <option value="personal">Personal Injury</option>
-            </select>
-          </label>
-
-          <label class="contact-field contact-field-full">
-            <span class="contact-label">MESSAGE *</span>
-            <textarea name="message" rows="4" required></textarea>
-          </label>
-
-          <button class="contact-submit" type="submit">
-            SUBMIT MESSAGE
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14"></path>
-              <path d="M13 5l7 7-7 7"></path>
+        <!-- Sleek Angled Bottom Divider connecting to the grid -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+            <svg class="relative block w-full h-[60px] md:h-[120px]" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,120 L1200,120 L1200,0 L0,120 Z" fill="#F9FAFC"></path>
             </svg>
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+    </section>
 
-<!-- Footer -->
+    <!-- GROWTH Core Values Grid Section -->
+    <section class="py-24 bg-geometric relative z-20 overflow-hidden">
+        <!-- Floating Editorial Watermarks -->
+        <div class="absolute top-[8%] right-[-5%] text-[10vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
+            INTEGRITY
+        </div>
+        <div class="absolute bottom-[8%] left-[-5%] text-[12vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
+            EXCELLENCE
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-brand-primary text-xs font-bold tracking-widest uppercase mb-4">Our DNA</p>
+                <h2 class="text-4xl md:text-5xl font-heading font-black tracking-tight text-brand-dark">The GROWTH Framework</h2>
+                <p class="text-brand-muted max-w-2xl mx-auto mt-4 text-sm leading-relaxed">Our six core values form the foundation of our firm's culture and guide how we represent our clients every single day.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Grit Card -->
+                <article class="bg-white p-8 rounded-[2rem] border border-brand-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-brand-primary/40 transition-all duration-500 flex flex-col relative overflow-hidden group">
+                    <div class="absolute right-6 top-6 text-7xl font-heading font-black text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-300">G</div>
+                    <div class="w-12 h-12 rounded-2xl bg-brand-pale flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading text-brand-dark mb-3">Grit</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">Grit is determined to win. Personal injury cases often involve powerful insurance companies that expect people to give up or settle for less than they deserve. At The Awad Law Firm, grit means we do not quit. We pursue every avenue available to secure justice for our clients and remain steadfast in the face of obstacles.</p>
+                </article>
+
+                <!-- Respect Card -->
+                <article class="bg-white p-8 rounded-[2rem] border border-brand-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-brand-primary/40 transition-all duration-500 flex flex-col relative overflow-hidden group">
+                    <div class="absolute right-6 top-6 text-7xl font-heading font-black text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-300">R</div>
+                    <div class="w-12 h-12 rounded-2xl bg-brand-pale flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="heart" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading text-brand-dark mb-3">Respect</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">We treat every client with dignity, empathy, and deep respect for their unique situation. We understand that our clients are facing some of the most challenging moments of their lives, and we honor their trust by listening closely, communicating honestly, and valuing their time and well-being at every step.</p>
+                </article>
+
+                <!-- Ownership Card -->
+                <article class="bg-white p-8 rounded-[2rem] border border-brand-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-brand-primary/40 transition-all duration-500 flex flex-col relative overflow-hidden group">
+                    <div class="absolute right-6 top-6 text-7xl font-heading font-black text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-300">O</div>
+                    <div class="w-12 h-12 rounded-2xl bg-brand-pale flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading text-brand-dark mb-3">Ownership</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">We take full responsibility for our work, our communication, and our results. Ownership means being proactive, accountable, and committed to following through on every promise we make to our clients and our teammates.</p>
+                </article>
+
+                <!-- Winning Attitude Card -->
+                <article class="bg-white p-8 rounded-[2rem] border border-brand-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-brand-primary/40 transition-all duration-500 flex flex-col relative overflow-hidden group">
+                    <div class="absolute right-6 top-6 text-7xl font-heading font-black text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-300">W</div>
+                    <div class="w-12 h-12 rounded-2xl bg-brand-pale flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="trophy" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading text-brand-dark mb-3">Winning Attitude</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">We approach every case with optimism, confidence, and a relentless focus on achieving the best possible outcome. A winning attitude means finding solutions where others see obstacles, staying positive in difficult situations, and projecting the confidence that reassures our clients we will secure the justice they deserve.</p>
+                </article>
+
+                <!-- Teamwork Card -->
+                <article class="bg-white p-8 rounded-[2rem] border border-brand-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-brand-primary/40 transition-all duration-500 flex flex-col relative overflow-hidden group">
+                    <div class="absolute right-6 top-6 text-7xl font-heading font-black text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-300">T</div>
+                    <div class="w-12 h-12 rounded-2xl bg-brand-pale flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading text-brand-dark mb-3">Teamwork</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">No single lawyer wins a case alone. True success comes from collaboration, communication, and mutual support among a dedicated team. Attorneys, paralegals, client care specialists, and staff work together with a shared mission to deliver extraordinary service and exceptional results.</p>
+                </article>
+
+                <!-- Humility Card -->
+                <article class="bg-white p-8 rounded-[2rem] border border-brand-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-brand-primary/40 transition-all duration-500 flex flex-col relative overflow-hidden group">
+                    <div class="absolute right-6 top-6 text-7xl font-heading font-black text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors duration-300">H</div>
+                    <div class="w-12 h-12 rounded-2xl bg-brand-pale flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading text-brand-dark mb-3">Humility</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">Humility reminds us that the trust our clients place in us is a privilege. We approach our work with gratitude, respect, and a commitment to continual improvement. Guided by faith and service, we remain grounded in the understanding that our role is to advocate for others with integrity and compassion.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get in Touch / Form Section (Light Blue BG Matching redone pages) -->
+    <section class="bg-brand-pale text-brand-dark pt-32 pb-24 border-t border-brand-border/40 relative z-20">
+        <div class="container mx-auto px-6 max-w-[80rem]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Left: Contact Details -->
+                <div class="space-y-12">
+                    <div>
+                        <p class="text-brand-charcoal text-xs font-bold tracking-widest uppercase mb-4">Get In Touch</p>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-tight mb-8 text-brand-navy tracking-tight">Talk to an Experienced<br>Personal Injury Attorney<br>Today</h2>
+                    </div>
+
+                    <div class="space-y-8 text-sm text-brand-charcoal">
+                        <!-- Offices -->
+                        <div>
+                            <p class="font-bold tracking-widest uppercase mb-4 text-brand-muted">Offices</p>
+                            <ul class="space-y-4 font-medium text-base list-none p-0 m-0">
+                                <li class="flex items-start">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-brand-primary mr-3 mt-0.5"></i>
+                                    <span>Marietta: 4076 Ebenezer Rd.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-brand-primary mr-3 mt-0.5"></i>
+                                    <span>Dalton: 210 North Glenwood Ave.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div>
+                            <p class="font-bold tracking-widest uppercase mb-4 text-brand-muted mt-8">Contact Info</p>
+                            <ul class="space-y-4 font-medium text-base list-none p-0 m-0">
+                                <li class="flex items-center">
+                                    <i data-lucide="mail" class="w-5 h-5 text-brand-primary mr-3"></i>
+                                    <a href="mailto:team@theawadlawfirm.com" class="hover:text-brand-primary text-brand-charcoal transition no-underline">team@theawadlawfirm.com</a>
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="phone" class="w-5 h-5 text-brand-primary mr-3"></i>
+                                    <a href="tel:+17068900000" class="hover:text-brand-primary text-brand-charcoal transition no-underline">(706) 890-0000</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form Card -->
+                <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-brand-border/60 text-brand-dark">
+                    <div class="flex justify-center mb-10 border-b border-brand-border/60 pb-6">
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="scale" class="w-8 h-8 text-brand-dark mb-2"></i>
+                            <div class="font-heading font-black text-xl leading-none tracking-tight">AWAD LAW FIRM</div>
+                        </div>
+                    </div>
+
+                    <form class="space-y-6" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" target="salesforce_submissions">
+                        <input type="hidden" name="oid" value="00DF00000008J4B">
+                        <input type="hidden" name="retURL" value="https://theawadlawfirm.com/">
+                        <input type="hidden" name="description" value="">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">First Name *</label>
+                                <input type="text" name="first_name" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Last Name *</label>
+                                <input type="text" name="last_name" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Email *</label>
+                                <input type="email" name="email" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Phone *</label>
+                                <input type="tel" name="phone" required class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition shadow-sm text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Select Type of Practice Area</label>
+                            <div class="relative">
+                                <select name="practiceArea" class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition text-brand-charcoal appearance-none shadow-sm cursor-pointer text-sm font-medium">
+                                    <option value="">Select a practice area</option>
+                                    <option value="Car Accidents">Car Accidents</option>
+                                    <option value="Trucking Accidents">Trucking Accidents</option>
+                                    <option value="Wrongful Death">Wrongful Death</option>
+                                    <option value="Personal Injury">Personal Injury</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Message *</label>
+                            <textarea name="message" required rows="4" class="w-full bg-white border border-brand-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-primary transition resize-none shadow-sm text-sm"></textarea>
+                        </div>
+
+                        <div class="pt-4 text-center">
+                            <button type="submit" class="bg-brand-primary hover:bg-brand-primaryhover text-white font-bold py-4 px-10 rounded-full w-full max-w-[280px] mx-auto transition-all duration-300 flex justify-center items-center text-sm tracking-widest uppercase shadow-[0_10px_20px_rgba(108,161,230,0.25)] hover:shadow-[0_15px_30px_rgba(108,161,230,0.4)] hover:-translate-y-0.5 group border-none cursor-pointer">
+                                Send Message <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 <footer class="site-footer">
   <!-- Newsletter CTA Bar -->
   <div class="footer-newsletter-bar">
@@ -550,6 +652,10 @@ A2 2 0 0 1 22 16.92z"></path>
 </footer>
 
 <script src="/script.js"></script>
+<script>
+    // Initialize Icons
+    lucide.createIcons();
+</script>
 <a class="premium-float-call" href="tel:+17068900000" aria-label="Call Awad Law Firm at (706) 890-0000">
   <span class="float-call-pulse" aria-hidden="true"></span>
   <span class="float-call-pulse-2" aria-hidden="true"></span>
@@ -562,5 +668,6 @@ A2 2 0 0 1 22 16.92z"></path>
     </span>
   </span>
 </a>
+<iframe name="salesforce_submissions" id="salesforce_submissions" style="display:none;"></iframe>
 </body>
 </html>

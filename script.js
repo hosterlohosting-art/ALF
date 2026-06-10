@@ -966,6 +966,45 @@ if (document.readyState === 'loading') {
           }
         }
 
+        // Send email notification to team@theawadlawfirm.com (CC: mehar, leland) using FormSubmit
+        try {
+          var emailData = {};
+          var formData = new FormData(form);
+          formData.forEach(function (value, key) {
+            if (key === 'oid' || key === 'retURL' || key === 'website_url_hp' || key === 'description') return;
+            emailData[key] = value;
+          });
+
+          var formType = 'General Contact Form';
+          if (form.classList.contains('newsletter-form')) {
+            formType = 'Newsletter Signup';
+          } else if (form.classList.contains('premium-hero-form')) {
+            formType = 'Hero Consultation Form';
+          } else if (form.classList.contains('space-y-6')) {
+            formType = 'Practice Area Case Form';
+          }
+
+          var clientName = emailData['firstName'] || emailData['first_name'] || '';
+          var clientLastName = emailData['lastName'] || emailData['last_name'] || '';
+          var fullName = (clientName + ' ' + clientLastName).trim();
+          emailData['_subject'] = 'New Website Lead: [' + formType + ']' + (fullName ? ' - ' + fullName : '');
+          emailData['_cc'] = 'mehar@theawadlawfirm.com,leland@theawadlawfirm.com,selvin@theawadlawfirm.com';
+          emailData['Submitted From Page'] = window.location.href;
+
+          fetch('https://formsubmit.co/ajax/team@theawadlawfirm.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(emailData)
+          }).catch(function (err) {
+            console.error('Email notification dispatch failed:', err);
+          });
+        } catch (e) {
+          console.error('Error preparing email notification:', e);
+        }
+
         // Web-to-Lead: Map variables and submit natively to the background iframe
         if (form.getAttribute('target') === 'salesforce_submissions') {
           // Temporarily rename fields to standard Web-to-Lead API field names
@@ -1038,7 +1077,7 @@ if (document.readyState === 'loading') {
   const clientPromiseButtons = document.querySelectorAll('.client-promise-btn');
   clientPromiseButtons.forEach(button => {
     button.addEventListener('click', function() {
-      window.location.href = 'contact.html';
+      window.location.href = '/contact/';
     });
   });
 
@@ -1046,17 +1085,17 @@ if (document.readyState === 'loading') {
   const ctaButton = document.querySelector('.cta');
   if (ctaButton) {
     ctaButton.addEventListener('click', function() {
-      window.location.href = 'contact.html';
+      window.location.href = '/contact/';
     });
   }
 
   // Learn More on Firm History page -> Ibrahim Awad; homepage uses <a href="about.html">.
   const path = window.location.pathname.replace(/\\/g, '/');
-  const isAboutPage = /(^|\/)about\.html$/i.test(path);
+  const isAboutPage = /(^|\/)about\.html$/i.test(path) || /(^|\/)about-the-awad-law-firm-history/i.test(path);
   const learnMoreBtn = document.querySelector('.origin-story .learn-more-btn');
   if (learnMoreBtn && isAboutPage) {
     learnMoreBtn.addEventListener('click', function() {
-      window.location.href = 'ibrahim-awad.html';
+      window.location.href = '/team-members/ibrahim-awad/';
     });
   }
 })();
@@ -1131,11 +1170,13 @@ if (document.readyState === 'loading') {
   'use strict';
 
   function initPolish() {
-    var path = window.location.pathname.split('/').pop() || 'index.html';
+    var path = window.location.pathname;
     document.querySelectorAll('.navbar nav a[href]').forEach(function (link) {
       var href = link.getAttribute('href');
       if (!href || href.indexOf('http') === 0 || href === '#') return;
-      if (href === path) link.classList.add('active');
+      var cleanHref = href.replace(/^\/?/, '/').replace(/\/?$/, '/');
+      var cleanPath = path.replace(/^\/?/, '/').replace(/\/?$/, '/');
+      if (cleanHref === cleanPath) link.classList.add('active');
     });
 
     // 1. Target key structural components for automatic dynamic animation
@@ -1390,11 +1431,11 @@ if (document.readyState === 'loading') {
       var quickMenu = document.createElement('div');
       quickMenu.className = 'nav-quick-menu';
       quickMenu.innerHTML = [
-        '<a href="contact.html">Free Case Review</a>',
+        '<a href="/contact/">Free Case Review</a>',
         '<a href="tel:+17068900000">Call (706) 890-0000</a>',
-        '<a href="practice-areas.html">Practice Areas</a>',
-        '<a href="testimonials.html">Video Testimonials</a>',
-        '<a href="education.html">Legal Education</a>'
+        '<a href="/practice-areas/">Practice Areas</a>',
+        '<a href="/testimonials/">Video Testimonials</a>',
+        '<a href="/resources/">Legal Education</a>'
       ].join('');
       navbar.appendChild(quickMenu);
 
@@ -1682,7 +1723,7 @@ if (document.readyState === 'loading') {
       '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="top-bar-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
       '      <span>Call (706) 890-0000</span>',
       '    </a>',
-      '    <a href="sms:+13106930720" class="top-bar-item">',
+      '    <a href="sms:+13106930720?&body=Hello%20Awad%20Law%20Firm%2C%20I%20need%20help%20with%20a%20case." class="top-bar-item js-text-message-link" aria-label="Text The Awad Law Firm at (310) 693-0720">',
       '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="top-bar-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
       '      <span>Text (310) 693-0720</span>',
       '    </a>',
@@ -1708,6 +1749,13 @@ if (document.readyState === 'loading') {
     ].join('\n');
 
     navbar.parentNode.insertBefore(topBar, navbar);
+
+    var textLink = topBar.querySelector('.js-text-message-link');
+    if (textLink) {
+      textLink.addEventListener('click', function () {
+        window.location.href = textLink.href;
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
