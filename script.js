@@ -842,7 +842,7 @@ if (document.readyState === 'loading') {
         captchaElements.forEach(function (el) {
           if (!el.getAttribute('data-hcaptcha-id')) {
             var widgetId = hcaptcha.render(el, {
-              sitekey: el.getAttribute('data-sitekey') || '10000000-ffff-ffff-ffff-000000000001'
+              sitekey: el.getAttribute('data-sitekey') || 'bbaee838-b0ee-4376-bf5c-206ed8ae50fa'
             });
             el.setAttribute('data-hcaptcha-id', widgetId);
           }
@@ -919,7 +919,7 @@ if (document.readyState === 'loading') {
         if (submitBtn && !form.querySelector('.h-captcha')) {
           var captchaDiv = document.createElement('div');
           captchaDiv.className = 'h-captcha';
-          captchaDiv.setAttribute('data-sitekey', '10000000-ffff-ffff-ffff-000000000001');
+          captchaDiv.setAttribute('data-sitekey', 'bbaee838-b0ee-4376-bf5c-206ed8ae50fa');
           captchaDiv.style.display = 'flex';
           captchaDiv.style.justifyContent = 'center';
           captchaDiv.style.marginBottom = '20px';
@@ -930,7 +930,7 @@ if (document.readyState === 'loading') {
           // If hCaptcha library is already loaded, render it immediately
           if (typeof hcaptcha !== 'undefined') {
             var widgetId = hcaptcha.render(captchaDiv, {
-              sitekey: '10000000-ffff-ffff-ffff-000000000001'
+              sitekey: 'bbaee838-b0ee-4376-bf5c-206ed8ae50fa'
             });
             captchaDiv.setAttribute('data-hcaptcha-id', widgetId);
           }
