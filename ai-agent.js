@@ -13,8 +13,8 @@
     /* AI Chatbot container */
     #alf-ai-chat-widget {
       position: fixed;
-      bottom: 25px;
-      left: 25px;
+      bottom: 32px;
+      left: 32px;
       z-index: 99999;
       font-family: 'Outfit', 'Inter', sans-serif;
     }
@@ -486,10 +486,11 @@
     if (!userText || !aiFacts.length) return null;
 
     // Clean and split user input into tokens
+    const stopWords = new Set(['can', 'you', 'with', 'the', 'and', 'are', 'does', 'how', 'what', 'where', 'who', 'this', 'that', 'for', 'about', 'our', 'your', 'from', 'have', 'has', 'had', 'was', 'were', 'been', 'will', 'would', 'should', 'could', 'but', 'not', 'they', 'them', 'their', 'him', 'her', 'his', 'she', 'its', 'into', 'than', 'then', 'once', 'here', 'there', 'when', 'why', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'only', 'own', 'same', 'so', 'too', 'very', 'just', 'about', 'need']);
     const tokens = userText.toLowerCase()
       .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g, "")
       .split(/\s+/)
-      .filter(w => w.length > 2);
+      .filter(w => w.length > 2 && !stopWords.has(w));
 
     if (tokens.length === 0) return null;
 
