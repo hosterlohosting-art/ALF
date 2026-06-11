@@ -487,11 +487,22 @@
   }
 
   // Answer matching engine (keyword/token based scoring)
+  // Answer matching engine (keyword/token based scoring)
   function findBestResponse(userText) {
     if (!userText || !aiFacts.length) return null;
 
     // Clean and split user input into tokens
-    const stopWords = new Set(['can', 'you', 'with', 'the', 'and', 'are', 'does', 'how', 'what', 'where', 'who', 'this', 'that', 'for', 'about', 'our', 'your', 'from', 'have', 'has', 'had', 'was', 'were', 'been', 'will', 'would', 'should', 'could', 'but', 'not', 'they', 'them', 'their', 'him', 'her', 'his', 'she', 'its', 'into', 'than', 'then', 'once', 'here', 'there', 'when', 'why', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'only', 'own', 'same', 'so', 'too', 'very', 'just', 'about', 'need']);
+    const stopWords = new Set([
+      'i', 'me', 'my', 'myself', 'we', 'us', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves',
+      'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves',
+      'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+      'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as',
+      'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after',
+      'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once',
+      'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such',
+      'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now',
+      'need', 'get', 'got', 'give', 'tell', 'talk', 'ask', 'make', 'take', 'way', 'want', 'please', 'would', 'could', 'should'
+    ]);
     const tokens = userText.toLowerCase()
       .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g, "")
       .split(/\s+/)
@@ -502,6 +513,8 @@
     let bestPage = null;
     let highestScore = 0;
 
+    const escapeRegExp = (str) => str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+
     aiFacts.forEach(page => {
       let score = 0;
       const questionText = page.question.toLowerCase();
@@ -511,22 +524,32 @@
       const topics = page.topics || [];
 
       tokens.forEach(token => {
+        const escapedToken = escapeRegExp(token);
+        const exactRegex = new RegExp('\\b' + escapedToken + '\\b', 'i');
+        const prefixRegex = new RegExp('\\b' + escapedToken, 'i');
+
         // Boost matches in topics (highly specific)
         topics.forEach(topic => {
-          if (topic.toLowerCase().includes(token)) score += 3.5;
+          const tLower = topic.toLowerCase();
+          if (exactRegex.test(tLower)) score += 3.5;
+          else if (prefixRegex.test(tLower)) score += 1.75;
         });
 
         // Matches in the core question text
-        if (questionText.includes(token)) score += 2.5;
+        if (exactRegex.test(questionText)) score += 2.5;
+        else if (prefixRegex.test(questionText)) score += 1.25;
 
         // Matches in the user intent
-        if (intentText.includes(token)) score += 2.0;
+        if (exactRegex.test(intentText)) score += 2.0;
+        else if (prefixRegex.test(intentText)) score += 1.0;
 
         // Matches in title
-        if (titleText.includes(token)) score += 1.0;
+        if (exactRegex.test(titleText)) score += 1.0;
+        else if (prefixRegex.test(titleText)) score += 0.5;
 
         // Matches in answer body
-        if (answerText.includes(token)) score += 0.5;
+        if (exactRegex.test(answerText)) score += 0.5;
+        else if (prefixRegex.test(answerText)) score += 0.25;
       });
 
       if (score > highestScore) {
@@ -547,35 +570,54 @@
     if (!userText) return null;
     const cleaned = userText.toLowerCase().trim().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g, "");
     
-    // Check greetings
-    const greetings = ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'greetings'];
+    // 1. Greetings check
+    const greetings = ['hello', 'hi', 'hey', 'yo', 'greetings', 'good morning', 'good afternoon', 'good evening'];
     if (greetings.some(g => cleaned === g || cleaned.startsWith(g + ' '))) {
       return "Hello! How can I help you today? You can ask me about our practice areas, attorneys, locations, or reviews.";
     }
 
-    // Check "how are you"
-    if (cleaned.includes('how are you') || cleaned.includes('how r u')) {
-      return "I'm doing great, thank you! I'm here and ready to answer any questions you have about The Awad Law Firm.";
+    // 2. Presence check ("are you there")
+    if (cleaned === 'are you there' || cleaned === 'you there' || cleaned.includes('anyone there') || cleaned.includes('anyone here') || cleaned.includes('anybody here') || cleaned.includes('anybody there') || cleaned === 'hello there') {
+      return "Yes, I am here and ready to help! What questions do you have about The Awad Law Firm or your case?";
     }
 
-    // Check chatbot identity
-    if (cleaned.includes('who are you') || cleaned.includes('what is your name') || cleaned.includes('your identity') || cleaned.includes('what is this')) {
+    // 3. Slang / Friendly chat check ("bro", "dude")
+    if (cleaned === 'bro' || cleaned === 'dude' || cleaned === 'buddy' || cleaned === 'mate' || cleaned === 'yo' || cleaned.includes('whats up') || cleaned.includes('whatsup')) {
+      return "Hey! How can I help you today? Feel free to ask about our legal team, office locations, or practice areas.";
+    }
+
+    // 4. General Help check ("can you help me", "help me", "i need help")
+    if (cleaned === 'help' || cleaned === 'help me' || cleaned === 'can you help me' || cleaned === 'can you help' || cleaned === 'i need help' || cleaned === 'assist' || cleaned === 'assist me') {
+      return "Yes, I can absolutely help you! The Awad Law Firm assists clients throughout Georgia with personal injury cases (including car/truck accidents, slip and falls, wrongful death, and medical malpractice). How can I assist you today? You can also call us 24/7 at <a href=\"tel:+17068900000\">(706) 890-0000</a>.";
+    }
+
+    // 5. Human Escalation check ("connect me with real person")
+    const connectKeywords = ['connect', 'speak', 'talk', 'chat', 'call', 'contact', 'reach', 'get in touch'];
+    const humanKeywords = ['person', 'perosn', 'human', 'live', 'someone', 'somebody', 'member', 'attorney', 'lawyer', 'team', 'real'];
+    
+    const wantsConnect = connectKeywords.some(kw => cleaned.includes(kw));
+    const wantsHuman = humanKeywords.some(kw => cleaned.includes(kw));
+    
+    if ((wantsConnect && wantsHuman) || cleaned.includes('real person') || cleaned.includes('real perosn') || cleaned.includes('human') || cleaned.includes('live agent') || cleaned.includes('real human')) {
+      return "I can certainly help connect you! While I am an AI assistant, you can connect with a real member of our team 24/7 by calling us at <a href=\"tel:+17068900000\">(706) 890-0000</a> or by submitting our <a href=\"/contact/\">Free Case Evaluation form</a>. If you'd like to browse our attorneys, you can check out our <a href=\"/team-members/\">Team Directory</a>.";
+    }
+
+    // 6. Identity check
+    if (cleaned.includes('who are you') || cleaned.includes('what is your name') || cleaned.includes('whats your name') || cleaned.includes('your identity') || cleaned.includes('what do you call yourself') || cleaned.includes('call yourself') || cleaned.includes('who is this') || cleaned === 'what are you') {
       return "I am the ALF AI Assistant. I am here to help answer your questions about The Awad Law Firm, including our attorneys, locations, reviews, and practice areas.";
     }
 
-    // Check thank thanks
-    if (cleaned.includes('thank you') || cleaned.startsWith('thanks') || cleaned === 'thank' || cleaned.includes('thankyou')) {
+    // 7. Thank you / Acknowledgment check
+    if (cleaned.includes('thank you') || cleaned.startsWith('thanks') || cleaned === 'thank' || cleaned.includes('thankyou') || cleaned === 'great' || cleaned === 'awesome' || cleaned === 'cool' || cleaned === 'ok' || cleaned === 'okay') {
       return "You are very welcome! Let me know if you need help with anything else.";
     }
 
-    // Check "talk properly" or "not working naturally" or conversational complaint
+    // 8. General conversational complaint (catch-all)
     if (
       (cleaned.includes('talk') && cleaned.includes('properly')) ||
       (cleaned.includes('work') && cleaned.includes('properly')) ||
       (cleaned.includes('work') && cleaned.includes('naturally')) ||
-      (cleaned.includes('talk') && cleaned.includes('naturally')) ||
-      cleaned.includes('real person') ||
-      cleaned.includes('human')
+      (cleaned.includes('talk') && cleaned.includes('naturally'))
     ) {
       return "I am a helpful AI assistant trained on facts about The Awad Law Firm. While I can't have general human conversations, I can answer anything about our legal team, practice areas, office locations, case results, and client reviews. Try asking a specific question like 'Who is Basher Hassan?' or 'Where is the Dalton office?'";
     }
