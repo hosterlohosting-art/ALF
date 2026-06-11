@@ -41,6 +41,24 @@ playBtn.addEventListener('click', () => {
   document.body.style.overflow = 'hidden';
 });
 
+const tedxBtns = document.querySelectorAll('.premium-video-note, .premium-mobile-video-wrap');
+tedxBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    savedScrollY = window.scrollY || window.pageYOffset;
+    savedScrollX = window.scrollX || window.pageXOffset;
+
+    youtubePlayer.src = 'https://www.youtube.com/embed/JZURZPGzUvA?autoplay=1';
+    videoModal.style.display = 'flex';
+    videoModal.style.position = 'fixed';
+    videoModal.style.inset = '0';
+    videoModal.style.width = '100vw';
+    videoModal.style.height = '100vh';
+    videoModal.style.height = '100dvh';
+    document.body.style.overflow = 'hidden';
+  });
+});
+
 function closeHomeVideoModal() {
   videoModal.style.display = 'none';
   youtubePlayer.src = '';
@@ -1876,7 +1894,7 @@ if (document.readyState === 'loading') {
 /* Dynamically load the AI Chatbot Agent on all pages */
 (function() {
   const script = document.createElement('script');
-  script.src = "/ai-agent.js?v=4";
+  script.src = "/ai-agent.js?v=5";
   script.defer = true;
   document.body.appendChild(script);
 })();
