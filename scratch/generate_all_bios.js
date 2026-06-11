@@ -715,9 +715,9 @@ ${scripts}
                     if (teamExperts.substring(pos, pos + 4) === '<div') {
                         openCount++;
                         pos += 4;
-                    } else if (teamExperts.substring(pos, pos + 5) === '</div') {
+                    } else if (teamExperts.substring(pos, pos + 6) === '</div>') {
                         openCount--;
-                        pos += 5;
+                        pos += 6;
                         if (openCount === 0) {
                             cardEndPos = pos;
                             break;
@@ -730,19 +730,33 @@ ${scripts}
                 if (cardEndPos !== -1) {
                     const cardContent = teamExperts.substring(divStart, cardEndPos);
                     
-                    // Replace open div tag with anchor tag
-                    let newCardContent = cardContent.replace(
-                        '<div class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full">',
-                        `<a href="${link}" class="group bg-white rounded-[2.5rem] p-4 border border-brand-border/60 hover:border-brand-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">`
-                    );
-
-                    // Replace last div closing tag with anchor closing tag
-                    if (newCardContent.endsWith('</div>')) {
-                        newCardContent = newCardContent.slice(0, -6) + '</a>';
+                    // Parse the opening div tag and replace it with an anchor tag
+                    const openTagEnd = cardContent.indexOf('>');
+                    if (openTagEnd !== -1) {
+                        const openTag = cardContent.substring(0, openTagEnd + 1);
+                        const classMatch = openTag.match(/class="([^"]*)"/);
+                        if (classMatch) {
+                            let classes = classMatch[1];
+                            if (openTag.startsWith('<div')) {
+                                if (!classes.includes('hover:no-underline')) {
+                                    classes += ' hover:no-underline';
+                                }
+                                if (!classes.includes('text-decoration-none')) {
+                                    classes += ' text-decoration-none';
+                                }
+                                const newOpenTag = `<a href="${link}" class="${classes}">`;
+                                let newCardContent = newOpenTag + cardContent.substring(openTagEnd + 1);
+                                
+                                // Replace last div closing tag with anchor closing tag
+                                if (newCardContent.endsWith('</div>')) {
+                                    newCardContent = newCardContent.slice(0, -6) + '</a>';
+                                }
+                                
+                                teamExperts = teamExperts.substring(0, divStart) + newCardContent + teamExperts.substring(cardEndPos);
+                                console.log(`Updated card link for ${name} -> ${link}`);
+                            }
+                        }
                     }
-
-                    teamExperts = teamExperts.substring(0, divStart) + newCardContent + teamExperts.substring(cardEndPos);
-                    console.log(`Updated card link for ${name} -> ${link}`);
                 }
             }
         }
