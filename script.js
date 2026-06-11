@@ -1876,7 +1876,7 @@ if (document.readyState === 'loading') {
 /* Dynamically load the AI Chatbot Agent on all pages */
 (function() {
   const script = document.createElement('script');
-  script.src = '/ai-agent.js';
+  script.src = "/ai-agent.js?v=4";
   script.defer = true;
   document.body.appendChild(script);
 })();
