@@ -12,11 +12,12 @@
   style.textContent = `
     /* AI Chatbot container */
     #alf-ai-chat-widget {
-      position: fixed;
-      bottom: 32px;
-      left: 32px;
-      z-index: 99999;
-      font-family: 'Outfit', 'Inter', sans-serif;
+      position: fixed !important;
+      top: calc(100dvh - 90px) !important;
+      bottom: auto !important;
+      left: 32px !important;
+      z-index: 100002 !important;
+      font-family: 'Outfit', 'Inter', sans-serif !important;
     }
 
     /* Floating bubble button */
@@ -349,16 +350,17 @@
     /* Mobile Responsive styling */
     @media (max-width: 450px) {
       #alf-ai-chat-widget {
-        left: 14px;
-        bottom: 14px;
-        right: 14px;
+        left: 14px !important;
+        right: 14px !important;
+        top: calc(100dvh - 72px) !important;
+        bottom: auto !important;
       }
       .alf-ai-chat-window {
-        width: auto;
-        left: 0;
-        right: 0;
-        bottom: 70px;
-        height: 460px;
+        width: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 64px !important;
+        height: 460px !important;
       }
     }
   `;
@@ -537,6 +539,47 @@
     return null;
   }
 
+  // Match conversational phrases
+  function findConversationalResponse(userText) {
+    if (!userText) return null;
+    const cleaned = userText.toLowerCase().trim().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g, "");
+    
+    // Check greetings
+    const greetings = ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'greetings'];
+    if (greetings.some(g => cleaned === g || cleaned.startsWith(g + ' '))) {
+      return "Hello! How can I help you today? You can ask me about our practice areas, attorneys, locations, or reviews.";
+    }
+
+    // Check "how are you"
+    if (cleaned.includes('how are you') || cleaned.includes('how r u')) {
+      return "I'm doing great, thank you! I'm here and ready to answer any questions you have about The Awad Law Firm.";
+    }
+
+    // Check chatbot identity
+    if (cleaned.includes('who are you') || cleaned.includes('what is your name') || cleaned.includes('your identity') || cleaned.includes('what is this')) {
+      return "I am the ALF AI Assistant. I am here to help answer your questions about The Awad Law Firm, including our attorneys, locations, reviews, and practice areas.";
+    }
+
+    // Check thank thanks
+    if (cleaned.includes('thank you') || cleaned.startsWith('thanks') || cleaned === 'thank' || cleaned.includes('thankyou')) {
+      return "You are very welcome! Let me know if you need help with anything else.";
+    }
+
+    // Check "talk properly" or "not working naturally" or conversational complaint
+    if (
+      (cleaned.includes('talk') && cleaned.includes('properly')) ||
+      (cleaned.includes('work') && cleaned.includes('properly')) ||
+      (cleaned.includes('work') && cleaned.includes('naturally')) ||
+      (cleaned.includes('talk') && cleaned.includes('naturally')) ||
+      cleaned.includes('real person') ||
+      cleaned.includes('human')
+    ) {
+      return "I am a helpful AI assistant trained on facts about The Awad Law Firm. While I can't have general human conversations, I can answer anything about our legal team, practice areas, office locations, case results, and client reviews. Try asking a specific question like 'Who is Basher Hassan?' or 'Where is the Dalton office?'";
+    }
+
+    return null;
+  }
+
   // Send message processing
   function processMessage(messageText) {
     if (!messageText.trim()) return;
@@ -550,6 +593,13 @@
 
     setTimeout(() => {
       hideTypingIndicator();
+
+      // Check for conversational greetings or general intents first
+      const conversationalAnswer = findConversationalResponse(messageText);
+      if (conversationalAnswer) {
+        appendMessage(`<p>${conversationalAnswer}</p>`, false);
+        return;
+      }
 
       const matchedPage = findBestResponse(messageText);
 
