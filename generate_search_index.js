@@ -123,12 +123,24 @@ function buildTeamItems() {
     const h3 = pick(/<h3[^>]*>([\s\S]*?)<\/h3>/i, chunk) || fallbackName;
     const role = pick(/<span[^>]*>([\s\S]*?)<\/span>/i, chunk);
     const slug = slugify(h3.replace(/,\s*Esq\.?/i, ''));
+    
+    let file = `team-${slug}.html`;
+    if (slug === 'ibrahim-awad') {
+      file = 'ibrahim-awad.html';
+    }
+    
+    let bodyText = "";
+    if (fs.existsSync(path.join(root, file))) {
+      const pageHtml = fs.readFileSync(path.join(root, file), 'utf8');
+      bodyText = stripHtml(pageHtml).slice(0, 5500);
+    }
+    
     items.push({
       title: h3,
-      url: `/team-members/#${slug}`,
+      url: `/team-members/${slug}/`,
       category: 'Team Member',
       description: role ? `${h3} - ${role}. Meet the people behind The Awad Law Firm.` : `Meet ${h3} at The Awad Law Firm.`,
-      keywords: `${h3} ${role} Awad Law Firm team staff attorney client care media`
+      keywords: `${h3} ${role} Awad Law Firm team staff attorney client care media ${bodyText}`
     });
   }
   return items;
