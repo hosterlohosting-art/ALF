@@ -581,17 +581,67 @@
       return "Yes, I am here and ready to help! What questions do you have about The Awad Law Firm or your case?";
     }
 
-    // 3. Slang / Friendly chat check ("bro", "dude")
+    // 3. Identity check
+    if (cleaned.includes('who are you') || cleaned.includes('what is your name') || cleaned.includes('whats your name') || cleaned.includes('your identity') || cleaned.includes('what do you call yourself') || cleaned.includes('call yourself') || cleaned.includes('who is this') || cleaned === 'what are you') {
+      return "I am the ALF AI Assistant. I am here to help answer your questions about The Awad Law Firm, including our attorneys, locations, reviews, and practice areas.";
+    }
+
+    // 4. Slang / Friendly chat check ("bro", "dude")
     if (cleaned === 'bro' || cleaned === 'dude' || cleaned === 'buddy' || cleaned === 'mate' || cleaned === 'yo' || cleaned.includes('whats up') || cleaned.includes('whatsup')) {
       return "Hey! How can I help you today? Feel free to ask about our legal team, office locations, or practice areas.";
     }
 
-    // 4. General Help check ("can you help me", "help me", "i need help")
+    // 5. Phone Number / Calling check
+    if (cleaned.includes('phone') || cleaned.includes('telephone') || cleaned.includes('number') || cleaned.includes('call you') || cleaned === 'call') {
+      return "You can call our team 24/7 at <strong><a href=\"tel:+17068900000\">(706) 890-0000</a></strong>. We are always online and ready to answer your call immediately!";
+    }
+
+    // 6. Locations & Directions check
+    if (cleaned.includes('address') || cleaned.includes('location') || cleaned.includes('where is') || cleaned.includes('where are you') || cleaned.includes('direction') || cleaned.includes('office') || cleaned.includes('dalton') || cleaned.includes('marietta')) {
+      return "We serve clients throughout Georgia with two physical office locations:<br><br>" +
+        "📍 <strong>Marietta Office (HQ):</strong><br>4076 Ebenezer Rd., Marietta, GA 30066<br>" +
+        "📞 Phone: (706) 890-0000<br><br>" +
+        "📍 <strong>Dalton Office:</strong><br>210 North Glenwood Ave., Dalton, GA 30721<br>" +
+        "📞 Phone: (706) 890-0000<br><br>" +
+        "We can also handle your entire case virtually, or visit you at home or in the hospital if you are unable to travel. Would you like to schedule a free case review?";
+    }
+
+    // 7. Hours & Availability check
+    if (cleaned.includes('hour') || cleaned.includes('open') || cleaned.includes('schedule') || cleaned.includes('time') || cleaned.includes('weekend') || cleaned.includes('sunday') || cleaned.includes('saturday') || cleaned.includes('night') || cleaned.includes('24/7') || cleaned.includes('24 hours')) {
+      return "We are open and available <strong>24 hours a day, 7 days a week, 365 days a year</strong>. You can call us at <a href=\"tel:+17068900000\">(706) 890-0000</a> or submit our online contact form at any time, day or night!";
+    }
+
+    // 8. Fees & Contingency check
+    if (cleaned.includes('cost') || cleaned.includes('price') || cleaned.includes('fee') || cleaned.includes('charge') || cleaned.includes('contingency') || cleaned.includes('pay') || cleaned.includes('how much') || cleaned.includes('free consultation')) {
+      return "At The Awad Law Firm, your initial consultation is <strong>100% free</strong>. Furthermore, we work on a **contingency fee basis**—which means we charge $0 upfront, and we only get paid if we win your case and recover compensation for you. If we don't win, you don't owe us anything!";
+    }
+
+    // 9. Languages / Bilingual check
+    if (cleaned.includes('language') || cleaned.includes('spanish') || cleaned.includes('espanol') || cleaned.includes('habla') || cleaned.includes('bilingual')) {
+      return "Yes! We are proud to have a bilingual team. We speak both <strong>English and Spanish (Se Habla Español)</strong>. Many of our attorneys and team members are fluent in Spanish and ready to assist you. ¡Hablamos Español!";
+    }
+
+    // 10. Specific injuries / Pedestrian accidents check
+    if (cleaned.includes('pedestrian') || cleaned.includes('walk') || cleaned.includes('head') || cleaned.includes('brain') || cleaned.includes('concussion') || cleaned.includes('whiplash') || cleaned.includes('broken') || cleaned.includes('spine') || cleaned.includes('spinal') || cleaned.includes('burn') || cleaned.includes('paralysis')) {
+      return "Yes, we represent clients who have suffered severe and catastrophic injuries, including brain injuries (concussions), head and neck trauma (whiplash), spinal cord damage, broken bones, burns, and pedestrian accidents. We fight for full compensation to cover your medical bills, lost wages, and pain and suffering. Would you like to speak to a lawyer about your injury?";
+    }
+
+    // 11. Experience & Firm History check
+    if (cleaned.includes('experience') || cleaned.includes('how long') || cleaned.includes('years') || cleaned.includes('founded') || cleaned.includes('history')) {
+      return "The Awad Law Firm was founded by lead trial attorney Ibrahim J. Awad, Esq. Over the years, our firm has built a reputation for relentless advocacy, securing millions of dollars in settlements and verdicts for injured clients across Georgia. We have a dedicated team of attorneys, partners, and case managers ready to fight for you.";
+    }
+
+    // 12. Non-injury cases check (Divorce, Criminal, family law)
+    if (cleaned.includes('criminal') || cleaned.includes('divorce') || cleaned.includes('family law') || cleaned.includes('custody') || cleaned.includes('defense') || cleaned.includes('dui') || cleaned.includes('ticket')) {
+      return "The Awad Law Firm focuses exclusively on **personal injury and medical malpractice cases** (helping people who have been injured due to the negligence of others). We do not handle criminal defense, divorce, or family law. If you have been injured in an accident, we are the right team for you!";
+    }
+
+    // 13. General Help check ("can you help me", "help me", "i need help")
     if (cleaned === 'help' || cleaned === 'help me' || cleaned === 'can you help me' || cleaned === 'can you help' || cleaned === 'i need help' || cleaned === 'assist' || cleaned === 'assist me') {
       return "Yes, I can absolutely help you! The Awad Law Firm assists clients throughout Georgia with personal injury cases (including car/truck accidents, slip and falls, wrongful death, and medical malpractice). How can I assist you today? You can also call us 24/7 at <a href=\"tel:+17068900000\">(706) 890-0000</a>.";
     }
 
-    // 5. Human Escalation check ("connect me with real person")
+    // 14. Human Escalation check ("connect me with real person")
     const connectKeywords = ['connect', 'speak', 'talk', 'chat', 'call', 'contact', 'reach', 'get in touch'];
     const humanKeywords = ['person', 'perosn', 'human', 'live', 'someone', 'somebody', 'member', 'attorney', 'lawyer', 'team', 'real'];
     
@@ -602,17 +652,12 @@
       return "I can certainly help connect you! While I am an AI assistant, you can connect with a real member of our team 24/7 by calling us at <a href=\"tel:+17068900000\">(706) 890-0000</a> or by submitting our <a href=\"/contact/\">Free Case Evaluation form</a>. If you'd like to browse our attorneys, you can check out our <a href=\"/team-members/\">Team Directory</a>.";
     }
 
-    // 6. Identity check
-    if (cleaned.includes('who are you') || cleaned.includes('what is your name') || cleaned.includes('whats your name') || cleaned.includes('your identity') || cleaned.includes('what do you call yourself') || cleaned.includes('call yourself') || cleaned.includes('who is this') || cleaned === 'what are you') {
-      return "I am the ALF AI Assistant. I am here to help answer your questions about The Awad Law Firm, including our attorneys, locations, reviews, and practice areas.";
-    }
-
-    // 7. Thank you / Acknowledgment check
+    // 15. Thank you / Acknowledgment check
     if (cleaned.includes('thank you') || cleaned.startsWith('thanks') || cleaned === 'thank' || cleaned.includes('thankyou') || cleaned === 'great' || cleaned === 'awesome' || cleaned === 'cool' || cleaned === 'ok' || cleaned === 'okay') {
       return "You are very welcome! Let me know if you need help with anything else.";
     }
 
-    // 8. General conversational complaint (catch-all)
+    // 16. General conversational complaint (catch-all)
     if (
       (cleaned.includes('talk') && cleaned.includes('properly')) ||
       (cleaned.includes('work') && cleaned.includes('properly')) ||
