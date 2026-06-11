@@ -425,7 +425,7 @@
       </div>
     </div>
   `;
-  document.body.appendChild(widget);
+  document.documentElement.appendChild(widget);
 
   // 3. Select DOM Elements
   const bubble = document.getElementById('alfAiBubble');
