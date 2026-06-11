@@ -12317,3 +12317,11 @@ body {
     font-size: 36px !important;
   }
 }
+
+/* Override team card underlines */
+.team-card {
+  text-decoration: none !important;
+}
+.team-card * {
+  text-decoration: none !important;
+}
