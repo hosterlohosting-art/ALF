@@ -602,13 +602,13 @@ ${navbar}
                                 <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0">
                                     <i data-lucide="phone" class="w-4 h-4 text-brand-primary"></i>
                                 </span>
-                                <a href="tel:+17068900000" class="hover:text-brand-primary transition">(706) 890-0000</a>
+                                <a href="tel:+17068900000" class="bio-contact-link hover:text-brand-primary transition">(706) 890-0000</a>
                             </li>
                             <li class="flex items-center">
                                 <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0">
                                     <i data-lucide="mail" class="w-4 h-4 text-brand-primary"></i>
                                 </span>
-                                <a href="mailto:team@theawadlawfirm.com" class="hover:text-brand-primary transition">team@theawadlawfirm.com</a>
+                                <a href="mailto:team@theawadlawfirm.com" class="bio-contact-link hover:text-brand-primary transition">team@theawadlawfirm.com</a>
                             </li>
                             <li class="flex items-start">
                                 <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0 mt-0.5">
@@ -617,25 +617,6 @@ ${navbar}
                                 <span>Marietta and Dalton Offices</span>
                             </li>
                         </ul>
-
-                        <!-- Firm Socials -->
-                        <div class="flex items-center space-x-4 mt-8 pt-6 border-t border-brand-border/60">
-                            <a href="https://www.facebook.com/theawadlawfirm" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-brand-offwhite border border-brand-border/60 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm" aria-label="Facebook">
-                                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/theawadlawfirm" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-brand-offwhite border border-brand-border/60 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm" aria-label="Instagram">
-                                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/company/the-awad-law-firm/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-brand-offwhite border border-brand-border/60 flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm" aria-label="LinkedIn">
-                                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-3.34-4-3.1-4 0v5.6h-3v-11h3v1.76c1.4-2.58 7-2.78 7 2.47v6.77z"/>
-                                </svg>
-                            </a>
-                        </div>
                     </div>
                 </div>
 

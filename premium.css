@@ -15097,3 +15097,15 @@ body.home-page .cp-form-label {
   }
 }
 
+/* Premium Bio Page Contact Link styling (removes default link underline/blue) */
+.bio-contact-link {
+  color: #1b2b42 !important; /* brand-navy */
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.bio-contact-link:hover {
+  color: #6da6e3 !important; /* brand-primary */
+  text-decoration: none !important;
+}
+
