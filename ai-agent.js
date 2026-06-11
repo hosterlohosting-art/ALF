@@ -13,9 +13,10 @@
     /* AI Chatbot container */
     #alf-ai-chat-widget {
       position: fixed !important;
-      top: calc(100dvh - 90px) !important;
-      bottom: auto !important;
+      bottom: 32px !important;
       left: 32px !important;
+      top: auto !important;
+      right: auto !important;
       z-index: 100002 !important;
       font-family: 'Outfit', 'Inter', sans-serif !important;
     }
@@ -61,19 +62,20 @@
 
     /* Chat Window Panel */
     .alf-ai-chat-window {
-      position: absolute;
-      bottom: 75px;
-      left: 0;
-      width: 380px;
-      height: 500px;
-      max-height: 80vh;
-      border-radius: 24px;
-      background: #ffffff;
-      border: 1px solid rgba(108, 161, 230, 0.22);
-      box-shadow: 0 15px 50px rgba(12, 24, 39, 0.16);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+      position: absolute !important;
+      bottom: 72px !important;
+      left: 0 !important;
+      top: auto !important;
+      width: 380px !important;
+      height: 500px !important;
+      max-height: calc(100vh - 130px) !important;
+      border-radius: 24px !important;
+      background: #ffffff !important;
+      border: 1px solid rgba(108, 161, 230, 0.22) !important;
+      box-shadow: 0 15px 50px rgba(12, 24, 39, 0.16) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      overflow: hidden !important;
       opacity: 0;
       transform: translateY(20px) scale(0.95);
       pointer-events: none;
@@ -352,15 +354,16 @@
       #alf-ai-chat-widget {
         left: 14px !important;
         right: 14px !important;
-        top: calc(100dvh - 72px) !important;
-        bottom: auto !important;
+        bottom: 14px !important;
+        top: auto !important;
       }
       .alf-ai-chat-window {
         width: auto !important;
         left: 0 !important;
         right: 0 !important;
         bottom: 64px !important;
-        height: 460px !important;
+        height: auto !important;
+        max-height: calc(100vh - 90px) !important;
       }
     }
   `;
