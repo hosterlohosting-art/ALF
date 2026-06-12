@@ -15,86 +15,28 @@ const types = {
   '.txt':'text/plain; charset=utf-8'
 };
 
+const { allPages } = require('../scratch/config.js');
+
 const cleanSlugMap = {
   '/': 'index.html',
-  '/about-the-awad-law-firm-history/': 'about.html',
-  '/team-members/': 'team-experts.html',
-  '/awad-law-firm-4/': 'mission-vision.html',
-  '/car-accident/': 'car-accidents.html',
-  '/truck-accident/': 'trucking-accidents.html',
-  '/motorcycle-accident/': 'motorcycle-accidents.html',
-  '/bicycle-accident/': 'bicycle-accidents.html',
-  '/uber-accident/': 'uber-accidents.html',
-  '/lyft-accident/': 'lyft-accidents.html',
-  '/slip-and-fall/': 'slip-and-fall.html',
-  '/medical-malpractice/': 'medical-malpractice.html',
-  '/wrongful-death/': 'wrongful-death.html',
-  '/personal-injury/': 'personal-injury.html',
-  '/practice-areas/': 'practice-areas.html',
-  '/contact/': 'contact.html',
-  '/search/': 'search.html',
-  '/reviews/': 'reviews.html',
-  '/testimonials/': 'testimonials.html',
-  '/video-library/': 'tedx.html',
-  '/resources/': 'education.html',
-  '/core-values/': 'core-values.html',
-  '/community/': 'community.html',
-  '/why-choose-us/': 'why-choose-us.html',
-  '/results/': 'results.html',
-  '/newsletter/': 'newsletter.html',
-  '/community-accident-report/': 'community-accident-report.html',
-  '/community-ajp/': 'community-ajp.html',
-  '/community-anti-bullying/': 'community-anti-bullying.html',
-  '/community-islamic-relief/': 'community-islamic-relief.html',
-  '/community-lowball/': 'community-lowball.html',
-  '/community-tacos/': 'community-tacos.html',
-  '/community-wanted-my-phone/': 'community-wanted-my-phone.html',
-  '/community-window-tint/': 'community-window-tint.html',
-  '/community-yaqeen/': 'community-yaqeen.html',
-  '/edu-guide-car-accident/': 'edu-guide-car-accident.html',
-  '/edu-guide-claim-worth/': 'edu-guide-claim-worth.html',
-  '/edu-guide-comparative-negligence/': 'edu-guide-comparative-negligence.html',
-  '/edu-guide-costly-mistakes/': 'edu-guide-costly-mistakes.html',
-  '/edu-guide-insurance-adjusters/': 'edu-guide-insurance-adjusters.html',
-  '/edu-guide-statute-of-limitations/': 'edu-guide-statute-of-limitations.html',
-  '/team-members/ibrahim-awad/': 'ibrahim-awad.html',
-  '/team-members/basher-hassan/': 'team-basher-hassan.html',
-  '/team-members/david-price/': 'team-david-price.html',
-  '/team-members/azima-mohamed/': 'team-azima-mohamed.html',
-  '/team-members/ahmad-choudhary/': 'team-ahmad-choudhary.html',
-  '/team-members/gay-hartley/': 'team-gay-hartley.html',
-  '/team-members/marion-day/': 'team-marion-day.html',
-  '/team-members/shantrell-ball/': 'team-shantrell-ball.html',
-  '/team-members/leland-bridges/': 'team-leland-bridges.html',
-  '/team-members/sandra-guzman/': 'team-sandra-guzman.html',
-  '/team-members/devin-spiegelhalter/': 'team-devin-spiegelhalter.html',
-  '/team-members/sabrina-portuondo/': 'team-sabrina-portuondo.html',
-  '/team-members/jocelyn-suarez/': 'team-jocelyn-suarez.html',
-  '/team-members/deanna-marquez/': 'team-deanna-marquez.html',
-  '/team-members/timothy-melson/': 'team-timothy-melson.html',
-  '/team-members/adriana-melgarejo/': 'team-adriana-melgarejo.html',
-  '/team-members/christina-dixon/': 'team-christina-dixon.html',
-  '/team-members/carley-richards/': 'team-carley-richards.html',
-  '/team-members/genesis-resendiz/': 'team-genesis-resendiz.html',
-  '/team-members/isabel-welch/': 'team-isabel-welch.html',
-  '/team-members/betty-mendez/': 'team-betty-mendez.html',
-  '/team-members/sierra-jones/': 'team-sierra-jones.html',
-  '/team-members/elizabeth-chavarria/': 'team-elizabeth-chavarria.html',
-  '/team-members/stephanie-rivera/': 'team-stephanie-rivera.html',
-  '/team-members/mohamed/': 'team-mohamed.html',
-  '/team-members/selvin-navarro/': 'team-selvin-navarro.html',
-  '/team-members/mehar-hassan/': 'team-mehar-hassan.html',
-  '/team-members/john-jabes-salva/': 'team-john-jabes-salva.html',
-  '/team-members/tasha-hijara/': 'team-tasha-hijara.html',
-  '/team-members/ella-batilona/': 'team-ella-batilona.html',
-  '/team-members/edgard-manzanares/': 'team-edgard-manzanares.html',
-  '/team-members/alvaro-vanegas/': 'team-alvaro-vanegas.html',
   '/average-car-accident-settlement-georgia/': 'article-average-settlement.html',
   '/distracted-driver-accident-georgia/': 'article-distracted-driver.html',
-  '/privacy-policy/': 'privacy-policy.html',
-  '/terms-of-service/': 'terms-of-service.html',
   '/personnel_category/team-awad/': 'personnel_category/team-awad/index.html'
 };
+
+// Build dynamically from config.js
+for (const [filename, info] of Object.entries(allPages)) {
+  // English mapping
+  if (info.route !== undefined) {
+    const enSlug = info.route === '' ? '/' : `/${info.route}/`;
+    cleanSlugMap[enSlug] = filename;
+  }
+  // Spanish mapping
+  if (info.esRoute !== undefined && info.esFile !== undefined) {
+    const esSlug = info.esRoute.endsWith('/') ? `/${info.esRoute}` : `/${info.esRoute}/`;
+    cleanSlugMap[esSlug] = info.esFile;
+  }
+}
 
 http.createServer((req, res) => {
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
