@@ -1899,4 +1899,165 @@ if (document.readyState === 'loading') {
   document.body.appendChild(script);
 })();
 
+/* Dynamically inject the language toggle (EN | ES) in the navbar */
+(function() {
+  'use strict';
+  
+  function initLanguageToggle() {
+    const navIcons = document.querySelector('.nav-icons');
+    if (!navIcons) return;
+
+    // Avoid duplicate injection
+    if (document.querySelector('.nav-lang-toggle')) return;
+
+    // Define language mapping
+    const langMap = {
+      '/': '/es/',
+      '/about-the-awad-law-firm-history/': '/es/sobre-nosotros/',
+      '/practice-areas/': '/es/areas-de-practica/',
+      '/results/': '/es/resultados/',
+      '/contact/': '/es/contacto/',
+      '/testimonials/': '/es/testimonios/',
+      '/car-accident/': '/es/accidente-de-auto/',
+      '/truck-accident/': '/es/accidente-de-camion/',
+      '/slip-and-fall/': '/es/resbalon-y-caida/',
+      '/wrongful-death/': '/es/muerte-injusta/',
+      '/medical-malpractice/': '/es/negligencia-medica/'
+    };
+
+    const currentPath = window.location.pathname;
+    const isSpanish = currentPath.startsWith('/es/');
+    
+    let englishUrl = '/';
+    let spanishUrl = '/es/';
+
+    if (isSpanish) {
+      // Find the English key that maps to this Spanish path
+      let foundKey = null;
+      for (const [enKey, esVal] of Object.entries(langMap)) {
+        if (currentPath === esVal) {
+          foundKey = enKey;
+          break;
+        }
+      }
+      englishUrl = foundKey || '/';
+      spanishUrl = currentPath;
+    } else {
+      // Find the Spanish path mapped to this English path
+      const mappedEs = langMap[currentPath];
+      spanishUrl = mappedEs || '/es/';
+      englishUrl = currentPath;
+    }
+
+    // Inject styles dynamically if not already added
+    if (!document.getElementById('nav-lang-styles')) {
+      const style = document.createElement('style');
+      style.id = 'nav-lang-styles';
+      style.textContent = `
+        .nav-lang-toggle {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-family: 'Outfit', sans-serif;
+          font-size: 14.5px;
+          font-weight: 700;
+          margin-right: 14px;
+          color: inherit;
+        }
+        .nav-lang-toggle .lang-link {
+          color: currentColor;
+          text-decoration: none !important;
+          opacity: 0.55;
+          transition: opacity 0.3s ease;
+        }
+        .nav-lang-toggle .lang-link.active {
+          opacity: 1;
+          pointer-events: none;
+        }
+        .nav-lang-toggle .lang-link:hover {
+          opacity: 1;
+        }
+        .nav-lang-toggle .lang-separator {
+          opacity: 0.3;
+        }
+        /* Mobile and Desktop visibility */
+        @media (min-width: 901px) {
+          .nav-lang-toggle.mobile-only {
+            display: none !important;
+          }
+        }
+        @media (max-width: 900px) {
+          .nav-lang-toggle.desktop-only {
+            display: none !important;
+          }
+          .navbar .nav-lang-toggle.mobile-only {
+            display: flex !important;
+            margin-right: 15px;
+            font-size: 13.5px;
+            align-self: center;
+            color: #1b1f24;
+            z-index: 1001;
+          }
+          body.home-page .navbar .nav-lang-toggle.mobile-only {
+            color: #ffffff;
+          }
+          .navbar.scrolled .nav-lang-toggle.mobile-only {
+            color: #ffffff !important;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Create the toggle container (desktop version)
+    const toggle = document.createElement('div');
+    toggle.className = 'nav-lang-toggle desktop-only';
+    toggle.innerHTML = `
+      <a href="${englishUrl}" class="lang-link ${!isSpanish ? 'active' : ''}">EN</a>
+      <span class="lang-separator">|</span>
+      <a href="${spanishUrl}" class="lang-link ${isSpanish ? 'active' : ''}">ES</a>
+    `;
+
+    // Inject before the "Free Consultation" button or at the beginning of nav-icons
+    const quoteBtn = navIcons.querySelector('.nav-quote-btn');
+    if (quoteBtn) {
+      navIcons.insertBefore(toggle, quoteBtn);
+    } else {
+      navIcons.appendChild(toggle);
+    }
+
+    // Create the mobile version next to hamburger
+    const navHamburger = document.getElementById('navHamburger');
+    if (navHamburger && !document.querySelector('.nav-lang-toggle.mobile-only')) {
+      const mobileToggle = document.createElement('div');
+      mobileToggle.className = 'nav-lang-toggle mobile-only';
+      mobileToggle.innerHTML = `
+        <a href="${englishUrl}" class="lang-link ${!isSpanish ? 'active' : ''}">EN</a>
+        <span class="lang-separator">|</span>
+        <a href="${spanishUrl}" class="lang-link ${isSpanish ? 'active' : ''}">ES</a>
+      `;
+      navHamburger.parentNode.insertBefore(mobileToggle, navHamburger);
+    }
+
+    // Inject into footer copyright links dynamically
+    const footerLinks = document.querySelector('.footer-bottom-links');
+    if (footerLinks && !footerLinks.querySelector('.footer-lang-link')) {
+      const sep = document.createElement('span');
+      sep.textContent = '|';
+      const langLink = document.createElement('a');
+      langLink.href = isSpanish ? englishUrl : spanishUrl;
+      langLink.className = 'footer-lang-link';
+      langLink.textContent = isSpanish ? 'English' : 'Español';
+      footerLinks.appendChild(sep);
+      footerLinks.appendChild(langLink);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguageToggle);
+  } else {
+    initLanguageToggle();
+  }
+})();
+
 

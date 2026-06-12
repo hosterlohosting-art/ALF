@@ -126,20 +126,26 @@ http.createServer((req, res) => {
     safePath = urlPath === '/' ? 'index.html' : urlPath.replace(/^([\\/])+/, '');
   }
 
-  const file = path.join(root, safePath);
+  let file = path.join(root, safePath);
   if (!file.startsWith(root)) {
     res.writeHead(403);
     return res.end('Forbidden');
   }
 
-  fs.readFile(file, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      return res.end('Not found');
+  fs.stat(file, (err, stats) => {
+    if (!err && stats.isDirectory()) {
+      file = path.join(file, 'index.html');
     }
-    const ext = path.extname(file).toLowerCase();
-    res.writeHead(200, { 'Content-Type': types[ext] || 'application/octet-stream' });
-    res.end(data);
+
+    fs.readFile(file, (err, data) => {
+      if (err) {
+        res.writeHead(404);
+        return res.end('Not found');
+      }
+      const ext = path.extname(file).toLowerCase();
+      res.writeHead(200, { 'Content-Type': types[ext] || 'application/octet-stream' });
+      res.end(data);
+    });
   });
 }).listen(8080, '127.0.0.1', () => {
   console.log('Server running at http://127.0.0.1:8080/');

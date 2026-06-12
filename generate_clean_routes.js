@@ -79,11 +79,26 @@ const routes = {
   'team-members/tasha-hijara': 'team-tasha-hijara.html',
   'team-members/ella-batilona': 'team-ella-batilona.html',
   'team-members/edgard-manzanares': 'team-edgard-manzanares.html',
-  'team-members/alvaro-vanegas': 'team-alvaro-vanegas.html'
+  'team-members/alvaro-vanegas': 'team-alvaro-vanegas.html',
+  
+  // Spanish Clean Routes
+  'es/sobre-nosotros': 'es/about.html',
+  'es/areas-de-practica': 'es/practice-areas.html',
+  'es/resultados': 'es/results.html',
+  'es/contacto': 'es/contact.html',
+  'es/accidente-de-auto': 'es/car-accidents.html',
+  'es/accidente-de-camion': 'es/trucking-accidents.html',
+  'es/resbalon-y-caida': 'es/slip-and-fall.html',
+  'es/muerte-injusta': 'es/wrongful-death.html',
+  'es/negligencia-medica': 'es/medical-malpractice.html'
 };
 
 for (const [route, file] of Object.entries(routes)) {
   const source = path.join(root, file);
+  if (!fs.existsSync(source)) {
+    console.log(`Skipping: ${file} (source file does not exist yet)`);
+    continue;
+  }
   const targetDir = path.join(root, route);
   const target = path.join(targetDir, 'index.html');
   fs.mkdirSync(targetDir, { recursive: true });
