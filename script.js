@@ -2040,11 +2040,18 @@ const langMap = {
           }
           .navbar .nav-lang-toggle.mobile-only {
             display: flex !important;
+            margin-left: auto;
             margin-right: 15px;
             font-size: 13.5px;
             align-self: center;
             color: #1b1f24;
             z-index: 1001;
+            flex-shrink: 0;
+          }
+          @media (max-width: 560px) {
+            .navbar .nav-lang-toggle.mobile-only {
+              margin-right: 52px;
+            }
           }
           body.home-page .navbar .nav-lang-toggle.mobile-only {
             color: #ffffff;
