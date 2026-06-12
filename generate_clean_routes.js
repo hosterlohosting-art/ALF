@@ -90,7 +90,12 @@ const routes = {
   'es/accidente-de-camion': 'es/trucking-accidents.html',
   'es/resbalon-y-caida': 'es/slip-and-fall.html',
   'es/muerte-injusta': 'es/wrongful-death.html',
-  'es/negligencia-medica': 'es/medical-malpractice.html'
+  'es/negligencia-medica': 'es/medical-malpractice.html',
+  'es/lesiones-personales': 'es/personal-injury.html',
+  'es/accidente-de-motocicleta': 'es/motorcycle-accidents.html',
+  'es/accidente-de-bicicleta': 'es/bicycle-accidents.html',
+  'es/accidente-de-uber': 'es/uber-accidents.html',
+  'es/accidente-de-lyft': 'es/lyft-accidents.html'
 };
 
 for (const [route, file] of Object.entries(routes)) {
