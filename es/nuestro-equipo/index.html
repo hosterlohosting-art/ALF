@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conoce al equipo Awad | Equipo de Expertos Jurídicos | El bufete de abogados Awad</title>
+
+    <!-- Local Stylesheets (Preserved) -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/premium.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Outfit (Headings) & Manrope (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Unified "Wow" Theme Config -->
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        bry: {
+                            dark: '#060B11',
+                            navy: '#0C1827',
+                            charcoal: '#1A2736',
+                            primary: '#6CA1E6',      /* Sky blue from premium theme */
+                            primaryhover: '#5A8DD0',
+                            pale: '#EAF2FA',         /* Very light blue for card accents */
+                            offwhite: '#F9FAFC',
+                            white: '#FFFFFF',
+                            lightgray: '#F0F4F8',
+                            border: '#E2E8F0',
+                            text: '#0A1118',
+                            muted: '#64748B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #F9FAFC; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6CA1E6; }
+
+        /* Subtle Geometric Background Pattern */
+        .bg-geometric {
+            background-color: #f9fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236ca1e6' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Outlined Text Watermark */
+        .text-stroke-premium {
+            color: #ffffff;
+            -webkit-text-stroke: 1.5px rgba(108, 161, 230, 0.12);
+            letter-spacing: 0.05em;
+        }
+
+        /* Diagonal Split Gradient Mask for Equipo Headshots */
+        .team-split-bg {
+            background: linear-gradient(180deg, #EAF2FA 0%, #ffffff 100%);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            transition: background-position 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Keep portraits natural; filters/blending make bright studio shots look grainy. */
+        .team-split-bg img {
+            filter: none !important;
+            opacity: 1 !important;
+            mix-blend-mode: normal !important;
+            image-rendering: auto;
+            backface-visibility: hidden;
+        }
+
+        /* Shifting split position dynamically on card hover */
+        .group:hover .team-split-bg {
+            background-position: 100% 100%;
+        }
+
+        /* Hero Animation Utilities */
+        @keyframes slow-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-spin {
+            animation: slow-spin 20s linear infinite;
+        }
+
+        body.team-page {
+            background: #f3f7fb;
+        }
+
+        @media (min-width: 1024px) {
+            body.home-page.team-page > section.bg-bry-dark:first-of-type {
+                padding-bottom: 2rem !important;
+            }
+        }
+
+        .team-page .team-hero-kicker {
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
+        .team-page .team-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            max-width: 600px;
+            margin: 32px auto 0;
+        }
+
+        .team-page .team-hero-stat {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 20px 18px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .team-page .team-hero-stat::before {
+            content: "";
+            position: absolute;
+            inset: -60% auto auto -30%;
+            width: 150px;
+            height: 150px;
+            border-radius: 999px;
+            background: rgba(108, 161, 230, 0.3);
+            filter: blur(28px);
+        }
+
+        .team-page .team-hero-stat strong {
+            position: relative;
+            display: block;
+            color: #ffffff;
+            font: 900 34px/1 "Outfit", sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .team-page .team-hero-stat span {
+            position: relative;
+            display: block;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, 0.68);
+            font: 800 11px/1.35 "Manrope", sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .team-page .bg-geometric {
+            background:
+                radial-gradient(circle at 12% 8%, rgba(108, 161, 230, 0.16), transparent 30%),
+                radial-gradient(circle at 88% 12%, rgba(198, 161, 91, 0.12), transparent 26%),
+                linear-gradient(180deg, #ffffff 0%, #f5f9ff 38%, #eef5fb 100%);
+        }
+
+        .team-page .text-stroke-premium {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(12, 24, 39, 0.055);
+        }
+
+        .team-page .space-y-16.mb-36,
+        .team-page .space-y-16.mb-16 {
+            margin-bottom: 76px !important;
+        }
+
+        .team-page .border-b-2.border-bry-primary\/30 {
+            position: relative;
+            border: 0 !important;
+            padding: 0 !important;
+            margin-bottom: 30px !important;
+        }
+
+        .team-page .border-b-2.border-bry-primary\/30::before {
+            content: "Meet the people behind the work";
+            display: inline-flex;
+            margin-bottom: 12px;
+            padding: 8px 13px;
+            border-radius: 999px;
+            background: rgba(108, 161, 230, 0.12);
+            color: #477dbb;
+            font: 900 11px/1 "Manrope", sans-serif;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .team-page .border-b-2.border-bry-primary\/30 h2 {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 0 !important;
+            color: #0c1827 !important;
+            font-size: clamp(34px, 4vw, 54px) !important;
+            letter-spacing: -0.035em !important;
+            text-transform: none !important;
+        }
+
+        .team-page .border-b-2.border-bry-primary\/30 h2::after {
+            content: "";
+            height: 2px;
+            flex: 1;
+            min-width: 80px;
+            background: linear-gradient(90deg, rgba(108, 161, 230, 0.5), transparent);
+        }
+
+        .team-page .grid > .group.bg-white {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(108, 161, 230, 0.18) !important;
+            border-radius: 30px !important;
+            text-decoration: none !important;
+            padding: 12px !important;
+            background: #ffffff !important;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.5s ease !important;
+            box-shadow: 0 20px 48px rgba(12, 24, 39, 0.08) !important;
+            isolation: isolate;
+        }
+
+        .team-page .grid > .group.bg-white * {
+            text-decoration: none !important;
+        }
+
+        .team-page .grid > .group.bg-white::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background:
+                radial-gradient(circle at 18% 0%, rgba(108, 161, 230, 0.22), transparent 34%),
+                linear-gradient(180deg, transparent 45%, rgba(12, 24, 39, 0.04));
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: -1;
+        }
+
+        .team-page .grid > .group.bg-white:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(108, 161, 230, 0.5) !important;
+            box-shadow: 0 25px 60px rgba(12, 24, 39, 0.12) !important;
+        }
+
+        .team-page .grid > .group.bg-white:hover::before {
+            opacity: 1;
+        }
+
+        .team-page .team-split-bg {
+            height: 430px !important;
+            margin-bottom: 18px !important;
+            border-radius: 24px !important;
+            background: #ffffff !important;
+        }
+
+        .team-page .team-split-bg::after {
+            display: none !important;
+            content: none !important;
+        }
+
+        .team-page .team-split-bg img {
+            mix-blend-mode: normal !important;
+            opacity: 1 !important;
+            filter: none !important;
+            object-fit: cover !important;
+            object-position: center top !important;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        }
+
+        .team-page .grid > .group.bg-white:hover .team-split-bg img {
+            transform: scale(1.04) !important;
+        }
+
+        .team-page .grid > .group.bg-white h3 {
+            font-size: 22px !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.02em;
+        }
+
+        .team-page .grid > .group.bg-white span.inline-block {
+            max-width: 100%;
+            white-space: normal;
+            border-color: rgba(108, 161, 230, 0.2) !important;
+            background: rgba(234, 242, 250, 0.72) !important;
+            color: #40516a !important;
+            line-height: 1.35 !important;
+        }
+
+        @media (max-width: 900px) {
+            .team-page .team-hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .team-page .team-split-bg {
+                height: 410px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .team-page .team-hero-stats {
+                margin-top: 26px;
+                gap: 10px;
+            }
+
+            .team-page .team-hero-stat {
+                padding: 17px 15px;
+            }
+
+            .team-page .team-hero-stat strong {
+                font-size: 28px;
+            }
+
+            .team-page .team-split-bg {
+                height: 390px !important;
+            }
+
+            .team-page .border-b-2.border-bry-primary\/30 h2 {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .team-page .border-b-2.border-bry-primary\/30 h2::after {
+                width: 92px;
+                flex: none;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Bufete de abogados Awad",
+      "url": "https://theawadlawfirm.com",
+      "logo": "https://theawadlawfirm.com/assets/awadlawfirmlogo.png",
+      "telephone": "(706) 890-0000",
+      "description": "Top-rated personal injury law firm serving Marietta y Dalton, Georgia.",
+      "founder": { "@type": "Person", "name": "Ibrahim J. Awad, Esq." },
+      "serviceArea": { "@type": "State", "name": "Georgia" },
+      "areaServed": [
+        {"@type": "City", "name": "Marietta"},
+        {"@type": "City", "name": "Marietta"},
+        {"@type": "City", "name": "Dalton"}
+      ],
+      "address": [
+        {"@type": "PostalAddress", "streetAddress": "4076 Ebenezer Rd.", "addressLocality": "Marietta", "addressRegion": "GA", "addressCountry": "US"},
+        {"@type": "PostalAddress", "streetAddress": "210 N Glenwood Ave..", "addressLocality": "Dalton", "addressRegion": "GA", "addressCountry": "US"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Hogar", "item": "https://theawadlawfirm.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Miembros del equipo", "item": "https://theawadlawfirm.com/team-members/"}
+      ]
+    }
+    </script>
+  
+  
+  
+  
+  
+  
+  
+  <meta name="keywords" content="Lesiones personales Law Firm Equipo, Bufete de abogados Awad Attorneys, Meet the Awad Squad">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Conoce al equipo Awad | Equipo de Expertos Jurídicos | El bufete de abogados Awad">
+  <meta property="og:description" content="Conozca a nuestro equipo de élite de abogados, administradores de atención al cliente y especialistas en apoyo legal que luchan por la máxima compensación por lesiones en todo Georgia.">
+  <meta property="og:url" content="https://theawadlawfirm.com/team-members/">
+  <meta property="og:site_name" content="El bufete de abogados Awad">
+  <meta property="og:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Conoce al equipo Awad | Equipo de Expertos Jurídicos | El bufete de abogados Awad">
+  <meta name="twitter:description" content="Conozca a nuestro equipo de élite de abogados, administradores de atención al cliente y especialistas en apoyo legal que luchan por la máxima compensación por lesiones en todo Georgia.">
+  <meta name="twitter:image" content="https://theawadlawfirm.com/assets/awadlawfirmlogo.png">
+  <meta name="ai:summary" content="El bufete de abogados Awad uses a legal team approach with attorneys y support professionals who help investigate claims, communicate with clients, manage evidence, y pursue injury recovery.">
+  <meta name="ai:topics" content="Bufete de abogados Awad team, Georgia injury attorneys, legal support team">
+  <meta name="ai:intent" content="evaluate the legal team">
+  <meta name="citation_title" content="Conoce al equipo Awad | Equipo de Expertos Jurídicos | El bufete de abogados Awad">
+  <meta name="citation_url" content="https://theawadlawfirm.com/team-members/">
+  <script type="application/ld+json" data-ai-seo="webpage">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://theawadlawfirm.com/team-members/#webpage",
+  "url": "https://theawadlawfirm.com/team-members/",
+  "name": "Conoce al equipo Awad | Equipo de Expertos Jurídicos | El bufete de abogados Awad",
+  "headline": "Conoce al equipo Awad | Equipo de Expertos Jurídicos | El bufete de abogados Awad",
+  "description": "Conozca a nuestro equipo de élite de abogados, administradores de atención al cliente y especialistas en apoyo legal que luchan por la máxima compensación por lesiones en todo Georgia.",
+  "inLanguage": "en-US",
+  "isPartOf": {
+    "@id": "https://theawadlawfirm.com/#website"
+  },
+  "publisher": {
+    "@id": "https://theawadlawfirm.com/#legalservice"
+  },
+  "about": [
+    {
+      "@id": "https://theawadlawfirm.com/#legalservice"
+    },
+    {
+      "@type": "Thing",
+      "name": "Bufete de abogados Awad team"
+    },
+    {
+      "@type": "Thing",
+      "name": "Georgia injury attorneys"
+    },
+    {
+      "@type": "Thing",
+      "name": "legal support team"
+    }
+  ],
+  "mainEntity": {
+    "@type": "Question",
+    "name": "Who works on cases at ¿El bufete de abogados Awad?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "El bufete de abogados Awad uses a legal team approach with attorneys y support professionals who help investigate claims, communicate with clients, manage evidence, y pursue injury recovery."
+    }
+  },
+  "potentialAction": {
+    "@type": "ContactoAction",
+    "target": "https://theawadlawfirm.com/contact/",
+    "name": "Request a free personal injury consultation"
+  }
+}
+</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta name="description" content="Conozca a nuestro equipo de élite de abogados, administradores de atención al cliente y especialistas en apoyo legal que luchan por la máxima compensación por lesiones en todo Georgia.">
+  <link rel="canonical" href="https://theawadlawfirm.com/team-members/">
+</head>
+<body class="home-page team-page bg-bry-offwhite text-bry-text font-body antialiased overflow-x-hidden">
+
+<header class="navbar">
+
+<a href="/es/" class="logo" aria-label="Inicio de Bufete de abogados Awad">
+    <img src="/assets/alf-white-logo.png" alt="Logotipo de Bufete de abogados Awad" loading="lazy" decoding="async">
+</a>
+
+<nav>
+<a href="/es/" class="">Inicio</a>
+<div class="nav-dropdown">
+  <a href="/es/sobre-nosotros/" class="nav-dropdown-toggle active">Sobre Nosotros</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Sobre Nosotros</span>
+    <hr class="nav-dropdown-divider">
+    <a href="/es/mision-y-vision/" class="nav-dropdown-item ">Misión y Visión</a>
+    <a href="/es/sobre-nosotros/" class="nav-dropdown-item ">Historia de la Firma</a>
+    <a href="/es/team-members/ibrahim-awad/" class="nav-dropdown-item ">Ibrahim Awad</a>
+    <a href="/es/nuestro-equipo/" class="nav-dropdown-item active">Nuestro Equipo</a>
+    <a href="/es/por-que-elegirnos/" class="nav-dropdown-item ">Por Qué Elegirnos</a>
+    <a href="/es/valores-fundamentales/" class="nav-dropdown-item ">Valores Fundamentales</a>
+    <a href="/es/comunidad/" class="nav-dropdown-item ">Comunidad</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="/es/areas-de-practica/" class="nav-dropdown-toggle">Áreas de Práctica</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Áreas de Práctica</span>
+    <hr class="nav-dropdown-divider">
+    <a href="/es/lesiones-personales/" class="nav-dropdown-item ">Lesiones Personales</a>
+    <a href="/es/accidente-de-auto/" class="nav-dropdown-item ">Accidentes de Auto</a>
+    <a href="/es/accidente-de-camion/" class="nav-dropdown-item ">Accidentes de Camión</a>
+    <a href="/es/accidente-de-motocicleta/" class="nav-dropdown-item ">Accidentes de Motocicleta Img</a>
+    <a href="/es/accidente-de-bicicleta/" class="nav-dropdown-item ">Accidentes de Bicicleta</a>
+    <a href="/es/accidente-de-uber/" class="nav-dropdown-item ">Accidentes de Uber</a>
+    <a href="/es/accidente-de-lyft/" class="nav-dropdown-item ">Accidentes de Lyft</a>
+    <a href="/es/resbalon-y-caida/" class="nav-dropdown-item ">Resbalones y Caídas</a>
+    <a href="/es/negligencia-medica/" class="nav-dropdown-item ">Negligencia Médica</a>
+    <a href="/es/muerte-injusta/" class="nav-dropdown-item ">Muerte Injusta</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="/es/resultados/" class="nav-dropdown-toggle">Resultados</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Resultados</span>
+    <hr class="nav-dropdown-divider">
+    <a href="/es/resultados/" class="nav-dropdown-item ">Casos de Éxito</a>
+    <a href="/es/testimonios/" class="nav-dropdown-item ">Testimonios en Video</a>
+    <a href="/es/resenas/" class="nav-dropdown-item ">Reseñas</a>
+  </div>
+</div>
+<div class="nav-dropdown">
+  <a href="/es/recursos/" class="nav-dropdown-toggle">Recursos</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Recursos</span>
+    <hr class="nav-dropdown-divider">
+    <a href="/es/biblioteca-de-videos/" class="nav-dropdown-item ">Charla TEDx</a>
+    <a href="/es/recursos/" class="nav-dropdown-item ">Educación Legal</a>
+    <a href="/es/boletin/" class="nav-dropdown-item ">Boletín</a>
+    <a href="https://www.awadacademy.com/" class="nav-dropdown-item" target="_blank" rel="noopener noreferrer">Awad Academy &#8599;</a>
+  </div>
+</div>
+<a href="/es/boletin/" class="">Boletín</a>
+<a href="/es/contacto/" class="">Contacto</a>
+</nav>
+
+<div class="nav-icons">
+
+<div class="nav-search" aria-label="Search">
+  <span></span>
+  <em>Buscar aquí...</em>
+</div>
+
+<a href="/es/contacto/" class="nav-quote-btn">Consulta Gratis</a>
+
+<a href="/es/contacto/" class="nav-arrow-btn" aria-label="Consulta Gratuita">
+  <span>&#8599;</span>
+</a>
+
+<button class="nav-dots-btn" aria-label="Open quick menu" type="button">
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+  <span></span><span></span><span></span>
+</button>
+
+<a href="/es/contacto/" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+<path d="m22 7-10 5L2 7"></path>
+</svg>
+
+</a>
+
+
+<a href="/es/contacto/" class="nav-btn">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2
+19.79 19.79 0 0 1-8.63-3.07
+19.5 19.5 0 0 1-6-6
+19.79 19.79 0 0 1-3.07-8.63
+2 2 0 0 1 2-2h3
+a2 2 0 0 1 2 1.72
+c.12.91.35 1.8.68 2.65
+a2 2 0 0 1-.45 2.11
+L8.09 9.91
+a16 16 0 0 0 6 6
+l1.43-1.25
+a2 2 0 0 1 2.11-.45
+c.85.33 1.74.56 2.65.68
+A2 2 0 0 1 22 16.92z"></path>
+</svg>
+
+</a>
+
+</div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expyed="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+    <!-- Colorful Brying Hero Section -->
+    <section class="relative pt-24 pb-8 lg:pt-28 lg:pb-10 overflow-hidden z-10 bg-bry-dark">
+        <!-- Dynamic Colorful Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#060B11] via-[#0C1827] to-[#1e3a8a] z-0 opacity-90"></div>
+
+        <!-- Glowing Orbs / Colorful Shapes for the "Wow" Effect -->
+        <div class="absolute inset-0 overflow-hidden z-0 pointer-events-none mix-blend-screen">
+            <!-- Top Left Vibrant Glow -->
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#3b82f6]/40 blur-[120px] rounded-full animate-pulse"></div>
+            <!-- Bottom Right Sky Blue Glow -->
+            <div class="absolute -bottom-32 -right-10 w-[700px] h-[700px] bg-bry-primary/30 blur-[150px] rounded-full"></div>
+            <!-- Center Accent Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563eb]/20 blur-[120px] rounded-full animate-slow-spin"></div>
+        </div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10 text-center">
+            <!-- Glassmorphism Tag -->
+            <div class="team-hero-kicker inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-2xl relative">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bry-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-bry-primary"></span>
+                </span>
+                <span>Los expertos</span>
+            </div>
+
+            <h1 class="text-5xl md:text-6xl lg:text-[5.5rem] font-heading font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl mb-8">
+                Meet the Equipo: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-bry-pale to-bry-primary drop-shadow-sm">El bufete de abogados Awad</span>
+            </h1>
+
+            
+
+            <div class="team-hero-stats" aria-label="Bufete de abogados Awad team highlights">
+                <div class="team-hero-stat">
+                    <strong>35</strong>
+                    <span>Miembros del equipo enfocados</span>
+                </div>
+                <div class="team-hero-stat">
+                    <strong>2</strong>
+                    <span>Centros de oficinas de Georgia</span>
+                </div>
+                <div class="team-hero-stat">
+                    <strong>24/7</strong>
+                    <span>La primera respuesta del cliente</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Equipo Layout Section (No Breadcrumbs) -->
+    <section class="pt-0 pb-24 bg-geometric relative z-20 overflow-hidden">
+
+        <!-- Large Elegant Watermark Text in Background -->
+        <div class="absolute top-[12%] right-[-3%] text-[11vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
+            THE AWAD SQUAD
+        </div>
+
+        <div class="container mx-auto px-6 max-w-[85rem] relative z-10">
+
+            <!-- ==========================================
+                 SECTION 1: THE AWAD SQUAD
+                 ========================================== -->
+            <div class="space-y-16 mb-36">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                    <!-- Member 1: Ibrahim J. Awad -->
+                    <a href="/es/team-members/ibrahim-awad/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <!-- Shimmer overlay on hover -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/ibrahim-awad.webp" alt="Ibrahim J. Awad, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Ibrahim J. Awad, Esq.</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Abogado Principal, Abogado de Karate
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 2: Basher Hassan -->
+                    <a href="/es/team-members/basher-hassan/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Basher-Hassan,-Esq..webp" alt="Basher Hassan, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Basher Hassan, Esq.</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Socio del Estudio Jurídico Awad
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 3: David Price -->
+                    <a href="/es/team-members/david-price/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/David-Price,-Esq..webp" alt="Precio de David, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Precio de David, Esq.</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Abogado Asociado Senior
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 4: Azima mohamed -->
+                    <a href="/es/team-members/azima-mohamed/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Azima-mohamed,-Esq..webp" alt="Azima mohamed, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Azima mohamed, Esq.</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Abogado Asociado
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 5: Ahmad Choudhary -->
+                    <a href="/es/team-members/ahmad-choudhary/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Ahmad-Choudhary.webp" alt="Ahmad Choudhary, Esq." class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Ahmad Choudhary, Esq.</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Abogado Asociado
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 6: Gay Hartley -->
+                    <a href="/es/team-members/gay-hartley/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Gay-Hartley.webp" alt="Gay Hartley" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Gay Hartley</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Director de operaciones
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 7: dia de marion -->
+                    <a href="/es/team-members/marion-day/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Marion-Day.webp" alt="dia de marion" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">dia de marion</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Director de Excelencia del Clientee
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 8: Bola Shantrell -->
+                    <a href="/es/team-members/shantrell-ball/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Shantrell-Ball.webp" alt="Bola Shantrell" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Bola Shantrell</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Gerente de Seguros
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 9: Puentes Lely -->
+                    <a href="/es/team-members/leland-bridges/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Lely-Bridges.webp" alt="Puentes Lely" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Puentes Lely</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Director de soporte
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 10: Syra Guzmán -->
+                    <a href="/es/team-members/sandra-guzman/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Syra-Guzman.webp" alt="Syra Guzmán" class="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Syra Guzmán</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Gerente de atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 11: Devin Spiegel Halter -->
+                    <a href="/es/team-members/devin-spiegelhalter/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/devin.webp" alt="Devin Spiegel Halter" class="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Devin Spiegel Halter</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Subgerente de atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 12: Sabrina Portuondo -->
+                    <a href="/es/team-members/sabrina-portuondo/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Sabrina-Portuondo.webp" alt="Sabrina Portuondo" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Sabrina Portuondo</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Gerente de Admisión de Clientees
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 13: Jocelyn Suárez -->
+                    <a href="/es/team-members/jocelyn-suarez/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Jocelyn-Suarez-Intake-Specialist.webp" alt="Jocelyn Suárez" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Jocelyn Suárez</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en Admisión
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 14: Diana Márquez -->
+                    <a href="/es/team-members/deanna-marquez/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/DeannaMarquez-(1).webp" alt="Diana Márquez" class="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Diana Márquez</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en recuperación de pruebas
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 15: Timothy Melson -->
+                    <a href="/es/team-members/timothy-melson/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Timothy-Melson.webp" alt="Timothy Melson" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Timothy Melson</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en recuperación de pruebas
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 16: Adriana Melgarejo -->
+                    <a href="/es/team-members/adriana-melgarejo/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/adriana-picture.webp" alt="Adriana Melgarejo" class="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Adriana Melgarejo</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en Responsabilidad de Seguros
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 17: Cristina Dixon -->
+                    <a href="/es/team-members/christina-dixon/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Christina-Dixon.webp" alt="Cristina Dixon" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Cristina Dixon</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en Nómina y Beneficios
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 18: Carley Richards -->
+                    <a href="/es/team-members/carley-richards/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Carley-Richards.webp" alt="Carley Richards" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Carley Richards</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Ayudante Administrativo
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 19: Génesis Reséndiz -->
+                    <a href="/es/team-members/genesis-resendiz/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/genesis.webp" alt="Génesis Reséndiz" class="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Génesis Reséndiz</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 20: Isabel Welch -->
+                    <a href="/es/team-members/isabel-welch/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Isabel-Welch.webp" alt="Isabel Welch" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Isabel Welch</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 21: Betty Méndez -->
+                    <a href="/es/team-members/betty-mendez/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Betty-Mendez.webp" alt="Betty Méndez" style="object-position: center 20%;" class="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Betty Méndez</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 22: Sierra Jones -->
+                    <a href="/es/team-members/sierra-jones/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Sierra-Jones.webp" alt="Sierra Jones" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Sierra Jones</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 23: Elizabeth Chavarría -->
+                    <a href="/es/team-members/elizabeth-chavarria/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Elizabeth-Chavarria.webp" alt="Elizabeth Chavarría" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Elizabeth Chavarría</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">Especialista en Admisión
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 24: Estefanía Rivera -->
+                    <a href="/es/team-members/stephanie-rivera/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/StephanieRivera.webp" alt="Estefanía Rivera" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Estefanía Rivera</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 25: mohamed -->
+                    <a href="/es/team-members/mohamed/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Mohamad-Cliente-Care-Speacilist.webp" alt="mohamed" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">mohamed</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Especialista en atención al cliente
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 SECTION 2: THE MEDIA TEAM
+                 ========================================== -->
+            <div class="space-y-16 mb-36 relative">
+                <!-- Watermark for Section 2 -->
+                <div class="absolute top-[20%] left-[-2%] text-[10vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
+                    THE MEDIA TEAM
+                </div>
+
+                <div class="border-b-2 border-bry-primary/30 pb-6 relative z-10">
+                    <h2 class="text-4xl font-heading font-black text-bry-navy tracking-tight uppercase">
+                        El equipo de medios
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">
+
+                    <!-- Member 1: Selvin Navarro -->
+                    <a href="/es/team-members/selvin-navarro/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Selvin-Navarro.webp" alt="Selvin Navarro" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Selvin Navarro</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Gerente de Marca
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 2: Hassan Mehar -->
+                    <a href="/es/team-members/mehar-hassan/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/mehar-hassan.webp" alt="Hassan Mehar" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="eager" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Hassan Mehar</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Diseñador Gráfico Sénior
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 3: John Jabés Salva -->
+                    <a href="/es/team-members/john-jabes-salva/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/John-Jabes-Salva.webp" alt="John Jabés Salva" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">John Jabés Salva</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Editor de vídeo
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 4: Tasha Hijara -->
+                    <a href="/es/team-members/tasha-hijara/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Tasha-Hijara.webp" alt="Tasha Hijara" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Tasha Hijara</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Webmaster
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 5: Ella Batilona -->
+                    <a href="/es/team-members/ella-batilona/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full sm:col-span-2 md:col-span-1 lg:col-span-1 hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Ella-Batilona.webp" alt="Ella Batilona" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Ella Batilona</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Artista Grafico
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 SECTION 3: GLOBAL TEAM
+                 ========================================== -->
+            <div class="space-y-16 mb-16 relative">
+                <div class="border-b-2 border-bry-primary/30 pb-6 relative z-10">
+                    <h2 class="text-4xl font-heading font-black text-bry-navy tracking-tight uppercase">
+                        Equipo global
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">
+
+                    <!-- Member 1: Edgardo Manzanares -->
+                    <a href="/es/team-members/edgard-manzanares/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Edgard-Manzanares.webp" alt="Edgardo Manzanares" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Edgardo Manzanares</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                Asistente Legal Virtual
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Member 2: Álvaro Vanegas -->
+                    <a href="/es/team-members/alvaro-vanegas/" class="group bg-white rounded-[2.5rem] p-4 border border-bry-border/60 hover:border-bry-primary/40 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(108,161,230,0.2)] transition-all duration-500 flex flex-col h-full hover:no-underline text-decoration-none">
+                        <div class="relative overflow-hidden rounded-[1.8rem] h-80 w-full mb-6 z-10 select-none team-split-bg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-bry-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                            <img src="/assets/new team member picture/Alvaro-Vanegas.webp" alt="Álvaro Vanegas" class="w-full h-full object-cover object-top mix-blend-multiply opacity-95 group-hover:opacity-100 group-hover:scale-105 group-hover:rotate-1 transition-all duration-500 relative z-10" loading="lazy" decoding="async">
+                        </div>
+                        <div class="text-center px-4 pb-4 flex flex-col flex-grow">
+                            <h3 class="font-heading font-black text-xl text-bry-navy group-hover:text-bry-primary transition-colors duration-300 mb-2">Álvaro Vanegas</h3>
+                            <span class="inline-block mx-auto bg-bry-pale/40 text-bry-muted border border-bry-primary/10 group-hover:bg-bry-primary group-hover:text-white px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider mt-auto shadow-sm group-hover:shadow-[0_8px_20px_rgba(108,161,230,0.25)] transition-all duration-300">
+                                asistente virtual
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Form Section (Light Blue BG Matching Screenshot) -->
+    <section class="bg-bry-pale text-bry-dark pt-24 pb-24 border-t border-bry-border/40 relative z-20">
+        <div class="container mx-auto px-6 max-w-[80rem]">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                                <!-- Left: Contacto Details -->
+                <div class="space-y-12">
+                    <div>
+                        <p class="text-bry-charcoal text-xs font-bold tracking-widest uppercase mb-4">Ponte en contacto</p>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-tight mb-8 text-bry-primary tracking-tight">Talk to an Experienced<br>Lesiones personales Attorney<br>Today</h2>
+                    </div>
+
+                    <div class="space-y-8 text-bry-charcoal">
+                        <!-- Offices -->
+                        <div class="space-y-6">
+                            <p class="font-bold text-xs tracking-widest uppercase mb-2">Nuestras Oficinas</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="flex items-start bg-white/70 backdrop-blur-sm p-6 rounded-3xl border border-bry-border/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                                    <div class="w-10 h-10 rounded-full bg-bry-primary/10 flex items-center justify-center text-bry-primary mr-4 shrink-0">
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-heading font-bold text-bry-navy text-xs uppercase tracking-wider mb-1">Oficina de Marieta</h4>
+                                        <p class="text-bry-muted text-sm font-semibold leading-relaxed">4076 Ebenezer Rd.<br>Marietta, GA 30066</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start bg-white/70 backdrop-blur-sm p-6 rounded-3xl border border-bry-border/60 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                                    <div class="w-10 h-10 rounded-full bg-bry-primary/10 flex items-center justify-center text-bry-primary mr-4 shrink-0">
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-heading font-bold text-bry-navy text-xs uppercase tracking-wider mb-1">Oficina de Dalton</h4>
+                                        <p class="text-bry-muted text-sm font-semibold leading-relaxed">210 N Glenwood Ave..<br>Dalton, Georgia 30720</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Información de contacto -->
+                        <div class="space-y-4">
+                            <p class="font-bold text-xs tracking-widest uppercase mb-2">Información de contacto</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <a href="mailto:team@theawadlawfirm.com" class="flex items-center bg-white/70 backdrop-blur-sm p-5 rounded-3xl border border-bry-border/60 shadow-sm hover:shadow-md hover:border-bry-primary/40 transition duration-300 text-inherit no-underline group">
+                                    <div class="w-10 h-10 rounded-full bg-bry-primary/10 flex items-center justify-center text-bry-primary mr-4 shrink-0 group-hover:bg-bry-primary group-hover:text-white transition duration-300">
+                                        <i data-lucide="mail" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-heading font-bold text-bry-navy text-[10px] tracking-widest uppercase mb-0.5">Envíenos un correo electrónico</h4>
+                                        <p class="text-bry-muted text-sm font-semibold group-hover:text-bry-primary transition">team@theawadlawfirm.com</p>
+                                    </div>
+                                </a>
+                                <a href="tel:+17068900000" class="flex items-center bg-white/70 backdrop-blur-sm p-5 rounded-3xl border border-bry-border/60 shadow-sm hover:shadow-md hover:border-bry-primary/40 transition duration-300 text-inherit no-underline group">
+                                    <div class="w-10 h-10 rounded-full bg-bry-primary/10 flex items-center justify-center text-bry-primary mr-4 shrink-0 group-hover:bg-bry-primary group-hover:text-white transition duration-300">
+                                        <i data-lucide="phone" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-heading font-bold text-bry-navy text-[10px] tracking-widest uppercase mb-0.5">Llámanos</h4>
+                                        <p class="text-bry-muted text-sm font-semibold group-hover:text-bry-primary transition">(706) 890-0000</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form Card -->
+                <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-bry-border/50 text-bry-dark">
+                                        <div class="flex justify-center mb-8 border-b border-bry-border/60 pb-6">
+                        <img src="/assets/awadlawfirmlogo.png" alt="El bufete de abogados Awad Logo" class="h-12 w-auto object-contain" decoding="async">
+                    </div>
+
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message submitted successfully!');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Nombre *</label>
+                                <input type="text" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Apellido *</label>
+                                <input type="text" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Correo electrónico *</label>
+                                <input type="email" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Teléfono *</label>
+                                <input type="tel" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Seleccione el tipo de área de práctica</label>
+                            <div class="relative">
+                                <select class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition text-bry-charcoal appearance-none shadow-sm cursor-pointer">
+                                    <option>Selecciona tipo de área de práctica</option>
+                                    <option>Accidentes automovilísticos</option>
+                                    <option>Accidentes de camiones</option>
+                                    <option>Muerte por negligencia</option>
+                                    <option>Lesiones personales</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-bry-muted pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Mensaje *</label>
+                            <textarea rows="4" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition resize-none shadow-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="bg-bry-primary hover:bg-bry-primaryhover text-white font-bold py-4 px-8 rounded-full w-full max-w-[250px] mx-auto transition-colors flex justify-center items-center text-sm tracking-widest uppercase shadow-[0_10px_20px_rgba(108,161,230,0.2)] mt-8 group">
+                            Enviar mensaje <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <!-- Barra de Boletín -->
+  <div class="footer-newsletter-bar">
+    <div class="newsletter-left">
+      <svg class="newsletter-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20 30 H80 M50 30 V80 M35 80 H65 M20 50 A15 15 0 0 0 50 50 A15 15 0 0 0 80 50" stroke-dasharray="2 2" />
+        <path d="M30 50 H40 M60 50 H70" />
+      </svg>
+      <div class="newsletter-text-col">
+        <span class="newsletter-kicker">BOLETÍN</span>
+        <h3 class="newsletter-heading">Suscríbase a nuestro Boletín</h3>
+      </div>
+    </div>
+    <div class="newsletter-right">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Suscrito con éxito!');">
+        <input type="email" placeholder="Ingrese su correo electrónico" class="newsletter-input" required />
+        <button type="submit" class="newsletter-btn">
+          Suscribir
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="site-footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: Páginas -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Páginas</h4>
+        <ul class="footer-links-list">
+          <li><a href="/es/">Inicio</a></li>
+          <li><a href="/es/sobre-nosotros/">Sobre nosotros</a></li>
+          <li><a href="/es/team-members/ibrahim-awad/">Nuestro abogado</a></li>
+          <li><a href="/es/areas-de-practica/">Áreas de Práctica</a></li>
+          <li><a href="/es/resultados/">Casos de Éxito</a></li>
+          <li><a href="/es/#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Nuestros Servicios -->
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-title">Nuestros Servicios</h4>
+        <ul class="footer-links-list">
+          <li><a href="/es/accidente-de-auto/">Accidentes de Auto</a></li>
+          <li><a href="/es/accidente-de-camion/">Accidentes de camiones</a></li>
+          <li><a href="/es/accidente-de-motocicleta/">Accidentes de Motocicleta Img</a></li>
+          <li><a href="/es/muerte-injusta/">Muerte Injusta</a></li>
+          <li><a href="/es/resbalon-y-caida/">Resbalones y Caídas</a></li>
+          <li><a href="/es/lesiones-personales/">Lesiones Personales</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Bry Identity (Center) -->
+      <div class="footer-col footer-col-bry">
+        <div class="footer-bry-logo-wrap">
+          <img src="/assets/alf-white-logo.png" alt="Bufete de abogados Awad" class="footer-logo" decoding="async">
+        </div>
+        <p class="footer-bry-desc">
+          Abogados de lesiones personales en Marietta sirviendo a clientes en toda Georgia con una defensa enfocada e implacable.
+        </p>
+        <div class="footer-social-row">
+          <a href="https://www.facebook.com/theawadlawfirm" class="social-circle-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/theawadlawfirm" class="social-circle-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.84a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-awad-law-firm/" class="social-circle-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 12.27h-3v-5.6c0-3.34-4-3.1-4 0v5.6h-3v-11h3v1.76c1.4-2.58 7-2.78 7 2.47v6.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 4: Location & Offices -->
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-title">Contacto y Oficinas</h4>
+
+        <!-- Address 1 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Marietta, GA</h5>
+            <p>4076 Ebenezer Rd.</p>
+          </div>
+        </div>
+
+        <!-- Address 2 -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Dalton, GA</h5>
+            <p>210 N Glenwood Ave..</p>
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Teléfono</h5>
+            <p><a href="tel:+17068900000">(706) 890-0000</a></p>
+          </div>
+        </div>
+
+        <!-- Correo electrónico -->
+        <div class="footer-contact-item">
+          <div class="contact-circle-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <h5>Correo</h5>
+            <p><a href="mailto:team@theawadlawfirm.com">team@theawadlawfirm.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-seo-links" aria-label="Helpful internal links">
+    <div class="footer-seo-links-inner">
+      <div>
+        <h4>Abogados de Lesiones en Georgia</h4>
+        <a href="/es/lesiones-personales/">Abogado de Lesiones Personales</a>
+        <a href="/es/accidente-de-auto/">Abogado de Accidentes de Auto</a>
+        <a href="/es/accidente-de-camion/">Abogado de Accidentes de Camión</a>
+        <a href="/es/resbalon-y-caida/">Abogado de Resbalones y Caídas</a>
+      </div>
+      <div>
+        <h4>Guías de Accidentes</h4>
+        <a href="/edu-guide-car-accident/">Qué Hacer Después de un Choque</a>
+        <a href="/average-car-accident-settlement-georgia/">Acuerdo Promedio en Georgia</a>
+        <a href="/edu-guide-comparative-negligence/">Negligencia Comparativa</a>
+        <a href="/edu-guide-statute-of-limitations/">Plazos de Reclamo en Georgia</a>
+      </div>
+      <div>
+        <h4>Señales de Confianza</h4>
+        <a href="/es/resultados/">Resultados de Casos</a>
+        <a href="/es/resenas/">Cliente Reseñas</a>
+        <a href="/es/testimonios/">Testimonios en Video</a>
+        <a href="/es/team-members/ibrahim-awad/">Abogado Ibrahim Awad</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-bar-inner">
+      <p class="footer-copyright-text">
+        &copy; 2026 Bufete de abogados Awad. Todos los Derechos Reservados.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="/es/politica-de-privacidad/">Política de Privacidad</a>
+        <span>|</span>
+        <a href="/es/terminos-de-servicio/">Términos de Servicio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="/script.js?v=5"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+<a class="premium-float-call" href="tel:+17068900000" aria-label="Call Bufete de abogados Awad at (706) 890-0000">
+  <span class="float-call-pulse" aria-hidden="true"></span>
+  <span class="float-call-pulse-2" aria-hidden="true"></span>
+  <span class="float-call-content">
+    <svg class="float-call-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.18L9.09 10.91a16 16 0 0 0 4 4l1.67-1.25a2 2 0 0 1 2.18-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <span class="float-call-text">
+      <span class="float-call-prefix">706-</span><span class="float-call-primary">890-0000</span>
+    </span>
+  </span>
+</a>
+</body>
+</html>
