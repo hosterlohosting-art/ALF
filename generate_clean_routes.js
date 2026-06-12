@@ -95,7 +95,11 @@ const routes = {
   'es/accidente-de-motocicleta': 'es/motorcycle-accidents.html',
   'es/accidente-de-bicicleta': 'es/bicycle-accidents.html',
   'es/accidente-de-uber': 'es/uber-accidents.html',
-  'es/accidente-de-lyft': 'es/lyft-accidents.html'
+  'es/accidente-de-lyft': 'es/lyft-accidents.html',
+  'es/mision-y-vision': 'es/mission-vision.html',
+  'es/testimonios': 'es/testimonials.html',
+  'es/resenas': 'es/reviews.html',
+  'es/recursos': 'es/education.html'
 };
 
 for (const [route, file] of Object.entries(routes)) {

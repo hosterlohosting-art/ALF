@@ -1922,7 +1922,15 @@ if (document.readyState === 'loading') {
       '/truck-accident/': '/es/accidente-de-camion/',
       '/slip-and-fall/': '/es/resbalon-y-caida/',
       '/wrongful-death/': '/es/muerte-injusta/',
-      '/medical-malpractice/': '/es/negligencia-medica/'
+      '/medical-malpractice/': '/es/negligencia-medica/',
+      '/personal-injury/': '/es/lesiones-personales/',
+      '/motorcycle-accident/': '/es/accidente-de-motocicleta/',
+      '/bicycle-accident/': '/es/accidente-de-bicicleta/',
+      '/uber-accident/': '/es/accidente-de-uber/',
+      '/lyft-accident/': '/es/accidente-de-lyft/',
+      '/awad-law-firm-4/': '/es/mision-y-vision/',
+      '/reviews/': '/es/resenas/',
+      '/resources/': '/es/recursos/'
     };
 
     const currentPath = window.location.pathname;
