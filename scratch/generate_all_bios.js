@@ -102,7 +102,7 @@ const BIOS_DATA = {
         "slug": "leland-bridges",
         "badge": "The Awad Squad",
         "bio": [
-            "Leland Bridges grew up across South Carolina, Florida, and Tennessee, attended Space Camp and Aviation Academy as a teenager, and earned a Bachelor’s in English from Converse College. After moving to Atlanta, Leland worked in several roles at a top 100 law firm and earned a paralegal certificate from Clayton State University.",
+            "Leland Bridges grew up across South Carolina, Florida, and Tennessee, attended Space Camp and Aviation Academy as a teenager, and earned a Bachelor’s in English from Converse College. After moving to Georgia, Leland worked in several roles at a top 100 law firm and earned a paralegal certificate from Clayton State University.",
             "Leland joined The Awad Law Firm in 2020 and supports clients and service providers with communication, research, analysis, administrative support, proofreading, and problem-solving.",
             "Outside of work, Leland enjoys HOA service, pets, family, wildlife photography, Victorian shows, theater, Legos, and games."
         ],
@@ -193,7 +193,7 @@ const BIOS_DATA = {
         "slug": "christina-dixon",
         "badge": "The Awad Squad",
         "bio": [
-            "Christina Dixon was born and raised in Brooklyn, New York. She earned a Bachelor of Science in Marketing from St. John’s University, then moved to Atlanta and earned an MBA from Keller Graduate School of Management with a concentration in Human Resources and Project Management.",
+            "Christina Dixon was born and raised in Brooklyn, New York. She earned a Bachelor of Science in Marketing from St. John’s University, then moved to Georgia and earned an MBA from Keller Graduate School of Management with a concentration in Human Resources and Project Management.",
             "Her background includes 19 years of sales experience across automotive, mortgage, and human resources. She has a deep passion for HR, helping others thrive, and creating positive outcomes in the workplace.",
             "Outside of work, she enjoys weight training, TV shows, and spending time with her children and dog."
         ],
@@ -232,7 +232,7 @@ const BIOS_DATA = {
         "bio": [
             "Isabel Welch is a Client Care Specialist originally from New Jersey who has lived in Georgia since 2011. Her focus is on building meaningful, warm client relationships.",
             "She studied Medical Assisting at Chattahoochee Technical College and worked for five years as a certified medical assistant in dermatology before moving into the legal field in 2024.",
-            "Outside of work, she enjoys baking sourdough, cheering for the Atlanta Braves with her husband, and spending time with her two German Shepherd mixes."
+            "Outside of work, she enjoys baking sourdough, cheering for the Georgia Braves with her husband, and spending time with her two German Shepherd mixes."
         ],
         "quote": "Building meaningful relationships and offering warm, dedicated client support.",
         "education": ["Chattahoochee Technical College (Medical Assisting Certification)"],
