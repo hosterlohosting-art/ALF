@@ -11,7 +11,7 @@ const business = {
   email: 'team@theawadlawfirm.com',
   marietta: '4076 Ebenezer Rd., Marietta, GA 30066',
   dalton: '210 North Glenwood Ave., Dalton, GA 30721',
-  serviceArea: 'Georgia, including Marietta, Dalton, Cobb County, Whitfield County, and the Georgia metro area',
+  serviceArea: 'Georgia, including Marietta, Dalton, Cobb County, Whitfield County, and the Atlanta metro area',
   primaryServices: [
     'Personal injury',
     'Car accidents',
@@ -378,7 +378,7 @@ Intent: ${page.intent}`).join('\n\n')}
 function markdownLlms(facts) {
   return `# ${business.name}
 
-> Georgia personal injury law firm serving Marietta, Dalton, Cobb County, Whitfield County, and the Georgia metro area.
+> Georgia personal injury law firm serving Marietta, Dalton, Cobb County, Whitfield County, and the Atlanta metro area.
 
 ## Contact
 
