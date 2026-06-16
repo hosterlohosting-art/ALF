@@ -10151,6 +10151,86 @@ body.home-page .premium-home-hero {
   }
 }
 
+/* Short desktop/laptop viewports need a stacked reveal rhythm so the form
+   never overlaps the centered headline. */
+@media (min-width: 901px) and (max-height: 720px) {
+  body.home-page .premium-home-hero .premium-hero-scroll-header {
+    top: 2.2vh !important;
+    max-width: min(760px, calc(100% - 48px)) !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-scroll-header .premium-eyebrow {
+    margin-bottom: 4px !important;
+    font-size: clamp(12px, 1.15vw, 15px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.16em !important;
+    white-space: normal !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-scroll-header .premium-scroll-title {
+    font-size: clamp(30px, 3vw, 42px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-bg img.hero-bg-team {
+    bottom: -17% !important;
+    height: 100% !important;
+    opacity: 0.42 !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-form {
+    left: 50% !important;
+    top: clamp(142px, 24vh, 174px) !important;
+    width: min(420px, calc(100vw - 56px)) !important;
+    max-height: calc(100vh - 190px) !important;
+    padding: 20px !important;
+    overflow: auto !important;
+    transform: translateX(-50%) scale(0.985) !important;
+  }
+
+  body.home-page.hero-form-visible .premium-home-hero .premium-hero-form,
+  body.home-page.hero-reveal-complete .premium-home-hero .premium-hero-form {
+    left: 50% !important;
+    top: clamp(142px, 24vh, 174px) !important;
+    transform: translateX(-50%) scale(1) !important;
+  }
+
+  body.home-page .premium-home-hero .premium-form-kicker {
+    display: none !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-form h2 {
+    margin-bottom: 12px !important;
+    font-size: clamp(22px, 2.2vw, 28px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.home-page .premium-home-hero .premium-form-grid {
+    gap: 8px !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-form input,
+  body.home-page .premium-home-hero .premium-hero-form select,
+  body.home-page .premium-home-hero .premium-hero-form textarea {
+    min-height: 42px !important;
+    margin-bottom: 8px !important;
+    padding-inline: 14px !important;
+    font-size: 13px !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-form textarea {
+    min-height: 50px !important;
+    padding-top: 12px !important;
+  }
+
+  body.home-page .premium-home-hero .premium-hero-form button {
+    min-height: 48px !important;
+    font-size: 13px !important;
+  }
+}
+
 /* Mobile-only placeholders and scroll-reveal headings hidden on wrong viewports */
 body.home-page .premium-mobile-video-wrap,
 body.home-page .premium-mobile-team-wrap,
