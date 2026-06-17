@@ -283,13 +283,13 @@ BIOS_DATA = {
         "quote": "Organizing files and addressing concerns to deliver meticulous care.",
         "focus": ["Client Support", "Records Organization", "Task Management"]
     },
-    "Mohamed": {
+    "Mohamed Ahmed": {
         "slug": "mohamed",
         "badge": "The Awad Squad",
         "bio": [
-            "Mohamed is a Client Care Specialist at The Awad Law Firm.",
+            "Mohamed Ahmed is a Client Care Specialist at The Awad Law Firm.",
             "He supports personal injury clients throughout their treatment and rehabilitation, ensuring their files are updated and they receive attentive service.",
-            "Outside work, Mohamed enjoys fitness, reading history, and spending time with friends."
+            "Outside work, Mohamed Ahmed enjoys fitness, reading history, and spending time with friends."
         ],
         "quote": "Attentive, consistent service to support clients throughout rehabilitation.",
         "focus": ["Treatment Sourcing", "Attentive Care", "Case File Updates"]
