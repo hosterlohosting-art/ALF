@@ -44,14 +44,62 @@
         Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX_HEADER
     </IfModule>
 
-    # --- 2. FORCE TRAILING SLASH ON clean SLUGS ---
+    # --- 2. LEGACY / CRAWLED URL REPAIRS ---
+    # These catch old WordPress-style URLs, outdated team paths, and nested
+    # relative-link discoveries reported by Google Search Console.
+    RewriteRule ^car-accident-lawyer-marietta/?$ /car-accident/ [R=301,L,NC]
+    RewriteRule ^georgia-window-tint-law/?$ /community-window-tint/ [R=301,L,NC]
+    RewriteRule ^how-to-respond-to-a-lowball-insurance-offer-a-step-by-step-guide/?$ /community-lowball/ [R=301,L,NC]
+    RewriteRule ^blog/?$ /resources/ [R=301,L,NC]
+    RewriteRule ^practice-area/?$ /practice-areas/ [R=301,L,NC]
+    RewriteRule ^attorney-ibrahim-awad/?$ /team-members/ibrahim-awad/ [R=301,L,NC]
+    RewriteRule ^cart/?$ /contact/ [R=301,L,NC]
+    RewriteRule ^my-account/?$ /contact/ [R=301,L,NC]
+    RewriteRule ^wp-admin(/.*)?$ - [G,L,NC]
+    RewriteRule ^xmlrpc\.php$ - [G,L,NC]
+    RewriteRule ^personnel/?$ /team-members/ [R=301,L,NC]
+    RewriteRule ^personnel_category/[^/]+/?$ /team-members/ [R=301,L,NC]
+    RewriteRule ^personnel/(gary|garry)-hartley/?$ /team-members/gay-hartley/ [R=301,L,NC]
+    RewriteRule ^personnel/mohamed-ahmed/?$ /team-members/mohamed/ [R=301,L,NC]
+    RewriteRule ^personnel/suhad-al-hejoj/?$ /team-members/ [R=301,L,NC]
+    RewriteRule ^personnel/([^/]+)/?$ /team-members/$1/ [R=301,L,NC]
+    RewriteRule ^our-team/([^/]+)/?$ /team-members/$1/ [R=301,L,NC]
+    RewriteRule ^team/([^/]+)/?$ /team-members/$1/ [R=301,L,NC]
+
+    # Spanish legacy .html paths.
+    RewriteRule ^es/(.+/)?about\.html$ /es/sobre-nosotros/ [R=301,L,NC]
+    RewriteRule ^es/(.+/)?contact\.html$ /es/contacto/ [R=301,L,NC]
+    RewriteRule ^es/(.+/)?education\.html$ /es/recursos/ [R=301,L,NC]
+    RewriteRule ^es/(.+/)?practice-areas\.html$ /es/areas-de-practica/ [R=301,L,NC]
+    RewriteRule ^es/(.+/)?resources\.html$ /es/recursos/ [R=301,L,NC]
+    RewriteRule ^es/(.+/)?reviews\.html$ /es/resenas/ [R=301,L,NC]
+    RewriteRule ^es/(.+/)?testimonials\.html$ /es/testimonios/ [R=301,L,NC]
+
+    # Clean up nested bad URLs like /car-accident/contact.html.
+    RewriteRule ^(.+/)?about\.html$ /about-the-awad-law-firm-history/ [R=301,L,NC]
+    RewriteRule ^(.+/)?contact\.html$ /contact/ [R=301,L,NC]
+    RewriteRule ^(.+/)?education\.html$ /resources/ [R=301,L,NC]
+    RewriteRule ^(.+/)?practice-areas\.html$ /practice-areas/ [R=301,L,NC]
+    RewriteRule ^(.+/)?resources\.html$ /resources/ [R=301,L,NC]
+    RewriteRule ^(.+/)?reviews\.html$ /reviews/ [R=301,L,NC]
+    RewriteRule ^(.+/)?testimonials\.html$ /testimonials/ [R=301,L,NC]
+
+    # Old plural/static aliases.
+    RewriteRule ^car-accidents/?$ /car-accident/ [R=301,L,NC]
+    RewriteRule ^trucking-accidents/?$ /truck-accident/ [R=301,L,NC]
+    RewriteRule ^motorcycle-accidents/?$ /motorcycle-accident/ [R=301,L,NC]
+    RewriteRule ^bicycle-accidents/?$ /bicycle-accident/ [R=301,L,NC]
+    RewriteRule ^uber-accidents/?$ /uber-accident/ [R=301,L,NC]
+    RewriteRule ^lyft-accidents/?$ /lyft-accident/ [R=301,L,NC]
+
+    # --- 3. FORCE TRAILING SLASH ON clean SLUGS ---
     # Redirects any request lacking a trailing slash to directory format
     # (except physical files like style.css, images, or index.html requests).
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !(.*)/$
     RewriteRule ^(.*)$ /$1/ [R=301,L]
 
-    # --- 3. 301 DIRECT REDIRECTS FOR DIRECT HTML REQUESTS ---
+    # --- 4. 301 DIRECT REDIRECTS FOR DIRECT HTML REQUESTS ---
     # Any direct browser hits to legacy .html files are 301 redirected to clean slugs.
     RewriteCond %{THE_REQUEST} \s/+(.*?)\.html[\s?] [NC]
     RewriteRule ^about\.html$ /about-the-awad-law-firm-history/ [R=301,L,NC]
@@ -85,7 +133,7 @@
     RewriteRule ^article-distracted-driver\.html$ /distracted-driver-accident-georgia/ [R=301,L,NC]
     RewriteRule ^(.*?)\.html$ /$1/ [R=301,L,NC]
 
-    # --- 4. INTERNAL REWRITES (clean SLUGS TO HTML FILES) ---
+    # --- 5. INTERNAL REWRITES (clean SLUGS TO HTML FILES) ---
     # Maps user-facing clean directory requests to serve the raw static file.
     RewriteRule ^about-the-awad-law-firm-history/?$ about.html [NC,L]
     RewriteRule ^team-members/?$ team-experts.html [NC,L]

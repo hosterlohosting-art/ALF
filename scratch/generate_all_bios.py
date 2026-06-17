@@ -462,6 +462,10 @@ def generate_credentials_html(name, data):
                             </div>
     """
 
+def get_profile_email(name):
+    first_name = re.sub(r'[^a-zA-Z]', '', name.split()[0]).lower()
+    return f"{first_name}@theawadlawfirm.com"
+
 def main():
     head, navbar, footer, scripts = extract_theme_parts()
     
@@ -510,21 +514,21 @@ def main():
         elif slug == "shantrell-ball": image_name = "Shantrell-Ball"
         elif slug == "leland-bridges": image_name = "Leland-Bridges"
         elif slug == "sandra-guzman": image_name = "Sandra-Guzman"
-        elif slug == "devin-spiegelhalter": image_name = "Devin-Spiegelhalter"
+        elif slug == "devin-spiegelhalter": image_name = "devin"
         elif slug == "sabrina-portuondo": image_name = "Sabrina-Portuondo"
-        elif slug == "jocelyn-suarez": image_name = "Jocelyn-Suarez"
-        elif slug == "deanna-marquez": image_name = "Deanna-Marquez"
+        elif slug == "jocelyn-suarez": image_name = "Jocelyn-Suarez-Intake-Specialist"
+        elif slug == "deanna-marquez": image_name = "DeannaMarquez-(1)"
         elif slug == "timothy-melson": image_name = "Timothy-Melson"
-        elif slug == "adriana-melgarejo": image_name = "Adriana-Melgarejo"
+        elif slug == "adriana-melgarejo": image_name = "adriana-picture"
         elif slug == "christina-dixon": image_name = "Christina-Dixon"
         elif slug == "carley-richards": image_name = "Carley-Richards"
-        elif slug == "genesis-resendiz": image_name = "Genesis-Resendiz"
+        elif slug == "genesis-resendiz": image_name = "genesis"
         elif slug == "isabel-welch": image_name = "Isabel-Welch"
         elif slug == "betty-mendez": image_name = "Betty-Mendez"
         elif slug == "sierra-jones": image_name = "Sierra-Jones"
         elif slug == "elizabeth-chavarria": image_name = "Elizabeth-Chavarria"
-        elif slug == "stephanie-rivera": image_name = "Stephanie-Rivera"
-        elif slug == "mohamed": image_name = "Mohamed"
+        elif slug == "stephanie-rivera": image_name = "StephanieRivera"
+        elif slug == "mohamed": image_name = "Mohamad-Client-Care-Speacilist"
         elif slug == "selvin-navarro": image_name = "Selvin-Navarro"
         elif slug == "mehar-hassan": image_name = "Mehar-Hassan"
         elif slug == "john-jabes-salva": image_name = "John-Jabes-Salva"
@@ -541,6 +545,7 @@ def main():
         canonical_url = f"https://theawadlawfirm.com/team-members/{slug}/"
         watermark = name.replace(", Esq.", "").strip().upper()
         quote = data["quote"]
+        profile_email = get_profile_email(name)
         
         bio_paragraphs = "\n".join([f"<p>{p}</p>" for p in data["bio"]])
         credentials_html = generate_credentials_html(name, data)
@@ -618,7 +623,7 @@ def main():
                                 <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0">
                                     <i data-lucide="mail" class="w-4 h-4 text-brand-primary"></i>
                                 </span>
-                                <a href="mailto:team@theawadlawfirm.com" class="hover:text-brand-primary transition">team@theawadlawfirm.com</a>
+                                <a href="mailto:{profile_email}" class="bio-contact-link hover:text-brand-primary transition">{profile_email}</a>
                             </li>
                             <li class="flex items-start">
                                 <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0 mt-0.5">

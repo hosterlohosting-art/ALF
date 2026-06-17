@@ -283,13 +283,13 @@ const BIOS_DATA = {
         "quote": "Organizing files and addressing concerns to deliver meticulous care.",
         "focus": ["Client Support", "Records Organization", "Task Management"]
     },
-    "Mohamed": {
+    "Mohamed Ahmed": {
         "slug": "mohamed",
         "badge": "The Awad Squad",
         "bio": [
-            "Mohamed is a Client Care Specialist at The Awad Law Firm.",
+            "Mohamed Ahmed is a Client Care Specialist at The Awad Law Firm.",
             "He supports personal injury clients throughout their treatment and rehabilitation, ensuring their files are updated and they receive attentive service.",
-            "Outside work, Mohamed enjoys fitness, reading history, and spending time with friends."
+            "Outside work, Mohamed Ahmed enjoys fitness, reading history, and spending time with friends."
         ],
         "quote": "Attentive, consistent service to support clients throughout rehabilitation.",
         "focus": ["Treatment Sourcing", "Attentive Care", "Case File Updates"]
@@ -458,6 +458,11 @@ function generateCredentialsHtml(name, data) {
     `;
 }
 
+function getProfileEmail(name) {
+    const firstName = name.split(/\s+/)[0].replace(/[^a-zA-Z]/g, '').toLowerCase();
+    return `${firstName}@theawadlawfirm.com`;
+}
+
 function main() {
     const { head, navbar, footer, scripts } = extractThemeParts();
 
@@ -503,21 +508,21 @@ function main() {
         else if (slug === "shantrell-ball") imageName = "Shantrell-Ball";
         else if (slug === "leland-bridges") imageName = "Leland-Bridges";
         else if (slug === "sandra-guzman") imageName = "Sandra-Guzman";
-        else if (slug === "devin-spiegelhalter") imageName = "Devin-Spiegelhalter";
+        else if (slug === "devin-spiegelhalter") imageName = "devin";
         else if (slug === "sabrina-portuondo") imageName = "Sabrina-Portuondo";
-        else if (slug === "jocelyn-suarez") imageName = "Jocelyn-Suarez";
-        else if (slug === "deanna-marquez") imageName = "Deanna-Marquez";
+        else if (slug === "jocelyn-suarez") imageName = "Jocelyn-Suarez-Intake-Specialist";
+        else if (slug === "deanna-marquez") imageName = "DeannaMarquez-(1)";
         else if (slug === "timothy-melson") imageName = "Timothy-Melson";
-        else if (slug === "adriana-melgarejo") imageName = "Adriana-Melgarejo";
+        else if (slug === "adriana-melgarejo") imageName = "adriana-picture";
         else if (slug === "christina-dixon") imageName = "Christina-Dixon";
         else if (slug === "carley-richards") imageName = "Carley-Richards";
-        else if (slug === "genesis-resendiz") imageName = "Genesis-Resendiz";
+        else if (slug === "genesis-resendiz") imageName = "genesis";
         else if (slug === "isabel-welch") imageName = "Isabel-Welch";
         else if (slug === "betty-mendez") imageName = "Betty-Mendez";
         else if (slug === "sierra-jones") imageName = "Sierra-Jones";
         else if (slug === "elizabeth-chavarria") imageName = "Elizabeth-Chavarria";
-        else if (slug === "stephanie-rivera") imageName = "Stephanie-Rivera";
-        else if (slug === "mohamed") imageName = "Mohamed";
+        else if (slug === "stephanie-rivera") imageName = "StephanieRivera";
+        else if (slug === "mohamed") imageName = "Mohamad-Client-Care-Speacilist";
         else if (slug === "selvin-navarro") imageName = "Selvin-Navarro";
         else if (slug === "mehar-hassan") imageName = "Mehar-Hassan";
         else if (slug === "john-jabes-salva") imageName = "John-Jabes-Salva";
@@ -532,6 +537,7 @@ function main() {
         const canonicalUrl = `https://theawadlawfirm.com/team-members/${slug}/`;
         const watermark = name.replace(", Esq.", "").trim().toUpperCase();
         const quote = data.quote;
+        const profileEmail = getProfileEmail(name);
         const bioParagraphs = data.bio.map(p => `<p>${p}</p>`).join("\n");
         const credentialsHtml = generateCredentialsHtml(name, data);
 
@@ -608,7 +614,7 @@ ${navbar}
                                 <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0">
                                     <i data-lucide="mail" class="w-4 h-4 text-brand-primary"></i>
                                 </span>
-                                <a href="mailto:team@theawadlawfirm.com" class="bio-contact-link hover:text-brand-primary transition">team@theawadlawfirm.com</a>
+                                <a href="mailto:${profileEmail}" class="bio-contact-link hover:text-brand-primary transition">${profileEmail}</a>
                             </li>
                             <li class="flex items-start">
                                 <span class="w-10 h-10 rounded-xl bg-brand-pale flex items-center justify-center mr-4 shrink-0 mt-0.5">
