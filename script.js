@@ -213,6 +213,49 @@ setActiveButton(currentIndex, practiceButtons);
 (function () {
   'use strict';
 
+  // Send conversion activity to the GA4 property already loaded on every page.
+  // Only operational metadata is included; form field values are never sent.
+  window.AwadTrackConversion = function (eventName, eventParameters) {
+    if (typeof window.gtag !== 'function') return;
+
+    window.gtag('event', eventName, Object.assign({
+      page_path: window.location.pathname,
+      page_title: document.title,
+      transport_type: 'beacon'
+    }, eventParameters || {}));
+  };
+
+  window.AwadGetFormType = function (form) {
+    if (form.classList.contains('premium-hero-form')) return 'Hero Consultation Form';
+    if (form.classList.contains('space-y-6')) return 'Practice Area Case Form';
+    if (form.classList.contains('contact-form')) return 'General Contact Form';
+    if (form.classList.contains('newsletter-form')) return 'Newsletter Signup';
+    return 'Website Form';
+  };
+
+  function initConversionTracking() {
+    if (document.documentElement.getAttribute('data-conversion-tracking-ready') === 'true') return;
+    document.documentElement.setAttribute('data-conversion-tracking-ready', 'true');
+
+    // Delegation also captures call buttons injected later by this script.
+    document.addEventListener('click', function (event) {
+      if (!event.target || typeof event.target.closest !== 'function') return;
+      var callLink = event.target.closest('a[href^="tel:"]');
+      if (!callLink) return;
+
+      var placement = 'phone_link';
+      if (callLink.classList.contains('premium-float-call')) placement = 'floating_call_button';
+      else if (callLink.classList.contains('premium-phone-btn')) placement = 'header_call_button';
+      else if (callLink.classList.contains('mobile-nav-phone')) placement = 'mobile_navigation';
+      else if (callLink.classList.contains('top-bar-item')) placement = 'top_bar';
+      else if (callLink.closest('footer')) placement = 'footer';
+
+      window.AwadTrackConversion('phone_call_click', {
+        call_placement: placement
+      });
+    });
+  }
+
   /* â”€â”€ Config â”€â”€ */
   const CARDS_PER_VIEW_DESKTOP = 3;
   const CARDS_PER_VIEW_TABLET  = 2;
@@ -223,6 +266,8 @@ setActiveButton(currentIndex, practiceButtons);
   const prevBtn  = document.getElementById('csPrev');
   const nextBtn  = document.getElementById('csNext');
   const dotsWrap = document.getElementById('csDots');
+
+  initConversionTracking();
 
   if (!track || !prevBtn || !nextBtn) return; // guard if section not on page
 
@@ -1052,6 +1097,22 @@ if (document.readyState === 'loading') {
           }
         }
 
+        // Count every accepted form submission, while keeping qualified case
+        // leads available as a separate conversion event. No field values are shared.
+        window.AwadTrackConversion('form_submission', {
+          form_name: window.AwadGetFormType(form),
+          form_category: isCaseForm ? 'case_lead' : 'general'
+        });
+
+        // Count a lead only after required fields, hCaptcha, honeypot, and
+        // solicitation checks have all passed.
+        if (isCaseForm) {
+          window.AwadTrackConversion('generate_lead', {
+            form_name: window.AwadGetFormType(form),
+            lead_source: 'website_form'
+          });
+        }
+
         // Send email notification to team@theawadlawfirm.com (CC: mehar, leland) using FormSubmit
         try {
           var emailData = {};
@@ -1061,14 +1122,7 @@ if (document.readyState === 'loading') {
             emailData[key] = value;
           });
 
-          var formType = 'General Contact Form';
-          if (form.classList.contains('newsletter-form')) {
-            formType = 'Newsletter Signup';
-          } else if (form.classList.contains('premium-hero-form')) {
-            formType = 'Hero Consultation Form';
-          } else if (form.classList.contains('space-y-6')) {
-            formType = 'Practice Area Case Form';
-          }
+          var formType = window.AwadGetFormType(form);
 
           var clientName = emailData['firstName'] || emailData['first_name'] || '';
           var clientLastName = emailData['lastName'] || emailData['last_name'] || '';
