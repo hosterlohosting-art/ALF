@@ -1,812 +1,1166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://theawadlawfirm.com/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/about-the-awad-law-firm-history/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/about-the-awad-law-firm-history/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/sobre-nosotros/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/about-the-awad-law-firm-history/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/average-car-accident-settlement-georgia/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/awad-law-firm-4/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/awad-law-firm-4/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/mision-y-vision/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/awad-law-firm-4/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/bicycle-accident/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/bicycle-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-bicicleta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/bicycle-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/car-accident/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/car-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-auto/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/car-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-accident-report/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-ajp/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-anti-bullying/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-islamic-relief/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-lowball/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-tacos/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-wanted-my-phone/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-window-tint/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community-yaqeen/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/community/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/community/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/comunidad/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/community/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/contact/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/contact/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/contacto/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/contact/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/core-values/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/core-values/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/valores-fundamentales/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/core-values/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/distracted-driver-accident-georgia/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/edu-guide-car-accident/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/edu-guide-claim-worth/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/edu-guide-comparative-negligence/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/edu-guide-costly-mistakes/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/edu-guide-insurance-adjusters/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/edu-guide-statute-of-limitations/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/accidente-de-auto/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/car-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-auto/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/car-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/accidente-de-bicicleta/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/bicycle-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-bicicleta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/bicycle-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/accidente-de-camion/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/truck-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-camion/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/truck-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/accidente-de-lyft/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/lyft-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-lyft/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/lyft-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/accidente-de-motocicleta/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/motorcycle-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-motocicleta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/motorcycle-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/accidente-de-uber/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/uber-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-uber/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/uber-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/areas-de-practica/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/practice-areas/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/areas-de-practica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/practice-areas/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/biblioteca-de-videos/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/video-library/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/biblioteca-de-videos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/video-library/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/boletin/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/newsletter/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/boletin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/newsletter/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/comunidad/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/community/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/comunidad/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/community/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/contacto/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/contact/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/contacto/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/contact/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/lesiones-personales/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/personal-injury/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/lesiones-personales/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/personal-injury/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/mision-y-vision/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/awad-law-firm-4/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/mision-y-vision/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/awad-law-firm-4/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/muerte-injusta/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/wrongful-death/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/muerte-injusta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/wrongful-death/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/negligencia-medica/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/medical-malpractice/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/negligencia-medica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/medical-malpractice/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/nuestro-equipo/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/nuestro-equipo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/politica-de-privacidad/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/privacy-policy/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/politica-de-privacidad/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/privacy-policy/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/por-que-elegirnos/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/why-choose-us/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/por-que-elegirnos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/why-choose-us/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/recursos/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/resources/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/recursos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/resources/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/resbalon-y-caida/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/slip-and-fall/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/resbalon-y-caida/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/slip-and-fall/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/resenas/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/reviews/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/resenas/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/reviews/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/resultados/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/results/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/resultados/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/results/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/sobre-nosotros/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/about-the-awad-law-firm-history/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/sobre-nosotros/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/about-the-awad-law-firm-history/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/adriana-melgarejo/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/adriana-melgarejo/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/adriana-melgarejo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/adriana-melgarejo/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/ahmad-choudhary/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/ahmad-choudhary/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/ahmad-choudhary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/ahmad-choudhary/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/alvaro-vanegas/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/alvaro-vanegas/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/alvaro-vanegas/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/alvaro-vanegas/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/azima-mohamed/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/azima-mohamed/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/azima-mohamed/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/azima-mohamed/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/basher-hassan/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/basher-hassan/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/basher-hassan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/basher-hassan/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/betty-mendez/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/betty-mendez/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/betty-mendez/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/betty-mendez/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/carley-richards/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/carley-richards/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/carley-richards/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/carley-richards/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/christina-dixon/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/christina-dixon/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/christina-dixon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/christina-dixon/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/david-price/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/david-price/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/david-price/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/david-price/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/deanna-marquez/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/deanna-marquez/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/deanna-marquez/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/deanna-marquez/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/devin-spiegelhalter/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/devin-spiegelhalter/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/devin-spiegelhalter/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/devin-spiegelhalter/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/edgard-manzanares/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/edgard-manzanares/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/edgard-manzanares/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/edgard-manzanares/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/elizabeth-chavarria/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/elizabeth-chavarria/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/elizabeth-chavarria/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/elizabeth-chavarria/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/ella-batilona/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/ella-batilona/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/ella-batilona/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/ella-batilona/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/gay-hartley/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/gay-hartley/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/gay-hartley/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/gay-hartley/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/genesis-resendiz/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/genesis-resendiz/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/genesis-resendiz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/genesis-resendiz/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/ibrahim-awad/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/ibrahim-awad/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/ibrahim-awad/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/ibrahim-awad/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/isabel-welch/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/isabel-welch/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/isabel-welch/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/isabel-welch/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/jocelyn-suarez/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/jocelyn-suarez/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/jocelyn-suarez/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/jocelyn-suarez/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/john-jabes-salva/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/john-jabes-salva/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/john-jabes-salva/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/john-jabes-salva/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/leland-bridges/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/leland-bridges/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/leland-bridges/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/leland-bridges/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/marion-day/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/marion-day/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/marion-day/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/marion-day/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/mehar-hassan/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/mehar-hassan/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/mehar-hassan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/mehar-hassan/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/mohamed/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/mohamed/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/mohamed/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/mohamed/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/sabrina-portuondo/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/sabrina-portuondo/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/sabrina-portuondo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/sabrina-portuondo/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/sandra-guzman/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/sandra-guzman/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/sandra-guzman/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/sandra-guzman/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/selvin-navarro/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/selvin-navarro/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/selvin-navarro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/selvin-navarro/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/shantrell-ball/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/shantrell-ball/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/shantrell-ball/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/shantrell-ball/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/sierra-jones/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/sierra-jones/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/sierra-jones/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/sierra-jones/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/stephanie-rivera/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/stephanie-rivera/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/stephanie-rivera/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/stephanie-rivera/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/tasha-hijara/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/tasha-hijara/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/tasha-hijara/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/tasha-hijara/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/team-members/timothy-melson/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/timothy-melson/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/timothy-melson/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/timothy-melson/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/terminos-de-servicio/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/terms-of-service/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/terminos-de-servicio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/terms-of-service/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/testimonios/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/testimonials/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/testimonios/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/testimonials/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/es/valores-fundamentales/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/core-values/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/valores-fundamentales/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/core-values/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/lyft-accident/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/lyft-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-lyft/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/lyft-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/medical-malpractice/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/medical-malpractice/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/negligencia-medica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/medical-malpractice/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/motorcycle-accident/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/motorcycle-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-motocicleta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/motorcycle-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/newsletter/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/newsletter/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/boletin/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/newsletter/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/personal-injury/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/personal-injury/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/lesiones-personales/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/personal-injury/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/practice-areas/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/practice-areas/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/areas-de-practica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/practice-areas/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/privacy-policy/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/privacy-policy/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/politica-de-privacidad/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/privacy-policy/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/resources/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/resources/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/recursos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/resources/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/results/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/results/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/resultados/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/results/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/reviews/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/reviews/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/resenas/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/reviews/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/slip-and-fall/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/slip-and-fall/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/resbalon-y-caida/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/slip-and-fall/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/nuestro-equipo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/adriana-melgarejo/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/adriana-melgarejo/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/adriana-melgarejo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/adriana-melgarejo/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/ahmad-choudhary/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/ahmad-choudhary/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/ahmad-choudhary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/ahmad-choudhary/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/alvaro-vanegas/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/alvaro-vanegas/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/alvaro-vanegas/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/alvaro-vanegas/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/azima-mohamed/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/azima-mohamed/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/azima-mohamed/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/azima-mohamed/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/basher-hassan/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/basher-hassan/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/basher-hassan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/basher-hassan/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/betty-mendez/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/betty-mendez/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/betty-mendez/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/betty-mendez/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/carley-richards/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/carley-richards/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/carley-richards/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/carley-richards/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/christina-dixon/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/christina-dixon/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/christina-dixon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/christina-dixon/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/david-price/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/david-price/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/david-price/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/david-price/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/deanna-marquez/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/deanna-marquez/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/deanna-marquez/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/deanna-marquez/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/devin-spiegelhalter/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/devin-spiegelhalter/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/devin-spiegelhalter/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/devin-spiegelhalter/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/edgard-manzanares/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/edgard-manzanares/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/edgard-manzanares/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/edgard-manzanares/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/elizabeth-chavarria/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/elizabeth-chavarria/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/elizabeth-chavarria/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/elizabeth-chavarria/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/ella-batilona/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/ella-batilona/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/ella-batilona/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/ella-batilona/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/gay-hartley/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/gay-hartley/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/gay-hartley/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/gay-hartley/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/genesis-resendiz/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/genesis-resendiz/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/genesis-resendiz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/genesis-resendiz/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/ibrahim-awad/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/ibrahim-awad/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/ibrahim-awad/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/ibrahim-awad/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/isabel-welch/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/isabel-welch/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/isabel-welch/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/isabel-welch/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/jocelyn-suarez/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/jocelyn-suarez/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/jocelyn-suarez/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/jocelyn-suarez/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/john-jabes-salva/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/john-jabes-salva/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/john-jabes-salva/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/john-jabes-salva/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/leland-bridges/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/leland-bridges/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/leland-bridges/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/leland-bridges/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/marion-day/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/marion-day/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/marion-day/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/marion-day/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/mehar-hassan/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/mehar-hassan/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/mehar-hassan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/mehar-hassan/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/mohamed/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/mohamed/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/mohamed/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/mohamed/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/sabrina-portuondo/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/sabrina-portuondo/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/sabrina-portuondo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/sabrina-portuondo/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/sandra-guzman/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/sandra-guzman/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/sandra-guzman/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/sandra-guzman/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/selvin-navarro/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/selvin-navarro/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/selvin-navarro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/selvin-navarro/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/shantrell-ball/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/shantrell-ball/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/shantrell-ball/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/shantrell-ball/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/sierra-jones/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/sierra-jones/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/sierra-jones/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/sierra-jones/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/stephanie-rivera/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/stephanie-rivera/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/stephanie-rivera/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/stephanie-rivera/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/tasha-hijara/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/tasha-hijara/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/tasha-hijara/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/tasha-hijara/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/team-members/timothy-melson/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/timothy-melson/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/team-members/timothy-melson/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/timothy-melson/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/terms-of-service/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/terms-of-service/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/terminos-de-servicio/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/terms-of-service/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/testimonials/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/testimonials/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/testimonios/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/testimonials/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/truck-accident/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/truck-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-camion/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/truck-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/uber-accident/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/uber-accident/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/accidente-de-uber/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/uber-accident/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/video-library/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/video-library/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/biblioteca-de-videos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/video-library/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/why-choose-us/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/why-choose-us/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/por-que-elegirnos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/why-choose-us/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theawadlawfirm.com/wrongful-death/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/wrongful-death/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/muerte-injusta/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/wrongful-death/" />
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

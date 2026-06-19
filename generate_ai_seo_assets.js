@@ -439,9 +439,9 @@ ${JSON.stringify(facts, null, 2)}
 `;
 }
 
-for (const [file, config] of Object.entries(pages)) {
-  enhancePage(file, config);
-}
+// Keep the HTML head standards-based. The machine-readable assets below are
+// generated separately; nonstandard ai:* and citation_* meta tags are not
+// injected into public pages.
 
 const facts = buildFacts();
 write('ai-site-facts.json', `${JSON.stringify(facts, null, 2)}\n`);
