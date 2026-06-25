@@ -1164,4 +1164,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://theawadlawfirm.com/fourth-of-july-driving-safety-georgia/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/fourth-of-july-driving-safety-georgia/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/seguridad-vial-cuatro-de-julio-georgia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/fourth-of-july-driving-safety-georgia/" />
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theawadlawfirm.com/es/seguridad-vial-cuatro-de-julio-georgia/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/fourth-of-july-driving-safety-georgia/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/seguridad-vial-cuatro-de-julio-georgia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/fourth-of-july-driving-safety-georgia/" />
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

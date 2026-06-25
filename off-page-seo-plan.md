@@ -2,14 +2,14 @@
 
 This file is the backlink, citation, and authority-building checklist for The Awad Law Firm. It is intentionally practical so the team can execute it without changing website code.
 
-Last updated: 2026-06-01
+Last updated: 2026-06-22
 
 ## Today's Off-Page Priorities
 
-- Push consistent NAP everywhere: The Awad Law Firm, (706) 388-3784, Marietta and Dalton offices, https://theawadlawfirm.com/.
+- Push consistent NAP everywhere: The Awad Law Firm, (706) 890-0000, Marietta and Dalton offices, https://theawadlawfirm.com/.
 - Submit the refreshed guide URLs from `llms.txt` and `sitemap.xml` to Google Search Console and Bing Webmaster Tools.
 - Use the accident guides as linkable assets for local safety, school, community, and legal-resource outreach.
-- Publish one Google Business Profile update pointing to https://theawadlawfirm.com/edu-guide-car-accident/.
+- Publish the prepared Google Business Profile update from `seo-daily/2026-06-22.md`, pointing to the new July 4 driving-safety guide.
 - Request new client reviews using the review prompt below, with no incentive or compensation.
 
 ## Priority 1: Local Legal Citations
@@ -17,7 +17,7 @@ Last updated: 2026-06-01
 Use the exact same NAP everywhere:
 
 - Business name: The Awad Law Firm
-- Phone: (706) 388-3784
+- Phone: (706) 890-0000
 - Marietta office: 4076 Ebenezer Rd., Marietta, GA 30066
 - Dalton office: 210 North Glenwood Ave., Dalton, GA 30721
 - Website: https://theawadlawfirm.com/
@@ -45,6 +45,7 @@ Promote these pages because they are useful enough to earn links:
 - https://theawadlawfirm.com/edu-guide-car-accident/
 - https://theawadlawfirm.com/average-car-accident-settlement-georgia/
 - https://theawadlawfirm.com/distracted-driver-accident-georgia/
+- https://theawadlawfirm.com/fourth-of-july-driving-safety-georgia/
 - https://theawadlawfirm.com/edu-guide-statute-of-limitations/
 - https://theawadlawfirm.com/community/
 
