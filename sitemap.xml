@@ -1182,4 +1182,22 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://theawadlawfirm.com/report-car-accident-georgia/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/report-car-accident-georgia/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/reportar-accidente-auto-georgia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/report-car-accident-georgia/" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theawadlawfirm.com/es/reportar-accidente-auto-georgia/</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/report-car-accident-georgia/" />
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/reportar-accidente-auto-georgia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/report-car-accident-georgia/" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
