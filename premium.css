@@ -12438,12 +12438,12 @@ body.home-page .cs-section[style*="padding: 0"] {
 body.home-page a.premium-video-note {
   display: block !important;
   text-decoration: none !important;
-  max-width: 440px !important;
+  max-width: 360px !important;
   margin-left: auto !important;
-  background: rgba(4, 16, 32, 0.45) !important;
-  border: 1px solid rgba(230, 0, 0, 0.25) !important;
-  border-radius: 24px !important;
-  padding: 20px 24px !important;
+  background: rgba(4, 16, 32, 0.74) !important;
+  border: 1px solid rgba(230, 0, 0, 0.38) !important;
+  border-radius: 20px !important;
+  padding: 14px 18px !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(230, 0, 0, 0.1) !important;
@@ -12457,15 +12457,15 @@ body.home-page a.premium-video-note {
 body.home-page .premium-video-card-content {
   display: flex !important;
   align-items: center !important;
-  gap: 20px !important;
+  gap: 16px !important;
   text-align: left !important;
 }
 
 /* Play button adjustment inside the card */
 body.home-page a.premium-video-note .premium-play-dot {
-  width: 72px !important; /* Elegant size to sit comfortably inside the side-by-side flex card */
-  height: 72px !important;
-  font-size: 22px !important;
+  width: 54px !important; /* Elegant size to sit comfortably inside the side-by-side flex card */
+  height: 54px !important;
+  font-size: 17px !important;
   margin-bottom: 0 !important; /* Reset default vertical bottom margin */
   display: flex !important;
   justify-content: center !important;
@@ -12484,36 +12484,40 @@ body.home-page a.premium-video-note .premium-play-dot {
 body.home-page .premium-video-right {
   display: flex !important;
   flex-direction: column !important;
-  gap: 3px !important;
+  gap: 5px !important;
+  min-width: 0 !important;
 }
 
 /* TEDx gold luxury kicker style */
 body.home-page .premium-video-kicker {
-  font-size: 11px !important;
+  font-size: 9.5px !important;
   text-transform: uppercase !important;
   font-weight: 800 !important;
   letter-spacing: 0.15em !important;
   color: #c6a15b !important; /* Brand gold */
   transition: color 0.3s ease !important;
+  white-space: nowrap !important;
 }
 
 /* Title text typography */
 body.home-page .premium-video-title {
-  font-size: 21px !important;
+  font-size: 18px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 !important;
   line-height: 1.25 !important;
   transition: all 0.3s ease !important;
   letter-spacing: -0.01em !important;
+  white-space: nowrap !important;
 }
 
 /* Speaker credits subtext */
 body.home-page .premium-video-speaker {
-  font-size: 14px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 11.5px !important;
+  color: rgba(255, 255, 255, 0.82) !important;
   font-weight: 500 !important;
   transition: color 0.3s ease !important;
+  white-space: nowrap !important;
 }
 
 /* Card Hover Interactions */
@@ -15187,5 +15191,127 @@ body.home-page .cp-form-label {
 .bio-contact-link:hover {
   color: #6da6e3 !important; /* brand-primary */
   text-decoration: none !important;
+}
+
+body.home-page .premium-hero-stat-desktop {
+  display: none !important;
+}
+
+/* Homepage hero visual alignment per client markup */
+@media (min-width: 901px) {
+  body.home-page .premium-hero-inner {
+    position: relative !important;
+    width: min(1500px, calc(100% - 72px)) !important;
+    grid-template-columns: minmax(0, 610px) minmax(430px, 560px) !important;
+    gap: clamp(260px, 18vw, 380px) !important;
+  }
+
+  body.home-page .premium-hero-copy {
+    position: static !important;
+    z-index: 5 !important;
+    padding-top: clamp(68px, 9vh, 110px) !important;
+  }
+
+  body.home-page .premium-hero-copy h1 {
+    margin-top: clamp(128px, 14vh, 164px) !important;
+  }
+
+  body.home-page .premium-hero-stat-mobile {
+    display: none !important;
+  }
+
+  body.home-page .premium-hero-side > .premium-hero-stat-desktop {
+    display: block !important;
+    position: absolute !important;
+    right: 0 !important;
+    bottom: clamp(84px, 12vh, 132px) !important;
+    width: 315px !important;
+    margin-top: 0 !important;
+    transform: none !important;
+    z-index: 11 !important;
+  }
+
+  body.home-page .premium-hero-bg img {
+    left: 51.5% !important;
+    width: min(620px, 36vw) !important;
+    transform: translateX(-10%) !important;
+  }
+
+  body.home-page .premium-hero-side {
+    position: static !important;
+    min-height: calc(100vh - 78px) !important;
+    justify-content: flex-start !important;
+    padding-top: clamp(120px, 15vh, 165px) !important;
+  }
+
+  body.home-page .premium-google-reviews-card {
+    position: absolute !important;
+    top: clamp(205px, 24vh, 242px) !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 292px !important;
+    margin: 0 !important;
+    z-index: 12 !important;
+  }
+
+  body.home-page .premium-side-tags {
+    position: absolute !important;
+    top: clamp(245px, 34vh, 320px) !important;
+    right: 0 !important;
+    width: 360px !important;
+    margin: 0 !important;
+    z-index: 7 !important;
+  }
+
+  body.home-page .premium-video-note {
+    position: absolute !important;
+    right: 0 !important;
+    top: clamp(-92px, -8vh, -62px) !important;
+    bottom: auto !important;
+    width: min(360px, 100%) !important;
+    max-width: 360px !important;
+    margin: 0 !important;
+    z-index: 12 !important;
+  }
+
+  body.home-page .premium-watch-now-badge {
+    top: -42px !important;
+    left: 84px !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1220px) {
+  body.home-page .premium-hero-inner {
+    width: min(1180px, calc(100% - 48px)) !important;
+    grid-template-columns: minmax(0, 520px) minmax(360px, 420px) !important;
+    gap: clamp(80px, 10vw, 130px) !important;
+  }
+
+  body.home-page .premium-hero-bg img {
+    left: 52% !important;
+    width: min(500px, 42vw) !important;
+    opacity: 0.62 !important;
+  }
+
+  body.home-page .premium-google-reviews-card {
+    top: 190px !important;
+  }
+
+  body.home-page .premium-hero-side > .premium-hero-stat-desktop {
+    right: 0 !important;
+    bottom: 108px !important;
+    width: 300px !important;
+  }
+
+  body.home-page .premium-side-tags {
+    top: 248px !important;
+    width: 330px !important;
+  }
+
+  body.home-page .premium-video-note {
+    top: -54px !important;
+    right: 0 !important;
+    width: 330px !important;
+  }
 }
 
