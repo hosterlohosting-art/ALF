@@ -478,13 +478,13 @@ function main() {
         // Specific overrides
         if (slug === "gay-hartley") role = "Director of Operations";
         else if (slug === "marion-day") role = "Director of Client Excellence";
-        else if (slug === "shantrell-ball") role = "Insurance Accountability Manager";
+        else if (slug === "shantrell-ball") role = "Director of Insurance Accountability";
         else if (slug === "leland-bridges") role = "Chief Support Officer";
         else if (slug === "devin-spiegelhalter") role = "Client Care Assistant Manager";
         else if (slug === "sabrina-portuondo") role = "Client Intake Manager";
         else if (slug === "deanna-marquez") role = "Evidence Retrieval Specialist";
         else if (slug === "timothy-melson") role = "Evidence Retrieval Specialist";
-        else if (slug === "christina-dixon") role = "Payroll and Benefits Specialist";
+        else if (slug === "christina-dixon") role = "Exec. Assistant to Ibrahim J Awad, Esq.";
         else if (slug === "carley-richards") role = "Administrative Assistant";
         else if (slug === "genesis-resendiz") role = "Client Care Specialist";
         else if (slug === "isabel-welch") role = "Client Care Specialist";
