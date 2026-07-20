@@ -1118,7 +1118,14 @@ if (document.readyState === 'loading') {
           var emailData = {};
           var formData = new FormData(form);
           formData.forEach(function (value, key) {
-            if (key === 'oid' || key === 'retURL' || key === 'website_url_hp' || key === 'description') return;
+            if (
+              key === 'oid' ||
+              key === 'retURL' ||
+              key === 'website_url_hp' ||
+              key === 'description' ||
+              key === 'g-recaptcha-response' ||
+              key === 'h-captcha-response'
+            ) return;
             emailData[key] = value;
           });
 
