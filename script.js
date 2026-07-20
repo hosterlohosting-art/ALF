@@ -935,7 +935,7 @@ if (document.readyState === 'loading') {
 
       if (isCaseForm) {
         // Upgrade properties dynamically to submit to Salesforce Web-to-Lead
-        form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+        form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DF00000008J4B';
         form.method = 'POST';
         form.target = 'salesforce_submissions';
 
@@ -1158,10 +1158,6 @@ if (document.readyState === 'loading') {
           var caseSelect = form.querySelector('[name="case_type"]') || form.querySelector('[name="practiceArea"]');
           if (caseSelect && caseSelect.value) {
             descVal += 'Practice/Case Area: ' + caseSelect.value + '\n';
-          }
-          var addressInput = form.querySelector('[name="address"]');
-          if (addressInput && addressInput.value) {
-            descVal += 'Address: ' + addressInput.value + '\n';
           }
           var msgTextObj = form.querySelector('[name="message"]');
           if (msgTextObj && msgTextObj.value) {

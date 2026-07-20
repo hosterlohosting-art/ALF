@@ -391,9 +391,10 @@ A2 2 0 0 1 22 16.92z"></path>
                             <p class="text-brand-muted text-sm">Fill out the form below and we'll reach out to you shortly.</p>
                         </div>
 
-                        <form class="space-y-6" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" target="salesforce_submissions">
+                        <form class="space-y-6" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&amp;orgId=00DF00000008J4B" method="POST" target="salesforce_submissions">
                             <input type="hidden" name="oid" value="00DF00000008J4B">
-                            <input type="hidden" name="retURL" value="https://theawadlawfirm.com/">
+                            <input type="hidden" name="retURL" value="https://theawadlawfirm.com/contact/">
+                            <input type="hidden" name="lead_source" value="Web">
                             <input type="hidden" name="description" value="">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
@@ -418,8 +419,23 @@ A2 2 0 0 1 22 16.92z"></path>
                             </div>
 
                             <div>
-                                <label for="contact-address" class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Address</label>
-                                <input id="contact-address" type="text" name="address" autocomplete="street-address" placeholder="Street address, city, state, ZIP" class="w-full bg-white border border-brand-border rounded-xl px-5 py-3.5 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/20 transition-all shadow-sm text-sm">
+                                <label for="contact-street" class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">Street Address</label>
+                                <input id="contact-street" type="text" name="street" autocomplete="street-address" placeholder="Street address" class="w-full bg-white border border-brand-border rounded-xl px-5 py-3.5 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/20 transition-all shadow-sm text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <label for="contact-city" class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">City</label>
+                                    <input id="contact-city" type="text" name="city" autocomplete="address-level2" placeholder="City" class="w-full bg-white border border-brand-border rounded-xl px-5 py-3.5 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/20 transition-all shadow-sm text-sm">
+                                </div>
+                                <div>
+                                    <label for="contact-state" class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">State</label>
+                                    <input id="contact-state" type="text" name="state" autocomplete="address-level1" placeholder="State" maxlength="80" class="w-full bg-white border border-brand-border rounded-xl px-5 py-3.5 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/20 transition-all shadow-sm text-sm">
+                                </div>
+                                <div>
+                                    <label for="contact-zip" class="block text-[10px] font-bold tracking-widest text-brand-muted uppercase mb-2">ZIP Code</label>
+                                    <input id="contact-zip" type="text" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder="ZIP Code" maxlength="20" class="w-full bg-white border border-brand-border rounded-xl px-5 py-3.5 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/20 transition-all shadow-sm text-sm">
+                                </div>
                             </div>
 
                             <div>
