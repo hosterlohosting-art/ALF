@@ -1159,6 +1159,10 @@ if (document.readyState === 'loading') {
           if (caseSelect && caseSelect.value) {
             descVal += 'Practice/Case Area: ' + caseSelect.value + '\n';
           }
+          var addressInput = form.querySelector('[name="address"]');
+          if (addressInput && addressInput.value) {
+            descVal += 'Address: ' + addressInput.value + '\n';
+          }
           var msgTextObj = form.querySelector('[name="message"]');
           if (msgTextObj && msgTextObj.value) {
             descVal += 'Message: ' + msgTextObj.value;
