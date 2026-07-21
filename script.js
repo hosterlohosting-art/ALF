@@ -1005,7 +1005,7 @@ if (document.readyState === 'loading') {
         form.onsubmit = null;
       }
 
-      form.addEventListener('submit', function (event) {
+      form.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         var isValid = true;
@@ -1113,8 +1113,10 @@ if (document.readyState === 'loading') {
           });
         }
 
-        // Send email notification to team@theawadlawfirm.com (CC: mehar, leland) using FormSubmit
-        try {
+        // Send the email independently from Salesforce, but wait for FormSubmit's
+        // response so the visitor is never shown a false delivery confirmation.
+        var emailPromise = (async function () {
+          try {
           var emailData = {};
           var formData = new FormData(form);
           formData.forEach(function (value, key) {
@@ -1138,19 +1140,33 @@ if (document.readyState === 'loading') {
           emailData['_cc'] = 'mehar@theawadlawfirm.com,leland@theawadlawfirm.com,selvin@theawadlawfirm.com';
           emailData['Submitted From Page'] = window.location.href;
 
-          fetch('https://formsubmit.co/ajax/team@theawadlawfirm.com', {
+          var emailResponse = await fetch('https://formsubmit.co/ajax/team@theawadlawfirm.com', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify(emailData)
-          }).catch(function (err) {
-            console.error('Email notification dispatch failed:', err);
+            body: JSON.stringify(emailData),
+            keepalive: true
           });
+
+          var emailResult = null;
+          try {
+            emailResult = await emailResponse.json();
+          } catch (parseError) {
+            console.warn('FormSubmit returned a non-JSON response.', parseError);
+          }
+
+          var emailDelivered = emailResponse.ok && (!emailResult || emailResult.success !== false);
+          if (!emailDelivered) {
+            console.error('FormSubmit rejected the email notification:', emailResponse.status, emailResult);
+          }
+          return emailDelivered;
         } catch (e) {
-          console.error('Error preparing email notification:', e);
+          console.error('Email notification dispatch failed:', e);
+          return false;
         }
+        })();
 
         // Web-to-Lead: Map variables and submit natively to the background iframe
         if (form.getAttribute('target') === 'salesforce_submissions') {
@@ -1182,6 +1198,10 @@ if (document.readyState === 'loading') {
           if (lNameInput) lNameInput.name = 'lastName';
         }
 
+        // Salesforce is already submitted at this point; only the visitor-facing
+        // result waits for the separate email notification response.
+        var emailDelivered = await emailPromise;
+
         setTimeout(function () {
           submitBtn.classList.remove('submitting-state');
           form.reset();
@@ -1198,6 +1218,12 @@ if (document.readyState === 'loading') {
               'INSIGHTS SUBSCRIBED',
               'Welcome! You are now subscribed to our premium legal publication.',
               'success'
+            );
+          } else if (!emailDelivered) {
+            showToast(
+              'SUBMISSION RECEIVED',
+              'Your request was sent to our intake system, but the email notification could not be confirmed.',
+              'warning'
             );
           } else if (form.classList.contains('premium-hero-form') || form.classList.contains('space-y-6') || form.classList.contains('contact-form')) {
             showToast(
