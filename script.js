@@ -1146,8 +1146,7 @@ if (document.readyState === 'loading') {
               'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify(emailData),
-            keepalive: true
+            body: JSON.stringify(emailData)
           });
 
           var emailResult = null;
@@ -1200,7 +1199,15 @@ if (document.readyState === 'loading') {
 
         // Salesforce is already submitted at this point; only the visitor-facing
         // result waits for the separate email notification response.
-        var emailDelivered = await emailPromise;
+        var emailDelivered = await Promise.race([
+          emailPromise,
+          new Promise(function (resolve) {
+            setTimeout(function () {
+              console.warn('FormSubmit response timed out; Salesforce submission already completed.');
+              resolve(false);
+            }, 8000);
+          })
+        ]);
 
         setTimeout(function () {
           submitBtn.classList.remove('submitting-state');
