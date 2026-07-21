@@ -1113,10 +1113,11 @@ if (document.readyState === 'loading') {
           });
         }
 
-        // Send the email independently from Salesforce, but wait for FormSubmit's
-        // response so the visitor is never shown a false delivery confirmation.
-        var emailPromise = (async function () {
-          try {
+        // Send email through FormSubmit's standard HTML form endpoint. A native
+        // background POST avoids AJAX/CORS timeouts while Salesforce submits
+        // independently to its own iframe.
+        var emailDelivered = true;
+        try {
           var emailData = {};
           var formData = new FormData(form);
           formData.forEach(function (value, key) {
@@ -1138,34 +1139,43 @@ if (document.readyState === 'loading') {
           var fullName = (clientName + ' ' + clientLastName).trim();
           emailData['_subject'] = 'New Website Lead: [' + formType + ']' + (fullName ? ' - ' + fullName : '');
           emailData['_cc'] = 'mehar@theawadlawfirm.com,leland@theawadlawfirm.com,selvin@theawadlawfirm.com';
+          emailData['_captcha'] = 'false';
+          emailData['_template'] = 'table';
+          emailData['_url'] = window.location.href;
           emailData['Submitted From Page'] = window.location.href;
 
-          var emailResponse = await fetch('https://formsubmit.co/ajax/team@theawadlawfirm.com', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify(emailData)
+          var emailFrameName = 'formsubmit_email_' + Date.now();
+          var emailFrame = document.createElement('iframe');
+          emailFrame.name = emailFrameName;
+          emailFrame.style.display = 'none';
+          emailFrame.setAttribute('aria-hidden', 'true');
+
+          var emailForm = document.createElement('form');
+          emailForm.action = 'https://formsubmit.co/team@theawadlawfirm.com';
+          emailForm.method = 'POST';
+          emailForm.target = emailFrameName;
+          emailForm.style.display = 'none';
+
+          Object.keys(emailData).forEach(function (key) {
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = emailData[key];
+            emailForm.appendChild(input);
           });
 
-          var emailResult = null;
-          try {
-            emailResult = await emailResponse.json();
-          } catch (parseError) {
-            console.warn('FormSubmit returned a non-JSON response.', parseError);
-          }
+          document.body.appendChild(emailFrame);
+          document.body.appendChild(emailForm);
+          emailForm.submit();
 
-          var emailDelivered = emailResponse.ok && (!emailResult || emailResult.success !== false);
-          if (!emailDelivered) {
-            console.error('FormSubmit rejected the email notification:', emailResponse.status, emailResult);
-          }
-          return emailDelivered;
+          setTimeout(function () {
+            emailForm.remove();
+            emailFrame.remove();
+          }, 30000);
         } catch (e) {
+          emailDelivered = false;
           console.error('Email notification dispatch failed:', e);
-          return false;
         }
-        })();
 
         // Web-to-Lead: Map variables and submit natively to the background iframe
         if (form.getAttribute('target') === 'salesforce_submissions') {
@@ -1196,18 +1206,6 @@ if (document.readyState === 'loading') {
           if (fNameInput) fNameInput.name = 'firstName';
           if (lNameInput) lNameInput.name = 'lastName';
         }
-
-        // Salesforce is already submitted at this point; only the visitor-facing
-        // result waits for the separate email notification response.
-        var emailDelivered = await Promise.race([
-          emailPromise,
-          new Promise(function (resolve) {
-            setTimeout(function () {
-              console.warn('FormSubmit response timed out; Salesforce submission already completed.');
-              resolve(false);
-            }, 8000);
-          })
-        ]);
 
         setTimeout(function () {
           submitBtn.classList.remove('submitting-state');
