@@ -927,6 +927,21 @@ if (document.readyState === 'loading') {
         return;
       }
 
+      var isNewsletterForm = form.classList.contains('newsletter-form');
+
+      // Keep newsletter consent consistent on every English and Spanish page.
+      if (isNewsletterForm && !form.querySelector('[name="newsletter_consent"]')) {
+        var isSpanishNewsletter = document.documentElement.lang === 'es' || window.location.pathname.indexOf('/es/') === 0;
+        var consentLabel = document.createElement('label');
+        consentLabel.className = 'newsletter-consent';
+        consentLabel.style.cssText = 'display:flex;align-items:flex-start;gap:8px;width:100%;margin-top:10px;font-size:12px;line-height:1.4;color:inherit;';
+        consentLabel.innerHTML = '<input type="checkbox" name="newsletter_consent" required style="margin-top:2px;accent-color:#c9a227;">' +
+          '<span>' + (isSpanishNewsletter
+            ? 'Acepto recibir boletines y actualizaciones de Awad Law Firm. Puedo cancelar mi suscripción en cualquier momento.'
+            : 'I agree to receive newsletters and updates from Awad Law Firm. I can unsubscribe at any time.') + '</span>';
+        form.appendChild(consentLabel);
+      }
+
       // Check if this is a case evaluation form
       var isCaseForm =
         form.classList.contains('premium-hero-form') ||
@@ -1029,6 +1044,57 @@ if (document.readyState === 'loading') {
 
         var submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
         if (!submitBtn || submitBtn.classList.contains('submitting-state')) return;
+
+        if (isNewsletterForm) {
+          var newsletterEmail = form.querySelector('input[type="email"]');
+          var newsletterConsent = form.querySelector('[name="newsletter_consent"]');
+          var newsletterHoneypot = form.querySelector('[name="website_url_hp"]');
+
+          submitBtn.classList.add('submitting-state');
+          submitBtn.disabled = true;
+
+          try {
+            var subscriptionResponse = await fetch('/api/newsletter/subscribe', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify({
+                email: newsletterEmail ? newsletterEmail.value.trim() : '',
+                consent: Boolean(newsletterConsent && newsletterConsent.checked),
+                website: newsletterHoneypot ? newsletterHoneypot.value : '',
+                language: document.documentElement.lang || 'en',
+                source: window.location.pathname
+              })
+            });
+            var subscriptionResult = await subscriptionResponse.json().catch(function () { return {}; });
+            if (!subscriptionResponse.ok) throw new Error(subscriptionResult.message || 'Subscription failed');
+
+            window.AwadTrackConversion('newsletter_subscription', {
+              form_name: 'Newsletter Signup',
+              form_category: 'newsletter'
+            });
+            form.reset();
+            showToast(
+              document.documentElement.lang === 'es' ? 'SUSCRIPCIÓN CONFIRMADA' : 'SUBSCRIPTION CONFIRMED',
+              subscriptionResult.message || (document.documentElement.lang === 'es'
+                ? 'Gracias. Ya estás en nuestra lista de correo.'
+                : 'Thank you. You are now on our mailing list.'),
+              'success'
+            );
+          } catch (subscriptionError) {
+            console.error('Newsletter subscription failed:', subscriptionError);
+            showToast(
+              document.documentElement.lang === 'es' ? 'NO SE PUDO SUSCRIBIR' : 'SUBSCRIPTION FAILED',
+              document.documentElement.lang === 'es'
+                ? 'No pudimos guardar tu correo. Inténtalo de nuevo en un momento.'
+                : 'We could not save your email. Please try again in a moment.',
+              'warning'
+            );
+          } finally {
+            submitBtn.classList.remove('submitting-state');
+            submitBtn.disabled = false;
+          }
+          return;
+        }
 
         // hCaptcha client-side validation check
         if (isCaseForm && typeof hcaptcha !== 'undefined') {

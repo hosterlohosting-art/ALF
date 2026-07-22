@@ -1,0 +1,7 @@
+.git
+.agents
+.codex
+*.log
+*.psd
+node_modules
+scratch*
