@@ -1113,9 +1113,9 @@ if (document.readyState === 'loading') {
           });
         }
 
-        // Send email through FormSubmit's standard HTML form endpoint. A native
-        // background POST avoids AJAX/CORS timeouts while Salesforce submits
-        // independently to its own iframe.
+        // Send the email independently through FormSubmit's proven AJAX route.
+        // Do not await this request: Salesforce submits immediately and the UI
+        // must never remain stuck if FormSubmit is slow to respond.
         var emailDelivered = true;
         try {
           var emailData = {};
@@ -1139,39 +1139,22 @@ if (document.readyState === 'loading') {
           var fullName = (clientName + ' ' + clientLastName).trim();
           emailData['_subject'] = 'New Website Lead: [' + formType + ']' + (fullName ? ' - ' + fullName : '');
           emailData['_cc'] = 'mehar@theawadlawfirm.com,leland@theawadlawfirm.com,selvin@theawadlawfirm.com';
-          emailData['_captcha'] = 'false';
-          emailData['_template'] = 'table';
-          emailData['_url'] = window.location.href;
           emailData['Submitted From Page'] = window.location.href;
 
-          var emailFrameName = 'formsubmit_email_' + Date.now();
-          var emailFrame = document.createElement('iframe');
-          emailFrame.name = emailFrameName;
-          emailFrame.style.display = 'none';
-          emailFrame.setAttribute('aria-hidden', 'true');
-
-          var emailForm = document.createElement('form');
-          emailForm.action = 'https://formsubmit.co/team@theawadlawfirm.com';
-          emailForm.method = 'POST';
-          emailForm.target = emailFrameName;
-          emailForm.style.display = 'none';
-
-          Object.keys(emailData).forEach(function (key) {
-            var input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = emailData[key];
-            emailForm.appendChild(input);
+          fetch('https://formsubmit.co/ajax/team@theawadlawfirm.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(emailData)
+          }).then(function (response) {
+            if (!response.ok) {
+              console.error('FormSubmit rejected the email notification:', response.status);
+            }
+          }).catch(function (error) {
+            console.error('Email notification dispatch failed:', error);
           });
-
-          document.body.appendChild(emailFrame);
-          document.body.appendChild(emailForm);
-          emailForm.submit();
-
-          setTimeout(function () {
-            emailForm.remove();
-            emailFrame.remove();
-          }, 30000);
         } catch (e) {
           emailDelivered = false;
           console.error('Email notification dispatch failed:', e);
