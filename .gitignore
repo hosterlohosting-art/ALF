@@ -10,3 +10,4 @@ Thumbs.db
 # Temporary/Scratch files
 scratch_*
 *.tmp
+.data/
