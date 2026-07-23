@@ -411,6 +411,31 @@ setActiveButton(currentIndex, practiceButtons);
   initScrollAnimation();
 })();
 
+// Keep the Events destination available in every duplicated desktop/mobile
+// navigation without requiring hundreds of page-specific header edits.
+(function () {
+  function initEventsNavigation() {
+    document.querySelectorAll('.navbar nav').forEach(function (nav) {
+      if (nav.querySelector('a[href="/events/"]')) return;
+      var contactLink = nav.querySelector('a[href="/contact/"]');
+      var eventsLink = document.createElement('a');
+      eventsLink.href = '/events/';
+      eventsLink.textContent = document.documentElement.lang === 'es' ? 'Eventos' : 'Events';
+      if (window.location.pathname === '/events/' || window.location.pathname === '/events') {
+        eventsLink.className = 'active';
+      }
+      if (contactLink) nav.insertBefore(eventsLink, contactLink);
+      else nav.appendChild(eventsLink);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEventsNavigation);
+  } else {
+    initEventsNavigation();
+  }
+})();
+
 /* Floating call widget viewport anchor */
 (function () {
   'use strict';
