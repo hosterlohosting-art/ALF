@@ -8,6 +8,12 @@ const root = __dirname;
 const port = Number(process.env.PORT || 3000);
 const brevoApiKey = process.env.BREVO_API_KEY || '';
 const brevoListId = Number(process.env.BREVO_LIST_ID || 5);
+const allowedOrigins = new Set(
+  (process.env.ALLOWED_ORIGINS || 'https://theawadlawfirm.com,https://www.theawadlawfirm.com')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean)
+);
 const rateLimits = new Map();
 
 const mimeTypes = {
@@ -23,6 +29,18 @@ const mimeTypes = {
 function sendJson(res, status, payload) {
   res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
   res.end(JSON.stringify(payload));
+}
+
+function applyCors(req, res) {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+  if (!allowedOrigins.has(origin)) return false;
+  res.setHeader('Access-Control-Allow-Origin', origin);
+  res.setHeader('Vary', 'Origin');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
+  res.setHeader('Access-Control-Max-Age', '86400');
+  return true;
 }
 
 function clientIp(req) {
@@ -124,6 +142,11 @@ const server = http.createServer(async (req, res) => {
   const pathname = new URL(req.url, 'http://localhost').pathname;
   if (pathname === '/health') return sendJson(res, 200, { status: 'ok', newsletterConfigured: Boolean(brevoApiKey) });
   if (pathname === '/api/newsletter/subscribe') {
+    if (!applyCors(req, res)) return sendJson(res, 403, { message: 'Origin not allowed.' });
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204);
+      return res.end();
+    }
     if (req.method !== 'POST') return sendJson(res, 405, { message: 'Method not allowed.' });
     return subscribe(req, res);
   }
