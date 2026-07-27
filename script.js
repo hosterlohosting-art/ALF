@@ -902,6 +902,84 @@ if (document.readyState === 'loading') {
   function initGlobalForms() {
     var forms = document.querySelectorAll('form');
     console.log('Premium Forms System: Intercepting ' + forms.length + ' forms');
+    var phoneInstances = new WeakMap();
+    var phoneInputs = document.querySelectorAll('form input[type="tel"]');
+    var phoneToolsReady = Promise.resolve();
+
+    if (phoneInputs.length) {
+      phoneToolsReady = new Promise(function (resolve) {
+        function initialisePhoneInputs() {
+          var pending = [];
+          phoneInputs.forEach(function (input, phoneIndex) {
+            if (phoneInstances.has(input)) return;
+            if (!input.id) input.id = 'awad-phone-' + phoneIndex;
+            input.setAttribute('autocomplete', 'tel');
+            input.setAttribute('inputmode', 'tel');
+            input.setAttribute('aria-describedby', input.id + '-validation');
+
+            var validation = document.createElement('p');
+            validation.id = input.id + '-validation';
+            validation.setAttribute('role', 'alert');
+            validation.style.cssText = 'display:none;margin:7px 0 0;color:#b42318;font-size:12px;line-height:1.4;';
+            validation.textContent = 'Enter a complete phone number for the selected country.';
+            input.parentNode.appendChild(validation);
+
+            var instance = window.intlTelInput(input, {
+              initialCountry: 'us',
+              separateDialCode: true,
+              strictMode: true,
+              countryOrder: ['us', 'ca', 'mx', 'gb'],
+              loadUtils: function () {
+                return import('https://cdn.jsdelivr.net/npm/intl-tel-input@29.0.3/build/js/utils.js');
+              }
+            });
+            phoneInstances.set(input, instance);
+            if (instance.promise) pending.push(instance.promise);
+
+            input.addEventListener('input', function () {
+              validation.style.display = 'none';
+              input.removeAttribute('aria-invalid');
+              input.classList.remove('border-red-500');
+            });
+            input.addEventListener('countrychange', function () {
+              validation.style.display = 'none';
+              input.removeAttribute('aria-invalid');
+              input.classList.remove('border-red-500');
+            });
+          });
+          Promise.allSettled(pending).then(resolve);
+        }
+
+        if (!document.querySelector('link[data-awad-phone-css]')) {
+          var phoneCss = document.createElement('link');
+          phoneCss.rel = 'stylesheet';
+          phoneCss.href = 'https://cdn.jsdelivr.net/npm/intl-tel-input@29.0.3/build/css/intlTelInput.css';
+          phoneCss.setAttribute('data-awad-phone-css', 'true');
+          document.head.appendChild(phoneCss);
+          var phoneOverrides = document.createElement('style');
+          phoneOverrides.textContent = '.iti{width:100%}.iti input[type="tel"]{width:100%}.iti__country-container{z-index:3}';
+          document.head.appendChild(phoneOverrides);
+        }
+
+        if (window.intlTelInput) {
+          initialisePhoneInputs();
+        } else {
+          var existingPhoneScript = document.querySelector('script[data-awad-phone-js]');
+          if (existingPhoneScript) {
+            existingPhoneScript.addEventListener('load', initialisePhoneInputs, { once: true });
+            existingPhoneScript.addEventListener('error', resolve, { once: true });
+          } else {
+            var phoneScript = document.createElement('script');
+            phoneScript.src = 'https://cdn.jsdelivr.net/npm/intl-tel-input@29.0.3/build/js/intlTelInput.min.js';
+            phoneScript.async = true;
+            phoneScript.setAttribute('data-awad-phone-js', 'true');
+            phoneScript.addEventListener('load', initialisePhoneInputs, { once: true });
+            phoneScript.addEventListener('error', resolve, { once: true });
+            document.head.appendChild(phoneScript);
+          }
+        }
+      });
+    }
 
     // Create the hidden iframe if any case form exists on the page
     var isAnyCaseForm = false;
@@ -1069,6 +1147,40 @@ if (document.readyState === 'loading') {
 
         var submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
         if (!submitBtn || submitBtn.classList.contains('submitting-state')) return;
+        var normalizedPhone = '';
+
+        if (isCaseForm) {
+          await phoneToolsReady;
+          var phoneInput = form.querySelector('input[type="tel"]');
+          if (phoneInput) {
+            var phoneInstance = phoneInstances.get(phoneInput);
+            var phoneValidation = phoneInput.parentNode.querySelector('[role="alert"]');
+            var phoneIsValid = false;
+
+            if (phoneInstance && typeof phoneInstance.isValidNumberPrecise === 'function') {
+              phoneIsValid = phoneInstance.isValidNumberPrecise();
+              normalizedPhone = phoneInstance.getNumber();
+            } else {
+              var rawPhone = phoneInput.value.trim();
+              var phoneDigits = rawPhone.replace(/\D/g, '');
+              phoneIsValid = /^\+[1-9]\d{7,14}$/.test(rawPhone) || phoneDigits.length === 10;
+              normalizedPhone = /^\+/.test(rawPhone) ? '+' + phoneDigits : (phoneDigits.length === 10 ? '+1' + phoneDigits : '');
+            }
+
+            if (!phoneIsValid || !/^\+[1-9]\d{7,14}$/.test(normalizedPhone)) {
+              phoneInput.setAttribute('aria-invalid', 'true');
+              phoneInput.classList.add('border-red-500');
+              if (phoneValidation) phoneValidation.style.display = 'block';
+              phoneInput.focus();
+              showToast(
+                'VALID PHONE NUMBER REQUIRED',
+                'Select the correct country and enter the complete phone number.',
+                'warning'
+              );
+              return;
+            }
+          }
+        }
 
         if (isNewsletterForm) {
           var newsletterEmail = form.querySelector('input[type="email"]');
@@ -1204,120 +1316,96 @@ if (document.readyState === 'loading') {
           });
         }
 
-        // Send the email independently through FormSubmit's proven AJAX route.
-        // Do not await this request: Salesforce submits immediately and the UI
-        // must never remain stuck if FormSubmit is slow to respond.
-        var emailDelivered = true;
+        var emailDelivered = false;
+        var submissionSucceeded = false;
+        var submissionMessage = '';
+        submitBtn.disabled = true;
+
         try {
-          var emailData = {};
           var formData = new FormData(form);
-          formData.forEach(function (value, key) {
-            if (
-              key === 'oid' ||
-              key === 'retURL' ||
-              key === 'website_url_hp' ||
-              key === 'description' ||
-              key === 'g-recaptcha-response' ||
-              key === 'h-captcha-response'
-            ) return;
-            emailData[key] = value;
-          });
+          function firstFormValue(names) {
+            for (var i = 0; i < names.length; i += 1) {
+              var value = formData.get(names[i]);
+              if (value !== null && String(value).trim()) return String(value).trim();
+            }
+            return '';
+          }
 
-          var formType = window.AwadGetFormType(form);
+          var leadPayload = {
+            firstName: firstFormValue(['firstName', 'first_name']),
+            lastName: firstFormValue(['lastName', 'last_name']),
+            email: firstFormValue(['email']),
+            phone: normalizedPhone,
+            street: firstFormValue(['street']),
+            city: firstFormValue(['city']),
+            state: firstFormValue(['state']),
+            zip: firstFormValue(['zip', 'postalCode']),
+            practiceArea: firstFormValue(['practiceArea', 'case_type']),
+            message: firstFormValue(['message']),
+            formType: window.AwadGetFormType(form),
+            sourcePage: window.location.href,
+            website: firstFormValue(['website_url_hp'])
+          };
 
-          var clientName = emailData['firstName'] || emailData['first_name'] || '';
-          var clientLastName = emailData['lastName'] || emailData['last_name'] || '';
-          var fullName = (clientName + ' ' + clientLastName).trim();
-          emailData['_subject'] = 'New Website Lead: [' + formType + ']' + (fullName ? ' - ' + fullName : '');
-          emailData['_cc'] = 'mehar@theawadlawfirm.com,leland@theawadlawfirm.com,selvin@theawadlawfirm.com';
-          emailData['Submitted From Page'] = window.location.href;
-
-          fetch('https://formsubmit.co/ajax/team@theawadlawfirm.com', {
+          var leadResponse = await fetch('/api/contact/submit', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify(emailData)
-          }).then(function (response) {
-            if (!response.ok) {
-              console.error('FormSubmit rejected the email notification:', response.status);
-            }
-          }).catch(function (error) {
-            console.error('Email notification dispatch failed:', error);
+            body: JSON.stringify(leadPayload)
           });
-        } catch (e) {
-          emailDelivered = false;
-          console.error('Email notification dispatch failed:', e);
-        }
-
-        // Web-to-Lead: Map variables and submit natively to the background iframe
-        if (form.getAttribute('target') === 'salesforce_submissions') {
-          // Temporarily rename fields to standard Web-to-Lead API field names
-          var fNameInput = form.querySelector('[name="firstName"]');
-          if (fNameInput) fNameInput.name = 'first_name';
-
-          var lNameInput = form.querySelector('[name="lastName"]');
-          if (lNameInput) lNameInput.name = 'last_name';
-
-          var descVal = '';
-          var caseSelect = form.querySelector('[name="case_type"]') || form.querySelector('[name="practiceArea"]');
-          if (caseSelect && caseSelect.value) {
-            descVal += 'Practice/Case Area: ' + caseSelect.value + '\n';
-          }
-          var msgTextObj = form.querySelector('[name="message"]');
-          if (msgTextObj && msgTextObj.value) {
-            descVal += 'Message: ' + msgTextObj.value;
-          }
-          var descInput = form.querySelector('[name="description"]');
-          if (descInput) {
-            descInput.value = descVal;
+          var leadResult = await leadResponse.json().catch(function () { return {}; });
+          if (!leadResponse.ok && leadResponse.status !== 202) {
+            throw new Error(leadResult.message || 'Submission failed');
           }
 
-          form.submit();
-
-          // Restore native field names to keep the DOM state clean for future submissions
-          if (fNameInput) fNameInput.name = 'firstName';
-          if (lNameInput) lNameInput.name = 'lastName';
+          submissionSucceeded = true;
+          emailDelivered = leadResult.notificationDelivered !== false;
+          submissionMessage = leadResult.message || '';
+        } catch (submissionError) {
+          console.error('Contact form submission failed:', submissionError);
+          submissionMessage = submissionError.message || 'We could not send your request.';
         }
 
         setTimeout(function () {
           submitBtn.classList.remove('submitting-state');
-          form.reset();
+          submitBtn.disabled = false;
+          if (submissionSucceeded) form.reset();
 
           // Reset hCaptcha if present
-          if (typeof hcaptcha !== 'undefined') {
+          if (submissionSucceeded && typeof hcaptcha !== 'undefined') {
             var captchaContainer = form.querySelector('.h-captcha');
             var widgetId = captchaContainer ? captchaContainer.getAttribute('data-hcaptcha-id') : null;
             if (widgetId) hcaptcha.reset(widgetId);
           }
 
-          if (form.classList.contains('newsletter-form')) {
+          if (!submissionSucceeded) {
             showToast(
-              'INSIGHTS SUBSCRIBED',
-              'Welcome! You are now subscribed to our premium legal publication.',
-              'success'
+              'SUBMISSION NOT SENT',
+              submissionMessage + ' Please call (706) 890-0000 if you need immediate help.',
+              'warning'
             );
           } else if (!emailDelivered) {
             showToast(
               'SUBMISSION RECEIVED',
-              'Your request was sent to our intake system, but the email notification could not be confirmed.',
+              submissionMessage || 'Your request reached our intake system, but the email alert could not be delivered.',
               'warning'
             );
           } else if (form.classList.contains('premium-hero-form') || form.classList.contains('space-y-6') || form.classList.contains('contact-form')) {
             showToast(
               'EVALUATION SUBMITTED SECURELY',
-              'Thank you. An expert attorney will contact you within 15 minutes.',
+              submissionMessage || 'Thank you. An expert attorney will contact you within 15 minutes.',
               'success'
             );
           } else {
             showToast(
               'SUBMISSION RECEIVED',
-              'Thank you. Your request has been successfully and securely transmitted.',
+              submissionMessage || 'Thank you. Your request has been successfully and securely transmitted.',
               'success'
             );
           }
-        }, 1500);
+        }, 500);
       });
     });
   }

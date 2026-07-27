@@ -11,6 +11,15 @@ const dataDir = process.env.DATA_DIR || path.join(root, '.data');
 const subscribersFile = path.join(dataDir, 'subscribers.json');
 const adminPassword = process.env.ADMIN_PASSWORD || '';
 const sessionSecret = process.env.SESSION_SECRET || '';
+const brevoApiKey = process.env.BREVO_API_KEY || '';
+const brevoApiUrl = process.env.BREVO_API_URL || 'https://api.brevo.com/v3/smtp/email';
+const salesforceWebToLeadUrl = process.env.SALESFORCE_WEB_TO_LEAD_URL ||
+  'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DF00000008J4B';
+const contactNotificationEmails = (process.env.CONTACT_NOTIFICATION_EMAILS ||
+  'team@theawadlawfirm.com,mehar@theawadlawfirm.com,leland@theawadlawfirm.com,selvin@theawadlawfirm.com')
+  .split(',')
+  .map((email) => email.trim().toLowerCase())
+  .filter(Boolean);
 const secureCookie = process.env.NODE_ENV === 'production';
 const allowedOrigins = new Set(
   (process.env.ALLOWED_ORIGINS || 'https://theawadlawfirm.com,https://www.theawadlawfirm.com')
@@ -149,6 +158,148 @@ async function subscribe(req, res) {
   }
 }
 
+function cleanText(value, maxLength = 500) {
+  return String(value || '').replace(/\0/g, '').trim().slice(0, maxLength);
+}
+
+function contactField(body, names, maxLength) {
+  for (const name of names) {
+    if (body[name] !== undefined && body[name] !== null) return cleanText(body[name], maxLength);
+  }
+  return '';
+}
+
+function contactEmailHtml(lead) {
+  const rows = [
+    ['Name', `${lead.firstName} ${lead.lastName}`.trim()],
+    ['Email', lead.email],
+    ['Phone', lead.phone],
+    ['Full Address', lead.fullAddress || 'Not provided'],
+    ['Practice Area', lead.practiceArea || 'Not provided'],
+    ['Message', lead.message],
+    ['Form', lead.formType],
+    ['Submitted From', lead.sourcePage],
+    ['Submitted At', lead.submittedAt]
+  ].map(([label, value]) =>
+    `<tr><td style="padding:10px 12px;border-bottom:1px solid #dce3ec;font-weight:700;color:#10233d;vertical-align:top">${escapeHtml(label)}</td><td style="padding:10px 12px;border-bottom:1px solid #dce3ec;color:#33445a;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`
+  ).join('');
+
+  return `<!doctype html><html><body style="margin:0;background:#eef2f6;font-family:Arial,sans-serif;color:#10233d"><div style="max-width:720px;margin:24px auto;background:#fff;border:1px solid #dce3ec"><div style="padding:22px 26px;background:#071529;color:#fff"><h1 style="margin:0;font-size:24px">New Website Lead</h1><p style="margin:7px 0 0;color:#d5b256">${escapeHtml(lead.formType)}</p></div><table role="presentation" style="width:100%;border-collapse:collapse">${rows}</table><div style="padding:18px 26px;background:#f6f8fb;font-size:13px;color:#66768a">Reply to this email to contact ${escapeHtml(lead.firstName || 'the prospective client')} directly.</div></div></body></html>`;
+}
+
+async function sendBrevoLeadNotification(lead) {
+  if (!brevoApiKey) throw new Error('BREVO_API_KEY is not configured');
+  const recipients = contactNotificationEmails.map((email) => ({ email }));
+  if (!recipients.length) throw new Error('No contact notification recipients are configured');
+
+  const response = await fetch(brevoApiUrl, {
+    method: 'POST',
+    headers: {
+      'api-key': brevoApiKey,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      sender: { name: 'Awad Law Firm Website', email: 'team@theawadlawfirm.com' },
+      to: recipients,
+      replyTo: { name: `${lead.firstName} ${lead.lastName}`.trim(), email: lead.email },
+      subject: `New Website Lead: [${lead.formType}] - ${lead.firstName} ${lead.lastName}`.trim(),
+      htmlContent: contactEmailHtml(lead)
+    })
+  });
+
+  if (!response.ok) {
+    const detail = cleanText(await response.text(), 500);
+    throw new Error(`Brevo notification failed (${response.status}): ${detail}`);
+  }
+}
+
+async function sendSalesforceLead(lead) {
+  const description = [
+    lead.practiceArea ? `Practice/Case Area: ${lead.practiceArea}` : '',
+    lead.fullAddress ? `Full Address: ${lead.fullAddress}` : '',
+    lead.message ? `Message: ${lead.message}` : '',
+    `Submitted From: ${lead.sourcePage}`
+  ].filter(Boolean).join('\n');
+
+  const params = new URLSearchParams({
+    oid: '00DF00000008J4B',
+    retURL: 'https://theawadlawfirm.com/contact/',
+    lead_source: 'Web',
+    first_name: lead.firstName,
+    last_name: lead.lastName,
+    email: lead.email,
+    phone: lead.phone,
+    street: lead.street,
+    city: lead.city,
+    state: lead.state,
+    zip: lead.zip,
+    description
+  });
+
+  const response = await fetch(salesforceWebToLeadUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString(),
+    redirect: 'manual'
+  });
+  if (response.status < 200 || response.status >= 400) {
+    throw new Error(`Salesforce submission failed (${response.status})`);
+  }
+}
+
+async function submitContact(req, res) {
+  if (isRateLimited(req, 15)) return sendJson(res, 429, { message: 'Please wait before submitting again.' });
+
+  let body;
+  try { body = JSON.parse(await readBody(req, 30_000) || '{}'); }
+  catch (_) { return sendJson(res, 400, { message: 'Invalid request.' }); }
+  if (body.website) return sendJson(res, 200, { message: 'Submission received.' });
+
+  const lead = {
+    firstName: contactField(body, ['firstName', 'first_name'], 80),
+    lastName: contactField(body, ['lastName', 'last_name'], 80),
+    email: contactField(body, ['email'], 254).toLowerCase(),
+    phone: contactField(body, ['phone'], 25),
+    street: contactField(body, ['street'], 160),
+    city: contactField(body, ['city'], 100),
+    state: contactField(body, ['state'], 100),
+    zip: contactField(body, ['zip', 'postalCode'], 24),
+    practiceArea: contactField(body, ['practiceArea', 'case_type'], 120),
+    message: contactField(body, ['message'], 5000),
+    formType: contactField(body, ['formType'], 120) || 'Website Contact Form',
+    sourcePage: contactField(body, ['sourcePage'], 500) || 'Website',
+    submittedAt: new Date().toISOString()
+  };
+  lead.fullAddress = [lead.street, lead.city, lead.state, lead.zip].filter(Boolean).join(', ');
+
+  if (!lead.firstName || !lead.lastName || !lead.email || !lead.phone || !lead.message) {
+    return sendJson(res, 400, { message: 'Please complete all required fields.' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
+    return sendJson(res, 400, { message: 'Please enter a valid email address.' });
+  }
+  if (!/^\+[1-9]\d{7,14}$/.test(lead.phone)) {
+    return sendJson(res, 400, { message: 'Please enter a complete phone number and select the correct country.' });
+  }
+
+  const [salesforceResult, emailResult] = await Promise.allSettled([
+    sendSalesforceLead(lead),
+    sendBrevoLeadNotification(lead)
+  ]);
+
+  if (salesforceResult.status === 'rejected') console.error('Contact lead Salesforce error:', salesforceResult.reason.message);
+  if (emailResult.status === 'rejected') console.error('Contact lead email error:', emailResult.reason.message);
+
+  if (salesforceResult.status === 'rejected' && emailResult.status === 'rejected') {
+    return sendJson(res, 502, { message: 'We could not send your request. Please call (706) 890-0000.' });
+  }
+  if (emailResult.status === 'rejected') {
+    return sendJson(res, 202, { message: 'Your request was received, but the email alert could not be delivered.', notificationDelivered: false });
+  }
+  return sendJson(res, 200, { message: 'Thank you. Your request was sent successfully.', notificationDelivered: true });
+}
+
 function safeEqual(left, right) {
   const leftBuffer = Buffer.from(String(left));
   const rightBuffer = Buffer.from(String(right));
@@ -249,12 +400,23 @@ function serveStatic(req, res) {
 ensureStorage();
 const server = http.createServer(async (req, res) => {
   const pathname = new URL(req.url, 'http://localhost').pathname;
-  if (pathname === '/health') return sendJson(res, 200, { status: 'ok', storageReady: true, adminConfigured: Boolean(adminPassword && sessionSecret) });
+  if (pathname === '/health') return sendJson(res, 200, {
+    status: 'ok',
+    storageReady: true,
+    adminConfigured: Boolean(adminPassword && sessionSecret),
+    leadNotificationsConfigured: Boolean(brevoApiKey && contactNotificationEmails.length)
+  });
   if (pathname === '/api/newsletter/subscribe') {
     if (!applyCors(req, res)) return sendJson(res, 403, { message: 'Origin not allowed.' });
     if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
     if (req.method !== 'POST') return sendJson(res, 405, { message: 'Method not allowed.' });
     return subscribe(req, res);
+  }
+  if (pathname === '/api/contact/submit') {
+    if (!applyCors(req, res)) return sendJson(res, 403, { message: 'Origin not allowed.' });
+    if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
+    if (req.method !== 'POST') return sendJson(res, 405, { message: 'Method not allowed.' });
+    return submitContact(req, res);
   }
   if (pathname === '/admin' || pathname.startsWith('/admin/')) return handleAdmin(req, res, pathname);
   if (req.method !== 'GET' && req.method !== 'HEAD') return sendJson(res, 405, { message: 'Method not allowed.' });
