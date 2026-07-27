@@ -1021,7 +1021,6 @@ if (document.readyState === 'loading') {
                 return import('/node_modules/intl-tel-input/dist/js/utils.js');
               }
             });
-            instance.setCountry('us');
             phoneInstances.set(input, instance);
             if (instance.promise) pending.push(instance.promise);
 
@@ -1147,6 +1146,10 @@ if (document.readyState === 'loading') {
         form.classList.contains('contact-form');
 
       if (isCaseForm) {
+        // Use the site's visible validation instead of browser-native bubbles,
+        // which can prevent the submit handler from running at all.
+        form.noValidate = true;
+
         // Upgrade properties dynamically to submit to Salesforce Web-to-Lead
         form.action = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DF00000008J4B';
         form.method = 'POST';
@@ -1245,22 +1248,13 @@ if (document.readyState === 'loading') {
         var normalizedPhone = '';
 
         if (isCaseForm) {
-          await phoneToolsReady;
           var phoneInput = form.querySelector('input[type="tel"]');
           if (phoneInput) {
-            var phoneInstance = phoneInstances.get(phoneInput);
             var phoneValidation = phoneInput.parentNode.querySelector('[role="alert"]');
-            var phoneIsValid = false;
-
-            if (phoneInstance && typeof phoneInstance.isValidNumber === 'function') {
-              phoneIsValid = phoneInstance.isValidNumber();
-              normalizedPhone = phoneInstance.getNumber();
-            } else {
-              var rawPhone = phoneInput.value.trim();
-              var phoneDigits = rawPhone.replace(/\D/g, '');
-              phoneIsValid = /^\+[1-9]\d{7,14}$/.test(rawPhone) || phoneDigits.length === 10;
-              normalizedPhone = /^\+/.test(rawPhone) ? '+' + phoneDigits : (phoneDigits.length === 10 ? '+1' + phoneDigits : '');
-            }
+            var phoneDigits = phoneInput.value.replace(/\D/g, '');
+            if (phoneDigits.length === 11 && phoneDigits.charAt(0) === '1') phoneDigits = phoneDigits.slice(1);
+            var phoneIsValid = phoneDigits.length === 10;
+            normalizedPhone = phoneIsValid ? '+1' + phoneDigits : '';
 
             if (!phoneIsValid || !/^\+[1-9]\d{7,14}$/.test(normalizedPhone)) {
               phoneInput.setAttribute('aria-invalid', 'true');
