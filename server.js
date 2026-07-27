@@ -11,8 +11,6 @@ const dataDir = process.env.DATA_DIR || path.join(root, '.data');
 const subscribersFile = path.join(dataDir, 'subscribers.json');
 const adminPassword = process.env.ADMIN_PASSWORD || '';
 const sessionSecret = process.env.SESSION_SECRET || '';
-const brevoApiKey = process.env.BREVO_API_KEY || '';
-const brevoApiUrl = process.env.BREVO_API_URL || 'https://api.brevo.com/v3/smtp/email';
 const salesforceWebToLeadUrl = process.env.SALESFORCE_WEB_TO_LEAD_URL ||
   'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DF00000008J4B';
 const contactNotificationEmails = (process.env.CONTACT_NOTIFICATION_EMAILS ||
@@ -20,6 +18,9 @@ const contactNotificationEmails = (process.env.CONTACT_NOTIFICATION_EMAILS ||
   .split(',')
   .map((email) => email.trim().toLowerCase())
   .filter(Boolean);
+const formSubmitRecipient = contactNotificationEmails[0] || 'team@theawadlawfirm.com';
+const formSubmitUrl = process.env.FORMSUBMIT_URL ||
+  `https://formsubmit.co/ajax/${formSubmitRecipient}`;
 const secureCookie = process.env.NODE_ENV === 'production';
 const allowedOrigins = new Set(
   (process.env.ALLOWED_ORIGINS || 'https://theawadlawfirm.com,https://www.theawadlawfirm.com')
@@ -169,48 +170,42 @@ function contactField(body, names, maxLength) {
   return '';
 }
 
-function contactEmailHtml(lead) {
-  const rows = [
-    ['Name', `${lead.firstName} ${lead.lastName}`.trim()],
-    ['Email', lead.email],
-    ['Phone', lead.phone],
-    ['Full Address', lead.fullAddress || 'Not provided'],
-    ['Practice Area', lead.practiceArea || 'Not provided'],
-    ['Message', lead.message],
-    ['Form', lead.formType],
-    ['Submitted From', lead.sourcePage],
-    ['Submitted At', lead.submittedAt]
-  ].map(([label, value]) =>
-    `<tr><td style="padding:10px 12px;border-bottom:1px solid #dce3ec;font-weight:700;color:#10233d;vertical-align:top">${escapeHtml(label)}</td><td style="padding:10px 12px;border-bottom:1px solid #dce3ec;color:#33445a;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`
-  ).join('');
+async function sendFormSubmitNotification(lead) {
+  const ccRecipients = contactNotificationEmails.slice(1).join(',');
+  const payload = {
+    name: `${lead.firstName} ${lead.lastName}`.trim(),
+    email: lead.email,
+    phone: lead.phone,
+    address: lead.fullAddress || 'Not provided',
+    practice_area: lead.practiceArea || 'Not provided',
+    message: lead.message,
+    form: lead.formType,
+    submitted_from: lead.sourcePage,
+    submitted_at: lead.submittedAt,
+    _subject: `New Website Lead: [${lead.formType}] - ${lead.firstName} ${lead.lastName}`.trim(),
+    _template: 'table',
+    _captcha: 'false',
+    _replyto: lead.email
+  };
+  if (ccRecipients) payload._cc = ccRecipients;
 
-  return `<!doctype html><html><body style="margin:0;background:#eef2f6;font-family:Arial,sans-serif;color:#10233d"><div style="max-width:720px;margin:24px auto;background:#fff;border:1px solid #dce3ec"><div style="padding:22px 26px;background:#071529;color:#fff"><h1 style="margin:0;font-size:24px">New Website Lead</h1><p style="margin:7px 0 0;color:#d5b256">${escapeHtml(lead.formType)}</p></div><table role="presentation" style="width:100%;border-collapse:collapse">${rows}</table><div style="padding:18px 26px;background:#f6f8fb;font-size:13px;color:#66768a">Reply to this email to contact ${escapeHtml(lead.firstName || 'the prospective client')} directly.</div></div></body></html>`;
-}
-
-async function sendBrevoLeadNotification(lead) {
-  if (!brevoApiKey) throw new Error('BREVO_API_KEY is not configured');
-  const recipients = contactNotificationEmails.map((email) => ({ email }));
-  if (!recipients.length) throw new Error('No contact notification recipients are configured');
-
-  const response = await fetch(brevoApiUrl, {
+  const response = await fetch(formSubmitUrl, {
     method: 'POST',
     headers: {
-      'api-key': brevoApiKey,
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: JSON.stringify({
-      sender: { name: 'Awad Law Firm Website', email: 'team@theawadlawfirm.com' },
-      to: recipients,
-      replyTo: { name: `${lead.firstName} ${lead.lastName}`.trim(), email: lead.email },
-      subject: `New Website Lead: [${lead.formType}] - ${lead.firstName} ${lead.lastName}`.trim(),
-      htmlContent: contactEmailHtml(lead)
-    })
+    body: JSON.stringify(payload)
   });
 
   if (!response.ok) {
     const detail = cleanText(await response.text(), 500);
-    throw new Error(`Brevo notification failed (${response.status}): ${detail}`);
+    throw new Error(`FormSubmit notification failed (${response.status}): ${detail}`);
+  }
+
+  const result = await response.json().catch(() => ({}));
+  if (result.success === false || String(result.success).toLowerCase() === 'false') {
+    throw new Error(`FormSubmit notification failed: ${cleanText(result.message, 500) || 'unknown error'}`);
   }
 }
 
@@ -285,7 +280,7 @@ async function submitContact(req, res) {
 
   const [salesforceResult, emailResult] = await Promise.allSettled([
     sendSalesforceLead(lead),
-    sendBrevoLeadNotification(lead)
+    sendFormSubmitNotification(lead)
   ]);
 
   if (salesforceResult.status === 'rejected') console.error('Contact lead Salesforce error:', salesforceResult.reason.message);
@@ -404,7 +399,7 @@ const server = http.createServer(async (req, res) => {
     status: 'ok',
     storageReady: true,
     adminConfigured: Boolean(adminPassword && sessionSecret),
-    leadNotificationsConfigured: Boolean(brevoApiKey && contactNotificationEmails.length)
+    leadNotificationsConfigured: Boolean(formSubmitRecipient)
   });
   if (pathname === '/api/newsletter/subscribe') {
     if (!applyCors(req, res)) return sendJson(res, 403, { message: 'Origin not allowed.' });
