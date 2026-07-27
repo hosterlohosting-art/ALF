@@ -19,9 +19,7 @@ const contactNotificationEmails = (process.env.CONTACT_NOTIFICATION_EMAILS ||
   .split(',')
   .map((email) => email.trim().toLowerCase())
   .filter(Boolean);
-const formSubmitRecipient = contactNotificationEmails[0] || 'team@theawadlawfirm.com';
-const formSubmitUrl = process.env.FORMSUBMIT_URL ||
-  `https://formsubmit.co/ajax/${formSubmitRecipient}`;
+const formSubmitUrlOverride = process.env.FORMSUBMIT_URL || '';
 const secureCookie = process.env.NODE_ENV === 'production';
 const allowedOrigins = new Set(
   (process.env.ALLOWED_ORIGINS || 'https://theawadlawfirm.com,https://www.theawadlawfirm.com')
@@ -175,7 +173,6 @@ function contactField(body, names, maxLength) {
 }
 
 async function sendFormSubmitNotification(lead) {
-  const ccRecipients = contactNotificationEmails.slice(1).join(',');
   const payload = {
     name: `${lead.firstName} ${lead.lastName}`.trim(),
     email: lead.email,
@@ -186,31 +183,36 @@ async function sendFormSubmitNotification(lead) {
     form: lead.formType,
     submitted_from: lead.sourcePage,
     submitted_at: lead.submittedAt,
+    _url: lead.sourcePage,
     _subject: `New Website Lead: [${lead.formType}] - ${lead.firstName} ${lead.lastName}`.trim(),
     _template: 'table',
     _captcha: 'false',
     _replyto: lead.email
   };
-  if (ccRecipients) payload._cc = ccRecipients;
 
-  const response = await fetch(formSubmitUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(payload)
-  });
+  await Promise.all(contactNotificationEmails.map(async (recipient) => {
+    const endpoint = formSubmitUrlOverride || `https://formsubmit.co/ajax/${recipient}`;
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Origin': 'https://theawadlawfirm.com',
+        'Referer': lead.sourcePage
+      },
+      body: JSON.stringify(payload)
+    });
 
-  if (!response.ok) {
-    const detail = cleanText(await response.text(), 500);
-    throw new Error(`FormSubmit notification failed (${response.status}): ${detail}`);
-  }
+    if (!response.ok) {
+      const detail = cleanText(await response.text(), 500);
+      throw new Error(`FormSubmit notification to ${recipient} failed (${response.status}): ${detail}`);
+    }
 
-  const result = await response.json().catch(() => ({}));
-  if (result.success === false || String(result.success).toLowerCase() === 'false') {
-    throw new Error(`FormSubmit notification failed: ${cleanText(result.message, 500) || 'unknown error'}`);
-  }
+    const result = await response.json().catch(() => ({}));
+    if (result.success === false || String(result.success).toLowerCase() === 'false') {
+      throw new Error(`FormSubmit notification to ${recipient} failed: ${cleanText(result.message, 500) || 'unknown error'}`);
+    }
+  }));
 }
 
 async function sendSalesforceLead(lead) {
@@ -403,7 +405,7 @@ const server = http.createServer(async (req, res) => {
     status: 'ok',
     storageReady: true,
     adminConfigured: Boolean(adminPassword && sessionSecret),
-    leadNotificationsConfigured: Boolean(formSubmitRecipient)
+    leadNotificationsConfigured: contactNotificationEmails.length > 0
   });
   if (pathname === '/api/newsletter/subscribe') {
     if (!applyCors(req, res)) return sendJson(res, 403, { message: 'Origin not allowed.' });
