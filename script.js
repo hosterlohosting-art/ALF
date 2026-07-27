@@ -1014,7 +1014,7 @@ if (document.readyState === 'loading') {
               separateDialCode: true,
               strictMode: true,
               strictRejectAnimation: true,
-              dropdownContainer: document.body,
+              countrySelectorMode: 'FULLSCREEN',
               countryOrder: ['us', 'ca', 'mx', 'gb'],
               loadUtils: function () {
                 return import('/node_modules/intl-tel-input/dist/js/utils.js');
@@ -1050,7 +1050,8 @@ if (document.readyState === 'loading') {
             '.iti input[type="tel"]{width:100%}',
             '.iti__country-container{z-index:31}',
             '.iti__country-selector{z-index:2147483000!important}',
-            'body>.iti__country-selector{position:absolute!important;z-index:2147483000!important;box-shadow:0 14px 35px rgba(7,21,41,.22)}'
+            '.iti--fullscreen-popup.iti--detached-country-selector{z-index:2147482999!important;justify-content:center!important}',
+            '.iti--fullscreen-popup .iti__country-selector{width:min(520px,100%);margin:auto;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(7,21,41,.35);overflow:hidden}'
           ].join('');
           document.head.appendChild(phoneOverrides);
         }
