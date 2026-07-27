@@ -4,6 +4,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { State, City } = require('country-state-city');
 
 const root = __dirname;
 const port = Number(process.env.PORT || 3000);
@@ -30,6 +31,9 @@ const allowedOrigins = new Set(
 );
 const rateLimits = new Map();
 let writeQueue = Promise.resolve();
+const usStates = State.getStatesOfCountry('US')
+  .map((state) => ({ name: state.name, code: state.isoCode }))
+  .sort((left, right) => left.name.localeCompare(right.name));
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -412,6 +416,21 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
     if (req.method !== 'POST') return sendJson(res, 405, { message: 'Method not allowed.' });
     return submitContact(req, res);
+  }
+  if (pathname === '/api/locations/us/states') {
+    if (req.method !== 'GET') return sendJson(res, 405, { message: 'Method not allowed.' });
+    return sendJson(res, 200, { states: usStates });
+  }
+  if (pathname === '/api/locations/us/cities') {
+    if (req.method !== 'GET') return sendJson(res, 405, { message: 'Method not allowed.' });
+    const stateCode = cleanText(new URL(req.url, 'http://localhost').searchParams.get('state'), 2).toUpperCase();
+    if (!usStates.some((state) => state.code === stateCode)) {
+      return sendJson(res, 400, { message: 'Please select a valid U.S. state.' });
+    }
+    const cities = Array.from(new Set(
+      City.getCitiesOfState('US', stateCode).map((city) => city.name)
+    )).sort((left, right) => left.localeCompare(right));
+    return sendJson(res, 200, { cities });
   }
   if (pathname === '/admin' || pathname.startsWith('/admin/')) return handleAdmin(req, res, pathname);
   if (req.method !== 'GET' && req.method !== 'HEAD') return sendJson(res, 405, { message: 'Method not allowed.' });

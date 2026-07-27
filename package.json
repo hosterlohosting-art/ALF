@@ -8,5 +8,9 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "country-state-city": "^3.2.1",
+    "intl-tel-input": "^29.0.3"
   }
 }

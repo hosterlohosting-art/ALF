@@ -906,6 +906,91 @@ if (document.readyState === 'loading') {
     var phoneInputs = document.querySelectorAll('form input[type="tel"]');
     var phoneToolsReady = Promise.resolve();
 
+    function replaceWithSelect(input, placeholder) {
+      var select = document.createElement('select');
+      Array.from(input.attributes).forEach(function (attribute) {
+        if (!['type', 'value', 'placeholder', 'maxlength'].includes(attribute.name)) {
+          select.setAttribute(attribute.name, attribute.value);
+        }
+      });
+      select.className = input.className;
+      select.setAttribute('aria-label', placeholder);
+      var option = document.createElement('option');
+      option.value = '';
+      option.textContent = placeholder;
+      option.selected = true;
+      option.disabled = true;
+      select.appendChild(option);
+      input.replaceWith(select);
+      return select;
+    }
+
+    function addSelectOption(select, value, label, stateCode) {
+      var option = document.createElement('option');
+      option.value = value;
+      option.textContent = label;
+      if (stateCode) option.dataset.stateCode = stateCode;
+      select.appendChild(option);
+    }
+
+    document.querySelectorAll('form').forEach(function (form) {
+      var stateInput = form.querySelector('input[name="state"]');
+      var cityInput = form.querySelector('input[name="city"]');
+      if (!stateInput || !cityInput) return;
+
+      var stateSelect = replaceWithSelect(stateInput, 'Select a state');
+      var citySelect = replaceWithSelect(cityInput, 'Select a state first');
+      citySelect.disabled = true;
+
+      fetch('/api/locations/us/states', { headers: { Accept: 'application/json' } })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Unable to load states');
+          return response.json();
+        })
+        .then(function (result) {
+          (result.states || []).forEach(function (state) {
+            addSelectOption(stateSelect, state.name, state.name, state.code);
+          });
+        })
+        .catch(function () {
+          stateSelect.options[0].textContent = 'Unable to load states';
+          stateSelect.setAttribute('aria-invalid', 'true');
+        });
+
+      stateSelect.addEventListener('change', function () {
+        var selected = stateSelect.options[stateSelect.selectedIndex];
+        var stateCode = selected ? selected.dataset.stateCode : '';
+        citySelect.innerHTML = '';
+        addSelectOption(citySelect, '', 'Loading cities…');
+        citySelect.options[0].disabled = true;
+        citySelect.disabled = true;
+
+        fetch('/api/locations/us/cities?state=' + encodeURIComponent(stateCode), {
+          headers: { Accept: 'application/json' }
+        })
+          .then(function (response) {
+            if (!response.ok) throw new Error('Unable to load cities');
+            return response.json();
+          })
+          .then(function (result) {
+            citySelect.innerHTML = '';
+            addSelectOption(citySelect, '', 'Select a city');
+            citySelect.options[0].disabled = true;
+            (result.cities || []).forEach(function (city) {
+              addSelectOption(citySelect, city, city);
+            });
+            citySelect.disabled = false;
+            citySelect.focus();
+          })
+          .catch(function () {
+            citySelect.innerHTML = '';
+            addSelectOption(citySelect, '', 'Unable to load cities');
+            citySelect.options[0].disabled = true;
+            citySelect.setAttribute('aria-invalid', 'true');
+          });
+      });
+    });
+
     if (phoneInputs.length) {
       phoneToolsReady = new Promise(function (resolve) {
         function initialisePhoneInputs() {
@@ -920,19 +1005,21 @@ if (document.readyState === 'loading') {
             var validation = document.createElement('p');
             validation.id = input.id + '-validation';
             validation.setAttribute('role', 'alert');
-            validation.style.cssText = 'display:none;margin:7px 0 0;color:#b42318;font-size:12px;line-height:1.4;';
-            validation.textContent = 'Enter a complete phone number for the selected country.';
+            validation.style.cssText = 'display:none;align-items:center;gap:7px;margin:7px 0 0;color:#b42318;font-size:12px;line-height:1.4;font-weight:600;';
+            validation.innerHTML = '<span aria-hidden="true" style="display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#b42318;color:#fff;font-size:12px;font-weight:800">!</span><span>Enter a complete phone number for the selected country.</span>';
             input.parentNode.appendChild(validation);
 
             var instance = window.intlTelInput(input, {
               initialCountry: 'us',
               separateDialCode: true,
               strictMode: true,
+              strictRejectAnimation: true,
               countryOrder: ['us', 'ca', 'mx', 'gb'],
               loadUtils: function () {
-                return import('https://cdn.jsdelivr.net/npm/intl-tel-input@29.0.3/build/js/utils.js');
+                return import('/node_modules/intl-tel-input/dist/js/utils.js');
               }
             });
+            instance.setCountry('us');
             phoneInstances.set(input, instance);
             if (instance.promise) pending.push(instance.promise);
 
@@ -953,7 +1040,7 @@ if (document.readyState === 'loading') {
         if (!document.querySelector('link[data-awad-phone-css]')) {
           var phoneCss = document.createElement('link');
           phoneCss.rel = 'stylesheet';
-          phoneCss.href = 'https://cdn.jsdelivr.net/npm/intl-tel-input@29.0.3/build/css/intlTelInput.css';
+          phoneCss.href = '/node_modules/intl-tel-input/dist/css/intlTelInput.css';
           phoneCss.setAttribute('data-awad-phone-css', 'true');
           document.head.appendChild(phoneCss);
           var phoneOverrides = document.createElement('style');
@@ -970,7 +1057,7 @@ if (document.readyState === 'loading') {
             existingPhoneScript.addEventListener('error', resolve, { once: true });
           } else {
             var phoneScript = document.createElement('script');
-            phoneScript.src = 'https://cdn.jsdelivr.net/npm/intl-tel-input@29.0.3/build/js/intlTelInput.min.js';
+            phoneScript.src = '/node_modules/intl-tel-input/dist/js/intlTelInput.min.js';
             phoneScript.async = true;
             phoneScript.setAttribute('data-awad-phone-js', 'true');
             phoneScript.addEventListener('load', initialisePhoneInputs, { once: true });
@@ -1170,7 +1257,7 @@ if (document.readyState === 'loading') {
             if (!phoneIsValid || !/^\+[1-9]\d{7,14}$/.test(normalizedPhone)) {
               phoneInput.setAttribute('aria-invalid', 'true');
               phoneInput.classList.add('border-red-500');
-              if (phoneValidation) phoneValidation.style.display = 'block';
+              if (phoneValidation) phoneValidation.style.display = 'flex';
               phoneInput.focus();
               showToast(
                 'VALID PHONE NUMBER REQUIRED',
