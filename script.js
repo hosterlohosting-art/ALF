@@ -1006,16 +1006,17 @@ if (document.readyState === 'loading') {
             validation.id = input.id + '-validation';
             validation.setAttribute('role', 'alert');
             validation.style.cssText = 'display:none;align-items:center;gap:7px;margin:7px 0 0;color:#b42318;font-size:12px;line-height:1.4;font-weight:600;';
-            validation.innerHTML = '<span aria-hidden="true" style="display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#b42318;color:#fff;font-size:12px;font-weight:800">!</span><span>Enter a complete phone number for the selected country.</span>';
+            validation.innerHTML = '<span aria-hidden="true" style="display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#b42318;color:#fff;font-size:12px;font-weight:800">!</span><span>Enter a complete 10-digit U.S. phone number after +1.</span>';
             input.parentNode.appendChild(validation);
 
             var instance = window.intlTelInput(input, {
               initialCountry: 'us',
+              onlyCountries: ['us'],
               separateDialCode: true,
+              showFlags: true,
               strictMode: true,
               strictRejectAnimation: true,
-              countrySelectorMode: 'FULLSCREEN',
-              countryOrder: ['us', 'ca', 'mx', 'gb'],
+              countrySelectorMode: 'OFF',
               loadUtils: function () {
                 return import('/node_modules/intl-tel-input/dist/js/utils.js');
               }
@@ -1048,10 +1049,9 @@ if (document.readyState === 'loading') {
           phoneOverrides.textContent = [
             '.iti{width:100%;position:relative;z-index:30}',
             '.iti input[type="tel"]{width:100%}',
-            '.iti__country-container{z-index:31}',
-            '.iti__country-selector{z-index:2147483000!important}',
-            '.iti--fullscreen-popup.iti--detached-country-selector{z-index:2147482999!important;justify-content:center!important}',
-            '.iti--fullscreen-popup .iti__country-selector{width:min(520px,100%);margin:auto;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(7,21,41,.35);overflow:hidden}'
+            '.iti__country-container{z-index:31;pointer-events:none}',
+            '.iti__selected-country{cursor:default}',
+            '@keyframes awad-submit-spin{to{transform:rotate(360deg)}}'
           ].join('');
           document.head.appendChild(phoneOverrides);
         }
@@ -1252,8 +1252,8 @@ if (document.readyState === 'loading') {
             var phoneValidation = phoneInput.parentNode.querySelector('[role="alert"]');
             var phoneIsValid = false;
 
-            if (phoneInstance && typeof phoneInstance.isValidNumberPrecise === 'function') {
-              phoneIsValid = phoneInstance.isValidNumberPrecise();
+            if (phoneInstance && typeof phoneInstance.isValidNumber === 'function') {
+              phoneIsValid = phoneInstance.isValidNumber();
               normalizedPhone = phoneInstance.getNumber();
             } else {
               var rawPhone = phoneInput.value.trim();
@@ -1269,7 +1269,7 @@ if (document.readyState === 'loading') {
               phoneInput.focus();
               showToast(
                 'VALID PHONE NUMBER REQUIRED',
-                'Select the correct country and enter the complete phone number.',
+                'Enter a complete 10-digit U.S. phone number after +1.',
                 'warning'
               );
               return;
@@ -1340,7 +1340,11 @@ if (document.readyState === 'loading') {
           }
         }
 
+        var originalSubmitMarkup = submitBtn.innerHTML;
         submitBtn.classList.add('submitting-state');
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.innerHTML = '<span aria-hidden="true" style="width:16px;height:16px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;display:inline-block;animation:awad-submit-spin .8s linear infinite"></span><span style="margin-left:9px">SENDING…</span>';
 
         // Bot honeypot check
         var hpInput = form.querySelector('[name="website_url_hp"]');
@@ -1348,6 +1352,9 @@ if (document.readyState === 'loading') {
           console.warn('Spam submission blocked by honeypot.');
           setTimeout(function () {
             submitBtn.classList.remove('submitting-state');
+            submitBtn.disabled = false;
+            submitBtn.removeAttribute('aria-busy');
+            submitBtn.innerHTML = originalSubmitMarkup;
             form.reset();
             if (typeof hcaptcha !== 'undefined') {
               var captchaContainer = form.querySelector('.h-captcha');
@@ -1379,6 +1386,9 @@ if (document.readyState === 'loading') {
             console.warn('Spam solicitation blocked by keyword filter.');
             setTimeout(function () {
               submitBtn.classList.remove('submitting-state');
+              submitBtn.disabled = false;
+              submitBtn.removeAttribute('aria-busy');
+              submitBtn.innerHTML = originalSubmitMarkup;
               form.reset();
               if (typeof hcaptcha !== 'undefined') {
                 var captchaContainer = form.querySelector('.h-captcha');
@@ -1414,8 +1424,6 @@ if (document.readyState === 'loading') {
         var emailDelivered = false;
         var submissionSucceeded = false;
         var submissionMessage = '';
-        submitBtn.disabled = true;
-
         try {
           var formData = new FormData(form);
           function firstFormValue(names) {
@@ -1466,6 +1474,8 @@ if (document.readyState === 'loading') {
         setTimeout(function () {
           submitBtn.classList.remove('submitting-state');
           submitBtn.disabled = false;
+          submitBtn.removeAttribute('aria-busy');
+          submitBtn.innerHTML = originalSubmitMarkup;
           if (submissionSucceeded) form.reset();
 
           // Reset hCaptcha if present
