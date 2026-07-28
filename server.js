@@ -20,6 +20,7 @@ const contactNotificationEmails = (process.env.CONTACT_NOTIFICATION_EMAILS ||
   .map((email) => email.trim().toLowerCase())
   .filter(Boolean);
 const formSubmitUrlOverride = process.env.FORMSUBMIT_URL || '';
+const formSubmitFormUrl = process.env.FORMSUBMIT_FORM_URL || 'https://theawadlawfirm.com/contact/';
 const secureCookie = process.env.NODE_ENV === 'production';
 const allowedOrigins = new Set(
   (process.env.ALLOWED_ORIGINS || 'https://theawadlawfirm.com,https://www.theawadlawfirm.com')
@@ -184,7 +185,7 @@ async function sendFormSubmitNotification(lead) {
     form: lead.formType,
     submitted_from: lead.sourcePage,
     submitted_at: lead.submittedAt,
-    _url: lead.sourcePage,
+    _url: formSubmitFormUrl,
     _subject: `New Website Lead: [${lead.formType}] - ${lead.firstName} ${lead.lastName}`.trim(),
     _template: 'table',
     _captcha: 'false',
@@ -199,7 +200,7 @@ async function sendFormSubmitNotification(lead) {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Origin': 'https://theawadlawfirm.com',
-        'Referer': lead.sourcePage
+        'Referer': formSubmitFormUrl
       },
       body: JSON.stringify(payload)
     });
