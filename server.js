@@ -29,7 +29,7 @@ const allowedOrigins = new Set(
 );
 const rateLimits = new Map();
 let writeQueue = Promise.resolve();
-const websiteScriptVersion = '11';
+const websiteScriptVersion = '12';
 const usStates = State.getStatesOfCountry('US')
   .map((state) => ({ name: state.name, code: state.isoCode }))
   .sort((left, right) => left.name.localeCompare(right.name));

@@ -1046,10 +1046,14 @@ if (document.readyState === 'loading') {
           document.head.appendChild(phoneCss);
           var phoneOverrides = document.createElement('style');
           phoneOverrides.textContent = [
-            '.iti{width:100%;position:relative;z-index:30}',
-            '.iti input[type="tel"]{width:100%}',
+            '.iti{width:100%;position:relative;z-index:30;box-sizing:border-box}',
+            'html body .iti input[type="tel"].iti__tel-input{width:100%;box-sizing:border-box!important;padding-left:86px!important;padding-right:14px!important}',
             '.iti__country-container{z-index:31;pointer-events:none}',
             '.iti__selected-country{cursor:default}',
+            '.premium-hero-form>.iti{display:block!important;margin:0 0 8px!important}',
+            'html body .premium-hero-form>.iti input[type="tel"].iti__tel-input{margin:0!important}',
+            '.cp-form-field>.iti,.contact-field>.iti,.space-y-6 .iti{display:block;width:100%}',
+            '.cp-form-field>.iti input[type="tel"],.contact-field>.iti input[type="tel"]{margin:0!important}',
             '@keyframes awad-submit-spin{to{transform:rotate(360deg)}}'
           ].join('');
           document.head.appendChild(phoneOverrides);
