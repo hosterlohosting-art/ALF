@@ -906,6 +906,20 @@ if (document.readyState === 'loading') {
     var phoneInputs = document.querySelectorAll('form input[type="tel"]');
     var phoneToolsReady = Promise.resolve();
 
+    function isCaseLeadForm(form) {
+      if (form.classList.contains('newsletter-form') || form.classList.contains('nav-search')) return false;
+      if (
+        form.classList.contains('premium-hero-form') ||
+        form.classList.contains('space-y-6') ||
+        form.classList.contains('contact-form')
+      ) return true;
+      return Boolean(
+        form.querySelector('input[type="email"]') &&
+        form.querySelector('input[type="tel"]') &&
+        form.querySelector('textarea[name="message"]')
+      );
+    }
+
     function replaceWithSelect(input, placeholder) {
       var select = document.createElement('select');
       Array.from(input.attributes).forEach(function (attribute) {
@@ -1080,16 +1094,7 @@ if (document.readyState === 'loading') {
     }
 
     // Create the hidden iframe if any case form exists on the page
-    var isAnyCaseForm = false;
-    forms.forEach(function (form) {
-      if (
-        form.classList.contains('premium-hero-form') ||
-        form.classList.contains('space-y-6') ||
-        form.classList.contains('contact-form')
-      ) {
-        isAnyCaseForm = true;
-      }
-    });
+    var isAnyCaseForm = Array.from(forms).some(isCaseLeadForm);
 
     if (isAnyCaseForm && !document.getElementById('salesforce_submissions')) {
       var iframe = document.createElement('iframe');
@@ -1144,10 +1149,7 @@ if (document.readyState === 'loading') {
       }
 
       // Check if this is a case evaluation form
-      var isCaseForm =
-        form.classList.contains('premium-hero-form') ||
-        form.classList.contains('space-y-6') ||
-        form.classList.contains('contact-form');
+      var isCaseForm = isCaseLeadForm(form);
 
       if (isCaseForm) {
         // Use the site's visible validation instead of browser-native bubbles,
@@ -1252,12 +1254,22 @@ if (document.readyState === 'loading') {
         var normalizedPhone = '';
 
         if (isCaseForm) {
+          var emailInput = form.querySelector('input[type="email"]');
+          var emailValue = emailInput ? emailInput.value.trim() : '';
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+            emailInput.setAttribute('aria-invalid', 'true');
+            emailInput.classList.add('border-red-500');
+            emailInput.focus();
+            showToast('VALID EMAIL REQUIRED', 'Please enter a complete and valid email address.', 'warning');
+            return;
+          }
+
           var phoneInput = form.querySelector('input[type="tel"]');
           if (phoneInput) {
             var phoneValidation = phoneInput.parentNode.querySelector('[role="alert"]');
             var phoneDigits = phoneInput.value.replace(/\D/g, '');
             if (phoneDigits.length === 11 && phoneDigits.charAt(0) === '1') phoneDigits = phoneDigits.slice(1);
-            var phoneIsValid = phoneDigits.length === 10;
+            var phoneIsValid = /^[2-9]\d{2}[2-9]\d{6}$/.test(phoneDigits);
             normalizedPhone = phoneIsValid ? '+1' + phoneDigits : '';
 
             if (!phoneIsValid || !/^\+[1-9]\d{7,14}$/.test(normalizedPhone)) {

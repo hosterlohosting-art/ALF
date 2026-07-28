@@ -29,7 +29,7 @@ const allowedOrigins = new Set(
 );
 const rateLimits = new Map();
 let writeQueue = Promise.resolve();
-const websiteScriptVersion = '12';
+const websiteScriptVersion = '13';
 const usStates = State.getStatesOfCountry('US')
   .map((state) => ({ name: state.name, code: state.isoCode }))
   .sort((left, right) => left.name.localeCompare(right.name));
@@ -281,8 +281,8 @@ async function submitContact(req, res) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
     return sendJson(res, 400, { message: 'Please enter a valid email address.' });
   }
-  if (!/^\+[1-9]\d{7,14}$/.test(lead.phone)) {
-    return sendJson(res, 400, { message: 'Please enter a complete phone number and select the correct country.' });
+  if (!/^\+1[2-9]\d{2}[2-9]\d{6}$/.test(lead.phone)) {
+    return sendJson(res, 400, { message: 'Please enter a valid 10-digit U.S. phone number.' });
   }
 
   const [salesforceResult, emailResult] = await Promise.allSettled([
