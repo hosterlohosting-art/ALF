@@ -29,6 +29,7 @@ const allowedOrigins = new Set(
 );
 const rateLimits = new Map();
 let writeQueue = Promise.resolve();
+const websiteScriptVersion = '11';
 const usStates = State.getStatesOfCountry('US')
   .map((state) => ({ name: state.name, code: state.isoCode }))
   .sort((left, right) => left.name.localeCompare(right.name));
@@ -390,11 +391,18 @@ function serveStatic(req, res) {
     res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
     return res.end(fs.existsSync(notFound) ? fs.readFileSync(notFound) : 'Not Found');
   }
+  const extension = path.extname(requested).toLowerCase();
+  const isWebsiteScript = requested === path.join(root, 'script.js');
   res.writeHead(200, {
-    'Content-Type': mimeTypes[path.extname(requested).toLowerCase()] || 'application/octet-stream',
-    'Cache-Control': path.extname(requested) === '.html' ? 'no-cache' : 'public, max-age=86400'
+    'Content-Type': mimeTypes[extension] || 'application/octet-stream',
+    'Cache-Control': extension === '.html' || isWebsiteScript ? 'no-cache' : 'public, max-age=86400'
   });
   if (req.method === 'HEAD') return res.end();
+  if (extension === '.html') {
+    const html = fs.readFileSync(requested, 'utf8')
+      .replace(/\/script\.js\?v=\d+/g, `/script.js?v=${websiteScriptVersion}`);
+    return res.end(html);
+  }
   fs.createReadStream(requested).pipe(res);
 }
 
