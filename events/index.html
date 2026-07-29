@@ -34,6 +34,260 @@
     <style>
       /* Only community stories that represent actual gatherings belong in the event archive. */
       .events-past-grid > a:nth-child(n+6) { display: none; }
+
+      .event-tabs-shell {
+        position: relative;
+        z-index: 30;
+        margin-top: -42px;
+      }
+
+      .event-tabs {
+        width: min(620px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        border: 1px solid rgba(198, 161, 91, 0.24);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 18px 50px rgba(6, 11, 17, 0.13);
+        backdrop-filter: blur(18px);
+      }
+
+      .event-tab {
+        min-height: 52px;
+        padding: 12px 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: #0c1827;
+        font-family: "Manrope", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      }
+
+      .event-tab:hover {
+        transform: translateY(-1px);
+        background: #f7f3ec;
+      }
+
+      .event-tab[aria-selected="true"] {
+        color: #ffffff;
+        background: linear-gradient(115deg, #081426, #122b4b);
+        box-shadow: 0 10px 24px rgba(8, 20, 38, 0.22);
+      }
+
+      .event-tab[aria-selected="true"] svg {
+        color: #d7b76d;
+      }
+
+      .event-tab:focus-visible {
+        outline: 3px solid rgba(198, 161, 91, 0.55);
+        outline-offset: 3px;
+      }
+
+      .upcoming-event-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(198, 161, 91, 0.28);
+        border-radius: 36px;
+        background: #ffffff;
+        box-shadow: 0 28px 80px rgba(6, 24, 43, 0.12);
+      }
+
+      .upcoming-event-visual {
+        position: relative;
+        overflow: hidden;
+        padding: 18px;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(198, 161, 91, 0.25), transparent 28%),
+          #071326;
+      }
+
+      .upcoming-event-artwork {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      }
+
+      .upcoming-event-details {
+        padding: clamp(38px, 6vw, 76px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .upcoming-event-details > span {
+        margin-bottom: 16px;
+        color: #b08b48;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .upcoming-event-details h2 {
+        margin: 0 0 18px;
+        color: #081426;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(38px, 5vw, 64px);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.045em;
+      }
+
+      .upcoming-event-details > p {
+        margin: 0 0 30px;
+        max-width: 650px;
+        color: #64748b;
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      .event-facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+
+      .event-fact {
+        min-height: 112px;
+        padding: 18px;
+        border: 1px solid #e7edf4;
+        border-radius: 20px;
+        background: #f9fbfd;
+      }
+
+      .event-fact svg {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 12px;
+        color: #b08b48;
+      }
+
+      .event-fact small,
+      .event-fact strong {
+        display: block;
+      }
+
+      .event-fact small {
+        margin-bottom: 5px;
+        color: #8491a3;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .event-fact strong {
+        color: #142238;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .event-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .event-primary-action,
+      .event-secondary-action {
+        min-height: 52px;
+        padding: 13px 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        border-radius: 999px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      }
+
+      .event-primary-action {
+        color: #071326;
+        background: linear-gradient(110deg, #f2d48e, #c6a15b);
+        box-shadow: 0 12px 28px rgba(198, 161, 91, 0.24);
+      }
+
+      .event-secondary-action {
+        color: #0c1827;
+        border: 1px solid #dce4ec;
+        background: #ffffff;
+      }
+
+      .event-primary-action:hover,
+      .event-secondary-action:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(8, 20, 38, 0.14);
+      }
+
+      [data-event-panel][hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 640px) {
+        .event-tabs-shell {
+          margin-top: -30px;
+        }
+
+        .event-tabs {
+          width: calc(100% - 24px);
+          padding: 6px;
+        }
+
+        .event-tab {
+          min-height: 48px;
+          padding: 10px 9px;
+          font-size: 12px;
+        }
+
+        .event-tab svg {
+          width: 17px;
+          height: 17px;
+        }
+
+        .upcoming-event-visual {
+          padding: 8px;
+        }
+
+        .upcoming-event-artwork {
+          border-radius: 20px;
+        }
+
+        .upcoming-event-details {
+          padding: 34px 24px 40px;
+        }
+
+        .event-facts {
+          grid-template-columns: 1fr;
+        }
+
+        .event-fact {
+          min-height: auto;
+        }
+
+        .event-actions {
+          flex-direction: column;
+        }
+
+        .event-primary-action,
+        .event-secondary-action {
+          width: 100%;
+        }
+      }
     </style>
 
     <!-- Tailwind CSS -->
@@ -108,6 +362,36 @@
             animation: slow-spin 20s linear infinite;
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Back to School Supply Drive",
+      "description": "A free community school-supplies drive hosted by The Awad Law Firm in Dalton, Georgia.",
+      "startDate": "2026-08-03T13:00:00-04:00",
+      "endDate": "2026-08-03T16:00:00-04:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "The Awad Law Firm – Dalton",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "210 Glenwood Ave.",
+          "addressLocality": "Dalton",
+          "addressRegion": "GA",
+          "addressCountry": "US"
+        }
+      },
+      "organizer": {
+        "@type": "LegalService",
+        "name": "The Awad Law Firm",
+        "url": "https://theawadlawfirm.com/"
+      },
+      "isAccessibleForFree": true,
+      "url": "https://theawadlawfirm.com/events/#upcoming-events"
+    }
+    </script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -347,6 +631,15 @@
   </div>
 </div>
 <a href="/newsletter/" class="">Newsletter</a>
+<div class="nav-dropdown">
+  <a href="/events/" class="nav-dropdown-toggle active">Events</a>
+  <div class="nav-dropdown-menu">
+    <span class="nav-dropdown-label">Events</span>
+    <hr class="nav-dropdown-divider">
+    <a href="/events/#upcoming-events" class="nav-dropdown-item">Upcoming Events</a>
+    <a href="/events/#past-events" class="nav-dropdown-item">Past Events</a>
+  </div>
+</div>
 <a href="/contact/" class="">Contact</a>
 </nav>
 
@@ -453,8 +746,70 @@ A2 2 0 0 1 22 16.92z"></path>
         </div>
     </section>
 
+    <div class="event-tabs-shell">
+      <div class="event-tabs" role="tablist" aria-label="Browse events">
+        <button class="event-tab" id="upcoming-events-tab" type="button" role="tab" aria-selected="true" aria-controls="upcoming-events" data-event-tab="upcoming-events">
+          <i data-lucide="calendar-days" aria-hidden="true"></i>
+          Upcoming Events
+        </button>
+        <button class="event-tab" id="past-events-tab" type="button" role="tab" aria-selected="false" aria-controls="past-events" data-event-tab="past-events" tabindex="-1">
+          <i data-lucide="history" aria-hidden="true"></i>
+          Past Events
+        </button>
+      </div>
+    </div>
+
     <!-- Upcoming Events Section -->
-    <section class="py-24 bg-white relative z-20">
+    <section class="py-24 bg-white relative z-20" id="upcoming-events" role="tabpanel" aria-labelledby="upcoming-events-tab" data-event-panel>
+      <div class="container mx-auto px-6 max-w-7xl">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="inline-block text-[#b08b48] font-bold uppercase tracking-[0.22em] text-xs mb-4">Save the Date</span>
+          <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-dark mb-5">Upcoming Events</h2>
+          <p class="text-brand-muted text-lg leading-relaxed">Join The Awad Law Firm as we help local students begin the school year prepared and confident.</p>
+        </div>
+
+        <article class="upcoming-event-card">
+          <div class="upcoming-event-visual">
+            <img class="upcoming-event-artwork" src="/assets/events/back-to-school-supply-drive-2026.png?v=2" alt="The Awad Law Firm Back to School Supply Drive on August 3 from 1 to 4 PM at 210 Glenwood Avenue" width="1500" height="717" loading="eager" decoding="async">
+          </div>
+
+          <div class="upcoming-event-details">
+            <span>Free Community Event</span>
+            <h2>Back to School Supply Drive</h2>
+            <p><strong>Serving our community, one backpack at a time.</strong> Stop by our Dalton office for an afternoon dedicated to supporting local students and families as they prepare for the new school year.</p>
+
+            <div class="event-facts">
+              <div class="event-fact">
+                <i data-lucide="calendar-days" aria-hidden="true"></i>
+                <small>Date</small>
+                <strong>Monday, August 3, 2026</strong>
+              </div>
+              <div class="event-fact">
+                <i data-lucide="clock-3" aria-hidden="true"></i>
+                <small>Time</small>
+                <strong>1:00 PM – 4:00 PM</strong>
+              </div>
+              <div class="event-fact">
+                <i data-lucide="map-pin" aria-hidden="true"></i>
+                <small>Location</small>
+                <strong>210 Glenwood Ave.<br>Dalton, GA</strong>
+              </div>
+            </div>
+
+            <div class="event-actions">
+              <a class="event-primary-action" href="https://www.google.com/maps/search/?api=1&amp;query=210+Glenwood+Ave+Dalton+GA" target="_blank" rel="noopener noreferrer">
+                Get Directions <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+              </a>
+              <a class="event-secondary-action" href="tel:+17068900000">
+                Questions? Call 706-890-0000
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="hidden" aria-hidden="true">
       <div class="container mx-auto px-6 max-w-7xl">
         <div class="text-center max-w-3xl mx-auto mb-12">
           <span class="inline-block text-brand-primary font-bold uppercase tracking-[0.22em] text-xs mb-4">Save the Date</span>
@@ -475,7 +830,7 @@ A2 2 0 0 1 22 16.92z"></path>
     </section>
 
     <!-- Past Events Section -->
-    <section class="py-24 bg-geometric relative z-20 overflow-hidden">
+    <section class="py-24 bg-geometric relative z-20 overflow-hidden" id="past-events" role="tabpanel" aria-labelledby="past-events-tab" data-event-panel hidden>
 
         <!-- Large Elegant Watermark Text in Background -->
         <div class="absolute top-[15%] left-[-3%] text-[11vw] font-heading font-black text-stroke-premium whitespace-nowrap pointer-events-none select-none z-0">
@@ -994,6 +1349,48 @@ A2 2 0 0 1 22 16.92z"></path>
     <!-- Scripts -->
     <script src="/script.js?v=5"></script>
     <script>
+        const eventTabs = Array.from(document.querySelectorAll('[data-event-tab]'));
+        const eventPanels = Array.from(document.querySelectorAll('[data-event-panel]'));
+
+        function selectEventTab(panelId, updateHash = true) {
+            const nextTab = eventTabs.find((tab) => tab.dataset.eventTab === panelId) || eventTabs[0];
+
+            eventTabs.forEach((tab) => {
+                const isActive = tab === nextTab;
+                tab.setAttribute('aria-selected', String(isActive));
+                tab.tabIndex = isActive ? 0 : -1;
+            });
+
+            eventPanels.forEach((panel) => {
+                panel.hidden = panel.id !== nextTab.dataset.eventTab;
+            });
+
+            if (updateHash && history.replaceState) {
+                history.replaceState(null, '', `#${nextTab.dataset.eventTab}`);
+            }
+        }
+
+        eventTabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => selectEventTab(tab.dataset.eventTab));
+            tab.addEventListener('keydown', (event) => {
+                if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+                event.preventDefault();
+
+                let nextIndex = index;
+                if (event.key === 'ArrowRight') nextIndex = (index + 1) % eventTabs.length;
+                if (event.key === 'ArrowLeft') nextIndex = (index - 1 + eventTabs.length) % eventTabs.length;
+                if (event.key === 'Home') nextIndex = 0;
+                if (event.key === 'End') nextIndex = eventTabs.length - 1;
+
+                eventTabs[nextIndex].focus();
+                selectEventTab(eventTabs[nextIndex].dataset.eventTab);
+            });
+        });
+
+        if (location.hash === '#past-events' || location.hash === '#upcoming-events') {
+            selectEventTab(location.hash.slice(1), false);
+        }
+
         // Initialize Icons
         lucide.createIcons();
     </script>
