@@ -10231,6 +10231,12 @@ body.home-page .premium-home-hero {
   font-weight: 800;
 }
 
+.academy-announcement-meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
 .academy-announcement-date {
   position: relative;
   padding-left: 16px;
@@ -10250,6 +10256,25 @@ body.home-page .premium-home-hero {
   box-shadow: 0 0 0 0 rgba(230, 199, 121, 0.55);
   transform: translateY(-50%);
   animation: academy-date-pulse 2.2s ease-out infinite;
+}
+
+.academy-announcement-time {
+  position: relative;
+  padding-left: 12px;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  white-space: nowrap;
+}
+
+.academy-announcement-time::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 15px;
+  background: rgba(230, 199, 121, 0.62);
+  transform: translateY(-50%);
 }
 
 .academy-announcement-copy span,
@@ -10317,6 +10342,11 @@ body.home-page .premium-home-hero {
     line-height: 1.25;
   }
 
+  .academy-announcement-meta {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
   .academy-announcement-date {
     padding-left: 12px;
     font-size: 12px;
@@ -10328,8 +10358,86 @@ body.home-page .premium-home-hero {
     height: 4px;
   }
 
+  .academy-announcement-time {
+    padding-left: 9px;
+    font-size: 12px;
+  }
+
+  .academy-announcement-time::before {
+    height: 12px;
+  }
+
   .academy-announcement-arrow {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 440px) {
+  .academy-announcement a {
+    min-height: 108px;
+    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "badge arrow"
+      "copy arrow";
+    column-gap: 12px;
+    row-gap: 6px;
+    align-items: center;
+  }
+
+  .academy-announcement-badge {
+    grid-area: badge;
+    justify-self: start;
+    padding: 7px 11px;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+
+  .academy-announcement-copy {
+    grid-area: copy;
+    min-width: 0;
+    gap: 3px;
+    font-size: 13px;
+  }
+
+  .academy-announcement-copy > strong {
+    line-height: 1.18;
+  }
+
+  .academy-announcement-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .academy-announcement-time {
+    padding-left: 9px;
+  }
+
+  .academy-announcement-time::before {
+    left: 0;
+    width: 1px;
+    height: 11px;
+    border-radius: 0;
+    background: rgba(230, 199, 121, 0.62);
+  }
+
+  .academy-announcement-arrow {
+    grid-area: arrow;
+    align-self: center;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 350px) {
+  .academy-announcement a {
+    padding-inline: 14px;
+  }
+
+  .academy-announcement-meta {
+    flex-wrap: wrap;
+    row-gap: 2px;
   }
 }
 
