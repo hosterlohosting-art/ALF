@@ -238,7 +238,19 @@ function looksLikeAutomatedLead(lead) {
   const machineToken = /^[a-z0-9]{12,80}$/i.test(lead.message) &&
     (lead.message.match(/[A-Z]/g) || []).length >= 3 &&
     (lead.message.match(/[a-z]/g) || []).length >= 3;
-  return links.length > 2 || repeated || controlCharacters || machineToken;
+  const consonantHeavy = (name) => {
+    const letters = name.replace(/[^a-z]/gi, '');
+    const vowelRatio = letters.length ? (letters.match(/[aeiou]/gi) || []).length / letters.length : 1;
+    return letters.length >= 4 && vowelRatio < 0.25 && /[bcdfghjklmnpqrstvwxyz]{3,}/i.test(letters);
+  };
+  const unusualMixedCase = [lead.firstName, lead.lastName].some((name) =>
+    name.length >= 10 && (name.slice(1).match(/[A-Z]/g) || []).length >= 2
+  );
+  // Requiring both names to look machine-generated avoids rejecting legitimate
+  // low-vowel names such as "Krzysztof Smith."
+  const gibberishName = unusualMixedCase ||
+    (consonantHeavy(lead.firstName) && consonantHeavy(lead.lastName));
+  return links.length > 2 || repeated || controlCharacters || machineToken || gibberishName;
 }
 
 async function sendFormSubmitNotification(lead) {
