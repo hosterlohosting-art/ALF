@@ -1152,6 +1152,7 @@ if (document.readyState === 'loading') {
       var isCaseForm = isCaseLeadForm(form);
 
       if (isCaseForm) {
+        form.dataset.awadStartedAt = String(Date.now());
         // Use the site's visible validation instead of browser-native bubbles,
         // which can prevent the submit handler from running at all.
         form.noValidate = true;
@@ -1197,6 +1198,19 @@ if (document.readyState === 'loading') {
           hpInput.autocomplete = 'off';
           hpContainer.appendChild(hpInput);
           form.appendChild(hpContainer);
+        }
+
+        if (!form.querySelector('[name="company_fax_hp"]')) {
+          var faxContainer = document.createElement('div');
+          faxContainer.setAttribute('aria-hidden', 'true');
+          faxContainer.style.cssText = 'position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;';
+          var faxInput = document.createElement('input');
+          faxInput.type = 'text';
+          faxInput.name = 'company_fax_hp';
+          faxInput.tabIndex = -1;
+          faxInput.autocomplete = 'off';
+          faxContainer.appendChild(faxInput);
+          form.appendChild(faxContainer);
         }
 
         // Dynamically inject hCaptcha container
@@ -1457,7 +1471,15 @@ if (document.readyState === 'loading') {
             message: firstFormValue(['message']),
             formType: window.AwadGetFormType(form),
             sourcePage: window.location.href,
-            website: firstFormValue(['website_url_hp'])
+            website: firstFormValue(['website_url_hp']),
+            companyFax: firstFormValue(['company_fax_hp']),
+            formStartedAt: Number(form.dataset.awadStartedAt || 0),
+            hcaptchaToken: (function () {
+              if (typeof hcaptcha === 'undefined') return '';
+              var captchaContainer = form.querySelector('.h-captcha');
+              var widgetId = captchaContainer ? captchaContainer.getAttribute('data-hcaptcha-id') : null;
+              return widgetId ? hcaptcha.getResponse(widgetId) : hcaptcha.getResponse();
+            })()
           };
 
           var leadResponse = await fetch('/api/contact/submit', {

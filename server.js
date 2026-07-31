@@ -21,6 +21,11 @@ const contactNotificationEmails = (process.env.CONTACT_NOTIFICATION_EMAILS ||
   .filter(Boolean);
 const formSubmitUrlOverride = process.env.FORMSUBMIT_URL || '';
 const formSubmitFormUrl = process.env.FORMSUBMIT_FORM_URL || 'https://theawadlawfirm.com/contact/';
+const hcaptchaSecret = process.env.HCAPTCHA_SECRET || '';
+const hcaptchaSiteKey = process.env.HCAPTCHA_SITE_KEY || 'bbaee838-b0ee-4376-bf5c-206ed8ae50fa';
+const blockedIps = new Set(
+  (process.env.BLOCKED_IPS || '').split(',').map((ip) => ip.trim()).filter(Boolean)
+);
 const secureCookie = process.env.NODE_ENV === 'production';
 const allowedOrigins = new Set(
   (process.env.ALLOWED_ORIGINS || 'https://theawadlawfirm.com,https://www.theawadlawfirm.com')
@@ -30,7 +35,7 @@ const allowedOrigins = new Set(
 );
 const rateLimits = new Map();
 let writeQueue = Promise.resolve();
-const websiteScriptVersion = '13';
+const websiteScriptVersion = '14';
 const usStates = State.getStatesOfCountry('US')
   .map((state) => ({ name: state.name, code: state.isoCode }))
   .sort((left, right) => left.name.localeCompare(right.name));
@@ -80,16 +85,32 @@ function applyCors(req, res) {
 }
 
 function clientIp(req) {
-  return String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  return String(req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || req.socket.remoteAddress || '')
+    .split(',')[0].trim().replace(/^::ffff:/, '');
 }
 
-function isRateLimited(req, limit = 10) {
-  const key = clientIp(req);
+function isBlockedIp(req) {
+  return blockedIps.has(clientIp(req));
+}
+
+function isRateLimited(req, limit = 10, windowMs = 60 * 60 * 1000, scope = 'general') {
+  const key = `${scope}:${clientIp(req)}`;
   const now = Date.now();
-  const recent = (rateLimits.get(key) || []).filter((time) => now - time < 60 * 60 * 1000);
+  const recent = (rateLimits.get(key) || []).filter((time) => now - time < windowMs);
   recent.push(now);
   rateLimits.set(key, recent);
+  if (rateLimits.size > 10_000) {
+    for (const staleKey of rateLimits.keys()) {
+      if (rateLimits.size <= 8_000) break;
+      rateLimits.delete(staleKey);
+    }
+  }
   return recent.length > limit;
+}
+
+function securityLog(result, req, detail = '') {
+  const suffix = detail ? ` detail=${cleanText(detail, 180).replace(/\s+/g, '_')}` : '';
+  console.log(`[lead-security] result=${result} ip=${clientIp(req) || 'unknown'}${suffix}`);
 }
 
 async function readBody(req, maxLength = 10_000) {
@@ -174,6 +195,52 @@ function contactField(body, names, maxLength) {
   return '';
 }
 
+function isValidEmail(email) {
+  if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+  const [local, domain] = email.split('@');
+  return Boolean(local && domain && local.length <= 64 &&
+    !local.startsWith('.') && !local.endsWith('.') && !local.includes('..') &&
+    !domain.startsWith('-') && !domain.endsWith('-') && !domain.includes('..'));
+}
+
+async function verifyHcaptcha(token, ip) {
+  // Keep existing forms available during deployment; strict verification
+  // activates as soon as HCAPTCHA_SECRET is configured in Coolify.
+  if (!hcaptchaSecret) return { success: true, skipped: true };
+  if (!token) return { success: false, errors: ['missing-input-response'] };
+
+  const params = new URLSearchParams({
+    secret: hcaptchaSecret,
+    response: cleanText(token, 4000),
+    sitekey: hcaptchaSiteKey
+  });
+  if (ip) params.set('remoteip', ip);
+
+  const response = await fetch('https://api.hcaptcha.com/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString(),
+    signal: AbortSignal.timeout(8000)
+  });
+  if (!response.ok) throw new Error(`hCaptcha verification failed (${response.status})`);
+  const result = await response.json();
+  return {
+    success: result.success === true,
+    errors: Array.isArray(result['error-codes']) ? result['error-codes'] : []
+  };
+}
+
+function looksLikeAutomatedLead(lead) {
+  const combined = `${lead.firstName} ${lead.lastName} ${lead.message}`;
+  const links = combined.match(/https?:\/\/|www\.|\b[a-z0-9-]+\.(?:com|net|org|io|xyz)\b/gi) || [];
+  const repeated = /(.)\1{7,}/.test(combined);
+  const controlCharacters = /[\u0000-\u0008\u000B\u000C\u000E-\u001F]/.test(combined);
+  const machineToken = /^[a-z0-9]{12,80}$/i.test(lead.message) &&
+    (lead.message.match(/[A-Z]/g) || []).length >= 3 &&
+    (lead.message.match(/[a-z]/g) || []).length >= 3;
+  return links.length > 2 || repeated || controlCharacters || machineToken;
+}
+
 async function sendFormSubmitNotification(lead) {
   const payload = {
     name: `${lead.firstName} ${lead.lastName}`.trim(),
@@ -252,12 +319,41 @@ async function sendSalesforceLead(lead) {
 }
 
 async function submitContact(req, res) {
-  if (isRateLimited(req, 15)) return sendJson(res, 429, { message: 'Please wait before submitting again.' });
+  if (isBlockedIp(req)) {
+    securityLog('blocked-ip', req);
+    return sendJson(res, 403, { message: 'Submission unavailable.' });
+  }
+  const burstLimited = isRateLimited(req, 3, 10 * 60 * 1000, 'contact-burst');
+  const hourlyLimited = isRateLimited(req, 8, 60 * 60 * 1000, 'contact-hourly');
+  if (burstLimited || hourlyLimited) {
+    securityLog('rate-limited', req);
+    return sendJson(res, 429, { message: 'Please wait before submitting again.' });
+  }
 
   let body;
   try { body = JSON.parse(await readBody(req, 30_000) || '{}'); }
   catch (_) { return sendJson(res, 400, { message: 'Invalid request.' }); }
-  if (body.website) return sendJson(res, 200, { message: 'Submission received.' });
+  if (body.website || body.companyFax) {
+    securityLog('honeypot', req);
+    return sendJson(res, 200, { message: 'Submission received.' });
+  }
+
+  const startedAt = Number(body.formStartedAt || 0);
+  if (!Number.isFinite(startedAt) || startedAt <= 0 || Date.now() - startedAt < 2500 || Date.now() - startedAt > 24 * 60 * 60 * 1000) {
+    securityLog('timing', req);
+    return sendJson(res, 400, { message: 'Please refresh the page and try again.' });
+  }
+
+  let captchaResult;
+  try { captchaResult = await verifyHcaptcha(body.hcaptchaToken, clientIp(req)); }
+  catch (error) {
+    console.error('hCaptcha service error:', error.message);
+    return sendJson(res, 503, { message: 'Security verification is temporarily unavailable. Please try again.' });
+  }
+  if (!captchaResult.success) {
+    securityLog('captcha-failed', req, (captchaResult.errors || []).join(','));
+    return sendJson(res, 403, { message: 'Security verification failed. Please complete hCaptcha again.' });
+  }
 
   const lead = {
     firstName: contactField(body, ['firstName', 'first_name'], 80),
@@ -277,13 +373,20 @@ async function submitContact(req, res) {
   lead.fullAddress = [lead.street, lead.city, lead.state, lead.zip].filter(Boolean).join(', ');
 
   if (!lead.firstName || !lead.lastName || !lead.email || !lead.phone || !lead.message) {
+    securityLog('missing-fields', req);
     return sendJson(res, 400, { message: 'Please complete all required fields.' });
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
+  if (!isValidEmail(lead.email)) {
+    securityLog('invalid-email', req);
     return sendJson(res, 400, { message: 'Please enter a valid email address.' });
   }
   if (!/^\+1[2-9]\d{2}[2-9]\d{6}$/.test(lead.phone)) {
+    securityLog('invalid-phone', req);
     return sendJson(res, 400, { message: 'Please enter a valid 10-digit U.S. phone number.' });
+  }
+  if (looksLikeAutomatedLead(lead)) {
+    securityLog('content-filter', req);
+    return sendJson(res, 200, { message: 'Submission received.' });
   }
 
   const [salesforceResult, emailResult] = await Promise.allSettled([
@@ -300,6 +403,7 @@ async function submitContact(req, res) {
   if (emailResult.status === 'rejected') {
     return sendJson(res, 202, { message: 'Your request was received, but the email alert could not be delivered.', notificationDelivered: false });
   }
+  securityLog('accepted', req, lead.formType);
   return sendJson(res, 200, { message: 'Thank you. Your request was sent successfully.', notificationDelivered: true });
 }
 
@@ -414,7 +518,9 @@ const server = http.createServer(async (req, res) => {
     status: 'ok',
     storageReady: true,
     adminConfigured: Boolean(adminPassword && sessionSecret),
-    leadNotificationsConfigured: contactNotificationEmails.length > 0
+    leadNotificationsConfigured: contactNotificationEmails.length > 0,
+    hcaptchaConfigured: Boolean(hcaptchaSecret),
+    blockedIpCount: blockedIps.size
   });
   if (pathname === '/api/newsletter/subscribe') {
     if (!applyCors(req, res)) return sendJson(res, 403, { message: 'Origin not allowed.' });
