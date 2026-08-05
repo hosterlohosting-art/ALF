@@ -266,7 +266,7 @@
     <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/newsletter/" />
     <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/boletin/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/newsletter/" />
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -329,7 +329,7 @@
     <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/" />
     <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/nuestro-equipo/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/" />
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -743,7 +743,7 @@
     <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/newsletter/" />
     <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/boletin/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/newsletter/" />
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -815,7 +815,7 @@
     <xhtml:link rel="alternate" hreflang="en-US" href="https://theawadlawfirm.com/team-members/" />
     <xhtml:link rel="alternate" hreflang="es-US" href="https://theawadlawfirm.com/es/nuestro-equipo/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://theawadlawfirm.com/team-members/" />
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1225,8 +1225,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://theawadlawfirm.com/edu-guide-hit-and-run-georgia/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theawadlawfirm.com/edu-guide-rear-end-accident-georgia/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://theawadlawfirm.com/edu-guide-rideshare-accident-georgia/</loc>
     <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://theawadlawfirm.com/marietta-personal-injury-attorney/</loc>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
