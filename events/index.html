@@ -103,6 +103,22 @@
         box-shadow: 0 28px 80px rgba(6, 24, 43, 0.12);
       }
 
+      .upcoming-events-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+      .upcoming-event-summary { display:flex; flex-direction:column; min-height:100%; overflow:hidden; border:1px solid rgba(198,161,91,.28); border-radius:30px; background:#fff; box-shadow:0 18px 50px rgba(6,24,43,.09); transition:transform 180ms ease,box-shadow 180ms ease,border-color 180ms ease; }
+      .upcoming-event-summary:hover { transform:translateY(-6px); border-color:rgba(198,161,91,.58); box-shadow:0 26px 60px rgba(6,24,43,.14); }
+      .upcoming-event-summary-top { position:relative; min-height:176px; padding:28px; display:flex; align-items:flex-end; overflow:hidden; color:#fff; background:linear-gradient(135deg,#071326,#17385f); }
+      .upcoming-event-summary-top::before { content:""; position:absolute; width:190px; height:190px; top:-92px; right:-54px; border:1px solid rgba(215,183,109,.34); border-radius:50%; box-shadow:0 0 0 28px rgba(215,183,109,.05),0 0 0 58px rgba(215,183,109,.035); }
+      .upcoming-event-summary-top>div { position:relative; z-index:1; }
+      .upcoming-event-icon { width:50px; height:50px; margin-bottom:22px; display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.2); border-radius:16px; color:#efd28e; background:rgba(255,255,255,.09); backdrop-filter:blur(8px); }
+      .upcoming-event-summary-top time { display:block; color:#efd28e; font-size:11px; font-weight:900; letter-spacing:.17em; text-transform:uppercase; }
+      .upcoming-event-summary-body { padding:30px; display:flex; flex:1; flex-direction:column; }
+      .upcoming-event-summary-body h3 { margin:0 0 14px; color:#081426; font-family:"Outfit",sans-serif; font-size:28px; font-weight:850; line-height:1.12; letter-spacing:-.025em; }
+      .upcoming-event-summary-body>p { margin:0 0 24px; color:#64748b; font-size:14px; line-height:1.7; }
+      .upcoming-event-meta { margin-top:auto; padding-top:20px; display:grid; gap:13px; border-top:1px solid #e7edf4; }
+      .upcoming-event-meta div { display:grid; grid-template-columns:18px 1fr; gap:10px; align-items:start; color:#142238; font-size:13px; font-weight:700; line-height:1.45; }
+      .upcoming-event-meta svg { width:18px; height:18px; margin-top:1px; color:#b08b48; }
+      .upcoming-event-link { margin-top:22px; display:inline-flex; align-items:center; gap:8px; color:#0c1827; font-size:12px; font-weight:900; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
+      .upcoming-event-link:hover { color:#b08b48; }
       .upcoming-event-visual {
         position: relative;
         overflow: hidden;
@@ -236,6 +252,10 @@
 
       [data-event-panel][hidden] {
         display: none !important;
+      }
+
+      @media (max-width:980px) {
+        .upcoming-events-grid { grid-template-columns:1fr; max-width:720px; margin:0 auto; }
       }
 
       @media (max-width: 640px) {
@@ -765,17 +785,21 @@ A2 2 0 0 1 22 16.92z"></path>
         <div class="text-center max-w-3xl mx-auto mb-12">
           <span class="inline-block text-brand-primary font-bold uppercase tracking-[0.22em] text-xs mb-4">Save the Date</span>
           <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-dark mb-5">Upcoming Events</h2>
-          <p class="text-brand-muted text-lg leading-relaxed">New events will appear here with dates, locations, registration details, and everything you need to attend.</p>
+          <p class="text-brand-muted text-lg leading-relaxed">Meet The Awad Law Firm across Georgia at these upcoming community celebrations and gatherings.</p>
         </div>
-        <div class="max-w-4xl mx-auto rounded-[2rem] border border-brand-border bg-gradient-to-br from-[#f8fbff] to-white p-10 md:p-14 text-center shadow-[0_20px_60px_rgba(10,30,55,0.08)]">
-          <div class="w-16 h-16 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center mx-auto mb-6">
-            <i data-lucide="calendar-days" class="w-8 h-8"></i>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-heading font-bold text-brand-dark mb-3">More events are coming soon</h3>
-          <p class="text-brand-muted max-w-xl mx-auto mb-8">Check back for new Awad Law Firm events, community programs, and special announcements.</p>
-          <a href="/contact/" class="inline-flex items-center gap-2 rounded-full bg-brand-dark text-white px-7 py-3.5 font-bold no-underline hover:bg-brand-primary transition-colors">
-            Contact Our Team <span aria-hidden="true">→</span>
-          </a>
+        <div class="upcoming-events-grid">
+          <article class="upcoming-event-summary">
+            <div class="upcoming-event-summary-top"><div><span class="upcoming-event-icon"><i data-lucide="party-popper" aria-hidden="true"></i></span><time datetime="2026-09-12">Saturday, September 12, 2026</time></div></div>
+            <div class="upcoming-event-summary-body"><h3>Latin American Festival</h3><p>Visit The Awad Law Firm's community booth for family giveaways, bilingual resources, and a chance to connect with our team.</p><div class="upcoming-event-meta"><div><i data-lucide="map-pin" aria-hidden="true"></i><span>Downtown Dalton, Georgia<br>Venue details coming soon</span></div><div><i data-lucide="store" aria-hidden="true"></i><span>Community booth and family giveaways</span></div></div></div>
+          </article>
+          <article class="upcoming-event-summary">
+            <div class="upcoming-event-summary-top"><div><span class="upcoming-event-icon"><i data-lucide="heart-handshake" aria-hidden="true"></i></span><time datetime="2026-09-12">Saturday, September 12, 2026 &bull; Evening</time></div></div>
+            <div class="upcoming-event-summary-body"><h3>CAIR-Georgia 10th Anniversary Gala</h3><p>The Karate Attorney is proud to continue supporting CAIR-Georgia at its formal anniversary gala and community celebration.</p><div class="upcoming-event-meta"><div><i data-lucide="map-pin" aria-hidden="true"></i><span>Metro Atlanta, Georgia<br>Venue details coming soon</span></div><div><i data-lucide="badge-check" aria-hidden="true"></i><span>Sponsored by Karate Attorney</span></div></div><a class="upcoming-event-link" href="https://cairgeorgia.org/gala" target="_blank" rel="noopener noreferrer">Gala information <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="upcoming-event-summary">
+            <div class="upcoming-event-summary-top"><div><span class="upcoming-event-icon"><i data-lucide="landmark" aria-hidden="true"></i></span><time datetime="2026-10-03">October 3&ndash;4, 2026 &bull; 11:00 AM&ndash;6:00 PM</time></div></div>
+            <div class="upcoming-event-summary-body"><h3>Atlanta Arab Festival</h3><p>Join us for two days of culture, community, and family activities at the Alif Institute. Admission and parking are free.</p><div class="upcoming-event-meta"><div><i data-lucide="map-pin" aria-hidden="true"></i><span>Alif Institute<br>3288 Marjan Drive, Atlanta, GA 30340</span></div><div><i data-lucide="clock-3" aria-hidden="true"></i><span>11:00 AM&ndash;6:00 PM both days</span></div></div><a class="upcoming-event-link" href="https://alifinstitute.org" target="_blank" rel="noopener noreferrer">Visit Alif Institute <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+          </article>
         </div>
       </div>
     </section>
