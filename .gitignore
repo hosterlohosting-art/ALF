@@ -11,3 +11,9 @@ Thumbs.db
 scratch_*
 *.tmp
 .data/
+cms-exports/
+
+# Local secrets
+.env
+.env.local
+.env.*.local
