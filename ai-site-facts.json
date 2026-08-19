@@ -3,7 +3,7 @@
   "@type": "Dataset",
   "name": "The Awad Law Firm AI Search Facts",
   "url": "https://theawadlawfirm.com/ai-site-facts.json",
-  "dateModified": "2026-07-06",
+  "dateModified": "2026-07-13",
   "license": "https://theawadlawfirm.com/terms-of-service/",
   "publisher": {
     "@type": "LegalService",
@@ -395,13 +395,16 @@
     {
       "title": "Meet the Awad Squad | Team of Legal Experts | The Awad Law Firm",
       "url": "https://theawadlawfirm.com/team-members/",
-      "description": "Meet our elite team of attorneys, client care managers, and legal support specialists fighting for maximum injury compensation across Georgia.",
+      "description": "Meet The Awad Law Firm team, including attorneys, client care managers, intake specialists, media professionals, and legal support staff serving injury clients across Georgia.",
       "question": "Who works on cases at The Awad Law Firm?",
       "answer": "The Awad Law Firm uses a legal team approach with attorneys and support professionals who help investigate claims, communicate with clients, manage evidence, and pursue injury recovery.",
       "topics": [
         "Awad Law Firm team",
         "Georgia injury attorneys",
-        "legal support team"
+        "legal support team",
+        "client care team",
+        "intake specialists",
+        "media team"
       ],
       "intent": "evaluate the legal team"
     },
@@ -436,13 +439,15 @@
     {
       "title": "Awad Law Firm Newsletters | Monthly Legal Insights: Awad Law Firm",
       "url": "https://theawadlawfirm.com/newsletter/",
-      "description": "Browse Awad Law Firm monthly newsletters featuring legal tips, community spotlights, case highlights, and education resources in Georgia.",
+      "description": "Browse Awad Law Firm monthly newsletters, including the July 2026 edition, featuring legal tips, community spotlights, case highlights, and firm news in Georgia.",
       "question": "Where can I read The Awad Law Firm newsletter?",
-      "answer": "The Awad Law Firm publishes newsletter updates with legal education, community highlights, safety information, and firm news for clients and local readers.",
+      "answer": "The Awad Law Firm publishes monthly newsletter updates, including the July 2026 edition, with legal education, community highlights, safety information, team news, and firm updates for clients and local readers.",
       "topics": [
         "Awad Law Firm newsletter",
         "legal updates Georgia",
-        "injury law education"
+        "injury law education",
+        "July 2026 newsletter",
+        "Awad Law Firm community updates"
       ],
       "intent": "read law firm newsletter"
     },

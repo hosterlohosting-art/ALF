@@ -1,7 +1,7 @@
 {
   "name": "The Awad Law Firm Answer Engine FAQ",
   "url": "https://theawadlawfirm.com/answer-engine-faq.json",
-  "dateModified": "2026-06-08",
+  "dateModified": "2026-07-13",
   "answers": [
     {
       "question": "Who is The Awad Law Firm?",
@@ -314,12 +314,14 @@
     },
     {
       "question": "Where can I read The Awad Law Firm newsletter?",
-      "answer": "The Awad Law Firm publishes newsletter updates with legal education, community highlights, safety information, and firm news for clients and local readers.",
+      "answer": "The Awad Law Firm publishes monthly newsletter updates, including the July 2026 edition, with legal education, community highlights, safety information, team news, and firm updates for clients and local readers.",
       "source": "https://theawadlawfirm.com/newsletter/",
       "topics": [
         "Awad Law Firm newsletter",
         "legal updates Georgia",
-        "injury law education"
+        "injury law education",
+        "July 2026 newsletter",
+        "Awad Law Firm community updates"
       ],
       "intent": "read law firm newsletter"
     }
