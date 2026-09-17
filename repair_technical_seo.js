@@ -34,8 +34,6 @@ const teamNames = {
   'selvin-navarro': 'Selvin Navarro',
   'mehar-hassan': 'Mehar Hassan',
   'john-jabes-salva': 'John Jabes Salva',
-  'tasha-hijara': 'Tasha Hijara',
-  'ella-batilona': 'Ella Batilona',
   'edgard-manzanares': 'Edgard Manzanares',
   'alvaro-vanegas': 'Alvaro Vanegas'
 };

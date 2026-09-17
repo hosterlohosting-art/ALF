@@ -2358,8 +2358,6 @@ const langMap = {
       '/team-members/selvin-navarro/': '/es/team-members/selvin-navarro/',
       '/team-members/mehar-hassan/': '/es/team-members/mehar-hassan/',
       '/team-members/john-jabes-salva/': '/es/team-members/john-jabes-salva/',
-      '/team-members/tasha-hijara/': '/es/team-members/tasha-hijara/',
-      '/team-members/ella-batilona/': '/es/team-members/ella-batilona/',
       '/team-members/edgard-manzanares/': '/es/team-members/edgard-manzanares/',
       '/team-members/alvaro-vanegas/': '/es/team-members/alvaro-vanegas/'
     };
