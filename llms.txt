@@ -40,7 +40,7 @@
 - [Meet the Awad Squad | Team of Legal Experts | The Awad Law Firm](https://theawadlawfirm.com/team-members/): Meet our elite team of attorneys, client care managers, and legal support specialists fighting for maximum injury compensation across Georgia.
 - [Ibrahim J. Awad, Esq. | Lead Trial Counsel | The Awad Law Firm](https://theawadlawfirm.com/team-members/ibrahim-awad/): Meet Attorney Ibrahim J. Awad, lead trial counsel and founder of The Awad Law Firm, renowned for aggressive litigation and tireless injury advocacy in Georgia.
 - [Community Involvement & Giving Back | Awad Law Firm Georgia](https://theawadlawfirm.com/community/): Awad Law Firm is deeply rooted in the Georgia communities we serve. Explore our community events, advocacy initiatives, and charitable giving in Dalton and Marietta, GA.
-- [Awad Law Firm Newsletters | Monthly Legal Insights: Awad Law Firm](https://theawadlawfirm.com/newsletter/): Browse Awad Law Firm monthly newsletters featuring legal tips, community spotlights, case highlights, and education resources in Georgia.
+- [Awad Law Firm Newsletters | Monthly Legal Insights: Awad Law Firm](https://theawadlawfirm.com/newsletter/): Browse Awad Law Firm monthly newsletters, including the July 2026 latest edition, featuring legal tips, community spotlights, case highlights, new hires, and firm updates in Georgia.
 - [July 4 Driving Safety Tips for Georgia](https://theawadlawfirm.com/fourth-of-july-driving-safety-georgia/): Practical holiday travel tips and a clear checklist for what to do after a Georgia car accident.
 - [Seguridad al Conducir el 4 de Julio en Georgia](https://theawadlawfirm.com/es/seguridad-vial-cuatro-de-julio-georgia/): Consejos de viaje y pasos que debe tomar después de un accidente automovilístico en Georgia.
 - [Do You Have to Report a Car Accident in Georgia?](https://theawadlawfirm.com/report-car-accident-georgia/): Crash-report checklist for Georgia drivers, including what to collect and how to protect an injury claim.
@@ -51,3 +51,8 @@
 - [AI site facts](https://theawadlawfirm.com/ai-site-facts.json)
 - [Full AI search reference](https://theawadlawfirm.com/llms-full.txt)
 - [Sitemap](https://theawadlawfirm.com/sitemap.xml)
+
+## Latest SEO Content Notes
+
+- July 2026 newsletter is the latest newsletter edition on the English and Spanish newsletter pages.
+- Team pages include attorneys, client care, intake, support, global, and media team sections for The Awad Law Firm.
