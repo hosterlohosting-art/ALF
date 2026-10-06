@@ -613,8 +613,8 @@
 }
 
 .nl-book-stage {
-    width: min(94vw, 1200px);
-    height: min(calc(100dvh - 190px), 720px);
+    width: min(96vw, 1500px);
+    height: min(calc(100dvh - 130px), 940px);
     position: relative;
     display: flex;
     align-items: center;
@@ -651,6 +651,11 @@
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .nl-page-hard {
@@ -1887,9 +1892,9 @@ A2 2 0 0 1 22 16.92z"></path>
             height: size.height,
             size: 'fixed',
             minWidth: 260,
-            maxWidth: 2000,
+            maxWidth: 2500,
             minHeight: 360,
-            maxHeight: 2000,
+            maxHeight: 2500,
             showCover: true,
             usePortrait: window.innerWidth < 768,
             flippingTime: 900,
