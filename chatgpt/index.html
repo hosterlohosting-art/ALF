@@ -567,6 +567,18 @@
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     if (button.disabled) return;
+    var emailInput = document.getElementById("email");
+    if (emailInput.value.trim().toLowerCase().endsWith("@ultraleadgeneration.com")) {
+      statusEl.textContent = "Please use a different email address.";
+      emailInput.setAttribute("aria-invalid", "true");
+      emailInput.focus();
+      emailInput.addEventListener("input", function clearBlockedEmailError() {
+        emailInput.removeAttribute("aria-invalid");
+        statusEl.textContent = "";
+        emailInput.removeEventListener("input", clearBlockedEmailError);
+      });
+      return;
+    }
     evaluate();
     if (reason() || !allAnswered() || contactStep.style.display !== "block") return; // never send a non-qualifying lead
     if (!form.reportValidity()) return; // native required/type checks

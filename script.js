@@ -1244,6 +1244,18 @@ if (document.readyState === 'loading') {
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
 
+        var blockedEmailInput = form.querySelector('input[type="email"], input[name="email"]');
+        if (blockedEmailInput && blockedEmailInput.value.trim().toLowerCase().endsWith('@ultraleadgeneration.com')) {
+          blockedEmailInput.setAttribute('aria-invalid', 'true');
+          blockedEmailInput.focus();
+          blockedEmailInput.addEventListener('input', function clearBlockedEmailError() {
+            blockedEmailInput.removeAttribute('aria-invalid');
+            blockedEmailInput.removeEventListener('input', clearBlockedEmailError);
+          });
+          showToast('Email address', 'Please use a different email address.', 'warning');
+          return;
+        }
+
         var isValid = true;
         var requiredInputs = form.querySelectorAll('[required]');
 
@@ -1429,22 +1441,6 @@ if (document.readyState === 'loading') {
           }
         }
 
-        // Count every accepted form submission, while keeping qualified case
-        // leads available as a separate conversion event. No field values are shared.
-        window.AwadTrackConversion('form_submission', {
-          form_name: window.AwadGetFormType(form),
-          form_category: isCaseForm ? 'case_lead' : 'general'
-        });
-
-        // Count a lead only after required fields, hCaptcha, honeypot, and
-        // solicitation checks have all passed.
-        if (isCaseForm) {
-          window.AwadTrackConversion('generate_lead', {
-            form_name: window.AwadGetFormType(form),
-            lead_source: 'website_form'
-          });
-        }
-
         var emailDelivered = false;
         var submissionSucceeded = false;
         var submissionMessage = '';
@@ -1498,6 +1494,17 @@ if (document.readyState === 'loading') {
           submissionSucceeded = true;
           emailDelivered = leadResult.notificationDelivered !== false;
           submissionMessage = leadResult.message || '';
+          // Keep conversion events unchanged, but count only server-accepted requests.
+          window.AwadTrackConversion('form_submission', {
+            form_name: window.AwadGetFormType(form),
+            form_category: isCaseForm ? 'case_lead' : 'general'
+          });
+          if (isCaseForm) {
+            window.AwadTrackConversion('generate_lead', {
+              form_name: window.AwadGetFormType(form),
+              lead_source: 'website_form'
+            });
+          }
         } catch (submissionError) {
           console.error('Contact form submission failed:', submissionError);
           submissionMessage = submissionError.message || 'We could not send your request.';

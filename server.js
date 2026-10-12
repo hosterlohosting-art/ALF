@@ -39,7 +39,7 @@ const allowedOrigins = new Set(
 );
 const rateLimits = new Map();
 let writeQueue = Promise.resolve();
-const websiteScriptVersion = '14';
+const websiteScriptVersion = '15';
 const usStates = State.getStatesOfCountry('US')
   .map((state) => ({ name: state.name, code: state.isoCode }))
   .sort((left, right) => left.name.localeCompare(right.name));
@@ -181,6 +181,7 @@ async function subscribe(req, res) {
   let body;
   try { body = JSON.parse(await readBody(req) || '{}'); }
   catch (_) { return sendJson(res, 400, { message: 'Invalid request.' }); }
+  if (isBlockedEmail(body.email)) return sendJson(res, 400, { message: 'Please use a different email address.' });
   if (body.website) return sendJson(res, 200, { message: 'Subscription received.' });
 
   const email = String(body.email || '').trim().toLowerCase();
@@ -211,6 +212,10 @@ function contactField(body, names, maxLength) {
     if (body[name] !== undefined && body[name] !== null) return cleanText(body[name], maxLength);
   }
   return '';
+}
+
+function isBlockedEmail(email) {
+  return String(email || '').replace(/\0/g, '').trim().toLowerCase().endsWith('@ultraleadgeneration.com');
 }
 
 function isValidEmail(email) {
@@ -354,6 +359,10 @@ async function submitContact(req, res) {
   let body;
   try { body = JSON.parse(await readBody(req, 30_000) || '{}'); }
   catch (_) { return sendJson(res, 400, { message: 'Invalid request.' }); }
+  if (isBlockedEmail(body.email)) {
+    securityLog('blocked-email-domain', req);
+    return sendJson(res, 400, { message: 'Please use a different email address.' });
+  }
   if (body.website || body.companyFax) {
     securityLog('honeypot', req);
     return sendJson(res, 200, { message: 'Submission received.' });

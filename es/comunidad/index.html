@@ -739,29 +739,29 @@ A2 2 0 0 1 22 16.92z"></path>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Nombre *</label>
-                                <input type="text" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                                <input name="firstName" type="text" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Apellido *</label>
-                                <input type="text" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                                <input name="lastName" type="text" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Correo electrónico *</label>
-                                <input type="email" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                                <input name="email" type="email" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Teléfono *</label>
-                                <input type="tel" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
+                                <input name="phone" type="tel" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition shadow-sm">
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Seleccione el tipo de área de práctica</label>
                             <div class="relative">
-                                <select class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition text-bry-charcoal appearance-none shadow-sm cursor-pointer">
+                                <select name="practiceArea" class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition text-bry-charcoal appearance-none shadow-sm cursor-pointer">
                                     <option>Selecciona tipo de área de práctica</option>
                                     <option>Accidentes automovilísticos</option>
                                     <option>Accidentes de camiones</option>
@@ -774,7 +774,7 @@ A2 2 0 0 1 22 16.92z"></path>
 
                         <div>
                             <label class="block text-[10px] font-bold tracking-widest text-bry-muted uppercase mb-2">Mensaje *</label>
-                            <textarea rows="4" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition resize-none shadow-sm"></textarea>
+                            <textarea name="message" rows="4" required class="w-full bg-white border border-bry-border/60 rounded-xl px-4 py-3.5 focus:outline-none focus:border-bry-primary transition resize-none shadow-sm"></textarea>
                         </div>
 
                         <button type="submit" class="bg-bry-primary hover:bg-bry-primaryhover text-white font-bold py-4 px-8 rounded-full w-full max-w-[250px] mx-auto transition-colors flex justify-center items-center text-sm tracking-widest uppercase shadow-[0_10px_20px_rgba(108,161,230,0.2)] mt-8 group">
